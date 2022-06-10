@@ -1,0 +1,27 @@
+```{r}
+rm(list = setdiff(ls(), lsf.str())[!(setdiff(ls(), lsf.str()) %in% "params")])
+source(here("R", "005-folder_paths_and_options.R"))
+```
+
+```{r}
+gcp_df <- readRDS(file=path(r_objects_folder, "020_gcp_items_df.rds"))
+
+```
+
+# Missing values
+
+```{r}
+
+missing_values_table_fxn <- function(df) {
+
+  df %>%
+    filter(!is.na(value_label)) %>%
+    select(source_item, item_label, value_label) %>%
+    gt::gt()
+}
+
+purrr::map(gcp_df[["item_data"]], missing_values_table_fxn)
+
+
+
+```

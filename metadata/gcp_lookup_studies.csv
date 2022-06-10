@@ -1,0 +1,8 @@
+Study_number,Study,Title,Aux_variables
+1,HRS_ADAMS,"Health and Retirement Study, Aging, Demographics and Memory Study","c(""AASAMPWT_F"", ""SECLUST"", ""SESTRAT"")"
+2,SAGES,Successful Aging after Elective Surgery,"c(""timefr"")"
+6,SAGES_Telephone,Successful Aging after Elective Surgery (Telephone),"c(""timefr"")"
+3,SAGESII_Inperson,Successful Aging after Elective Surgery II (In person),"c(""timefr"")"
+4,SAGESII_Telephone,Successful Aging after Elective Surgery II (Telephone battery),"c(""timefr"")"
+5,SAGESII_Video,Successful Aging after Elective Surgery II (Videoconference battery),"c(""timefr"")"
+7,INTUIT_ACTIVE,INTUIT/ACTIVE (Berger et al),"c(""visit"",""study"",""studyno"")"

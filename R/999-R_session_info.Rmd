@@ -1,0 +1,8 @@
+
+# Technical appendix
+
+Details about the R session used to create this report.
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,24 @@
+```{r}
+rm(list = setdiff(ls(), lsf.str())[!(setdiff(ls(), lsf.str()) %in% "params")])
+source(here("R", "005-folder_paths_and_options.R"))
+```
+
+```{r}
+gcp_df <- readRDS(file=path(r_objects_folder, "021_gcp_items_df.rds"))
+```
+
+```{r}
+gcp_df[["item_data"]][[1]]
+
+recode_values_table_fxn <- function(df) {
+
+  df %>%
+    filter(!is.na(recode)) %>%
+    select(source_item, item_label, recode) %>%
+    gt::gt()
+}
+
+purrr::map(gcp_df[["item_data"]], recode_values_table_fxn)
+
+
+```

@@ -1,0 +1,86 @@
+item_a,item_label_a,study_a,set_a,item_b,item_label_b,study_b,set_b,link_curator,Notes
+Q115,"Boston Naming Test, 15 Items",HRS_ADAMS,GCP,Q251,"Boston Naming Test, 15 Items (decile)",SAGES,GCP,NA,NA
+Q104,CERAD Animal Fluency,HRS_ADAMS,GCP-alt-3a,Q265,Semantic fluency - supermarket (ADAMS animal deciles),SAGES,GCP-alt-3a,NA,NA
+Q103,Digit Span Backward,HRS_ADAMS,GCP,Q272,Digit Span Backwards (decile),SAGES,GCP,NA,NA
+Q102,Digit Span Forward,HRS_ADAMS,GCP,Q271,Digit Span Forwards (decile),SAGES,GCP,NA,NA
+Q118,Letter fluency (F),HRS_ADAMS,GCP-alt-2b,Q282,Letter Fluency (F),SAGES,GCP-alt-2b,NA,NA
+Q117,Letter fluency CFL (Controlled Oral Word Association Test (COWAT)),HRS_ADAMS,GCP-alt-2a,Q281,Letter Fluency (FAS) (CFL cutpoints),SAGES,GCP-alt-2a,NA,NA
+Q101,"Trails A (time, deciles)",HRS_ADAMS,GCP,Q231,"Trails A (time, decile)",SAGES,GCP,NA,NA
+Q100,"Trails B (time, deciles)",HRS_ADAMS,GCP,Q233,"Trails B (time, decile)",SAGES,GCP,NA,NA
+Q587,Category switching (Total number of correct switches),SAGESII_Telephone,GCP,Q387,Category switching (Total number of correct switches),SAGES_Telephone,GCP,NA,NA
+Q104,CERAD Animal Fluency,HRS_ADAMS,GCP-alt-3a,Q365,Semantic fluency - supermarket (ADAMS animal deciles),SAGES_Telephone,GCP-alt-3a,NA,Tel vs Vid failed equivalence test
+Q103,Digit Span Backward,HRS_ADAMS,GCP,Q372,Digit Span Backwards (decile),SAGES_Telephone,GCP,NA,Tel vs Vid failed equivalence test
+Q102,Digit Span Forward,HRS_ADAMS,GCP,Q371,Digit Span Forwards (decile),SAGES_Telephone,GCP,NA,Tel vs Vid failed equivalence test
+Q227,HVLT Delayed Recall Percent (septile),SAGES,GCP-alt-1a,Q327,HVLT Delayed Recall Percent (septile),SAGES_Telephone,GCP-alt-1a,NA,NA
+Q223,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1a,Q323,HVLT Trial 1-3 nonile (not nonile),SAGES_Telephone,GCP-alt-1a,NA,Tel vs Vid failed equivalence test
+Q226,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1b,Q326,HVLT Trial 1-3 nonile (not nonile),SAGES_Telephone,GCP-alt-1b,NA,NA
+Q228,HVLT Delayed Recall Percent (octile),SAGES,GCP-alt-1b,Q328,HVLT Delayed Recall Percent (octile),SAGES_Telephone,GCP-alt-1b,NA,NA
+Q283,Letter Fluency (A),SAGES,GCP-alt-2b,Q383,Letter Fluency (A),SAGES_Telephone,GCP-alt-2b,NA,NA
+Q118,Letter fluency (F),HRS_ADAMS,GCP-alt-2b,Q382,Letter Fluency (F),SAGES_Telephone,GCP-alt-2b,NA,NA
+Q284,Letter Fluency (S),SAGES,GCP-alt-2b,Q384,Letter Fluency (S),SAGES_Telephone,GCP-alt-2b,NA,NA
+Q117,Letter fluency CFL (Controlled Oral Word Association Test (COWAT)),HRS_ADAMS,GCP-alt-2a,Q381,Letter Fluency (FAS) (CFL cutpoints),SAGES_Telephone,GCP-alt-2a,NA,NA
+Q285,Letter Fluency (FAS) (Sages deciles),SAGES,GCP-alt-2c,Q385,Letter Fluency (FAS) (SAGES deciles),SAGES_Telephone,GCP-alt-2c,NA,NA
+Q266,Semantic fluency - supermarket (SAGES deciles),SAGES,GCP-alt-3b,Q366,Semantic fluency - supermarket (SAGES deciles),SAGES_Telephone,GCP-alt-3b,NA,NA
+Q115,"Boston Naming Test, 15 Items",HRS_ADAMS,GCP,Q451,"Boston Naming Test, 15 Items (decile)",SAGESII_Inperson,GCP,NA,NA
+Q104,CERAD Animal Fluency,HRS_ADAMS,GCP-alt-3a,Q465,Semantic fluency - supermarket (ADAMS animal deciles),SAGESII_Inperson,GCP-alt-3a,NA,NA
+Q103,Digit Span Backward,HRS_ADAMS,GCP,Q472,Digit Span Backwards (decile),SAGESII_Inperson,GCP,NA,NA
+Q102,Digit Span Forward,HRS_ADAMS,GCP,Q471,Digit Span Forwards (decile),SAGESII_Inperson,GCP,NA,NA
+Q241,Digit Symbol Substitution (aka rbans) (septile),SAGES,GCP-alt-1a,Q441,Digit Symbol Substitution (aka rbans) (septile),SAGESII_Inperson,GCP-alt-1a,NA,NA
+Q227,HVLT Delayed Recall Percent (septile),SAGES,GCP-alt-1a,Q427,HVLT Delayed Recall Percent (septile),SAGESII_Inperson,GCP-alt-1a,NA,NA
+Q223,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1a,Q423,HVLT Trial 1-3 nonile (not nonile),SAGESII_Inperson,GCP-alt-1a,NA,NA
+Q226,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1b,Q426,HVLT Trial 1-3 nonile (not nonile),SAGESII_Inperson,GCP-alt-1b,NA,NA
+Q228,HVLT Delayed Recall Percent (octile),SAGES,GCP-alt-1b,Q428,HVLT Delayed Recall Percent (octile),SAGESII_Inperson,GCP-alt-1b,NA,NA
+Q283,Letter Fluency (A),SAGES,GCP-alt-2b,Q483,Letter Fluency (A),SAGESII_Inperson,GCP-alt-2b,NA,NA
+Q118,Letter fluency (F),HRS_ADAMS,GCP-alt-2b,Q482,Letter Fluency (F),SAGESII_Inperson,GCP-alt-2b,NA,NA
+Q284,Letter Fluency (S),SAGES,GCP-alt-2b,Q484,Letter Fluency (S),SAGESII_Inperson,GCP-alt-2b,NA,NA
+Q117,Letter fluency CFL (Controlled Oral Word Association Test (COWAT)),HRS_ADAMS,GCP-alt-2a,Q481,Letter Fluency (FAS) (CFL cutpoints),SAGESII_Inperson,GCP-alt-2a,NA,NA
+Q101,"Trails A (time, deciles)",HRS_ADAMS,GCP,Q431,"Trails A (time, decile)",SAGESII_Inperson,GCP,NA,NA
+Q100,"Trails B (time, deciles)",HRS_ADAMS,GCP,Q433,"Trails B (time, decile)",SAGESII_Inperson,GCP,NA,NA
+Q222,Visual Search and Attention Task (VSAT) number of targets (septile),SAGES,GCP-alt-1a,Q422,Visual Search and Attention Task (VSAT) number of targets (septile),SAGESII_Inperson,GCP-alt-1a,NA,NA
+Q225,Visual Search and Attention Task (VSAT) number of targets (octile),SAGES,GCP-alt-1b,Q425,Visual Search and Attention Task (VSAT) number of targets (octile),SAGESII_Inperson,GCP-alt-1b,NA,NA
+Q242,Digit Symbol Substitution (aka rbans) (octile),SAGES,GCP-alt-1b,Q442,Digit Symbol Substitution (aka rbans) (octile),SAGESII_Inperson,GCP-alt-1b,NA,NA
+Q285,Letter Fluency (FAS) (Sages deciles),SAGES,GCP-alt-2c,Q485,Letter Fluency (FAS) (SAGES deciles),SAGESII_Inperson,GCP-alt-2c,NA,NA
+Q266,Semantic fluency - supermarket (SAGES deciles),SAGES,GCP-alt-3b,Q466,Semantic fluency - supermarket (SAGES deciles),SAGESII_Inperson,GCP-alt-3b,NA,NA
+Q104,CERAD Animal Fluency,HRS_ADAMS,GCP-alt-3a,Q565,Semantic fluency - supermarket (ADAMS animal deciles),SAGESII_Telephone,GCP-alt-3a,NA,Tel vs Vid failed equivalence test
+Q103,Digit Span Backward,HRS_ADAMS,GCP,Q572,Digit Span Backwards (decile),SAGESII_Telephone,GCP,NA,Tel vs Vid failed equivalence test
+Q102,Digit Span Forward,HRS_ADAMS,GCP,Q571,Digit Span Forwards (decile),SAGESII_Telephone,GCP,NA,Tel vs Vid failed equivalence test
+Q227,HVLT Delayed Recall Percent (septile),SAGES,GCP-alt-1a,Q527,HVLT Delayed Recall Percent (septile),SAGESII_Telephone,GCP-alt-1a,NA,NA
+Q223,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1a,Q523,HVLT Trial 1-3 nonile (not nonile),SAGESII_Telephone,GCP-alt-1a,NA,Tel vs Vid failed equivalence test
+Q226,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1b,Q526,HVLT Trial 1-3 nonile (not nonile),SAGESII_Telephone,GCP-alt-1b,NA,NA
+Q228,HVLT Delayed Recall Percent (octile),SAGES,GCP-alt-1b,Q528,HVLT Delayed Recall Percent (octile),SAGESII_Telephone,GCP-alt-1b,NA,NA
+Q283,Letter Fluency (A),SAGES,GCP-alt-2b,Q583,Letter Fluency (A),SAGESII_Telephone,GCP-alt-2b,NA,NA
+Q118,Letter fluency (F),HRS_ADAMS,GCP-alt-2b,Q582,Letter Fluency (F),SAGESII_Telephone,GCP-alt-2b,NA,NA
+Q284,Letter Fluency (S),SAGES,GCP-alt-2b,Q584,Letter Fluency (S),SAGESII_Telephone,GCP-alt-2b,NA,NA
+Q117,Letter fluency CFL (Controlled Oral Word Association Test (COWAT)),HRS_ADAMS,GCP-alt-2a,Q581,Letter Fluency (FAS) (CFL cutpoints),SAGESII_Telephone,GCP-alt-2a,NA,NA
+Q285,Letter Fluency (FAS) (Sages deciles),SAGES,GCP-alt-2c,Q585,Letter Fluency (FAS) (SAGES deciles),SAGESII_Telephone,GCP-alt-2c,NA,NA
+Q266,Semantic fluency - supermarket (SAGES deciles),SAGES,GCP-alt-3b,Q566,Semantic fluency - supermarket (SAGES deciles),SAGESII_Telephone,GCP-alt-3b,NA,NA
+Q115,"Boston Naming Test, 15 Items",HRS_ADAMS,GCP,Q651,"Boston Naming Test, 15 Items (decile)",SAGESII_Video,GCP,NA,NA
+Q104,CERAD Animal Fluency,HRS_ADAMS,GCP-alt-3a,Q665,Semantic fluency - supermarket (ADAMS animal deciles),SAGESII_Video,GCP-alt-3a,NA,NA
+Q103,Digit Span Backward,HRS_ADAMS,GCP,Q672,Digit Span Backwards (decile),SAGESII_Video,GCP,NA,NA
+Q102,Digit Span Forward,HRS_ADAMS,GCP,Q671,Digit Span Forwards (decile),SAGESII_Video,GCP,NA,NA
+Q241,Digit Symbol Substitution (aka rbans) (septile),SAGES,GCP-alt-1a,Q641,Digit Symbol Substitution (aka rbans) (septile),SAGESII_Video,GCP-alt-1a,NA,NA
+Q227,HVLT Delayed Recall Percent (septile),SAGES,GCP-alt-1a,Q627,HVLT Delayed Recall Percent (septile),SAGESII_Video,GCP-alt-1a,NA,NA
+Q223,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1a,Q623,HVLT Trial 1-3 nonile (not nonile),SAGESII_Video,GCP-alt-1a,NA,NA
+Q226,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1b,Q626,HVLT Trial 1-3 nonile (not nonile),SAGESII_Video,GCP-alt-1b,NA,NA
+Q228,HVLT Delayed Recall Percent (octile),SAGES,GCP-alt-1b,Q628,HVLT Delayed Recall Percent (octile),SAGESII_Video,GCP-alt-1b,NA,NA
+Q283,Letter Fluency (A),SAGES,GCP-alt-2b,Q683,Letter Fluency (A),SAGESII_Video,GCP-alt-2b,NA,NA
+Q118,Letter fluency (F),HRS_ADAMS,GCP-alt-2b,Q682,Letter Fluency (F),SAGESII_Video,GCP-alt-2b,NA,NA
+Q284,Letter Fluency (S),SAGES,GCP-alt-2b,Q684,Letter Fluency (S),SAGESII_Video,GCP-alt-2b,NA,NA
+Q117,Letter fluency CFL (Controlled Oral Word Association Test (COWAT)),HRS_ADAMS,GCP-alt-2a,Q681,Letter Fluency (FAS) (CFL cutpoints),SAGESII_Video,GCP-alt-2a,NA,NA
+Q101,"Trails A (time, deciles)",HRS_ADAMS,GCP,Q631,"Trails A (time, decile)",SAGESII_Video,GCP,NA,NA
+Q100,"Trails B (time, deciles)",HRS_ADAMS,GCP,Q633,"Trails B (time, decile)",SAGESII_Video,GCP,NA,NA
+Q222,Visual Search and Attention Task (VSAT) number of targets (septile),SAGES,GCP-alt-1a,Q622,Visual Search and Attention Task (VSAT) number of targets (septile),SAGESII_Video,GCP-alt-1a,NA,NA
+Q225,Visual Search and Attention Task (VSAT) number of targets (octile),SAGES,GCP-alt-1b,Q625,Visual Search and Attention Task (VSAT) number of targets (octile),SAGESII_Video,GCP-alt-1b,NA,NA
+Q242,Digit Symbol Substitution (aka rbans) (octile),SAGES,GCP-alt-1b,Q642,Digit Symbol Substitution (aka rbans) (octile),SAGESII_Video,GCP-alt-1b,NA,NA
+Q285,Letter Fluency (FAS) (Sages deciles),SAGES,GCP-alt-2c,Q685,Letter Fluency (FAS) (SAGES deciles),SAGESII_Video,GCP-alt-2c,NA,NA
+Q266,Semantic fluency - supermarket (SAGES deciles),SAGES,GCP-alt-3b,Q666,Semantic fluency - supermarket (SAGES deciles),SAGESII_Video,GCP-alt-3b,NA,NA
+Q223,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1a,Q723,HVLT sum of learning trials (not nonile),INTUIT_ACTIVE,GCP-alt-1a,NA,NA
+Q226,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1b,Q726,HVLT sum of learning trials,INTUIT_ACTIVE,GCP-alt-1b,NA,NA
+Q241,Digit Symbol Substitution (aka rbans) (septile),SAGES,GCP-alt-1a,Q741,Digit Symbol (septile),INTUIT_ACTIVE,GCP-alt-1a,NA,NA
+Q242,Digit Symbol Substitution (aka rbans) (octile),SAGES,GCP-alt-1b,Q742,Digit Symbol (octile),INTUIT_ACTIVE,GCP-alt-1b,NA,NA
+Q101,"Trails A (time, deciles)",HRS_ADAMS,GCP,Q701,"Trails A (time, decile)",INTUIT_ACTIVE,GCP,NA,NA
+Q100,"Trails B (time, deciles)",HRS_ADAMS,GCP,Q700,"Trails B (time, decile)",INTUIT_ACTIVE,GCP,NA,NA
+Q102,Digit Span Forward,HRS_ADAMS,GCP,Q702,Digit Span Forwards (decile),INTUIT_ACTIVE,GCP,NA,NA
+Q103,Digit Span Backward,HRS_ADAMS,GCP,Q703,Digit Span Backwards (decile),INTUIT_ACTIVE,GCP,NA,NA
+Q227,HVLT Delayed Recall Percent (septile),SAGES,GCP-alt-1a,Q727,HVLT-Delayed Recall Percent (septile),INTUIT_ACTIVE,GCP-alt-1a,NA,NA
+Q228,HVLT Delayed Recall Percent (octile),SAGES,GCP-alt-1b,Q728,HVLT-Delayed Recall Percent (octile),INTUIT_ACTIVE,GCP-alt-1b,NA,NA

@@ -1,0 +1,676 @@
+---
+title: "Comparison of GCP versions"
+output: powerpoint_presentation
+author: "Doug Tommet"
+date: '`r Sys.Date()`'
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source(here::here("R", "001-Libraries_and_functions.R"))
+source(here::here("R", "005-Folder_paths_and_options.R"))
+
+```
+
+```{r}
+item_bank_v1 <- read_csv(here("data", "gcp_item_bank_v1.csv"))
+item_bank_v2a <- read_csv(here("data", "gcp_item_bank_v2a.csv"))
+item_bank_v2b <- read_csv(here("data", "gcp_item_bank_v2b.csv"))
+item_bank_v2c <- read_csv(here("data", "gcp_item_bank_v2c.csv"))
+
+gcp_study_nested_v2b <- readRDS(file=path(r_objects_folder, "070_gcp_study_nested_GCPv2b.rds"))
+sagesI_npb <- gcp_study_nested_v2b[["response_data"]][[2]] %>%
+  select(newid, i201, i208, i210, i241, i265, i282, i283, i284, npb10, npb12, npb14, npb15, npb16)
+
+if(fs::dir_exists(sagesI_datafolder)) {
+  sagesI_df <- read_dta(fs::path(sagesI_datafolder, "SAGES-Subject-Interview-Data-Analysis-File.dta"))
+  saveRDS(sagesI_df,  file=path(r_objects_folder, "xxx_sagesI_df.rds"))
+} else {
+  sagesI_df <- readRDS(file=path(r_objects_folder, "xxx_sagesI_df.rds"))
+}
+  
+sagesI_gcp <- sagesI_df %>%
+  filter(timefr==0) %>%
+  select(studyid, vdgcp)
+  # select(studyid, vdgcp, npb01, npb02, npb03, npb17, npb06, npb08, npb10, npb12, npb14, npb15, npb16, npb34, npb25, npb28, npb31, npb37, npb38, npb39)
+  
+gcp_g_v1 <- read_csv(path(derivedfolder, "gcp_factor_score_v1.csv"))
+gcp_g_v2a <- read_csv(path(derivedfolder, "gcp_factor_score_v2a.csv"))
+gcp_g_v2b <- read_csv(path(derivedfolder, "gcp_factor_score_v2b.csv"))
+gcp_g_v2c <- read_csv(path(derivedfolder, "gcp_factor_score_v2c.csv"))
+
+gcp_g_v1 <- gcp_g_v1 %>% 
+  mutate(g = g * 10 + 50,
+         g_se = g_se * 10) %>%
+  rename(GCP_v1 = g) %>%
+  rename(g_se_v1 = g_se)
+gcp_g_v2a <- gcp_g_v2a %>% 
+  mutate(g = g * 10 + 50,
+         g_se = g_se * 10) %>%
+  rename(GCP_v2a = g) %>%
+  rename(g_se_v2a = g_se)
+gcp_g_v2b <- gcp_g_v2b %>% 
+  mutate(g = g * 10 + 50,
+         g_se = g_se * 10) %>%
+  rename(GCP_v2b = g) %>%
+  rename(g_se_v2b = g_se)
+gcp_g_v2c <- gcp_g_v2c %>% 
+  mutate(g = g * 10 + 50,
+         g_se = g_se * 10) %>%
+  rename(GCP_v2c = g) %>%
+  rename(g_se_v2c = g_se)
+
+gcp_g <- gcp_g_v1 %>%
+  left_join(gcp_g_v2a, by = c("newid", "study_name_short", "study_wave_number")) %>%
+  left_join(gcp_g_v2b, by = c("newid", "study_name_short", "study_wave_number")) %>%
+  left_join(gcp_g_v2c, by = c("newid", "study_name_short", "study_wave_number"))
+  
+sagesI_gcp <- gcp_g %>%  
+  left_join(sagesI_gcp, by = c("newid" = "studyid")) %>%
+  filter(study_wave_number == 2)
+```
+
+# Intro
+
+When we first made the GCP, we made some mistakes and had questionable assumptions.
+
+Now with this harmonization work we have a chance to revisit and possibly correct these mistakes and assumptions.
+
+------------------------------------------------------------------------
+
+# Mistakes
+
+-   GCP v 1.0 (Gross et al 2014, and as used in SAGES encoded in VDS) has a few minor errors and questionable decisions.
+-   [Error \#1, \#2, \#3 & \#4]{.ul}. Top two categories (based on quantiles) in VSAT, HVLT, HVLT delayed, and Digit Symbol Substitution are collapsed. This was unintentional, the data would have supported more categories.
+-   The result of this is we may not have as precise a measure of cognitive performance among the very top (best) performers.
+
+------------------------------------------------------------------------
+
+# Questionable assumptions
+
+-   [Questionable assumption \#1]{.ul}. We decided to treat HRS/ADAMS "C, F, and L" letter fluency as equivalent to SAGES "F, A, S" fluency. If this assumption of equivalence is a bad assumption, our linkage to HRS/ADAMS is biased.
+-   [Questionable assumption \#2]{.ul}. We decided to treat HRS/ADAMS animal fluency as equivalent to SAGES supermarket. If this assumption of equivalence is a bad assumption, our linkage to HRS/ADAMS is biased.
+
+------------------------------------------------------------------------
+
+# Also...
+
+-   The computational procedures we are using to generate the item bank and linked GCP scores is different now than in GCP 1.0
+-   Therefore, the new GCP won't be [exactly]{.ul} the same as GCP 1.0.
+-   But these procedural differences are expected to produce trivial differences in scores
+
+------------------------------------------------------------------------
+
+# So we have several options to redo the GCP
+
+-   Retain the mistakes and questionable assumptions (GCP_v1)
+-   Fix the mistakes but retain the animal/supermarket and CFL/FAS linking (GCP_v2a)
+-   Fix the mistakes and separate linking for animal/supermarket and separate items for C/F/L and F/A/S (GCP_v2b)
+-   Fix the mistakes and separate linking for animal/supermarket and separate linking for CLF/FAS (GCP_v2c)
+
+------------------------------------------------------------------------
+
+# Fixing the item recoding mistakes
+
+VSAT: Comparison of parameter estimates
+
+```{r}
+item_bank_v1 %>%
+  filter(item=="Q222") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v1 %>%
+  filter(item=="Q222") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2a %>%
+  filter(item=="Q225") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2a: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2a %>%
+  filter(item=="Q225") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2a: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+```
+
+------------------------------------------------------------------------
+
+# Fixing the item recoding mistakes
+
+HVLT: Comparison of parameter estimates
+
+```{r}
+item_bank_v1 %>%
+  filter(item=="Q223") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v1 %>%
+  filter(item=="Q223") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2a %>%
+  filter(item=="Q226") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2a: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2a %>%
+  filter(item=="Q226") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2a: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+```
+------------------------------------------------------------------------
+
+# Fixing the item recoding mistakes
+
+HVLT Delayed: Comparison of parameter estimates
+
+```{r}
+item_bank_v1 %>%
+  filter(item=="Q227") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v1 %>%
+  filter(item=="Q227") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2a %>%
+  filter(item=="Q228") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2a: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2a %>%
+  filter(item=="Q228") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2a: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+```
+
+------------------------------------------------------------------------
+
+# Fixing the item recoding mistakes
+
+Digit symbol substitution: Comparison of parameter estimates
+
+```{r}
+item_bank_v1 %>%
+  filter(item=="Q241") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v1 %>%
+  filter(item=="Q241") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2a %>%
+  filter(item=="Q242") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2a: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2a %>%
+  filter(item=="Q242") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2a: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+```
+
+------------------------------------------------------------------------
+
+# Summary statistics for those where there is a difference in GCP between version 1 and version 2a
+
+-   The recoding mistakes only affected 53 out of 560 participants
+-   Mean absolute difference is only 0.02 GCP units
+
+```{r}
+sagesI_gcp %>%
+  mutate(GCP_v2a_any_diff = GCP_v1 != GCP_v2a,
+         GCP_v2a_diff = abs(GCP_v1 - GCP_v2a)) %>%
+  filter(GCP_v2a_any_diff == TRUE) %>%
+  select(GCP_v2a_diff) %>%
+  gtsummary::tbl_summary(
+    type = c("GCP_v2a_diff" ~ "continuous2"),
+    statistic = gtsummary::all_continuous() ~ c("{N_nonmiss}",
+                                                "{mean} ({sd})",
+                                     "{median} ({p25}, {p75})", 
+                                     "{min}, {max}"),
+    label = GCP_v2a_diff ~ "Difference in GCP between v1 and v2a"
+  ) %>%
+  gtsummary::as_flex_table()
+
+
+```
+
+------------------------------------------------------------------------
+
+# Fixing the item linking
+
+Animal vs Supermarket naming: Comparison of parameter estimates
+
+```{r}
+item_bank_v1 %>%
+  filter(item=="Q104") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v1 %>%
+  filter(item=="Q104") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2b %>%
+  filter(item=="Q266") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2b: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2b %>%
+  filter(item=="Q266") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2b: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+```
+
+------------------------------------------------------------------------
+
+# Fixing the item linking (Option 1)
+
+FAS : Comparison of parameter estimates
+
+*The threshold parameter estimates are not really comparable, because the Version 1 thresholds are based on bins on number of F+A+S words, and the Version 2b thresholds are based on bins of F, A, and S words considered separately.*
+
+```{r}
+item_bank_v1 %>%
+  filter(item=="Q117") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v1 %>%
+  filter(item=="Q117") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2b %>%
+  filter(item %in% c("Q118", "Q283", "Q284")) %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(item, parameter_T, estimate.stdyx) %>%
+  pivot_wider(names_from = item, values_from = estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(4), 
+                            values = c("Version 2b: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               Q118 = "F",
+                               Q283 = "A",
+                               Q284 = "S")
+
+item_bank_v2b %>%
+  filter(item %in% c("Q118", "Q283", "Q284")) %>%
+  filter(parameter_type == "threshold") %>%
+  select(item, parameter_T, estimate.stdyx) %>%
+  pivot_wider(names_from = item, values_from = estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(4), 
+                            values = c("Version 2b: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               Q118 = "F",
+                               Q283 = "A",
+                               Q284 = "S")
+```
+
+------------------------------------------------------------------------
+
+# Summary statistics for those participants where there is a difference between GCP_v1 and GCP_v2b
+
+-   GCP_v1 is not fixing mistakes or item linkages
+-   GCP_v2b is fixing the mistakes, animal/supermarket not linked, CFL/FAS as three separate items
+-   Fixing the item linkage affects nearly the whole sample
+-   The mean absolute difference is 2.2 GCP units
+
+```{r}
+sagesI_gcp %>%
+  mutate(GCP_v2b_any_diff = GCP_v1 != GCP_v2b,
+         GCP_v2b_diff = abs(GCP_v1 - GCP_v2b)) %>%
+  filter(GCP_v2b_any_diff == TRUE) %>%
+  select(GCP_v2b_diff) %>%
+  gtsummary::tbl_summary(
+    type = c("GCP_v2b_diff" ~ "continuous2"),
+    statistic = gtsummary::all_continuous() ~ c("{N_nonmiss}",
+                                                "{mean} ({sd})",
+                                     "{median} ({p25}, {p75})", 
+                                     "{min}, {max}"),
+    label = GCP_v2b_diff ~ "Difference in GCP between v1 and v2b"
+  ) %>%
+  gtsummary::as_flex_table()
+
+
+```
+
+# Fixing the item linking (Option 2)
+
+FAS and CFL summed but not linked
+
+FAS : Comparison of parameter estimates
+
+```{r}
+item_bank_v1 %>%
+  filter(item=="Q117") %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v1 %>%
+  filter(item=="Q117") %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 1: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2c %>%
+  filter(item %in% c("Q285")) %>%
+  filter(parameter_type == "factor_loading") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2c: Factor loading")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+
+item_bank_v2c %>%
+  filter(item %in% c("Q285")) %>%
+  filter(parameter_type == "threshold") %>%
+  select(parameter_T, estimate.stdyx) %>%
+  flextable::flextable() %>%
+  flextable::add_header_row(colwidths = c(2), 
+                            values = c("Version 2c: Thresholds")) %>%
+  flextable::set_header_labels(parameter_T = "Parameter",
+                               estimate.stdyx = "Std. Estimate")
+```
+
+------------------------------------------------------------------------
+
+# Summary statistics for those participants where there is a difference between GCP_v1 and GCP_v2c
+
+-   GCP_v1 is not fixing mistakes or item linkages
+-   GCP_v2b is fixing the mistakes, animal/supermarket not linked, CFL/FAS summed but not linked
+-   Fixing the item linkage affects nearly the whole sample
+-   The mean absolute difference is 1.0 GCP units
+
+```{r}
+sagesI_gcp %>%
+  mutate(GCP_v2c_any_diff = GCP_v1 != GCP_v2c,
+         GCP_v2c_diff = abs(GCP_v1 - GCP_v2c)) %>%
+  filter(GCP_v2c_any_diff == TRUE) %>%
+  select(GCP_v2c_diff) %>%
+  gtsummary::tbl_summary(
+    type = c("GCP_v2c_diff" ~ "continuous2"),
+    statistic = gtsummary::all_continuous() ~ c("{N_nonmiss}",
+                                                "{mean} ({sd})",
+                                     "{median} ({p25}, {p75})", 
+                                     "{min}, {max}"),
+    label = GCP_v2c_diff ~ "Difference in GCP between v1 and v2c"
+  ) %>%
+  gtsummary::as_flex_table()
+
+
+```
+
+------------------------------------------------------------------------
+
+# Summary statistics for GCP versions at baseline
+
+```{r}
+sagesI_gcp %>%
+  select(vdgcp, GCP_v1, GCP_v2a, GCP_v2b, GCP_v2c) %>%
+  gtsummary::tbl_summary(type = gtsummary::all_continuous() ~ "continuous2",
+    statistic = gtsummary::all_continuous() ~ c("{mean} ({sd})",
+                                     "{median} ({p25}, {p75})", 
+                                     "{min}, {max}"),
+    digits = gtsummary::all_continuous() ~ 2,
+    label = vdgcp ~ "Original GCP") %>%
+  gtsummary::as_flex_table() 
+  
+ 
+```
+
+*Great case to be made for fixing both errors and relaxing both questionable assumptions.*
+
+------------------------------------------------------------------------
+
+# Correlation of GCP versions at baseline
+
+```{r}
+sagesI_gcp %>%
+  select(vdgcp, GCP_v1, GCP_v2a, GCP_v2b, GCP_v2c) %>%
+  cor() %>%
+  as_tibble(rownames = NA) %>%
+  rownames_to_column() %>%
+  rename(variable = rowname) %>%
+  flextable::flextable() %>%
+  flextable::colformat_double(digits = 2)
+  
+```
+
+------------------------------------------------------------------------
+
+# Rank order correlation of GCP versions at baseline
+
+```{r}
+sagesI_gcp %>%
+  select(vdgcp, GCP_v1, GCP_v2a, GCP_v2b, GCP_v2c) %>%
+  cor(method = "spearman") %>%
+  as_tibble(rownames = NA) %>%
+  rownames_to_column() %>%
+  rename(variable = rowname) %>%
+  flextable::flextable() %>%
+  flextable::colformat_double(digits = 2)
+  
+```
+
+------------------------------------------------------------------------
+
+# Repeating mistakes and item linkages
+
+```{r}
+ggplot(sagesI_gcp, aes(x = vdgcp, y = GCP_v1)) +
+  geom_point() +
+  ggtitle("Original GCP vs New GCP version 1") +
+  hrbrthemes::theme_ipsum()
+```
+
+------------------------------------------------------------------------
+
+# Fixing the mistakes
+
+```{r}
+ggplot(sagesI_gcp, aes(x = vdgcp, y = GCP_v2a)) +
+  geom_point() +
+  ggtitle("Original GCP vs New GCP version 2a") +
+  hrbrthemes::theme_ipsum()
+```
+
+------------------------------------------------------------------------
+
+# Fixing mistakes and item linkages (Option 1)
+
+- Animal/Supermarket not linked, CFL/FAS as three separate items
+
+```{r}
+ggplot(sagesI_gcp, aes(x = vdgcp, y = GCP_v2b)) +
+  geom_point() +
+  ggtitle("Original GCP vs New GCP version 2b") +
+  hrbrthemes::theme_ipsum()
+```
+
+------------------------------------------------------------------------
+
+# Fixing mistakes and item linkages (Option 2)
+
+- Animal/Supermarket not linked, CFL/FAS summed but not linked
+
+```{r}
+ggplot(sagesI_gcp, aes(x = vdgcp, y = GCP_v2c)) +
+  geom_point() +
+  ggtitle("Original GCP vs New GCP version 2c") +
+  hrbrthemes::theme_ipsum()
+```
+
+------------------------------------------------------------------------
+
+# Absolute difference from original GCP
+
+```{r}
+sagesI_gcp %>%
+  mutate(diff_v1 = abs(vdgcp - GCP_v1),
+         diff_v2a = abs(vdgcp - GCP_v2a),
+         diff_v2b = abs(vdgcp - GCP_v2b),
+         diff_v2c = abs(vdgcp - GCP_v2c)
+         ) %>%
+  select(starts_with("diff_")) %>%
+  gtsummary::tbl_summary(type = gtsummary::all_continuous() ~ "continuous2",
+    statistic = gtsummary::all_continuous() ~ c("{mean} ({sd})",
+                                     "{median} ({p25}, {p75})", 
+                                     "{min}, {max}"),
+    label = c(diff_v1 ~ "abs(Original GCP - V1)",
+              diff_v2a ~ "abs(Original GCP - V2a)",
+              diff_v2b ~ "abs(Original GCP - V2b)",
+              diff_v2c ~ "abs(Original GCP - V2c)")
+    ) %>%
+  gtsummary::as_flex_table()
+```
+
+------------------------------------------------------------------------
+
+
+```{r, eval=FALSE}
+foo <- sagesI_gcp %>%
+  left_join(sagesI_npb, by = c("newid" = "newid")) %>%
+  mutate(diff_v2a = (GCP_v2a - GCP_v1),
+         diff_v2b = (GCP_v2b - GCP_v1)
+         ) %>%
+  filter(abs(diff_v2b) > 4) %>%
+  select(newid, vdgcp, GCP_v1, GCP_v2a, GCP_v2b, diff_v2a, diff_v2b, i282, i283, i284, i265) %>%
+  select(-study_name_short, -study_wave_number, -starts_with("g_se"))
+
+foo %>%
+  filter(diff_v2b < 0) %>%
+  arrange(diff_v2b) %>%
+  flextable::flextable()
+```

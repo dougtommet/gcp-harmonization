@@ -1,0 +1,81 @@
+
+
+# Data
+
+The data for these analyses come from three studies: ADAMS, SAGES-I, and SAGES-II.  The SAGES-I and SAGES-II studies will be split into sub-studies based on the interview mode. 
+
+A calibration sample will be used to harmonize the studies. The calibration sample for each study is the first time a participant encountered a particular interview mode.  For the in-person samples this is usually the baseline interview. For the telephone and video samples, this varies across the interview visit. 
+
+After the data has been harmonized, a factor score will be calculated for each record in the data.
+
+## Calibration order
+
+  - ADAMS
+  
+  - SAGES-I: In-person
+  
+  - SAGES-II: In-person
+  
+  - SAGES-II: Telephone
+  
+  - SAGES-II: Video
+  
+  - SAGES-I: Telephone
+  
+    +   The SAGES-I telephone sample will use telephone interviews done for the Bunker validation analysis, as well as the first  interview participants did over the telephone.  The timing of the first telephone interview varies by participant.
+
+
+## Items
+
+
+```{r}
+gcp_items <- readRDS(file=path(r_objects_folder, "010_gcp_items.rds"))
+gcp_linking_items <- readRDS(file=path(r_objects_folder, "010_gcp_linking_items.rds")) %>%
+  select(item_a, item_b)
+
+gcp_items <- gcp_items %>%
+  filter(str_detect(item, "Q")) %>%
+  filter(!str_detect(Set, "Not")) %>%
+  filter(!str_detect(item, "Q7")) %>%
+  left_join(gcp_linking_items, by = c("item" = "item_b")) %>%
+  select(item, item_a, item_label, study, domain, Set)
+
+gcp_items_wide <- gcp_items %>%
+  mutate(item_new = case_when(!is.na(item_a) ~ item_a,
+                              TRUE ~ item),
+         x = "X") %>%
+  select(item_new, study, x) %>%
+  pivot_wider(names_from = study, values_from = x)
+
+gcp_items <- gcp_items_wide %>%
+  left_join(gcp_items, by = c("item_new" = "item")) %>%
+  select(item_new, item_label, Set, domain, everything()) %>%
+  select(-item_a, -study) %>%
+  arrange(domain, item_new)
+
+gcp_items %>%
+  gt::gt() %>%
+  gt::cols_hide(columns = c(item_new, domain)) %>%
+  gt::tab_row_group(label = "Memory", rows = domain %in% c("mem")) %>%
+  gt::tab_row_group(label = "Language", rows = domain %in% c("lan")) %>%
+  gt::tab_row_group(label = "Attention/Executive Function", rows = domain %in% c("att", "ef")) %>%
+  gt::fmt_missing(columns = 3:10, rows = everything(), missing_text = "") %>%
+  gt::tab_spanner("Study", 5:10) %>%
+  gt::tab_footnote(footnote = "Indicator of which version of GCP item is used in",
+                   locations = gt::cells_column_labels(columns = Set)) %>%
+  gt::tab_footnote(footnote = "Item had a mistake in the response coding: GCP_v1",
+                   locations = gt::cells_body(columns = Set, rows = Set == "GCP-alt-1a")) %>%
+  gt::tab_footnote(footnote = "Item fixed the mistake in the response coding: GCP_v2a, GCP_v2b, GCP_v2c",
+                   locations = gt::cells_body(columns = Set, rows = Set == "GCP-alt-1b")) %>%
+  gt::tab_footnote(footnote = "Letter fluency - CFL linked to FAS: GCP_v1",
+                   locations = gt::cells_body(columns = Set, rows = Set == "GCP-alt-2a")) %>%
+  gt::tab_footnote(footnote = "Letter fluency - CFL & FAS are separate items, F items linked: GCP_v2b",
+                   locations = gt::cells_body(columns = Set, rows = Set == "GCP-alt-2b")) %>%
+  gt::tab_footnote(footnote = "Letter fluency - CFL & FAS summed but not linked: GCP_v2c",
+                   locations = gt::cells_body(columns = Set, rows = Set == "GCP-alt-2c")) %>%
+  gt::tab_footnote(footnote = "Category fluency - Animal naming & supermarket naming are linked: GCP_v1",
+                   locations = gt::cells_body(columns = Set, rows = Set == "GCP-alt-3a")) %>%
+  gt::tab_footnote(footnote = "Category fluency - Animal naming & supermarket naming are not linked: GCP_v2c",
+                   locations = gt::cells_body(columns = Set, rows = Set == "GCP-alt-3b"))
+
+```

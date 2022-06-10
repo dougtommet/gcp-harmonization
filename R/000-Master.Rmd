@@ -1,0 +1,102 @@
+---
+title: "GCP Data Management"
+author: "Doug Tommet"
+date: '`r Sys.Date()`'
+params:
+  pull_from_googlesheets: TRUE
+output:
+  html_document:
+    keep_md: yes
+    toc: yes
+    toc_float: yes
+    theme: cerulean
+  word_document: default
+---
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source(here::here("R", "001-Libraries_and_functions.R"))
+source(here::here("R", "005-Folder_paths_and_options.R"))
+
+```
+
+
+```{r, eval = FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+
+source(here::here("R", "010-Read_data.R"))
+
+# GCPv1: Didn't fix mistakes, Animal/Supermarket linked, CFL/FAS linked
+gcp_version <- "GCPv1"
+saveRDS(gcp_version, file=path(r_objects_folder, "000_gcp_version.rds"))
+source(here::here("R", "020-Transform_data.R"))
+source(here::here("R", "021-Missing_values.R"))
+
+source(here::here("R", "023-Item_recoding.R"))
+source(here::here("R", "024-Data_to_long.R"))
+# source(here::here("R", "031-Frogger_plot.R"))
+# source(here::here("R", "050-Item_management.R"))
+source(here::here("R", "060-Study_linkage_setup.R"))
+source(here::here("R", "070-Create_linking_object.R"))
+source(here::here("R", "090-link_studies.R"))
+source(here::here("R", "091-link_studies_2.R"))
+
+# GCPv2a: Fix mistakes, Animal/Supermarket linked, CFL/FAS linked
+gcp_version <- "GCPv2a"
+saveRDS(gcp_version, file=path(r_objects_folder, "000_gcp_version.rds"))
+source(here::here("R", "020-Transform_data.R"))
+source(here::here("R", "021-Missing_values.R"))
+
+source(here::here("R", "023-Item_recoding.R"))
+source(here::here("R", "024-Data_to_long.R"))
+# source(here::here("R", "031-Frogger_plot.R"))
+# source(here::here("R", "050-Item_management.R"))
+source(here::here("R", "060-Study_linkage_setup.R"))
+source(here::here("R", "070-Create_linking_object.R"))
+source(here::here("R", "090-link_studies.R"))
+source(here::here("R", "091-link_studies_2.R"))
+
+# GCPv2b: Fix mistakes, Animal/Supermarket not linked, FAS separate (F linked to F)
+gcp_version <- "GCPv2b"
+saveRDS(gcp_version, file=path(r_objects_folder, "000_gcp_version.rds"))
+source(here::here("R", "020-Transform_data.R"))
+source(here::here("R", "021-Missing_values.R"))
+
+source(here::here("R", "023-Item_recoding.R"))
+source(here::here("R", "024-Data_to_long.R"))
+# source(here::here("R", "031-Frogger_plot.R"))
+# source(here::here("R", "050-Item_management.R"))
+source(here::here("R", "060-Study_linkage_setup.R"))
+source(here::here("R", "070-Create_linking_object.R"))
+source(here::here("R", "090-link_studies.R"))
+source(here::here("R", "091-link_studies_2.R"))
+
+# GCPv2c: Fix mistakes, Animal/Supermarket not linked, CFL/FAS not linked
+gcp_version <- "GCPv2c"
+saveRDS(gcp_version, file=path(r_objects_folder, "000_gcp_version.rds"))
+source(here::here("R", "020-Transform_data.R"))
+source(here::here("R", "021-Missing_values.R"))
+
+source(here::here("R", "023-Item_recoding.R"))
+source(here::here("R", "024-Data_to_long.R"))
+# source(here::here("R", "031-Frogger_plot.R"))
+# source(here::here("R", "050-Item_management.R"))
+source(here::here("R", "060-Study_linkage_setup.R"))
+source(here::here("R", "070-Create_linking_object.R"))
+source(here::here("R", "090-link_studies.R"))
+source(here::here("R", "091-link_studies_2.R"))
+
+source(here::here("R", "200-check_and_save_itembank.R"))
+source(here::here("R", "400-score_gcp.R"))
+
+```
+
+```{r, child='002-Opening_statement.Rmd'}
+```
+
+```{r, child='010-Read_data.Rmd'}
+```
+
+
+```{r, child='999-R_session_info.Rmd'}
+```

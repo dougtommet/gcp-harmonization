@@ -1,0 +1,105 @@
+---
+title: "Distribution of GCP scores"
+output: html_document
+author: "Doug Tommet"
+date: '`r Sys.Date()`'
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+source(here::here("R", "001-Libraries_and_functions.R"))
+source(here::here("R", "005-Folder_paths_and_options.R"))
+
+```
+
+
+```{r}
+gcp_study_nested_v2c <- readRDS(file=path(r_objects_folder, "400_gcp_study_nested_v2c.rds"))
+gcp_g_v2c <- readRDS(file=path(r_objects_folder, "400_gcp_g_v2c.rds"))
+
+adams_wts <- gcp_study_nested_v2c[["response_data_all"]][[1]] %>%
+  select(newid, AASAMPWT_F)
+gcp_g_v2c <- gcp_g_v2c %>%
+  left_join(adams_wts, by = c("newid" = "newid")) %>%
+  mutate(wt = case_when(study_wave_number==1 ~ AASAMPWT_F,
+                        TRUE ~ 1))
+
+
+gcp_g_v2c <- gcp_g_v2c %>%
+  separate(newid, into = c("id", "timefr"), sep = "_") %>%
+  mutate(gcp = (g*10)+50,
+         timefr = case_when(study_name_short == "HRS_ADAMS" ~ 0,
+                            TRUE ~ as.numeric(timefr)),
+         main_study = case_when(study_wave_number %in% c(2, 6) ~ "SAGES",
+                                study_wave_number %in% c(3, 4, 5) ~ "SAGES II",
+                                study_wave_number %in% c(7) ~ "Intuit",
+                                study_wave_number %in% c(1) ~ "ADAMS"),
+         interview_mode = case_when(study_wave_number %in% c(3, 4, 5) ~ str_sub(study_name_short, 9, -1))) %>%
+  arrange(main_study, id, timefr) %>%
+  group_by(id, interview_mode) %>%
+  mutate(mode_number = row_number()) %>%
+  ungroup()
+
+
+```
+
+
+```{r}
+gcp_g_v2c %>%
+  filter(timefr == 0) %>%
+  ggplot(aes(x = study_name_short, y = gcp)) +
+    geom_violin() +
+    geom_boxplot(width = .25) +
+    scale_x_discrete("Study") +
+    scale_y_continuous("GCP") +
+    ggtitle("Distribution of GCP at baseline") +
+    hrbrthemes::theme_ipsum() +
+    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) +
+    labs(caption="HRS_ADAMS is unweighted")
+```
+
+```{r}
+gcp_g_v2c %>%
+  filter(timefr == 0) %>%
+  ggplot(aes(x = study_name_short, y = gcp, weight = wt)) +
+    geom_violin() +
+    geom_boxplot(width = .25) +
+    scale_x_discrete("Study") +
+    scale_y_continuous("GCP") +
+    ggtitle("Distribution of GCP at baseline") +
+    hrbrthemes::theme_ipsum() +
+    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) +
+    labs(caption="HRS_ADAMS is weighted")
+
+```
+
+This plot differs from the previous one for the SAGES II interview modes, because few participants had telephone or video interviews at baseline.
+
+```{r}
+gcp_g_v2c %>%
+  filter(mode_number == 1) %>%
+  filter(study_wave_number!= 6) %>%
+  ggplot(aes(x = study_name_short, y = gcp)) +
+    geom_violin() +
+    geom_boxplot(width = .25) +
+    scale_x_discrete("Study") +
+    scale_y_continuous("GCP") +
+    ggtitle("Distribution of GCP at first interview mode") +
+    hrbrthemes::theme_ipsum() +
+    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+
+```
+
+
+```{r}
+gcp_g_v2c %>%
+  filter(main_study == "SAGES II") %>%
+  ggplot(aes(x = factor(timefr), y = gcp, color = interview_mode)) +
+    geom_boxplot(width = .25) +
+    scale_x_discrete("Timefr") +
+    scale_y_continuous("GCP") +
+    ggtitle("Distribution of GCP over time in SAGES II by interview mode") +
+    hrbrthemes::theme_ipsum() 
+
+```
+
