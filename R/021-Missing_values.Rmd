@@ -4,20 +4,22 @@ source(here("R", "005-folder_paths_and_options.R"))
 ```
 
 ```{r}
-gcp_df <- readRDS(file=path(r_objects_folder, "020_gcp_items_df.rds"))
+gcp_version <- readRDS(file=path(r_objects_folder, "000_gcp_version.rds"))
+gcp_df <- readRDS(file=path(r_objects_folder, str_c("020_gcp_items_df_", gcp_version, ".rds")))
 
 ```
 
 # Missing values
 
-```{r}
+```{r, results='asis'}
 
 missing_values_table_fxn <- function(df) {
 
   df %>%
     filter(!is.na(value_label)) %>%
     select(source_item, item_label, value_label) %>%
-    gt::gt()
+    kable(col.names = c("Item", "Label", "Missing values")) 
+  
 }
 
 purrr::map(gcp_df[["item_data"]], missing_values_table_fxn)
@@ -25,3 +27,4 @@ purrr::map(gcp_df[["item_data"]], missing_values_table_fxn)
 
 
 ```
+

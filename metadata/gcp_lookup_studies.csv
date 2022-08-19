@@ -6,3 +6,5 @@ Study_number,Study,Title,Aux_variables
 4,SAGESII_Telephone,Successful Aging after Elective Surgery II (Telephone battery),"c(""timefr"")"
 5,SAGESII_Video,Successful Aging after Elective Surgery II (Videoconference battery),"c(""timefr"")"
 7,INTUIT_ACTIVE,INTUIT/ACTIVE (Berger et al),"c(""visit"",""study"",""studyno"")"
+8,SAGESII_Telephone_validation,Successful Aging after Elective Surgery II (Telephone battery validation),"c(""timefr"")"
+9,SAGESII_Video_validation,Successful Aging after Elective Surgery II (Videoconference battery validation),"c(""timefr"")"

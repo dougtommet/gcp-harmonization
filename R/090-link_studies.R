@@ -225,4 +225,11 @@ saveRDS(uni_item_bank_06,  file=path(r_objects_folder, str_c("090_uni_item_bank_
 uni_item_bank_07 <- my_harmonization_fx(7, uni_item_bank_06, 7, b.runmplus = TRUE, b.bifactor_model = FALSE)
 saveRDS(uni_item_bank_07,  file=path(r_objects_folder, str_c("090_uni_item_bank_07_", gcp_version, ".rds")))
 
+# 08 - SAGESII telephone validation
+uni_item_bank_08 <- my_harmonization_fx(8, uni_item_bank_07, 8, b.runmplus = TRUE, b.bifactor_model = FALSE)
+saveRDS(uni_item_bank_08,  file=path(r_objects_folder, str_c("090_uni_item_bank_08_", gcp_version, ".rds")))
+
+# 09 - SAGESII video validation
+uni_item_bank_09 <- my_harmonization_fx(9, uni_item_bank_08, 9, b.runmplus = TRUE, b.bifactor_model = FALSE)
+saveRDS(uni_item_bank_09,  file=path(r_objects_folder, str_c("090_uni_item_bank_09_", gcp_version, ".rds")))
 

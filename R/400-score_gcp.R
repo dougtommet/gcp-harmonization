@@ -2,10 +2,10 @@ rm(list = setdiff(ls(), lsf.str())[!(setdiff(ls(), lsf.str()) %in% "params")])
 source(here("R", "005-folder_paths_and_options.R"))
 
 
-gcp_study_nested_v1 <- readRDS(file=path(r_objects_folder, "070_gcp_study_nested_GCPv1.rds"))
-gcp_study_nested_v2a <- readRDS(file=path(r_objects_folder, "070_gcp_study_nested_GCPv2a.rds"))
-gcp_study_nested_v2b <- readRDS(file=path(r_objects_folder, "070_gcp_study_nested_GCPv2b.rds"))
-gcp_study_nested_v2c <- readRDS(file=path(r_objects_folder, "070_gcp_study_nested_GCPv2c.rds"))
+gcp_study_nested_v1  <- readRDS(file=path(r_objects_folder, "250_gcp_study_nested_GCPv1.rds"))
+gcp_study_nested_v2a <- readRDS(file=path(r_objects_folder, "250_gcp_study_nested_GCPv2a.rds"))
+gcp_study_nested_v2b <- readRDS(file=path(r_objects_folder, "250_gcp_study_nested_GCPv2b.rds"))
+gcp_study_nested_v2c <- readRDS(file=path(r_objects_folder, "250_gcp_study_nested_GCPv2c.rds"))
 item_bank_v1 <- read_csv(here("data", "gcp_item_bank_v1.csv"))
 item_bank_v2a <- read_csv(here("data", "gcp_item_bank_v2a.csv"))
 item_bank_v2b <- read_csv(here("data", "gcp_item_bank_v2b.csv"))
@@ -138,20 +138,62 @@ gcp_g_v2c <- gcp_study_nested_foo_v2c %>%
   select(newid, study_name_short, study_wave_number, everything())
 
 
+
+gcp_g_v1 <- gcp_g_v1 %>%
+  separate(newid, into = c("newid", "timefr"), sep = "_") %>%
+  mutate(gcp = (g*10)+50,
+         timefr = case_when(study_name_short == "HRS_ADAMS" ~ 0,
+                            TRUE ~ as.numeric(timefr)),
+         main_study = case_when(study_wave_number %in% c(2, 6) ~ "SAGES",
+                                study_wave_number %in% c(3, 4, 5, 8, 9) ~ "SAGES II",
+                                study_wave_number %in% c(7) ~ "Intuit",
+                                study_wave_number %in% c(1) ~ "ADAMS"),
+         interview_mode = case_when(study_wave_number %in% c(3, 4, 5) ~ str_sub(study_name_short, 9, -1),
+                                    study_wave_number %in% c(8, 9) ~ str_sub(study_name_short, 9, -12),
+                                    study_wave_number %in% c(2) ~ "Inperson")
+  ) 
+
+gcp_g_v2a <- gcp_g_v2a %>%
+  separate(newid, into = c("newid", "timefr"), sep = "_") %>%
+  mutate(gcp = (g*10)+50,
+         timefr = case_when(study_name_short == "HRS_ADAMS" ~ 0,
+                            TRUE ~ as.numeric(timefr)),
+         main_study = case_when(study_wave_number %in% c(2, 6) ~ "SAGES",
+                                study_wave_number %in% c(3, 4, 5, 8, 9) ~ "SAGES II",
+                                study_wave_number %in% c(7) ~ "Intuit",
+                                study_wave_number %in% c(1) ~ "ADAMS"),
+         interview_mode = case_when(study_wave_number %in% c(3, 4, 5) ~ str_sub(study_name_short, 9, -1),
+                                    study_wave_number %in% c(8, 9) ~ str_sub(study_name_short, 9, -12),
+                                    study_wave_number %in% c(2) ~ "Inperson")
+  ) 
+
+gcp_g_v2b <- gcp_g_v2b %>%
+  separate(newid, into = c("newid", "timefr"), sep = "_") %>%
+  mutate(gcp = (g*10)+50,
+         timefr = case_when(study_name_short == "HRS_ADAMS" ~ 0,
+                            TRUE ~ as.numeric(timefr)),
+         main_study = case_when(study_wave_number %in% c(2, 6) ~ "SAGES",
+                                study_wave_number %in% c(3, 4, 5, 8, 9) ~ "SAGES II",
+                                study_wave_number %in% c(7) ~ "Intuit",
+                                study_wave_number %in% c(1) ~ "ADAMS"),
+         interview_mode = case_when(study_wave_number %in% c(3, 4, 5) ~ str_sub(study_name_short, 9, -1),
+                                    study_wave_number %in% c(8, 9) ~ str_sub(study_name_short, 9, -12),
+                                    study_wave_number %in% c(2) ~ "Inperson")
+  ) 
+
 gcp_g_v2c <- gcp_g_v2c %>%
   separate(newid, into = c("newid", "timefr"), sep = "_") %>%
   mutate(gcp = (g*10)+50,
          timefr = case_when(study_name_short == "HRS_ADAMS" ~ 0,
                             TRUE ~ as.numeric(timefr)),
          main_study = case_when(study_wave_number %in% c(2, 6) ~ "SAGES",
-                                study_wave_number %in% c(3, 4, 5) ~ "SAGES II",
+                                study_wave_number %in% c(3, 4, 5, 8, 9) ~ "SAGES II",
                                 study_wave_number %in% c(7) ~ "Intuit",
                                 study_wave_number %in% c(1) ~ "ADAMS"),
-         interview_mode = case_when(study_wave_number %in% c(3, 4, 5) ~ str_sub(study_name_short, 9, -1))) %>%
-  arrange(main_study, newid, timefr) %>%
-  group_by(newid, interview_mode) %>%
-  mutate(mode_number = row_number()) %>%
-  ungroup()
+         interview_mode = case_when(study_wave_number %in% c(3, 4, 5) ~ str_sub(study_name_short, 9, -1),
+                                    study_wave_number %in% c(8, 9) ~ str_sub(study_name_short, 9, -12),
+                                    study_wave_number %in% c(2) ~ "Inperson")
+      ) 
 
 
 intuit_gcp <- gcp_g_v2c %>%
@@ -163,6 +205,11 @@ sagesII_gcp <- gcp_g_v2c %>%
   filter(study_wave_number %in% c(3, 4, 5)) %>%
   select(-main_study)
 write_csv(sagesII_gcp, path(derivedfolder, "sagesII_gcp.csv"))
+
+sagesII_validation_gcp <- gcp_g_v2c %>%
+  filter(study_wave_number %in% c(8, 9)) %>%
+  select(-main_study)
+write_csv(sagesII_validation_gcp, path(derivedfolder, "sagesII_validation_gcp.csv"))
 
 sagesI_gcp <- gcp_g_v2c %>%
   filter(study_wave_number %in% c(2, 6)) %>%

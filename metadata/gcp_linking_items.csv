@@ -84,3 +84,65 @@ Q102,Digit Span Forward,HRS_ADAMS,GCP,Q702,Digit Span Forwards (decile),INTUIT_A
 Q103,Digit Span Backward,HRS_ADAMS,GCP,Q703,Digit Span Backwards (decile),INTUIT_ACTIVE,GCP,NA,NA
 Q227,HVLT Delayed Recall Percent (septile),SAGES,GCP-alt-1a,Q727,HVLT-Delayed Recall Percent (septile),INTUIT_ACTIVE,GCP-alt-1a,NA,NA
 Q228,HVLT Delayed Recall Percent (octile),SAGES,GCP-alt-1b,Q728,HVLT-Delayed Recall Percent (octile),INTUIT_ACTIVE,GCP-alt-1b,NA,NA
+Q104,CERAD Animal Fluency,HRS_ADAMS,GCP-alt-3a,Q865,Semantic fluency - supermarket (ADAMS animal deciles),SAGESII_Telephone_validation,GCP-alt-3a,NA,NA
+Q103,Digit Span Backward,HRS_ADAMS,GCP,Q872,Digit Span Backwards (decile),SAGESII_Telephone_validation,GCP,NA,NA
+Q102,Digit Span Forward,HRS_ADAMS,GCP,Q871,Digit Span Forwards (decile),SAGESII_Telephone_validation,GCP,NA,NA
+Q227,HVLT Delayed Recall Percent (septile),SAGES,GCP-alt-1a,Q827,HVLT Delayed Recall Percent (septile),SAGESII_Telephone_validation,GCP-alt-1a,NA,NA
+Q223,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1a,Q823,HVLT Trial 1-3 nonile (not nonile),SAGESII_Telephone_validation,GCP-alt-1a,NA,NA
+Q226,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1b,Q826,HVLT Trial 1-3 nonile (not nonile),SAGESII_Telephone_validation,GCP-alt-1b,NA,NA
+Q228,HVLT Delayed Recall Percent (octile),SAGES,GCP-alt-1b,Q828,HVLT Delayed Recall Percent (octile),SAGESII_Telephone_validation,GCP-alt-1b,NA,NA
+Q283,Letter Fluency (A),SAGES,GCP-alt-2b,Q883,Letter Fluency (A),SAGESII_Telephone_validation,GCP-alt-2b,NA,NA
+Q118,Letter fluency (F),HRS_ADAMS,GCP-alt-2b,Q882,Letter Fluency (F),SAGESII_Telephone_validation,GCP-alt-2b,NA,NA
+Q284,Letter Fluency (S),SAGES,GCP-alt-2b,Q884,Letter Fluency (S),SAGESII_Telephone_validation,GCP-alt-2b,NA,NA
+Q117,Letter fluency CFL (Controlled Oral Word Association Test (COWAT)),HRS_ADAMS,GCP-alt-2a,Q881,Letter Fluency (FAS) (CFL cutpoints),SAGESII_Telephone_validation,GCP-alt-2a,NA,NA
+Q285,Letter Fluency (FAS) (Sages deciles),SAGES,GCP-alt-2c,Q885,Letter Fluency (FAS) (SAGES deciles),SAGESII_Telephone_validation,GCP-alt-2c,NA,NA
+Q266,Semantic fluency - supermarket (SAGES deciles),SAGES,GCP-alt-3b,Q866,Semantic fluency - supermarket (SAGES deciles),SAGESII_Telephone_validation,GCP-alt-3b,NA,NA
+Q532,Oral Trails A Telephone Time to complete,SAGESII_Telephone,GCP,Q832,Oral Trails A Telephone Time to complete,SAGESII_Telephone_validation,GCP,NA,NA
+Q534,Oral Trails B Telephone Time to complete,SAGESII_Telephone,GCP,Q834,Oral Trails B Telephone Time to complete,SAGESII_Telephone_validation,GCP,NA,NA
+Q587,Category switching (Total number of correct switches),SAGESII_Telephone,GCP,Q887,Category switching (Total number of correct switches),SAGESII_Telephone_validation,GCP,NA,NA
+Q115,"Boston Naming Test, 15 Items",HRS_ADAMS,GCP,Q951,"Boston Naming Test, 15 Items (decile)",SAGESII_Video_validation,GCP,NA,NA
+Q104,CERAD Animal Fluency,HRS_ADAMS,GCP-alt-3a,Q965,Semantic fluency - supermarket (ADAMS animal deciles),SAGESII_Video_validation,GCP-alt-3a,NA,NA
+Q103,Digit Span Backward,HRS_ADAMS,GCP,Q972,Digit Span Backwards (decile),SAGESII_Video_validation,GCP,NA,NA
+Q102,Digit Span Forward,HRS_ADAMS,GCP,Q971,Digit Span Forwards (decile),SAGESII_Video_validation,GCP,NA,NA
+Q241,Digit Symbol Substitution (aka rbans) (septile),SAGES,GCP-alt-1a,Q941,Digit Symbol Substitution (aka rbans) (septile),SAGESII_Video_validation,GCP-alt-1a,NA,NA
+Q227,HVLT Delayed Recall Percent (septile),SAGES,GCP-alt-1a,Q927,HVLT Delayed Recall Percent (septile),SAGESII_Video_validation,GCP-alt-1a,NA,NA
+Q223,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1a,Q923,HVLT Trial 1-3 nonile (not nonile),SAGESII_Video_validation,GCP-alt-1a,NA,NA
+Q226,HVLT Trial 1-3 nonile (not nonile),SAGES,GCP-alt-1b,Q926,HVLT Trial 1-3 nonile (not nonile),SAGESII_Video_validation,GCP-alt-1b,NA,NA
+Q228,HVLT Delayed Recall Percent (octile),SAGES,GCP-alt-1b,Q928,HVLT Delayed Recall Percent (octile),SAGESII_Video_validation,GCP-alt-1b,NA,NA
+Q283,Letter Fluency (A),SAGES,GCP-alt-2b,Q983,Letter Fluency (A),SAGESII_Video_validation,GCP-alt-2b,NA,NA
+Q118,Letter fluency (F),HRS_ADAMS,GCP-alt-2b,Q982,Letter Fluency (F),SAGESII_Video_validation,GCP-alt-2b,NA,NA
+Q284,Letter Fluency (S),SAGES,GCP-alt-2b,Q984,Letter Fluency (S),SAGESII_Video_validation,GCP-alt-2b,NA,NA
+Q117,Letter fluency CFL (Controlled Oral Word Association Test (COWAT)),HRS_ADAMS,GCP-alt-2a,Q981,Letter Fluency (FAS) (CFL cutpoints),SAGESII_Video_validation,GCP-alt-2a,NA,NA
+Q101,"Trails A (time, deciles)",HRS_ADAMS,GCP,Q931,"Trails A (time, decile)",SAGESII_Video_validation,GCP,NA,NA
+Q100,"Trails B (time, deciles)",HRS_ADAMS,GCP,Q933,"Trails B (time, decile)",SAGESII_Video_validation,GCP,NA,NA
+Q222,Visual Search and Attention Task (VSAT) number of targets (septile),SAGES,GCP-alt-1a,Q922,Visual Search and Attention Task (VSAT) number of targets (septile),SAGESII_Video_validation,GCP-alt-1a,NA,NA
+Q225,Visual Search and Attention Task (VSAT) number of targets (octile),SAGES,GCP-alt-1b,Q925,Visual Search and Attention Task (VSAT) number of targets (octile),SAGESII_Video_validation,GCP-alt-1b,NA,NA
+Q242,Digit Symbol Substitution (aka rbans) (octile),SAGES,GCP-alt-1b,Q942,Digit Symbol Substitution (aka rbans) (octile),SAGESII_Video_validation,GCP-alt-1b,NA,NA
+Q285,Letter Fluency (FAS) (Sages deciles),SAGES,GCP-alt-2c,Q985,Letter Fluency (FAS) (SAGES deciles),SAGESII_Video_validation,GCP-alt-2c,NA,NA
+Q266,Semantic fluency - supermarket (SAGES deciles),SAGES,GCP-alt-3b,Q966,Semantic fluency - supermarket (SAGES deciles),SAGESII_Video_validation,GCP-alt-3b,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA
+item,#N/A,#N/A,#N/A,item,#N/A,#N/A,#N/A,NA,NA

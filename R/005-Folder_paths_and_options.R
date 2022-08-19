@@ -27,8 +27,11 @@ sagesI_datafolder_old <- fs::path(sages_datapath, "SOURCE", "clean", "frozenfile
 
 sagesI_bunkerfolder <- fs::path(sages_datapath, "SOURCE", "SAGES-Telephone(Bunker)-workflow", "POSTED", "DATA", "DERIVED")
 
-sagesII_datafolder <- fs::path(sages_datapath, "SOURCE", "SAGESII-Neuropsych")
+sagesII_datafolder_npb <- fs::path(sages_datapath, "SOURCE", "SAGESII-Neuropsych")
 
+sagesII_datafolder <- fs::path(sages_datapath, "SOURCE", "SAGESII-Processing", "Files_2022-08-04")
+
+sagesII_datafolder_validation <- fs::path(sages_datapath, "SOURCE", "SAGESII-validation")
 
 r_objects_folder <- here::here( "R_objects")
 

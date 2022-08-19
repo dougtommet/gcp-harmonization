@@ -1,0 +1,17 @@
+
+```{r}
+rm(list = setdiff(ls(), lsf.str())[!(setdiff(ls(), lsf.str()) %in% "params")])
+source(here("R", "005-folder_paths_and_options.R"))
+```
+
+```{r}
+gcp_version <- readRDS(file=path(r_objects_folder, "000_gcp_version.rds"))
+gcp_df <- readRDS(file=path(r_objects_folder, str_c("021_gcp_items_df_", gcp_version, ".rds")))
+```
+
+# Prepare the data
+
+The items from each study were renamed according to the item linking table.  The data was put into a long format.
+
+
+

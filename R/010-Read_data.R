@@ -204,19 +204,31 @@ if(fs::dir_exists(sagesI_datafolder)) {
   saveRDS(sagesI_inperson_df,     file=path(r_objects_folder, "010_sagesI_inperson_df.rds"))
   saveRDS(sagesI_telephone_df,    file=path(r_objects_folder, "010_sagesI_telephone_df.rds"))
 }
-
 if(fs::dir_exists(sagesII_datafolder)) {
+  sagesII_subject_df <- read_dta(fs::path(sagesII_datafolder, "SAGESII-Subject-Interview-Data-Analysis-File.dta"))
+  
+  sagesII_subject_df <- sagesII_subject_df %>%
+    mutate(vdeduc_r = case_when(vdeduc_r %in% c(100000000) ~ NA_real_,
+                                TRUE ~ vdeduc_r))
+  sagesII_subject_df_bl <- sagesII_subject_df %>%
+    filter(timefr==0)
+  saveRDS(sagesII_subject_df_bl,    file=path(r_objects_folder, "010_sagesII_subject_df_bl.rds"))
+}
+
+
+
+if(fs::dir_exists(sagesII_datafolder_npb)) {
   # Sages II Data
-  # sagesII_df_old <- read_dta(fs::path(sagesII_datafolder, "sagesii.dta")) 
+  # sagesII_df_old <- read_dta(fs::path(sagesII_datafolder_npb, "sagesii.dta")) 
   # sagesII_df_old <- sagesII_df_old %>%
   #   rename(npb_08 = npb08) %>%
   #   rename(npb_10 = npb10)
-  sagesII_df <- read_dta(fs::path(sagesII_datafolder, "sagesiinpb 2022-03-25.dta")) 
+  sagesII_df <- read_dta(fs::path(sagesII_datafolder_npb, "sagesiinpb 2022-03-25.dta")) 
   
   # There was one record that had a very large Trails B time which is probably a data error
   sagesII_df <- sagesII_df %>%
     mutate(npb_61 = case_when(npb_61>800 & npb_61 <900 ~ NA_real_,
-                              TRUE ~ npb_61))
+                              TRUE ~ npb_61)) 
     
   sagesII_df <- sagesII_df %>%
     mutate(npb_08 = as.numeric(npb_08),
@@ -334,6 +346,47 @@ if(fs::dir_exists(sagesII_datafolder)) {
   saveRDS(sagesII_inperson_df,     file=path(r_objects_folder, "010_sagesII_inperson_df.rds"))
   saveRDS(sagesII_telephone_df,    file=path(r_objects_folder, "010_sagesII_telephone_df.rds"))
   saveRDS(sagesII_video_df,        file=path(r_objects_folder, "010_sagesII_video_df.rds"))
+}
+
+if(fs::dir_exists(sagesII_datafolder_validation)) {
+  sagesII_validation_df <- read_dta(fs::path(sagesII_datafolder_validation, "SAGESII_validation_20210618.dta")) 
+  
+  sagesII_validation_df <- sagesII_validation_df %>%
+    mutate(
+      npb_10 = as.numeric(npb_10),
+    ) %>%
+    mutate(
+      npb_06 = case_when(npb_06 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+                         TRUE ~ npb_06),
+      npb_08 = case_when(npb_08 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+                         TRUE ~ npb_08),
+      npb_12 = case_when(npb_12 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+                         TRUE ~ npb_12),
+      npb_13 = case_when(npb_13 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+                         TRUE ~ npb_13),
+      npb_14 = case_when(npb_14 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+                         TRUE ~ npb_14),
+      npb_37 = case_when(npb_37 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+                         TRUE ~ npb_37),
+      npb_38 = case_when(npb_38 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+                         TRUE ~ npb_38),
+      npb_39 = case_when(npb_39 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+                         TRUE ~ npb_39)
+    ) %>%
+    select(sort(tidyselect::peek_vars())) %>%
+    mutate(timefr=99) %>%
+    select(studyid, vin_loc, timefr, everything())
+    
+  
+  sagesII_validation_telephone_df <- sagesII_validation_df %>%
+    filter(vin_loc == 2)
+  
+  sagesII_validation_video_df <- sagesII_validation_df %>%
+    filter(vin_loc == 3)
+  
+  saveRDS(sagesII_validation_df,            file=path(r_objects_folder, "010_sagesII_validation_df.rds"))
+  saveRDS(sagesII_validation_telephone_df,  file=path(r_objects_folder, "010_sagesII_validation_telephone_df.rds"))
+  saveRDS(sagesII_validation_video_df,      file=path(r_objects_folder, "010_sagesII_validation_video_df.rds"))
 }
 
 # Duke data

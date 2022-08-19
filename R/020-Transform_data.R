@@ -10,6 +10,8 @@ sagesII_inperson_df <-  readRDS(file=path(r_objects_folder, "010_sagesII_inperso
 sagesII_telephone_df <- readRDS(file=path(r_objects_folder, "010_sagesII_telephone_df.rds"))
 sagesII_video_df <-     readRDS(file=path(r_objects_folder, "010_sagesII_video_df.rds"))
 intuit_df <-            readRDS(file=path(r_objects_folder, "010_intuit_df.rds"))
+sagesII_telephone_validation_df <- readRDS(file=path(r_objects_folder, "010_sagesII_validation_telephone_df.rds"))
+sagesII_video_validation_df <- readRDS(file=path(r_objects_folder, "010_sagesII_validation_video_df.rds"))
 
 gcp_lookup_studies <-   readRDS(file=path(r_objects_folder, "010_gcp_lookup_studies.rds"))
 gcp_lookup_domains<-    readRDS(file=path(r_objects_folder, "010_gcp_lookup_domains.rds"))
@@ -92,6 +94,11 @@ sagesI_items <- sagesI_items_df %>%
   filter(!str_detect(item, "^i")) %>%
   distinct(item) %>%
   pull(item)
+
+sagesI_df_for_table1 <- sagesI_560_df %>%
+  left_join(sagesI_inperson_df, by = "studyid")  %>%
+  filter(timefr==0)
+saveRDS(sagesI_df_for_table1,               file=path(r_objects_folder, "020_sagesI_df_for_table1.rds"))
 
 sagesI_df_filtered <- sagesI_560_df %>%
   left_join(sagesI_inperson_df, by = "studyid") %>%
@@ -199,6 +206,44 @@ sagesII_video_df_bl_filtered <- sagesII_video_df_filtered %>%
   slice(1) %>%
   ungroup()
 
+# SAGES II - telephone validation
+sagesII_telephone_validation_items_df <- gcp_items %>%
+  filter(study=="SAGESII_Telephone_validation") 
+
+sagesII_telephone_validation_items <- sagesII_telephone_validation_items_df %>%
+  select(source_item) %>%
+  filter(!is.na(source_item)) %>%
+  mutate(item = str_split(source_item, ",", simplify = FALSE)) %>%
+  unnest(item) %>%
+  select(item) %>%
+  mutate(item = str_trim(item, side="both")) %>%
+  filter(!str_detect(item, "^i")) %>%
+  distinct(item) %>%
+  pull(item)
+
+sagesII_telephone_validation_df_filtered <- sagesII_telephone_validation_df %>%
+  mutate(newid = str_c(studyid)) %>%
+  mutate(study_wave_number = 8)
+
+# SAGES II - video validation
+sagesII_video_validation_items_df <- gcp_items %>%
+  filter(study=="SAGESII_Video_validation") 
+
+sagesII_video_validation_items <- sagesII_video_validation_items_df %>%
+  select(source_item) %>%
+  filter(!is.na(source_item)) %>%
+  mutate(item = str_split(source_item, ",", simplify = FALSE)) %>%
+  unnest(item) %>%
+  select(item) %>%
+  mutate(item = str_trim(item, side="both")) %>%
+  filter(!str_detect(item, "^i")) %>%
+  distinct(item) %>%
+  pull(item)
+
+sagesII_video_validation_df_filtered <- sagesII_video_validation_df %>%
+  mutate(newid = str_c(studyid)) %>%
+  mutate(study_wave_number = 9)
+
 # Duke data
 intuit_items_df <- gcp_items %>%
   filter(study=="INTUIT_ACTIVE") 
@@ -239,6 +284,8 @@ saveRDS(sagesII_video_df_bl_filtered,     file=path(r_objects_folder, "020_sages
 saveRDS(intuit_items_df,                  file=path(r_objects_folder, "020_intuit_items_df.rds"))
 saveRDS(intuit_df_filtered,               file=path(r_objects_folder, "020_intuit_df_filtered.rds"))
 saveRDS(intuit_df_bl_filtered,            file=path(r_objects_folder, "020_intuit_df_bl_filtered.rds"))
+saveRDS(sagesII_telephone_validation_df_filtered,    file=path(r_objects_folder, "020_sagesII_telephone_validation_df_filtered.rds"))
+saveRDS(sagesII_video_validation_df_filtered,        file=path(r_objects_folder, "020_sagesII_video_validation_df_filtered.rds"))
 
 saveRDS(aux_variables_df,                 file=path(r_objects_folder, "020_aux_variables_df.rds"))
 
@@ -274,21 +321,27 @@ gcp_df <- tibble(response_data = list(adams_df_filtered,
                                       sagesII_telephone_df_bl_filtered, 
                                       sagesII_video_df_bl_filtered,
                                       sagesI_telephone_df_filtered,
-                                      intuit_df_filtered),
+                                      intuit_df_filtered,
+                                      sagesII_telephone_validation_df_filtered,
+                                      sagesII_video_validation_df_filtered),
                  response_data_all = list(adams_df_filtered, 
                                       sagesI_df_filtered,
                                       sagesII_inperson_df_filtered, 
                                       sagesII_telephone_df_filtered, 
                                       sagesII_video_df_filtered,
                                       sagesI_telephone_df_filtered,
-                                      intuit_df_filtered),
+                                      intuit_df_filtered,
+                                      sagesII_telephone_validation_df_filtered,
+                                      sagesII_video_validation_df_filtered),
                  item_data = list(adams_items_df, 
                                   sagesI_items_df, 
                                   sagesII_inperson_items_df, 
                                   sagesII_telephone_items_df, 
                                   sagesII_video_items_df, 
                                   sagesI_telephone_items_df,
-                                  intuit_items_df))
+                                  intuit_items_df,
+                                  sagesII_telephone_validation_items_df, 
+                                  sagesII_video_validation_items_df))
 gcp_df <- gcp_df %>%
   mutate(response_data = purrr::map(response_data, haven::zap_formats),
          response_data = purrr::map(response_data, haven::zap_label),
@@ -300,7 +353,7 @@ gcp_df <- gcp_df %>%
 
 gcp_df <- gcp_df %>%
   bind_cols(gcp_lookup_studies %>%
-              slice(c(1, 2, 4, 5, 6, 3, 7))
+              slice(c(1, 2, 4, 5, 6, 3, 7, 8, 9))
   )
 gcp_df <- gcp_df %>%
   mutate(Aux_variables = list(c("AASAMPWT_F", "SECLUST", "SESTRAT"), 
@@ -309,7 +362,11 @@ gcp_df <- gcp_df %>%
                               c("timefr"), 
                               c("timefr"), 
                               c("study_wave_number"),
-                              c("visit")))
+                              c("visit"),
+                              c("timefr"), 
+                              c("timefr")
+                              )
+         )
 
 saveRDS(gcp_df,                 file=path(r_objects_folder, str_c("020_gcp_items_df_", gcp_version, ".rds")))
 saveRDS(gcp_linking_items,      file=path(r_objects_folder, str_c("020_gcp_linking_items_", gcp_version, ".rds")))

@@ -29,8 +29,9 @@ gcp_df_xxx <- gcp_df %>%
   mutate(study_name_short2 = factor(Study, ordered = TRUE,
                                     levels = gcp_lookup_studies %>% 
                                       arrange(Study_number) %>% pull(Study)),
-         color.vec = c("#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69"
-                       # , "#fccde5", "#d9d9d9", "#bc80bd"
+         color.vec = c("#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9"
+                       # , 
+                       # "#bc80bd"
                        ),
          )
 gcp_lookup_studies_foo <- gcp_lookup_studies %>%
@@ -41,6 +42,7 @@ foo_fxn <- function(df) {
     pull(item) %>%
     str_c(collapse = " ")
 }
+# Rename variables so they match what is expected in the get_harmonization_object function
 foo <- gcp_df_xxx %>%
   mutate(study_order = Study_number) %>%
   rename(study_wave_number = Study_number) %>%

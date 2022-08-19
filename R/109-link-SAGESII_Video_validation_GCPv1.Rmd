@@ -1,26 +1,27 @@
 ```{r} 
 rm(list = setdiff(ls(), lsf.str())[!(setdiff(ls(), lsf.str()) %in% c('params'))])
-source(here::here('R', '002-folder-paths-and-options.R')) 
+source(here::here('R', '001-Libraries_and_functions.R')) 
+source(here::here('R', '005-folder_paths_and_options.R')) 
 ``` 
  
 ```{r} 
 # It's input is the following R objects: 
-gcp_study_nested <- readRDS(file=path(r_objects_folder, '070_gcp_study_nested.rds')) 
-uni.item.bank.02 <- readRDS(file=path(r_objects_folder, '090_uni_item_bank_02.rds')) 
-uni.item.bank.01 <- readRDS(file=path(r_objects_folder, '090_uni_item_bank_01.rds')) 
+gcp_study_nested <- readRDS(file=path(r_objects_folder, '070_gcp_study_nested_GCPv1.rds')) 
+uni.item.bank.09 <- readRDS(file=path(r_objects_folder, '090_uni_item_bank_09_GCPv1.rds')) 
+uni.item.bank.08 <- readRDS(file=path(r_objects_folder, '090_uni_item_bank_08_GCPv1.rds')) 
 ``` 
  
-### `r gcp_study_nested %>% filter(study_wave_number == 2) %>% pull(study_name_short)`
+### `r gcp_study_nested %>% filter(study_wave_number == 9) %>% pull(study_name_short)`
  
  
 #### Item descriptive statistics
  
 ```{r, results='asis'}
 ggg <- gcp_study_nested %>% 
-  filter(study_wave_number == 2) 
+  filter(study_wave_number == 9) 
 ggg <- ggg[['h_obj']][[1]] 
  
-HarmonizationTools::create_summary_report(ggg, uni.item.bank.01)
+HarmonizationTools::create_summary_report(ggg, uni.item.bank.08, include.subdomain.reporting = FALSE)
 ```
  
 #### Standardized Item parameters
@@ -28,9 +29,9 @@ HarmonizationTools::create_summary_report(ggg, uni.item.bank.01)
 ```{r}
 summarized_response_df <- HarmonizationTools::summarize_response_df(ggg, df_name = 'response_df_filtered') 
 item.parameters <- HarmonizationTools::get_item_parameters(summarized_response_df, 
-   mplus.output = here::here('mplus_output', 'link-02-SAGES-uni-mlr.out'),
+   mplus.output = here::here('mplus_output', 'link-09-SAGESII_Video_validation-uni-mlr-GCPv1.out'),
    h_obj = ggg,
-   itembank = uni.item.bank.01
+   itembank = uni.item.bank.08
 ) 
  
   t.names <- item.parameters %>%
@@ -57,12 +58,19 @@ item.parameters <- HarmonizationTools::get_item_parameters(summarized_response_d
 #### Summary of item bank
  
 ```{r, results='asis'}
-  newbank <- uni.item.bank.02 %>% filter(!str_detect(parameter_threshold, '^s'))
-  oldbank <- uni.item.bank.01 %>% filter(!str_detect(parameter_threshold, '^s'))
+  newbank <- uni.item.bank.09 %>% filter(!str_detect(parameter_threshold, '^s'))
+  oldbank <- uni.item.bank.08 %>% filter(!str_detect(parameter_threshold, '^s'))
   HarmonizationTools::compare_itembanks_tables(newbank, oldbank, standardized = TRUE)
 ```
  
 ```{r}
   HarmonizationTools::compare_itembanks_plots(newbank, oldbank, standardized = TRUE)
+```
+ 
+#### Mplus output file
+ 
+```{r  comment=''}
+  cat(readLines(here::here('mplus_output', 'link-09-SAGESII_Video_validation-uni-mlr-GCPv1.out')), sep = '
+')
 ```
  

@@ -36,7 +36,8 @@ gcp_linking_items <- readRDS(file=path(r_objects_folder, "010_gcp_linking_items.
 gcp_items <- gcp_items %>%
   filter(str_detect(item, "Q")) %>%
   filter(!str_detect(Set, "Not")) %>%
-  filter(!str_detect(item, "Q7")) %>%
+  filter(!str_detect(Set, "DNI")) %>%
+  # filter(!str_detect(item, "Q7")) %>%
   left_join(gcp_linking_items, by = c("item" = "item_b")) %>%
   select(item, item_a, item_label, study, domain, Set)
 
@@ -59,8 +60,8 @@ gcp_items %>%
   gt::tab_row_group(label = "Memory", rows = domain %in% c("mem")) %>%
   gt::tab_row_group(label = "Language", rows = domain %in% c("lan")) %>%
   gt::tab_row_group(label = "Attention/Executive Function", rows = domain %in% c("att", "ef")) %>%
-  gt::fmt_missing(columns = 3:10, rows = everything(), missing_text = "") %>%
-  gt::tab_spanner("Study", 5:10) %>%
+  gt::fmt_missing(columns = 3:11, rows = everything(), missing_text = "") %>%
+  gt::tab_spanner("Study", 5:11) %>%
   gt::tab_footnote(footnote = "Indicator of which version of GCP item is used in",
                    locations = gt::cells_column_labels(columns = Set)) %>%
   gt::tab_footnote(footnote = "Item had a mistake in the response coding: GCP_v1",

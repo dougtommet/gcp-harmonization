@@ -40,6 +40,7 @@ source(here::here("R", "060-Study_linkage_setup.R"))
 source(here::here("R", "070-Create_linking_object.R"))
 source(here::here("R", "090-link_studies.R"))
 source(here::here("R", "091-link_studies_2.R"))
+source(here::here("R", "095-create_linking_summary_Rmds.R"))
 
 # GCPv2a: Fix mistakes, Animal/Supermarket linked, CFL/FAS linked
 gcp_version <- "GCPv2a"
@@ -55,7 +56,8 @@ source(here::here("R", "060-Study_linkage_setup.R"))
 source(here::here("R", "070-Create_linking_object.R"))
 source(here::here("R", "090-link_studies.R"))
 source(here::here("R", "091-link_studies_2.R"))
-
+source(here::here("R", "095-create_linking_summary_Rmds.R"))
+                        
 # GCPv2b: Fix mistakes, Animal/Supermarket not linked, FAS separate (F linked to F)
 gcp_version <- "GCPv2b"
 saveRDS(gcp_version, file=path(r_objects_folder, "000_gcp_version.rds"))
@@ -70,6 +72,7 @@ source(here::here("R", "060-Study_linkage_setup.R"))
 source(here::here("R", "070-Create_linking_object.R"))
 source(here::here("R", "090-link_studies.R"))
 source(here::here("R", "091-link_studies_2.R"))
+source(here::here("R", "095-create_linking_summary_Rmds.R"))
 
 # GCPv2c: Fix mistakes, Animal/Supermarket not linked, CFL/FAS not linked
 gcp_version <- "GCPv2c"
@@ -85,8 +88,10 @@ source(here::here("R", "060-Study_linkage_setup.R"))
 source(here::here("R", "070-Create_linking_object.R"))
 source(here::here("R", "090-link_studies.R"))
 source(here::here("R", "091-link_studies_2.R"))
+source(here::here("R", "095-create_linking_summary_Rmds.R"))
 
 source(here::here("R", "200-check_and_save_itembank.R"))
+source(here::here("R", "250-item_information.R"))
 source(here::here("R", "400-score_gcp.R"))
 
 ```
@@ -96,6 +101,115 @@ source(here::here("R", "400-score_gcp.R"))
 
 ```{r, child='010-Read_data.Rmd'}
 ```
+
+```{r, child='020-Transform_data.Rmd'}
+```
+
+```{r, child='021-Missing_values.Rmd'}
+```
+
+```{r, child='023-Item_recoding.Rmd'}
+```
+
+```{r, child='024-Data_to_long.Rmd'}
+```
+
+# Summary of item linking under GCPv1
+
+```{r, child='101-link-HRS_ADAMS_GCPv1.Rmd'}
+```
+
+```{r, child='102-link-SAGES_GCPv1.Rmd'}
+```
+
+```{r, child='103-link-SAGESII_Inperson_GCPv1.Rmd'}
+```
+
+```{r, child='104-link-SAGESII_Telephone_GCPv1.Rmd'}
+```
+
+```{r, child='105-link-SAGESII_Video_GCPv1.Rmd'}
+```
+
+```{r, child='106-link-SAGES_Telephone_GCPv1.Rmd'}
+```
+
+```{r, child='107-link-INTUIT_ACTIVE_GCPv1.Rmd'}
+```
+
+# Summary of item linking under GCPv2a
+
+```{r, child='101-link-HRS_ADAMS_GCPv2a.Rmd'}
+```
+
+```{r, child='102-link-SAGES_GCPv2a.Rmd'}
+```
+
+```{r, child='103-link-SAGESII_Inperson_GCPv2a.Rmd'}
+```
+
+```{r, child='104-link-SAGESII_Telephone_GCPv2a.Rmd'}
+```
+
+```{r, child='105-link-SAGESII_Video_GCPv2a.Rmd'}
+```
+
+```{r, child='106-link-SAGES_Telephone_GCPv2a.Rmd'}
+```
+
+```{r, child='107-link-INTUIT_ACTIVE_GCPv2a.Rmd'}
+```
+
+# Summary of item linking under GCPv2b
+
+```{r, child='101-link-HRS_ADAMS_GCPv2b.Rmd'}
+```
+
+```{r, child='102-link-SAGES_GCPv2b.Rmd'}
+```
+
+```{r, child='103-link-SAGESII_Inperson_GCPv2b.Rmd'}
+```
+
+```{r, child='104-link-SAGESII_Telephone_GCPv2b.Rmd'}
+```
+
+```{r, child='105-link-SAGESII_Video_GCPv2b.Rmd'}
+```
+
+```{r, child='106-link-SAGES_Telephone_GCPv2b.Rmd'}
+```
+
+```{r, child='107-link-INTUIT_ACTIVE_GCPv2b.Rmd'}
+```
+
+# Summary of item linking under GCPv2c
+
+```{r, child='101-link-HRS_ADAMS_GCPv2c.Rmd'}
+```
+
+```{r, child='102-link-SAGES_GCPv2c.Rmd'}
+```
+
+```{r, child='103-link-SAGESII_Inperson_GCPv2c.Rmd'}
+```
+
+```{r, child='104-link-SAGESII_Telephone_GCPv2c.Rmd'}
+```
+
+```{r, child='105-link-SAGESII_Video_GCPv2c.Rmd'}
+```
+
+```{r, child='106-link-SAGES_Telephone_GCPv2c.Rmd'}
+```
+
+```{r, child='107-link-INTUIT_ACTIVE_GCPv2c.Rmd'}
+```
+
+
+
+
+
 
 
 ```{r, child='999-R_session_info.Rmd'}

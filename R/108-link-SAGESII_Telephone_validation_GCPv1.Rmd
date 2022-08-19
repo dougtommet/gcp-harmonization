@@ -1,0 +1,76 @@
+```{r} 
+rm(list = setdiff(ls(), lsf.str())[!(setdiff(ls(), lsf.str()) %in% c('params'))])
+source(here::here('R', '001-Libraries_and_functions.R')) 
+source(here::here('R', '005-folder_paths_and_options.R')) 
+``` 
+ 
+```{r} 
+# It's input is the following R objects: 
+gcp_study_nested <- readRDS(file=path(r_objects_folder, '070_gcp_study_nested_GCPv1.rds')) 
+uni.item.bank.08 <- readRDS(file=path(r_objects_folder, '090_uni_item_bank_08_GCPv1.rds')) 
+uni.item.bank.07 <- readRDS(file=path(r_objects_folder, '090_uni_item_bank_07_GCPv1.rds')) 
+``` 
+ 
+### `r gcp_study_nested %>% filter(study_wave_number == 8) %>% pull(study_name_short)`
+ 
+ 
+#### Item descriptive statistics
+ 
+```{r, results='asis'}
+ggg <- gcp_study_nested %>% 
+  filter(study_wave_number == 8) 
+ggg <- ggg[['h_obj']][[1]] 
+ 
+HarmonizationTools::create_summary_report(ggg, uni.item.bank.07, include.subdomain.reporting = FALSE)
+```
+ 
+#### Standardized Item parameters
+ 
+```{r}
+summarized_response_df <- HarmonizationTools::summarize_response_df(ggg, df_name = 'response_df_filtered') 
+item.parameters <- HarmonizationTools::get_item_parameters(summarized_response_df, 
+   mplus.output = here::here('mplus_output', 'link-08-SAGESII_Telephone_validation-uni-mlr-GCPv1.out'),
+   h_obj = ggg,
+   itembank = uni.item.bank.07
+) 
+ 
+  t.names <- item.parameters %>%
+    distinct(threshold) %>%
+    filter(!is.na(threshold)) %>%
+    pull(threshold) %>%
+    str_c('t', .)
+ 
+  item.parameters <- item.parameters %>%
+    select(in.itembank, item, item_number, parameter_threshold, estimate.stdyx) %>%
+    filter(!str_detect(parameter_threshold, '^s')) %>%
+    pivot_wider(names_from = parameter_threshold, values_from = estimate.stdyx) %>%
+    arrange(item_number) 
+ 
+  item.parameters %>%
+    select(-item_number) %>% 
+    kable(col.names = c('In Itembank', 'Item', 'g', t.names),
+          digits = 2) %>%
+        kable_styling(bootstrap_options = kable.styling.bootstrap.option, full_width = F,
+                      position = kable.styling.position.option) %>%
+         scroll_box(height = '600px')
+```
+ 
+#### Summary of item bank
+ 
+```{r, results='asis'}
+  newbank <- uni.item.bank.08 %>% filter(!str_detect(parameter_threshold, '^s'))
+  oldbank <- uni.item.bank.07 %>% filter(!str_detect(parameter_threshold, '^s'))
+  HarmonizationTools::compare_itembanks_tables(newbank, oldbank, standardized = TRUE)
+```
+ 
+```{r}
+  HarmonizationTools::compare_itembanks_plots(newbank, oldbank, standardized = TRUE)
+```
+ 
+#### Mplus output file
+ 
+```{r  comment=''}
+  cat(readLines(here::here('mplus_output', 'link-08-SAGESII_Telephone_validation-uni-mlr-GCPv1.out')), sep = '
+')
+```
+ 

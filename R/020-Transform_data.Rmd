@@ -1,0 +1,17 @@
+
+
+# Transform data
+
+SAGES I in-person - calibration sample is the baseline interview.
+
+SAGES II in-person - calibration sample is the baseline interview.
+
+SAGES II telephone - calibration sample is the first telephone interview.
+
+SAGES II video - calibration sample is the first video interview.
+
+Duke - calibration sample is the first interview.
+
+
+  
+

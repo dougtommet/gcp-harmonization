@@ -1,0 +1,309 @@
+---
+title: "GCP Harmonization Tables & Figures"
+author: "Doug Tommet"
+date: '`r Sys.Date()`'
+format:
+  html:
+    toc: true
+    self-contained: true
+    theme: journal
+figures:
+  fig-cap-location: top 
+execute:
+  echo: false
+  warning: false
+  message: false
+keep-md: true
+---
+
+```{r}
+rm(list = setdiff(ls(), lsf.str())[!(setdiff(ls(), lsf.str()) %in% "params")])
+source(here::here("R", "001-Libraries_and_functions.R"))
+source(here::here("R", "005-folder_paths_and_options.R"))
+```
+
+::: callout-note
+-   We adapted an in-person cognitive assessment battery for administration by two alternative modes: telephone and videoconference, in an on-going observational study of cognitive aging and delirium
+
+-   We administered all three modes (in-person, telephone, videoconference) in an on-going observational study of older surgical patients.
+
+-   We co-calibrated the scores across mode using item response theory (we placed the scores on the same metric)
+
+-   We compare the measurement precision (reliability) by mode:
+
+-   We contrast the external predictive (and postdictive) validity by mode (association with age, education, and mean change after surgery).
+:::
+
+# Differences in GCP from the previous version
+
+There were several different ways we considered harmonizing the test batteries to account for some mistakes and questionable assumptions.
+
+The mistake was when we categorized the test scores into bins, the top two categories were combined into the same bin.
+
+-   Tests this issue affected: VSAT, HVLT total, HVLT delayed and Digit symbol substitution
+
+The questionable assumptions were deciding whether measures of letter fluency and semantic fluency were equivalent. For letter fluency there were three options we considered and for semantic fluency there were two options we considered.
+
+-   Letter fluency:
+
+    -   FAS and FCL summed and deemed equivalent
+
+    -   FAS and FCL as individual tests, F are deemed equivalent, the other letters are not deemed equivalent
+
+    -   FAS and FCL summed but **not** deemed equivalent
+
+-   Semantic fluency:
+
+    -   Animal naming and supermarket item naming are deemed equivalent
+
+    -   Animal naming and supermarket item naming are **not** deemed equivalent
+
+With these as the possible choices, we decided to go with the version that fixes the coding mistakes, FAS/FCL summed but not equivalent and animal/supermarket naming not equivalent.
+
+## @fig-timeline: Timeline of SAGES-I and SAGES-II
+
+```{mermaid}
+%%| label: fig-timeline
+%%| fig-cap: Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes
+%%| fig-cap-location: top
+
+sequenceDiagram
+  participant Before times
+  participant After times
+  Before times ->>After times: COVID
+  Note left of Before times: SAGES II starts enrollment
+  Note right of After times: Neuropsych testing procedures updated
+```
+
+@fig-timeline is meant to show the development/refinement of the neuropsych testing procedures due to COVID.
+
+::: callout-note
+This needs to be sketched out by Eva/Tamara/Field staff.
+:::
+
+## @tbl-descriptives: Sample characteristics
+
+```{r}
+#| label: tbl-descriptives
+#| tbl-cap: Sample characteristics
+#| tbl-cap-location: top
+sagesII_subject_df_bl <- readRDS(file=path(r_objects_folder, "010_sagesII_subject_df_bl.rds"))
+
+sagesII_subject_df_bl %>%
+  select(vdfemale, vdnonwhite, vdeduc_r, vdsurg, vdgds15, vdcci) %>%
+  gtsummary::tbl_summary(
+    statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})",
+                     gtsummary::all_categorical() ~ "{n} / {N} ({p}%)")
+  ) %>%
+  gtsummary::modify_caption("SAGES II - Baseline interview")
+
+```
+
+::: callout-note
+This is the descriptive statistics for SAGES II at the baseline interview. In the harmonization analysis, for the telephone/video samples the interviews came (mostly) from the follow-up interviews.
+:::
+
+## @tbl-battery: Cognitive tests by mode and study
+
+```{r}
+#| label: tbl-battery
+#| tbl-cap: "Cognitive tests by mode and study"
+#| tbl-cap-location: top
+ 
+gcp_items <- readRDS(file=path(r_objects_folder, "010_gcp_items.rds"))
+gcp_linking_items <- readRDS(file=path(r_objects_folder, "010_gcp_linking_items.rds")) %>%
+  select(item_a, item_b)
+
+gcp_items <- gcp_items %>%
+  filter(str_detect(item, "Q")) %>%
+  filter(!str_detect(Set, "Not")) %>%
+  filter(!str_detect(Set, "DNI")) %>%
+  # filter(!str_detect(item, "Q7")) %>%
+  left_join(gcp_linking_items, by = c("item" = "item_b")) %>%
+  select(item, item_a, item_label, study, domain, Set)
+
+gcp_items_wide <- gcp_items %>%
+  mutate(item_new = case_when(!is.na(item_a) ~ item_a,
+                              TRUE ~ item),
+         x = "X") %>%
+  select(item_new, study, x) %>%
+  pivot_wider(names_from = study, values_from = x)
+
+gcp_items <- gcp_items_wide %>%
+  left_join(gcp_items, by = c("item_new" = "item")) %>%
+  select(item_new, item_label, Set, domain, everything()) %>%
+  select(-item_a, -study) %>%
+  arrange(domain, item_new)
+
+gcp_version <- "GCPv2c"
+if (gcp_version == "GCPv1"){
+  gcp_alt <- c("GCP-alt-1a", "GCP-alt-2a", "GCP-alt-3a")
+}
+if (gcp_version == "GCPv2a"){
+  gcp_alt <- c("GCP-alt-1b", "GCP-alt-2a", "GCP-alt-3a")
+}
+if (gcp_version == "GCPv2b"){
+  gcp_alt <- c("GCP-alt-1b", "GCP-alt-2b", "GCP-alt-3b")
+}
+if (gcp_version == "GCPv2c"){
+  gcp_alt <- c("GCP-alt-1b", "GCP-alt-2c", "GCP-alt-3b")
+}
+
+gcp_items <- gcp_items %>%
+  filter(Set %in% c("GCP", gcp_alt))
+
+gcp_items %>%
+  gt::gt() %>%
+  gt::cols_hide(columns = c(item_new, domain, Set, SAGES_Telephone, INTUIT_ACTIVE, SAGESII_Telephone_validation, SAGESII_Video_validation)) %>%
+  gt::cols_align(align = "center") %>%
+  gt::tab_row_group(label = "Memory", rows = domain %in% c("mem")) %>%
+  gt::tab_row_group(label = "Language", rows = domain %in% c("lan")) %>%
+  gt::tab_row_group(label = "Attention/Executive Function", rows = domain %in% c("att", "ef")) %>%
+  gt::sub_missing(columns = 3:11, rows = everything(), missing_text = "") %>%
+  gt::tab_spanner("Study/Mode", 5:11)
+  
+
+```
+
+@tbl-battery shows the neuropsych tests used in the different studys/modes.
+
+## @fig-info: Test Information by mode and study
+
+```{r}
+#| label: fig-info
+#| fig-cap: "Test Information by mode and study"
+#| fig-cap-location: top
+gcp_study_nested_v2c <- readRDS(file=path(r_objects_folder, "250_gcp_study_nested_GCPv2c.rds"))
+
+foo <- gcp_study_nested_v2c[["h_obj"]]
+
+foo <- gcp_study_nested_v2c %>%
+  mutate(boo = map(h_obj, pluck, "test_info"))
+
+goo <- foo %>%
+  select(study_name_short, boo) %>%
+  unnest(cols = c(boo))
+
+goo %>%
+  filter(study_name_short %in% c("HRS_ADAMS", "SAGES", 
+                                 "SAGESII_Inperson", "SAGESII_Telephone", 
+                                 "SAGESII_Video")) %>%
+  mutate(i = case_when(study_name_short=="SAGES" ~ i + .1,
+                       study_name_short=="SAGESII_Video" ~ i - .1,
+                       TRUE ~ i)) %>%
+ggplot(aes(x = theta, y = i, color = study_name_short)) +
+  geom_line() +
+  scale_y_continuous("Information") +
+  scale_x_continuous("GCP") +
+  scale_color_discrete("Study") +
+  hrbrthemes::theme_ipsum()
+
+```
+
+@fig-info shows the information plot.
+
+::: callout-note
+The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-person, and SAGES II - Video. This means their Information curves would overlap. I shifted the curves by a small amount so they would be distinct.
+:::
+
+## @fig-video-vs-telephone: Agreement by mode
+
+```{r}
+gcp_g_v2c <- readRDS(file=path(r_objects_folder, "400_gcp_g_v2c.rds"))
+validation_df <- gcp_g_v2c %>%
+  filter(study_wave_number %in% c(8,9)) %>%
+  mutate(id = substr(newid, 3, 9)) %>%
+  select(id, gcp, interview_mode) %>%
+  pivot_wider(id_cols = id, names_from = interview_mode, values_from = gcp)
+```
+
+@tbl-Deming-regression shows the results of Deming regression of telephone and video interview modes.
+
+```{r}
+#| label: tbl-Deming-regression
+#| tbl-cap: Deming regression results
+#| tbl-cap-location: top
+# Deming regression
+deming_reg <- mcr::mcreg(validation_df$Telephone, validation_df$Video, method.reg = "Deming")
+deming_reg@para %>%
+  as_tibble() %>%
+  select(-SE) %>%
+  gt::gt() %>%
+  gt::fmt_number(columns = everything(), decimals = 2)
+```
+
+```{r}
+#| label: fig-video-vs-telephone
+#| fig-cap: "Scatterplot of Telephone vs Video GCP in validation sample"
+#| fig-cap-location: top
+
+ggplot(validation_df, aes(x=Telephone, y=Video)) +
+  geom_point() +
+  scale_x_continuous("Telephone GCP", limits = c(40, 90)) +
+  scale_y_continuous("Video GCP", limits = c(40, 90)) +
+  geom_smooth(se=FALSE, aes(color = "Loess")) +
+  geom_abline(slope = 1) +
+  geom_abline(aes(slope = deming_reg@para[2], intercept = deming_reg@para[1], 
+              color = "Deming")) +
+  scale_color_manual("Model", values = c("blue", "red"), breaks = c("Loess", "Deming")) +
+  hrbrthemes::theme_ipsum()
+```
+
+The correlation of GCP between telephone and video interviews is: `r cor(validation_df$Telephone, validation_df$Video) %>% round(2)`.
+
+```{r}
+#| label: fig-bland-altman
+#| fig-cap: "Bland-Altman plot of Telephone vs Video GCP in validation sample"
+#| fig-cap-location: top
+
+validation_df %>%
+  mutate(diff = Telephone-Video,
+         avg = (Telephone+Video)/2) %>%
+ggplot(aes(x=avg, y=diff)) +
+  geom_point() +
+  scale_x_continuous("Average between telephone and video") +
+  scale_y_continuous("Difference between telephone and video", limits = c(-15, 15)) +
+  geom_smooth(se=FALSE) +
+  geom_hline(yintercept = 0) +
+  hrbrthemes::theme_ipsum()
+```
+
+## (Table 3): Validation study results
+
+## @fig-gcp-boxplots: GCP by study
+
+```{r}
+#| label: fig-gcp-boxplots
+#| fig-cap: GCP by study/mode
+#| fig-cap-location: top
+gcp_g_v2c %>%
+  mutate(study_name_short = factor(study_name_short, 
+                                   levels = c("HRS_ADAMS", "SAGES", "SAGESII_Inperson",
+                                              "SAGESII_Telephone", "SAGESII_Video",
+                                              "SAGESII_Telephone_validation",
+                                              "SAGESII_Video_validation", 
+                                              "SAGES_Telephone", "INTUIT_ACTIVE"),
+                                   labels = c("ADAMS (Unweighted)", "SAGES", "SAGESII - Inperson",
+                                              "SAGESII - Telephone", "SAGESII - Video",
+                                              "SAGESII - Telephone (validation)", 
+                                              "SAGESII - Video (validation)", 
+                                              "SAGES - Telephone", "INTUIT/ACTIVE"))) %>%
+  filter(!study_wave_number %in% c(7, 6)) %>%
+  ggplot(aes(x = gcp, y = study_name_short)) +
+  geom_violin() +
+  geom_boxplot(width = .25) +
+  scale_y_discrete("Study/Mode") +
+  scale_x_continuous("GCP") +
+  hrbrthemes::theme_ipsum() +
+  labs(caption = "Uses all interviews for SAGES & SAGESII modes")
+
+
+```
+
+::: {.callout-note collapse="true"}
+## Expand to see the R session information
+
+```{r} 
+sessionInfo()
+```
+:::
