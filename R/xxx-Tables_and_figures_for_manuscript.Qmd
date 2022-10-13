@@ -644,6 +644,17 @@ gcp_g_v2c %>%
 
 ```
 
+```{r}
+#| eval: false
+gcp_g_v2c %>%
+  filter(study_wave_number %in% c(3, 4, 5)) %>%
+  arrange(newid, timefr) %>%
+  ggplot(aes(x=timefr, y = gcp, color = study_name_short, group = newid)) +
+    geom_point() +
+    geom_line()
+```
+
+
 ::: {.callout-note collapse="true"}
 ## Expand to see the R session information
 

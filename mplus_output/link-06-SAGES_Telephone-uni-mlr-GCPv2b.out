@@ -1,6 +1,6 @@
 Mplus VERSION 8.5 (Mac)
 MUTHEN & MUTHEN
-10/07/2022   2:14 PM
+10/13/2022   3:27 PM
 
 INPUT INSTRUCTIONS
 
@@ -22,7 +22,7 @@ INPUT INSTRUCTIONS
    g by Q266 @ 1.821;
    g by Q283 @ 2.656;
    g by Q284 @ 2.924;
-   g by Q587 @ 1.174;
+   g by Q587 @ 1.175;
    [g * 0.000];
    g * 1.000 ;
 
@@ -89,15 +89,15 @@ INPUT INSTRUCTIONS
    [Q284$7 @  5.408];
    [Q284$8 @  6.774];
    [Q284$9 @  7.989];
-   [Q587$1 @  -1.592];
+   [Q587$1 @  -1.594];
    [Q587$2 @  -0.346];
-   [Q587$3 @  0.059];
-   [Q587$4 @  1.161];
-   [Q587$5 @  2.049];
-   [Q587$6 @  2.374];
-   [Q587$7 @  3.226];
-   [Q587$8 @  3.72];
-   [Q587$9 @  4.597];
+   [Q587$3 @  0.06];
+   [Q587$4 @  1.164];
+   [Q587$5 @  2.053];
+   [Q587$6 @  2.378];
+   [Q587$7 @  3.23];
+   [Q587$8 @  3.723];
+   [Q587$9 @  4.601];
 
   OUTPUT:
   standardized; svalues; tech8; tech10;
@@ -322,15 +322,15 @@ Number of Free Parameters                        2
 
 Loglikelihood
 
-          H0 Value                       -5186.484
+          H0 Value                       -5186.467
           H0 Scaling Correction Factor      1.0303
             for MLR
 
 Information Criteria
 
-          Akaike (AIC)                   10376.969
-          Bayesian (BIC)                 10384.621
-          Sample-Size Adjusted BIC       10378.276
+          Akaike (AIC)                   10376.933
+          Bayesian (BIC)                 10384.585
+          Sample-Size Adjusted BIC       10378.241
             (n* = (n + 2) / 24)
 
 
@@ -349,7 +349,7 @@ MODEL RESULTS
     Q266               1.821      0.000    999.000    999.000
     Q283               2.656      0.000    999.000    999.000
     Q284               2.924      0.000    999.000    999.000
-    Q587               1.174      0.000    999.000    999.000
+    Q587               1.175      0.000    999.000    999.000
 
  Means
     G                  1.100      0.056     19.775      0.000
@@ -418,15 +418,15 @@ MODEL RESULTS
     Q284$7             5.408      0.000    999.000    999.000
     Q284$8             6.774      0.000    999.000    999.000
     Q284$9             7.989      0.000    999.000    999.000
-    Q587$1            -1.592      0.000    999.000    999.000
+    Q587$1            -1.594      0.000    999.000    999.000
     Q587$2            -0.346      0.000    999.000    999.000
-    Q587$3             0.059      0.000    999.000    999.000
-    Q587$4             1.161      0.000    999.000    999.000
-    Q587$5             2.049      0.000    999.000    999.000
-    Q587$6             2.374      0.000    999.000    999.000
-    Q587$7             3.226      0.000    999.000    999.000
-    Q587$8             3.720      0.000    999.000    999.000
-    Q587$9             4.597      0.000    999.000    999.000
+    Q587$3             0.060      0.000    999.000    999.000
+    Q587$4             1.164      0.000    999.000    999.000
+    Q587$5             2.053      0.000    999.000    999.000
+    Q587$6             2.378      0.000    999.000    999.000
+    Q587$7             3.230      0.000    999.000    999.000
+    Q587$8             3.723      0.000    999.000    999.000
+    Q587$9             4.601      0.000    999.000    999.000
 
  Variances
     G                  0.935      0.084     11.117      0.000
@@ -537,15 +537,15 @@ STDYX Standardization
                     Estimate       S.E.  Est./S.E.    P-Value
 
  G        BY
-    Q102               0.610      0.017     35.442      0.000
+    Q102               0.610      0.017     35.443      0.000
     Q103               0.699      0.016     43.482      0.000
-    Q118               0.806      0.013     63.408      0.000
+    Q118               0.806      0.013     63.409      0.000
     Q226               0.629      0.017     36.752      0.000
     Q228               0.431      0.016     27.305      0.000
     Q266               0.697      0.016     43.182      0.000
     Q283               0.817      0.012     66.798      0.000
-    Q284               0.842      0.011     76.245      0.000
-    Q587               0.530      0.017     30.940      0.000
+    Q284               0.842      0.011     76.246      0.000
+    Q587               0.531      0.017     30.955      0.000
 
  Means
     G                  1.138      0.087     13.082      0.000
@@ -559,13 +559,13 @@ STDYX Standardization
     Q226$6             1.934      0.034     56.280      0.000
     Q226$7             2.911      0.052     56.280      0.000
     Q226$8             3.586      0.064     56.280      0.000
-    Q228$1            -1.181      0.010   -119.699      0.000
-    Q228$2            -0.760      0.006   -119.699      0.000
-    Q228$3            -0.242      0.002   -119.699      0.000
-    Q228$4             0.438      0.004    119.699      0.000
-    Q228$5             1.613      0.013    119.699      0.000
-    Q228$6             2.650      0.022    119.699      0.000
-    Q228$7             3.076      0.026    119.699      0.000
+    Q228$1            -1.181      0.010   -119.700      0.000
+    Q228$2            -0.760      0.006   -119.700      0.000
+    Q228$3            -0.242      0.002   -119.700      0.000
+    Q228$4             0.438      0.004    119.700      0.000
+    Q228$5             1.613      0.013    119.700      0.000
+    Q228$6             2.650      0.022    119.700      0.000
+    Q228$7             3.076      0.026    119.700      0.000
     Q266$1            -1.315      0.029    -45.830      0.000
     Q266$2            -0.516      0.011    -45.830      0.000
     Q266$3             0.152      0.003     45.830      0.000
@@ -580,22 +580,22 @@ STDYX Standardization
     Q102$5             0.511      0.009     59.656      0.000
     Q102$6             1.253      0.021     59.656      0.000
     Q102$7             2.312      0.039     59.656      0.000
-    Q103$1            -1.893      0.042    -45.496      0.000
-    Q103$2            -1.302      0.029    -45.496      0.000
-    Q103$3            -0.834      0.018    -45.496      0.000
-    Q103$4             0.084      0.002     45.496      0.000
-    Q103$5             0.631      0.014     45.496      0.000
-    Q103$6             1.035      0.023     45.496      0.000
-    Q103$7             1.812      0.040     45.496      0.000
-    Q103$8             2.124      0.047     45.496      0.000
-    Q103$9             3.275      0.072     45.496      0.000
-    Q118$1            -1.402      0.041    -34.238      0.000
-    Q118$2            -0.579      0.017    -34.238      0.000
-    Q118$3            -0.128      0.004    -34.238      0.000
-    Q118$4             0.449      0.013     34.238      0.000
-    Q118$5             1.035      0.030     34.238      0.000
-    Q118$6             1.672      0.049     34.238      0.000
-    Q118$7             2.131      0.062     34.238      0.000
+    Q103$1            -1.893      0.042    -45.497      0.000
+    Q103$2            -1.302      0.029    -45.497      0.000
+    Q103$3            -0.834      0.018    -45.497      0.000
+    Q103$4             0.084      0.002     45.497      0.000
+    Q103$5             0.631      0.014     45.497      0.000
+    Q103$6             1.035      0.023     45.497      0.000
+    Q103$7             1.812      0.040     45.497      0.000
+    Q103$8             2.124      0.047     45.497      0.000
+    Q103$9             3.275      0.072     45.497      0.000
+    Q118$1            -1.402      0.041    -34.239      0.000
+    Q118$2            -0.579      0.017    -34.239      0.000
+    Q118$3            -0.128      0.004    -34.239      0.000
+    Q118$4             0.449      0.013     34.239      0.000
+    Q118$5             1.035      0.030     34.239      0.000
+    Q118$6             1.672      0.049     34.239      0.000
+    Q118$7             2.131      0.062     34.239      0.000
     Q283$1            -0.415      0.012    -33.325      0.000
     Q283$2             0.039      0.001     33.325      0.000
     Q283$3             0.373      0.011     33.325      0.000
@@ -614,15 +614,15 @@ STDYX Standardization
     Q284$7             1.610      0.051     31.385      0.000
     Q284$8             2.017      0.064     31.385      0.000
     Q284$9             2.378      0.076     31.385      0.000
-    Q587$1            -0.744      0.009    -79.005      0.000
-    Q587$2            -0.162      0.002    -79.005      0.000
-    Q587$3             0.028      0.000     79.005      0.000
-    Q587$4             0.543      0.007     79.005      0.000
-    Q587$5             0.958      0.012     79.005      0.000
-    Q587$6             1.110      0.014     79.005      0.000
-    Q587$7             1.508      0.019     79.005      0.000
-    Q587$8             1.739      0.022     79.005      0.000
-    Q587$9             2.148      0.027     79.005      0.000
+    Q587$1            -0.745      0.009    -78.909      0.000
+    Q587$2            -0.162      0.002    -78.909      0.000
+    Q587$3             0.028      0.000     78.909      0.000
+    Q587$4             0.544      0.007     78.909      0.000
+    Q587$5             0.959      0.012     78.909      0.000
+    Q587$6             1.111      0.014     78.909      0.000
+    Q587$7             1.509      0.019     78.909      0.000
+    Q587$8             1.740      0.022     78.909      0.000
+    Q587$9             2.150      0.027     78.909      0.000
 
  Variances
     G                  1.000      0.000    999.000    999.000
@@ -634,15 +634,15 @@ STDY Standardization
                     Estimate       S.E.  Est./S.E.    P-Value
 
  G        BY
-    Q102               0.610      0.017     35.442      0.000
+    Q102               0.610      0.017     35.443      0.000
     Q103               0.699      0.016     43.482      0.000
-    Q118               0.806      0.013     63.408      0.000
+    Q118               0.806      0.013     63.409      0.000
     Q226               0.629      0.017     36.752      0.000
     Q228               0.431      0.016     27.305      0.000
     Q266               0.697      0.016     43.182      0.000
     Q283               0.817      0.012     66.798      0.000
-    Q284               0.842      0.011     76.245      0.000
-    Q587               0.530      0.017     30.940      0.000
+    Q284               0.842      0.011     76.246      0.000
+    Q587               0.531      0.017     30.955      0.000
 
  Means
     G                  1.138      0.087     13.082      0.000
@@ -656,13 +656,13 @@ STDY Standardization
     Q226$6             1.934      0.034     56.280      0.000
     Q226$7             2.911      0.052     56.280      0.000
     Q226$8             3.586      0.064     56.280      0.000
-    Q228$1            -1.181      0.010   -119.699      0.000
-    Q228$2            -0.760      0.006   -119.699      0.000
-    Q228$3            -0.242      0.002   -119.699      0.000
-    Q228$4             0.438      0.004    119.699      0.000
-    Q228$5             1.613      0.013    119.699      0.000
-    Q228$6             2.650      0.022    119.699      0.000
-    Q228$7             3.076      0.026    119.699      0.000
+    Q228$1            -1.181      0.010   -119.700      0.000
+    Q228$2            -0.760      0.006   -119.700      0.000
+    Q228$3            -0.242      0.002   -119.700      0.000
+    Q228$4             0.438      0.004    119.700      0.000
+    Q228$5             1.613      0.013    119.700      0.000
+    Q228$6             2.650      0.022    119.700      0.000
+    Q228$7             3.076      0.026    119.700      0.000
     Q266$1            -1.315      0.029    -45.830      0.000
     Q266$2            -0.516      0.011    -45.830      0.000
     Q266$3             0.152      0.003     45.830      0.000
@@ -677,22 +677,22 @@ STDY Standardization
     Q102$5             0.511      0.009     59.656      0.000
     Q102$6             1.253      0.021     59.656      0.000
     Q102$7             2.312      0.039     59.656      0.000
-    Q103$1            -1.893      0.042    -45.496      0.000
-    Q103$2            -1.302      0.029    -45.496      0.000
-    Q103$3            -0.834      0.018    -45.496      0.000
-    Q103$4             0.084      0.002     45.496      0.000
-    Q103$5             0.631      0.014     45.496      0.000
-    Q103$6             1.035      0.023     45.496      0.000
-    Q103$7             1.812      0.040     45.496      0.000
-    Q103$8             2.124      0.047     45.496      0.000
-    Q103$9             3.275      0.072     45.496      0.000
-    Q118$1            -1.402      0.041    -34.238      0.000
-    Q118$2            -0.579      0.017    -34.238      0.000
-    Q118$3            -0.128      0.004    -34.238      0.000
-    Q118$4             0.449      0.013     34.238      0.000
-    Q118$5             1.035      0.030     34.238      0.000
-    Q118$6             1.672      0.049     34.238      0.000
-    Q118$7             2.131      0.062     34.238      0.000
+    Q103$1            -1.893      0.042    -45.497      0.000
+    Q103$2            -1.302      0.029    -45.497      0.000
+    Q103$3            -0.834      0.018    -45.497      0.000
+    Q103$4             0.084      0.002     45.497      0.000
+    Q103$5             0.631      0.014     45.497      0.000
+    Q103$6             1.035      0.023     45.497      0.000
+    Q103$7             1.812      0.040     45.497      0.000
+    Q103$8             2.124      0.047     45.497      0.000
+    Q103$9             3.275      0.072     45.497      0.000
+    Q118$1            -1.402      0.041    -34.239      0.000
+    Q118$2            -0.579      0.017    -34.239      0.000
+    Q118$3            -0.128      0.004    -34.239      0.000
+    Q118$4             0.449      0.013     34.239      0.000
+    Q118$5             1.035      0.030     34.239      0.000
+    Q118$6             1.672      0.049     34.239      0.000
+    Q118$7             2.131      0.062     34.239      0.000
     Q283$1            -0.415      0.012    -33.325      0.000
     Q283$2             0.039      0.001     33.325      0.000
     Q283$3             0.373      0.011     33.325      0.000
@@ -711,15 +711,15 @@ STDY Standardization
     Q284$7             1.610      0.051     31.385      0.000
     Q284$8             2.017      0.064     31.385      0.000
     Q284$9             2.378      0.076     31.385      0.000
-    Q587$1            -0.744      0.009    -79.005      0.000
-    Q587$2            -0.162      0.002    -79.005      0.000
-    Q587$3             0.028      0.000     79.005      0.000
-    Q587$4             0.543      0.007     79.005      0.000
-    Q587$5             0.958      0.012     79.005      0.000
-    Q587$6             1.110      0.014     79.005      0.000
-    Q587$7             1.508      0.019     79.005      0.000
-    Q587$8             1.739      0.022     79.005      0.000
-    Q587$9             2.148      0.027     79.005      0.000
+    Q587$1            -0.745      0.009    -78.909      0.000
+    Q587$2            -0.162      0.002    -78.909      0.000
+    Q587$3             0.028      0.000     78.909      0.000
+    Q587$4             0.544      0.007     78.909      0.000
+    Q587$5             0.959      0.012     78.909      0.000
+    Q587$6             1.111      0.014     78.909      0.000
+    Q587$7             1.509      0.019     78.909      0.000
+    Q587$8             1.740      0.022     78.909      0.000
+    Q587$9             2.150      0.027     78.909      0.000
 
  Variances
     G                  1.000      0.000    999.000    999.000
@@ -739,7 +739,7 @@ STD Standardization
     Q266               1.761      0.079     22.233      0.000
     Q283               2.568      0.115     22.233      0.000
     Q284               2.827      0.127     22.233      0.000
-    Q587               1.135      0.051     22.233      0.000
+    Q587               1.136      0.051     22.233      0.000
 
  Means
     G                  1.138      0.087     13.082      0.000
@@ -808,15 +808,15 @@ STD Standardization
     Q284$7             5.408      0.000    999.000    999.000
     Q284$8             6.774      0.000    999.000    999.000
     Q284$9             7.989      0.000    999.000    999.000
-    Q587$1            -1.592      0.000    999.000    999.000
+    Q587$1            -1.594      0.000    999.000    999.000
     Q587$2            -0.346      0.000    999.000    999.000
-    Q587$3             0.059      0.000    999.000    999.000
-    Q587$4             1.161      0.000    999.000    999.000
-    Q587$5             2.049      0.000    999.000    999.000
-    Q587$6             2.374      0.000    999.000    999.000
-    Q587$7             3.226      0.000    999.000    999.000
-    Q587$8             3.720      0.000    999.000    999.000
-    Q587$9             4.597      0.000    999.000    999.000
+    Q587$3             0.060      0.000    999.000    999.000
+    Q587$4             1.164      0.000    999.000    999.000
+    Q587$5             2.053      0.000    999.000    999.000
+    Q587$6             2.378      0.000    999.000    999.000
+    Q587$7             3.230      0.000    999.000    999.000
+    Q587$8             3.723      0.000    999.000    999.000
+    Q587$9             4.601      0.000    999.000    999.000
 
  Variances
     G                  1.000      0.000    999.000    999.000
@@ -828,14 +828,14 @@ R-SQUARE
     Variable        Estimate       S.E.  Est./S.E.    P-Value
 
     Q226               0.395      0.021     18.376      0.000
-    Q228               0.186      0.014     13.652      0.000
+    Q228               0.186      0.014     13.653      0.000
     Q266               0.485      0.022     21.591      0.000
     Q102               0.373      0.021     17.721      0.000
     Q103               0.489      0.022     21.741      0.000
     Q118               0.649      0.020     31.704      0.000
     Q283               0.667      0.020     33.399      0.000
-    Q284               0.708      0.019     38.122      0.000
-    Q587               0.281      0.018     15.470      0.000
+    Q284               0.708      0.019     38.123      0.000
+    Q587               0.282      0.018     15.478      0.000
 
 
 QUALITY OF NUMERICAL RESULTS
@@ -854,7 +854,7 @@ MODEL COMMAND WITH FINAL ESTIMATES USED AS STARTING VALUES
      g BY q266@1.82100;
      g BY q283@2.65600;
      g BY q284@2.92400;
-     g BY q587@1.17400;
+     g BY q587@1.17500;
 
      [ g*1.09986 ];
 
@@ -921,17 +921,17 @@ MODEL COMMAND WITH FINAL ESTIMATES USED AS STARTING VALUES
      [ q284$7@5.40800 ];
      [ q284$8@6.77400 ];
      [ q284$9@7.98900 ];
-     [ q587$1@-1.59200 ];
+     [ q587$1@-1.59400 ];
      [ q587$2@-0.34600 ];
-     [ q587$3@0.05900 ];
-     [ q587$4@1.16100 ];
-     [ q587$5@2.04900 ];
-     [ q587$6@2.37400 ];
-     [ q587$7@3.22600 ];
-     [ q587$8@3.72000 ];
-     [ q587$9@4.59700 ];
+     [ q587$3@0.06000 ];
+     [ q587$4@1.16400 ];
+     [ q587$5@2.05300 ];
+     [ q587$6@2.37800 ];
+     [ q587$7@3.23000 ];
+     [ q587$8@3.72300 ];
+     [ q587$9@4.60100 ];
 
-     g*0.93478;
+     g*0.93479;
 
 
 
@@ -1393,7 +1393,7 @@ TECHNICAL 10 OUTPUT
        Category 7        0.160        0.090           4.486
        Category 8        0.062        0.012           8.369
        Category 9        0.036        0.004           9.964
-       Univariate Pearson Chi-Square                206.078
+       Univariate Pearson Chi-Square                206.076
        Univariate Log-Likelihood Chi-Square         106.049
      Q228
        Category 1        0.036        0.046          -0.920
@@ -1439,7 +1439,7 @@ TECHNICAL 10 OUTPUT
        Category 8        0.072        0.061           0.902
        Category 9        0.120        0.081           2.674
        Category 10       0.039        0.008           6.434
-       Univariate Pearson Chi-Square                 57.715
+       Univariate Pearson Chi-Square                 57.714
        Univariate Log-Likelihood Chi-Square          36.289
      Q118
        Category 1        0.024        0.011           2.253
@@ -1450,8 +1450,8 @@ TECHNICAL 10 OUTPUT
        Category 6        0.118        0.230          -4.884
        Category 7        0.169        0.112           3.321
        Category 8        0.136        0.110           1.516
-       Univariate Pearson Chi-Square                 42.101
-       Univariate Log-Likelihood Chi-Square          43.316
+       Univariate Pearson Chi-Square                 42.100
+       Univariate Log-Likelihood Chi-Square          43.315
      Q283
        Category 1        0.078        0.088          -0.681
        Category 2        0.087        0.096          -0.589
@@ -1479,21 +1479,21 @@ TECHNICAL 10 OUTPUT
        Univariate Pearson Chi-Square                 13.586
        Univariate Log-Likelihood Chi-Square          14.036
      Q587
-       Category 1        0.101        0.083           1.196
-       Category 2        0.174        0.127           2.580
-       Category 3        0.130        0.061           5.362
-       Category 4        0.203        0.203           0.010
-       Category 5        0.116        0.172          -2.743
-       Category 6        0.087        0.057           2.342
-       Category 7        0.029        0.124          -5.311
-       Category 8        0.043        0.052          -0.736
-       Category 9        0.058        0.061          -0.253
-       Category 10       0.058        0.058          -0.041
-       Univariate Pearson Chi-Square                 70.810
-       Univariate Log-Likelihood Chi-Square          74.714
+       Category 1        0.101        0.083           1.208
+       Category 2        0.174        0.127           2.575
+       Category 3        0.130        0.061           5.347
+       Category 4        0.203        0.203          -0.005
+       Category 5        0.116        0.172          -2.747
+       Category 6        0.087        0.057           2.347
+       Category 7        0.029        0.124          -5.306
+       Category 8        0.043        0.052          -0.723
+       Category 9        0.058        0.061          -0.252
+       Category 10       0.058        0.058          -0.033
+       Univariate Pearson Chi-Square                 70.633
+       Univariate Log-Likelihood Chi-Square          74.562
 
-       Overall Univariate Pearson Chi-Square                       538.344
-       Overall Univariate Log-Likelihood Chi-Square                387.307
+       Overall Univariate Pearson Chi-Square                       538.164
+       Overall Univariate Log-Likelihood Chi-Square                387.153
 
 
      BIVARIATE MODEL FIT INFORMATION
@@ -1575,10 +1575,10 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 6        0.000        0.001          -0.530
        Category 9     Category 7        0.000        0.000          -0.194
        Category 9     Category 8        0.000        0.000          -0.176
-       Bivariate Pearson Chi-Square                                574.212
+       Bivariate Pearson Chi-Square                                574.210
        Bivariate Log-Likelihood Chi-Square                         257.647
      Q226           Q266
-       Category 1     Category 1        0.023        0.006           4.008
+       Category 1     Category 1        0.023        0.006           4.007
        Category 1     Category 2        0.028        0.016           1.690
        Category 1     Category 3        0.018        0.022          -0.426
        Category 1     Category 4        0.000        0.017          -2.387
@@ -1650,7 +1650,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 6        0.009        0.001           5.771
        Category 9     Category 7        0.006        0.001           3.194
        Category 9     Category 8        0.003        0.001           1.034
-       Bivariate Pearson Chi-Square                                602.862
+       Bivariate Pearson Chi-Square                                602.861
        Bivariate Log-Likelihood Chi-Square                         262.847
      Q226           Q102
        Category 1     Category 1        0.000        0.000          -0.124
@@ -1725,8 +1725,8 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 6        0.012        0.001           7.079
        Category 9     Category 7        0.009        0.001           3.582
        Category 9     Category 8        0.012        0.001           7.354
-       Bivariate Pearson Chi-Square                                344.822
-       Bivariate Log-Likelihood Chi-Square                         172.545
+       Bivariate Pearson Chi-Square                                344.820
+       Bivariate Log-Likelihood Chi-Square                         172.544
      Q226           Q103
        Category 1     Category 1        0.000        0.002          -0.770
        Category 1     Category 2        0.006        0.004           0.503
@@ -1818,8 +1818,8 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 8        0.006        0.000           4.756
        Category 9     Category 9        0.006        0.001           2.738
        Category 9     Category 10       0.006        0.000           6.921
-       Bivariate Pearson Chi-Square                                447.039
-       Bivariate Log-Likelihood Chi-Square                         207.491
+       Bivariate Pearson Chi-Square                                447.037
+       Bivariate Log-Likelihood Chi-Square                         207.490
      Q226           Q118
        Category 1     Category 1        0.011        0.005           1.559
        Category 1     Category 2        0.025        0.016           1.344
@@ -1893,8 +1893,8 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 6        0.000        0.001          -0.483
        Category 9     Category 7        0.012        0.001           8.075
        Category 9     Category 8        0.021        0.002           8.530
-       Bivariate Pearson Chi-Square                                575.833
-       Bivariate Log-Likelihood Chi-Square                         253.193
+       Bivariate Pearson Chi-Square                                575.832
+       Bivariate Log-Likelihood Chi-Square                         253.192
      Q226           Q283
        Category 1     Category 1        0.037        0.025           1.365
        Category 1     Category 2        0.003        0.015          -1.798
@@ -1930,7 +1930,7 @@ TECHNICAL 10 OUTPUT
        Category 4     Category 2        0.015        0.017          -0.321
        Category 4     Category 3        0.036        0.020           1.971
        Category 4     Category 4        0.021        0.028          -0.856
-       Category 4     Category 5        0.012        0.027          -1.696
+       Category 4     Category 5        0.012        0.027          -1.695
        Category 4     Category 6        0.021        0.020           0.056
        Category 4     Category 7        0.015        0.017          -0.353
        Category 4     Category 8        0.015        0.011           0.669
@@ -1986,7 +1986,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 8        0.015        0.000          12.403
        Category 9     Category 9        0.009        0.000           8.156
        Category 9     Category 10       0.000        0.002          -0.715
-       Bivariate Pearson Chi-Square                                692.893
+       Bivariate Pearson Chi-Square                                692.892
        Bivariate Log-Likelihood Chi-Square                         260.114
      Q226           Q284
        Category 1     Category 1        0.026        0.023           0.268
@@ -2027,7 +2027,7 @@ TECHNICAL 10 OUTPUT
        Category 4     Category 6        0.018        0.021          -0.368
        Category 4     Category 7        0.015        0.016          -0.139
        Category 4     Category 8        0.012        0.015          -0.527
-       Category 4     Category 9        0.015        0.007           1.739
+       Category 4     Category 9        0.015        0.007           1.740
        Category 4     Category 10       0.006        0.005           0.203
        Category 5     Category 1        0.006        0.006           0.060
        Category 5     Category 2        0.009        0.010          -0.256
@@ -2079,101 +2079,101 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 8        0.006        0.001           4.251
        Category 9     Category 9        0.006        0.001           4.362
        Category 9     Category 10       0.003        0.001           0.724
-       Bivariate Pearson Chi-Square                                524.515
+       Bivariate Pearson Chi-Square                                524.516
        Bivariate Log-Likelihood Chi-Square                         226.631
      Q226           Q587
-       Category 1     Category 1        0.077        0.016           8.962
-       Category 1     Category 2        0.000        0.017          -2.431
-       Category 1     Category 3        0.000        0.006          -1.483
-       Category 1     Category 4        0.000        0.016          -2.376
+       Category 1     Category 1        0.077        0.016           8.969
+       Category 1     Category 2        0.000        0.017          -2.432
+       Category 1     Category 3        0.000        0.006          -1.484
+       Category 1     Category 4        0.000        0.016          -2.377
        Category 1     Category 5        0.000        0.010          -1.817
-       Category 1     Category 6        0.000        0.003          -0.933
-       Category 1     Category 7        0.000        0.005          -1.253
-       Category 1     Category 8        0.000        0.002          -0.735
+       Category 1     Category 6        0.000        0.003          -0.932
+       Category 1     Category 7        0.000        0.005          -1.251
+       Category 1     Category 8        0.000        0.002          -0.733
        Category 1     Category 9        0.000        0.002          -0.737
-       Category 1     Category 10       0.000        0.001          -0.653
-       Category 2     Category 1        0.000        0.014          -2.163
-       Category 2     Category 2        0.000        0.018          -2.485
-       Category 2     Category 3        0.000        0.007          -1.598
-       Category 2     Category 4        0.034        0.021           1.661
+       Category 1     Category 10       0.000        0.001          -0.652
+       Category 2     Category 1        0.000        0.014          -2.162
+       Category 2     Category 2        0.000        0.018          -2.486
+       Category 2     Category 3        0.000        0.007          -1.600
+       Category 2     Category 4        0.034        0.021           1.656
        Category 2     Category 5        0.000        0.013          -2.148
-       Category 2     Category 6        0.000        0.004          -1.127
-       Category 2     Category 7        0.017        0.007           2.209
-       Category 2     Category 8        0.000        0.002          -0.910
+       Category 2     Category 6        0.000        0.004          -1.125
+       Category 2     Category 7        0.017        0.007           2.215
+       Category 2     Category 8        0.000        0.002          -0.908
        Category 2     Category 9        0.000        0.002          -0.920
-       Category 2     Category 10       0.000        0.002          -0.820
-       Category 3     Category 1        0.029        0.018           1.455
-       Category 3     Category 2        0.000        0.028          -3.104
-       Category 3     Category 3        0.029        0.013           2.685
-       Category 3     Category 4        0.029        0.038          -0.915
-       Category 3     Category 5        0.029        0.028           0.133
-       Category 3     Category 6        0.000        0.008          -1.670
-       Category 3     Category 7        0.000        0.016          -2.323
-       Category 3     Category 8        0.000        0.006          -1.401
-       Category 3     Category 9        0.000        0.006          -1.432
-       Category 3     Category 10       0.000        0.005          -1.291
-       Category 4     Category 1        0.000        0.013          -2.134
-       Category 4     Category 2        0.074        0.022           6.469
-       Category 4     Category 3        0.037        0.011           4.584
-       Category 4     Category 4        0.037        0.037           0.010
-       Category 4     Category 5        0.000        0.030          -3.240
-       Category 4     Category 6        0.000        0.009          -1.798
-       Category 4     Category 7        0.000        0.019          -2.568
-       Category 4     Category 8        0.000        0.007          -1.585
+       Category 2     Category 10       0.000        0.002          -0.819
+       Category 3     Category 1        0.029        0.018           1.461
+       Category 3     Category 2        0.000        0.028          -3.105
+       Category 3     Category 3        0.029        0.013           2.677
+       Category 3     Category 4        0.029        0.039          -0.920
+       Category 3     Category 5        0.029        0.028           0.132
+       Category 3     Category 6        0.000        0.008          -1.669
+       Category 3     Category 7        0.000        0.016          -2.321
+       Category 3     Category 8        0.000        0.006          -1.398
+       Category 3     Category 9        0.000        0.006          -1.431
+       Category 3     Category 10       0.000        0.005          -1.290
+       Category 4     Category 1        0.000        0.013          -2.132
+       Category 4     Category 2        0.074        0.022           6.466
+       Category 4     Category 3        0.037        0.011           4.575
+       Category 4     Category 4        0.037        0.037           0.004
+       Category 4     Category 5        0.000        0.030          -3.241
+       Category 4     Category 6        0.000        0.009          -1.797
+       Category 4     Category 7        0.000        0.019          -2.566
+       Category 4     Category 8        0.000        0.007          -1.582
        Category 4     Category 9        0.000        0.008          -1.646
-       Category 4     Category 10       0.000        0.007          -1.510
-       Category 5     Category 1        0.015        0.012           0.541
+       Category 4     Category 10       0.000        0.007          -1.508
+       Category 5     Category 1        0.015        0.012           0.546
        Category 5     Category 2        0.015        0.021          -0.827
-       Category 5     Category 3        0.015        0.011           0.619
-       Category 5     Category 4        0.059        0.041           1.675
-       Category 5     Category 5        0.000        0.038          -3.652
-       Category 5     Category 6        0.000        0.013          -2.101
-       Category 5     Category 7        0.000        0.028          -3.103
-       Category 5     Category 8        0.015        0.011           0.603
+       Category 5     Category 3        0.015        0.011           0.614
+       Category 5     Category 4        0.059        0.041           1.667
+       Category 5     Category 5        0.000        0.038          -3.654
+       Category 5     Category 6        0.000        0.013          -2.100
+       Category 5     Category 7        0.000        0.028          -3.101
+       Category 5     Category 8        0.015        0.011           0.610
        Category 5     Category 9        0.000        0.013          -2.097
-       Category 5     Category 10       0.015        0.011           0.603
-       Category 6     Category 1        0.012        0.008           0.878
+       Category 5     Category 10       0.015        0.011           0.608
+       Category 6     Category 1        0.012        0.008           0.884
        Category 6     Category 2        0.072        0.015           8.526
-       Category 6     Category 3        0.012        0.009           0.681
-       Category 6     Category 4        0.024        0.034          -1.052
-       Category 6     Category 5        0.000        0.036          -3.575
-       Category 6     Category 6        0.036        0.014           3.589
-       Category 6     Category 7        0.012        0.032          -2.075
-       Category 6     Category 8        0.012        0.014          -0.368
+       Category 6     Category 3        0.012        0.009           0.678
+       Category 6     Category 4        0.024        0.035          -1.057
+       Category 6     Category 5        0.000        0.036          -3.577
+       Category 6     Category 6        0.036        0.014           3.590
+       Category 6     Category 7        0.012        0.032          -2.073
+       Category 6     Category 8        0.012        0.014          -0.362
        Category 6     Category 9        0.024        0.018           0.921
-       Category 6     Category 10       0.012        0.017          -0.719
-       Category 7     Category 1        0.017        0.002           5.427
-       Category 7     Category 2        0.017        0.005           3.128
-       Category 7     Category 3        0.025        0.003           7.664
-       Category 7     Category 4        0.025        0.013           2.119
-       Category 7     Category 5        0.025        0.015           1.588
-       Category 7     Category 6        0.017        0.006           2.556
-       Category 7     Category 7        0.000        0.016          -2.326
-       Category 7     Category 8        0.008        0.008           0.094
-       Category 7     Category 9        0.008        0.011          -0.410
-       Category 7     Category 10       0.017        0.012           0.772
-       Category 8     Category 1        0.000        0.000          -0.294
-       Category 8     Category 2        0.010        0.001           7.866
-       Category 8     Category 3        0.010        0.000          10.395
-       Category 8     Category 4        0.000        0.001          -0.693
-       Category 8     Category 5        0.031        0.002          12.807
+       Category 6     Category 10       0.012        0.017          -0.716
+       Category 7     Category 1        0.017        0.002           5.439
+       Category 7     Category 2        0.017        0.005           3.129
+       Category 7     Category 3        0.025        0.003           7.656
+       Category 7     Category 4        0.025        0.013           2.113
+       Category 7     Category 5        0.025        0.015           1.584
+       Category 7     Category 6        0.017        0.006           2.557
+       Category 7     Category 7        0.000        0.016          -2.325
+       Category 7     Category 8        0.008        0.008           0.099
+       Category 7     Category 9        0.008        0.011          -0.411
+       Category 7     Category 10       0.017        0.012           0.775
+       Category 8     Category 1        0.000        0.000          -0.293
+       Category 8     Category 2        0.010        0.001           7.868
+       Category 8     Category 3        0.010        0.000          10.387
+       Category 8     Category 4        0.000        0.001          -0.694
+       Category 8     Category 5        0.031        0.002          12.798
        Category 8     Category 6        0.010        0.001           6.398
-       Category 8     Category 7        0.000        0.002          -0.846
-       Category 8     Category 8        0.000        0.001          -0.626
-       Category 8     Category 9        0.000        0.002          -0.756
+       Category 8     Category 7        0.000        0.002          -0.845
+       Category 8     Category 8        0.000        0.001          -0.625
+       Category 8     Category 9        0.000        0.002          -0.757
        Category 8     Category 10       0.000        0.002          -0.875
        Category 9     Category 1        0.000        0.000          -0.152
        Category 9     Category 2        0.000        0.000          -0.220
-       Category 9     Category 3        0.009        0.000          17.521
-       Category 9     Category 4        0.009        0.000           7.998
-       Category 9     Category 5        0.009        0.000           6.991
+       Category 9     Category 3        0.009        0.000          17.508
+       Category 9     Category 4        0.009        0.000           7.991
+       Category 9     Category 5        0.009        0.000           6.986
        Category 9     Category 6        0.000        0.000          -0.269
        Category 9     Category 7        0.000        0.001          -0.449
        Category 9     Category 8        0.000        0.000          -0.336
-       Category 9     Category 9        0.009        0.000           6.931
+       Category 9     Category 9        0.009        0.000           6.929
        Category 9     Category 10       0.000        0.001          -0.493
-       Bivariate Pearson Chi-Square                               1358.627
-       Bivariate Log-Likelihood Chi-Square                         644.338
+       Bivariate Pearson Chi-Square                               1357.518
+       Bivariate Log-Likelihood Chi-Square                         644.152
      Q228           Q266
        Category 1     Category 1        0.009        0.003           2.452
        Category 1     Category 2        0.009        0.007           0.322
@@ -2239,7 +2239,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 6        0.000        0.002          -0.751
        Category 8     Category 7        0.000        0.002          -0.741
        Category 8     Category 8        0.000        0.001          -0.703
-       Bivariate Pearson Chi-Square                                283.322
+       Bivariate Pearson Chi-Square                                283.321
        Bivariate Log-Likelihood Chi-Square                         127.238
      Q228           Q102
        Category 1     Category 1        0.000        0.000          -0.083
@@ -2457,7 +2457,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 7        0.000        0.001          -0.689
        Category 8     Category 8        0.000        0.002          -0.892
        Bivariate Pearson Chi-Square                                189.181
-       Bivariate Log-Likelihood Chi-Square                         167.442
+       Bivariate Log-Likelihood Chi-Square                         167.441
      Q228           Q283
        Category 1     Category 1        0.015        0.011           0.788
        Category 1     Category 2        0.003        0.008          -0.987
@@ -2625,88 +2625,88 @@ TECHNICAL 10 OUTPUT
        Bivariate Pearson Chi-Square                                132.766
        Bivariate Log-Likelihood Chi-Square                         110.212
      Q228           Q587
-       Category 1     Category 1        0.036        0.008           6.086
+       Category 1     Category 1        0.036        0.008           6.092
        Category 1     Category 2        0.000        0.009          -1.741
-       Category 1     Category 3        0.000        0.004          -1.104
-       Category 1     Category 4        0.000        0.010          -1.846
+       Category 1     Category 3        0.000        0.004          -1.106
+       Category 1     Category 4        0.000        0.010          -1.847
        Category 1     Category 5        0.000        0.007          -1.505
-       Category 1     Category 6        0.000        0.002          -0.805
-       Category 1     Category 7        0.000        0.004          -1.113
-       Category 1     Category 8        0.000        0.001          -0.675
+       Category 1     Category 6        0.000        0.002          -0.804
+       Category 1     Category 7        0.000        0.004          -1.112
+       Category 1     Category 8        0.000        0.001          -0.674
        Category 1     Category 9        0.000        0.001          -0.693
        Category 1     Category 10       0.000        0.001          -0.631
-       Category 2     Category 1        0.057        0.007          10.700
-       Category 2     Category 2        0.000        0.009          -1.791
-       Category 2     Category 3        0.000        0.004          -1.156
-       Category 2     Category 4        0.000        0.011          -1.962
+       Category 2     Category 1        0.057        0.007          10.710
+       Category 2     Category 2        0.000        0.009          -1.792
+       Category 2     Category 3        0.000        0.004          -1.158
+       Category 2     Category 4        0.000        0.011          -1.963
        Category 2     Category 5        0.000        0.008          -1.625
-       Category 2     Category 6        0.000        0.002          -0.875
-       Category 2     Category 7        0.000        0.004          -1.217
-       Category 2     Category 8        0.000        0.002          -0.742
+       Category 2     Category 6        0.000        0.002          -0.874
+       Category 2     Category 7        0.000        0.004          -1.216
+       Category 2     Category 8        0.000        0.002          -0.740
        Category 2     Category 9        0.000        0.002          -0.764
        Category 2     Category 10       0.000        0.001          -0.698
-       Category 3     Category 1        0.000        0.015          -2.263
-       Category 3     Category 2        0.021        0.020           0.046
-       Category 3     Category 3        0.010        0.009           0.278
-       Category 3     Category 4        0.031        0.027           0.504
+       Category 3     Category 1        0.000        0.015          -2.261
+       Category 3     Category 2        0.021        0.020           0.044
+       Category 3     Category 3        0.010        0.009           0.274
+       Category 3     Category 4        0.031        0.027           0.499
        Category 3     Category 5        0.000        0.019          -2.582
-       Category 3     Category 6        0.010        0.006           1.115
-       Category 3     Category 7        0.000        0.011          -1.973
-       Category 3     Category 8        0.000        0.004          -1.210
+       Category 3     Category 6        0.010        0.006           1.118
+       Category 3     Category 7        0.000        0.011          -1.971
+       Category 3     Category 8        0.000        0.004          -1.208
        Category 3     Category 9        0.000        0.005          -1.254
-       Category 3     Category 10       0.000        0.004          -1.153
-       Category 4     Category 1        0.000        0.024          -2.906
-       Category 4     Category 2        0.098        0.037           5.861
-       Category 4     Category 3        0.016        0.018          -0.187
-       Category 4     Category 4        0.049        0.057          -0.633
-       Category 4     Category 5        0.016        0.045          -2.562
-       Category 4     Category 6        0.000        0.014          -2.215
-       Category 4     Category 7        0.016        0.029          -1.417
-       Category 4     Category 8        0.000        0.012          -1.990
-       Category 4     Category 9        0.016        0.013           0.576
-       Category 4     Category 10       0.000        0.011          -1.956
-       Category 5     Category 1        0.036        0.024           1.363
-       Category 5     Category 2        0.048        0.042           0.503
-       Category 5     Category 3        0.084        0.022           7.791
-       Category 5     Category 4        0.072        0.079          -0.473
-       Category 5     Category 5        0.084        0.073           0.766
-       Category 5     Category 6        0.060        0.025           4.029
-       Category 5     Category 7        0.012        0.056          -3.550
-       Category 5     Category 8        0.036        0.024           1.361
+       Category 3     Category 10       0.000        0.004          -1.152
+       Category 4     Category 1        0.000        0.024          -2.903
+       Category 4     Category 2        0.098        0.037           5.857
+       Category 4     Category 3        0.016        0.018          -0.192
+       Category 4     Category 4        0.049        0.057          -0.640
+       Category 4     Category 5        0.016        0.045          -2.563
+       Category 4     Category 6        0.000        0.014          -2.214
+       Category 4     Category 7        0.016        0.029          -1.414
+       Category 4     Category 8        0.000        0.012          -1.987
+       Category 4     Category 9        0.016        0.013           0.577
+       Category 4     Category 10       0.000        0.011          -1.954
+       Category 5     Category 1        0.036        0.024           1.371
+       Category 5     Category 2        0.048        0.042           0.501
+       Category 5     Category 3        0.084        0.022           7.778
+       Category 5     Category 4        0.072        0.079          -0.482
+       Category 5     Category 5        0.084        0.073           0.761
+       Category 5     Category 6        0.060        0.025           4.032
+       Category 5     Category 7        0.012        0.056          -3.547
+       Category 5     Category 8        0.036        0.024           1.372
        Category 5     Category 9        0.036        0.029           0.761
-       Category 5     Category 10       0.048        0.028           2.248
-       Category 6     Category 1        0.036        0.004           9.143
+       Category 5     Category 10       0.048        0.028           2.255
+       Category 6     Category 1        0.036        0.004           9.159
        Category 6     Category 2        0.000        0.008          -1.633
-       Category 6     Category 3        0.000        0.004          -1.205
-       Category 6     Category 4        0.073        0.017           8.011
-       Category 6     Category 5        0.000        0.018          -2.461
+       Category 6     Category 3        0.000        0.004          -1.207
+       Category 6     Category 4        0.073        0.017           8.000
+       Category 6     Category 5        0.000        0.018          -2.462
        Category 6     Category 6        0.000        0.007          -1.507
        Category 6     Category 7        0.000        0.016          -2.357
-       Category 6     Category 8        0.000        0.008          -1.621
+       Category 6     Category 8        0.000        0.008          -1.619
        Category 6     Category 9        0.000        0.010          -1.841
-       Category 6     Category 10       0.000        0.011          -1.924
-       Category 7     Category 1        0.000        0.000          -0.359
+       Category 6     Category 10       0.000        0.011          -1.923
+       Category 7     Category 1        0.000        0.000          -0.358
        Category 7     Category 2        0.000        0.001          -0.494
        Category 7     Category 3        0.000        0.000          -0.367
-       Category 7     Category 4        0.000        0.002          -0.734
-       Category 7     Category 5        0.000        0.002          -0.764
+       Category 7     Category 4        0.000        0.002          -0.735
+       Category 7     Category 5        0.000        0.002          -0.765
        Category 7     Category 6        0.000        0.001          -0.476
        Category 7     Category 7        0.000        0.002          -0.752
        Category 7     Category 8        0.000        0.001          -0.528
        Category 7     Category 9        0.000        0.001          -0.610
-       Category 7     Category 10       0.000        0.001          -0.659
-       Category 8     Category 1        0.000        0.000          -0.311
+       Category 7     Category 10       0.000        0.001          -0.658
+       Category 8     Category 1        0.000        0.000          -0.310
        Category 8     Category 2        0.000        0.001          -0.428
        Category 8     Category 3        0.000        0.000          -0.319
-       Category 8     Category 4        0.000        0.001          -0.638
-       Category 8     Category 5        0.000        0.001          -0.666
+       Category 8     Category 4        0.000        0.001          -0.639
+       Category 8     Category 5        0.000        0.001          -0.667
        Category 8     Category 6        0.000        0.001          -0.416
        Category 8     Category 7        0.000        0.001          -0.659
        Category 8     Category 8        0.000        0.001          -0.464
        Category 8     Category 9        0.000        0.001          -0.538
        Category 8     Category 10       0.000        0.001          -0.586
-       Bivariate Pearson Chi-Square                                539.518
-       Bivariate Log-Likelihood Chi-Square                         441.654
+       Bivariate Pearson Chi-Square                                539.676
+       Bivariate Log-Likelihood Chi-Square                         441.529
      Q266           Q102
        Category 1     Category 1        0.000        0.000          -0.081
        Category 1     Category 2        0.000        0.001          -0.503
@@ -2714,7 +2714,7 @@ TECHNICAL 10 OUTPUT
        Category 1     Category 4        0.019        0.008           2.374
        Category 1     Category 5        0.006        0.003           1.122
        Category 1     Category 6        0.009        0.003           2.308
-       Category 1     Category 7        0.009        0.001           4.922
+       Category 1     Category 7        0.009        0.001           4.921
        Category 1     Category 8        0.003        0.000           5.045
        Category 2     Category 1        0.000        0.000          -0.113
        Category 2     Category 2        0.006        0.002           2.105
@@ -2923,7 +2923,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 7        0.012        0.014          -0.364
        Category 8     Category 8        0.018        0.029          -1.265
        Bivariate Pearson Chi-Square                                198.155
-       Bivariate Log-Likelihood Chi-Square                         134.892
+       Bivariate Log-Likelihood Chi-Square                         134.891
      Q266           Q283
        Category 1     Category 1        0.028        0.009           3.844
        Category 1     Category 2        0.000        0.004          -1.108
@@ -3005,7 +3005,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 8        0.009        0.010          -0.203
        Category 8     Category 9        0.012        0.008           0.811
        Category 8     Category 10       0.015        0.026          -1.255
-       Bivariate Pearson Chi-Square                                147.336
+       Bivariate Pearson Chi-Square                                147.335
        Bivariate Log-Likelihood Chi-Square                         125.192
      Q266           Q284
        Category 1     Category 1        0.016        0.008           1.474
@@ -3093,88 +3093,88 @@ TECHNICAL 10 OUTPUT
      Q266           Q587
        Category 1     Category 1        0.000        0.005          -1.335
        Category 1     Category 2        0.000        0.005          -1.245
-       Category 1     Category 3        0.000        0.002          -0.721
-       Category 1     Category 4        0.000        0.004          -1.097
+       Category 1     Category 3        0.000        0.002          -0.722
+       Category 1     Category 4        0.000        0.004          -1.098
        Category 1     Category 5        0.000        0.002          -0.795
-       Category 1     Category 6        0.000        0.000          -0.398
-       Category 1     Category 7        0.000        0.001          -0.523
-       Category 1     Category 8        0.000        0.000          -0.301
+       Category 1     Category 6        0.000        0.000          -0.397
+       Category 1     Category 7        0.000        0.001          -0.522
+       Category 1     Category 8        0.000        0.000          -0.300
        Category 1     Category 9        0.000        0.000          -0.298
        Category 1     Category 10       0.000        0.000          -0.260
-       Category 2     Category 1        0.027        0.015           1.814
-       Category 2     Category 2        0.000        0.017          -2.401
-       Category 2     Category 3        0.027        0.006           4.761
-       Category 2     Category 4        0.054        0.016           5.553
-       Category 2     Category 5        0.000        0.009          -1.766
-       Category 2     Category 6        0.000        0.002          -0.897
-       Category 2     Category 7        0.000        0.004          -1.193
-       Category 2     Category 8        0.000        0.001          -0.693
+       Category 2     Category 1        0.027        0.015           1.817
+       Category 2     Category 2        0.000        0.017          -2.402
+       Category 2     Category 3        0.027        0.006           4.752
+       Category 2     Category 4        0.054        0.016           5.547
+       Category 2     Category 5        0.000        0.009          -1.765
+       Category 2     Category 6        0.000        0.002          -0.896
+       Category 2     Category 7        0.000        0.004          -1.192
+       Category 2     Category 8        0.000        0.001          -0.691
        Category 2     Category 9        0.000        0.001          -0.690
-       Category 2     Category 10       0.000        0.001          -0.606
-       Category 3     Category 1        0.036        0.022           1.781
-       Category 3     Category 2        0.018        0.031          -1.374
-       Category 3     Category 3        0.000        0.013          -2.152
-       Category 3     Category 4        0.073        0.038           3.272
+       Category 2     Category 10       0.000        0.001          -0.605
+       Category 3     Category 1        0.036        0.022           1.787
+       Category 3     Category 2        0.018        0.031          -1.377
+       Category 3     Category 3        0.000        0.014          -2.154
+       Category 3     Category 4        0.073        0.038           3.264
        Category 3     Category 5        0.000        0.025          -2.966
-       Category 3     Category 6        0.000        0.007          -1.550
-       Category 3     Category 7        0.018        0.013           0.842
-       Category 3     Category 8        0.000        0.005          -1.246
+       Category 3     Category 6        0.000        0.007          -1.549
+       Category 3     Category 7        0.018        0.013           0.848
+       Category 3     Category 8        0.000        0.005          -1.243
        Category 3     Category 9        0.000        0.005          -1.255
-       Category 3     Category 10       0.000        0.004          -1.114
-       Category 4     Category 1        0.035        0.019           2.210
-       Category 4     Category 2        0.035        0.031           0.410
-       Category 4     Category 3        0.017        0.015           0.346
-       Category 4     Category 4        0.070        0.049           1.742
-       Category 4     Category 5        0.035        0.038          -0.320
-       Category 4     Category 6        0.035        0.012           3.998
-       Category 4     Category 7        0.000        0.023          -2.814
-       Category 4     Category 8        0.000        0.009          -1.706
-       Category 4     Category 9        0.000        0.009          -1.751
-       Category 4     Category 10       0.000        0.007          -1.583
-       Category 5     Category 1        0.015        0.011           0.749
-       Category 5     Category 2        0.044        0.020           3.295
-       Category 5     Category 3        0.030        0.010           3.485
-       Category 5     Category 4        0.030        0.038          -0.791
-       Category 5     Category 5        0.015        0.034          -1.948
-       Category 5     Category 6        0.015        0.011           0.610
-       Category 5     Category 7        0.000        0.024          -2.871
-       Category 5     Category 8        0.000        0.009          -1.803
-       Category 5     Category 9        0.015        0.010           0.787
-       Category 5     Category 10       0.030        0.009           4.021
-       Category 6     Category 1        0.000        0.007          -1.568
+       Category 3     Category 10       0.000        0.004          -1.113
+       Category 4     Category 1        0.035        0.019           2.218
+       Category 4     Category 2        0.035        0.031           0.407
+       Category 4     Category 3        0.017        0.015           0.341
+       Category 4     Category 4        0.070        0.049           1.734
+       Category 4     Category 5        0.035        0.038          -0.322
+       Category 4     Category 6        0.035        0.012           4.004
+       Category 4     Category 7        0.000        0.023          -2.811
+       Category 4     Category 8        0.000        0.008          -1.703
+       Category 4     Category 9        0.000        0.009          -1.750
+       Category 4     Category 10       0.000        0.007          -1.581
+       Category 5     Category 1        0.015        0.011           0.755
+       Category 5     Category 2        0.044        0.020           3.293
+       Category 5     Category 3        0.030        0.010           3.477
+       Category 5     Category 4        0.030        0.038          -0.797
+       Category 5     Category 5        0.015        0.034          -1.950
+       Category 5     Category 6        0.015        0.011           0.612
+       Category 5     Category 7        0.000        0.024          -2.869
+       Category 5     Category 8        0.000        0.009          -1.800
+       Category 5     Category 9        0.015        0.010           0.788
+       Category 5     Category 10       0.030        0.009           4.030
+       Category 6     Category 1        0.000        0.007          -1.566
        Category 6     Category 2        0.057        0.014           6.597
-       Category 6     Category 3        0.034        0.008           5.369
-       Category 6     Category 4        0.000        0.032          -3.334
-       Category 6     Category 5        0.023        0.033          -1.029
-       Category 6     Category 6        0.034        0.012           3.768
-       Category 6     Category 7        0.011        0.027          -1.769
-       Category 6     Category 8        0.023        0.012           1.883
+       Category 6     Category 3        0.034        0.008           5.361
+       Category 6     Category 4        0.000        0.032          -3.337
+       Category 6     Category 5        0.023        0.033          -1.032
+       Category 6     Category 6        0.034        0.012           3.770
+       Category 6     Category 7        0.011        0.027          -1.767
+       Category 6     Category 8        0.023        0.012           1.892
        Category 6     Category 9        0.000        0.014          -2.164
-       Category 6     Category 10       0.011        0.013          -0.205
-       Category 7     Category 1        0.000        0.003          -1.080
+       Category 6     Category 10       0.011        0.013          -0.202
+       Category 7     Category 1        0.000        0.003          -1.078
        Category 7     Category 2        0.010        0.007           0.690
-       Category 7     Category 3        0.010        0.004           1.730
-       Category 7     Category 4        0.021        0.018           0.353
-       Category 7     Category 5        0.021        0.021          -0.044
+       Category 7     Category 3        0.010        0.004           1.727
+       Category 7     Category 4        0.021        0.018           0.348
+       Category 7     Category 5        0.021        0.021          -0.047
        Category 7     Category 6        0.000        0.008          -1.683
        Category 7     Category 7        0.000        0.021          -2.668
-       Category 7     Category 8        0.010        0.010           0.069
+       Category 7     Category 8        0.010        0.010           0.074
        Category 7     Category 9        0.000        0.013          -2.074
-       Category 7     Category 10       0.010        0.013          -0.428
-       Category 8     Category 1        0.009        0.001           3.824
+       Category 7     Category 10       0.010        0.013          -0.425
+       Category 8     Category 1        0.009        0.001           3.833
        Category 8     Category 2        0.000        0.003          -0.988
-       Category 8     Category 3        0.009        0.002           3.171
-       Category 8     Category 4        0.000        0.008          -1.649
-       Category 8     Category 5        0.009        0.010          -0.242
+       Category 8     Category 3        0.009        0.002           3.168
+       Category 8     Category 4        0.000        0.008          -1.650
+       Category 8     Category 5        0.009        0.010          -0.244
        Category 8     Category 6        0.000        0.004          -1.230
        Category 8     Category 7        0.000        0.012          -2.043
-       Category 8     Category 8        0.000        0.007          -1.500
-       Category 8     Category 9        0.027        0.009           3.322
-       Category 8     Category 10       0.000        0.012          -2.013
-       Bivariate Pearson Chi-Square                                387.409
-       Bivariate Log-Likelihood Chi-Square                         404.098
+       Category 8     Category 8        0.000        0.007          -1.498
+       Category 8     Category 9        0.027        0.009           3.320
+       Category 8     Category 10       0.000        0.012          -2.012
+       Bivariate Pearson Chi-Square                                387.253
+       Bivariate Log-Likelihood Chi-Square                         403.946
      Q102           Q103
-       Category 1     Category 1        0.003        0.000          21.256
+       Category 1     Category 1        0.003        0.000          21.255
        Category 1     Category 2        0.000        0.000          -0.066
        Category 1     Category 3        0.000        0.000          -0.081
        Category 1     Category 4        0.000        0.000          -0.137
@@ -3254,8 +3254,8 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 8        0.018        0.006           2.638
        Category 8     Category 9        0.057        0.013           7.135
        Category 8     Category 10       0.033        0.002          12.603
-       Bivariate Pearson Chi-Square                                767.742
-       Bivariate Log-Likelihood Chi-Square                         164.094
+       Bivariate Pearson Chi-Square                                767.728
+       Bivariate Log-Likelihood Chi-Square                         164.093
      Q102           Q118
        Category 1     Category 1        0.000        0.000          -0.078
        Category 1     Category 2        0.000        0.000          -0.112
@@ -3321,7 +3321,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 6        0.021        0.012           1.599
        Category 8     Category 7        0.024        0.010           2.562
        Category 8     Category 8        0.027        0.020           0.878
-       Bivariate Pearson Chi-Square                                393.225
+       Bivariate Pearson Chi-Square                                393.224
        Bivariate Log-Likelihood Chi-Square                         156.839
      Q102           Q283
        Category 1     Category 1        0.000        0.000          -0.148
@@ -3354,7 +3354,7 @@ TECHNICAL 10 OUTPUT
        Category 3     Category 8        0.000        0.001          -0.546
        Category 3     Category 9        0.000        0.000          -0.354
        Category 3     Category 10       0.000        0.000          -0.375
-       Category 4     Category 1        0.037        0.038          -0.081
+       Category 4     Category 1        0.037        0.038          -0.082
        Category 4     Category 2        0.013        0.035          -2.256
        Category 4     Category 3        0.034        0.031           0.232
        Category 4     Category 4        0.025        0.034          -0.923
@@ -3487,7 +3487,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 8        0.009        0.009           0.012
        Category 8     Category 9        0.000        0.008          -1.631
        Category 8     Category 10       0.015        0.016          -0.243
-       Bivariate Pearson Chi-Square                                269.775
+       Bivariate Pearson Chi-Square                                269.776
        Bivariate Log-Likelihood Chi-Square                         158.198
      Q102           Q587
        Category 1     Category 1        0.000        0.000          -0.117
@@ -3500,8 +3500,8 @@ TECHNICAL 10 OUTPUT
        Category 1     Category 8        0.000        0.000          -0.030
        Category 1     Category 9        0.000        0.000          -0.030
        Category 1     Category 10       0.000        0.000          -0.027
-       Category 2     Category 1        0.000        0.002          -0.750
-       Category 2     Category 2        0.000        0.002          -0.716
+       Category 2     Category 1        0.000        0.002          -0.749
+       Category 2     Category 2        0.000        0.002          -0.717
        Category 2     Category 3        0.000        0.001          -0.426
        Category 2     Category 4        0.000        0.001          -0.665
        Category 2     Category 5        0.000        0.001          -0.501
@@ -3509,69 +3509,69 @@ TECHNICAL 10 OUTPUT
        Category 2     Category 7        0.000        0.000          -0.342
        Category 2     Category 8        0.000        0.000          -0.200
        Category 2     Category 9        0.000        0.000          -0.201
-       Category 2     Category 10       0.000        0.000          -0.178
-       Category 3     Category 1        0.000        0.010          -1.816
-       Category 3     Category 2        0.026        0.010           2.820
-       Category 3     Category 3        0.000        0.004          -1.141
-       Category 3     Category 4        0.000        0.010          -1.824
+       Category 2     Category 10       0.000        0.000          -0.177
+       Category 3     Category 1        0.000        0.010          -1.815
+       Category 3     Category 2        0.026        0.010           2.816
+       Category 3     Category 3        0.000        0.004          -1.142
+       Category 3     Category 4        0.000        0.010          -1.826
        Category 3     Category 5        0.000        0.006          -1.399
-       Category 3     Category 6        0.000        0.002          -0.721
-       Category 3     Category 7        0.000        0.003          -0.969
-       Category 3     Category 8        0.000        0.001          -0.569
+       Category 3     Category 6        0.000        0.002          -0.720
+       Category 3     Category 7        0.000        0.003          -0.967
+       Category 3     Category 8        0.000        0.001          -0.568
        Category 3     Category 9        0.000        0.001          -0.572
-       Category 3     Category 10       0.026        0.001          16.610
-       Category 4     Category 1        0.025        0.029          -0.355
-       Category 4     Category 2        0.051        0.039           1.164
-       Category 4     Category 3        0.025        0.017           1.283
-       Category 4     Category 4        0.025        0.047          -1.890
+       Category 3     Category 10       0.026        0.001          16.636
+       Category 4     Category 1        0.025        0.029          -0.350
+       Category 4     Category 2        0.051        0.039           1.160
+       Category 4     Category 3        0.025        0.017           1.276
+       Category 4     Category 4        0.025        0.047          -1.895
        Category 4     Category 5        0.013        0.032          -1.994
-       Category 4     Category 6        0.000        0.009          -1.754
-       Category 4     Category 7        0.000        0.017          -2.413
-       Category 4     Category 8        0.000        0.006          -1.439
-       Category 4     Category 9        0.025        0.006           4.458
-       Category 4     Category 10       0.013        0.005           1.985
-       Category 5     Category 1        0.036        0.015           3.118
-       Category 5     Category 2        0.012        0.025          -1.490
-       Category 5     Category 3        0.012        0.012           0.047
-       Category 5     Category 4        0.024        0.038          -1.325
-       Category 5     Category 5        0.024        0.029          -0.563
-       Category 5     Category 6        0.024        0.009           2.959
-       Category 5     Category 7        0.000        0.018          -2.474
-       Category 5     Category 8        0.000        0.007          -1.514
-       Category 5     Category 9        0.000        0.007          -1.564
-       Category 5     Category 10       0.012        0.006           1.455
-       Category 6     Category 1        0.017        0.018          -0.221
-       Category 6     Category 2        0.067        0.033           3.540
-       Category 6     Category 3        0.050        0.017           4.713
-       Category 6     Category 4        0.084        0.062           1.709
-       Category 6     Category 5        0.034        0.056          -1.764
-       Category 6     Category 6        0.000        0.019          -2.542
-       Category 6     Category 7        0.000        0.040          -3.756
-       Category 6     Category 8        0.017        0.016           0.067
-       Category 6     Category 9        0.000        0.018          -2.522
-       Category 6     Category 10       0.017        0.016           0.073
-       Category 7     Category 1        0.012        0.009           0.739
+       Category 4     Category 6        0.000        0.009          -1.752
+       Category 4     Category 7        0.000        0.017          -2.410
+       Category 4     Category 8        0.000        0.006          -1.436
+       Category 4     Category 9        0.025        0.006           4.461
+       Category 4     Category 10       0.013        0.005           1.992
+       Category 5     Category 1        0.036        0.015           3.125
+       Category 5     Category 2        0.012        0.025          -1.492
+       Category 5     Category 3        0.012        0.012           0.043
+       Category 5     Category 4        0.024        0.038          -1.331
+       Category 5     Category 5        0.024        0.029          -0.564
+       Category 5     Category 6        0.024        0.009           2.963
+       Category 5     Category 7        0.000        0.018          -2.472
+       Category 5     Category 8        0.000        0.007          -1.511
+       Category 5     Category 9        0.000        0.007          -1.563
+       Category 5     Category 10       0.012        0.006           1.460
+       Category 6     Category 1        0.017        0.018          -0.215
+       Category 6     Category 2        0.067        0.033           3.539
+       Category 6     Category 3        0.050        0.017           4.703
+       Category 6     Category 4        0.084        0.062           1.699
+       Category 6     Category 5        0.034        0.056          -1.767
+       Category 6     Category 6        0.000        0.019          -2.541
+       Category 6     Category 7        0.000        0.040          -3.754
+       Category 6     Category 8        0.017        0.016           0.075
+       Category 6     Category 9        0.000        0.018          -2.521
+       Category 6     Category 10       0.017        0.016           0.078
+       Category 7     Category 1        0.012        0.009           0.745
        Category 7     Category 2        0.012        0.017          -0.650
-       Category 7     Category 3        0.012        0.009           0.525
-       Category 7     Category 4        0.037        0.038          -0.155
-       Category 7     Category 5        0.037        0.041          -0.419
-       Category 7     Category 6        0.024        0.016           1.303
-       Category 7     Category 7        0.024        0.038          -1.268
-       Category 7     Category 8        0.024        0.017           0.981
-       Category 7     Category 9        0.024        0.022           0.341
-       Category 7     Category 10       0.000        0.022          -2.768
-       Category 8     Category 1        0.000        0.001          -0.648
-       Category 8     Category 2        0.019        0.003           5.991
-       Category 8     Category 3        0.038        0.002          17.300
-       Category 8     Category 4        0.038        0.007           7.158
-       Category 8     Category 5        0.000        0.008          -1.649
+       Category 7     Category 3        0.012        0.009           0.521
+       Category 7     Category 4        0.037        0.038          -0.162
+       Category 7     Category 5        0.037        0.041          -0.423
+       Category 7     Category 6        0.024        0.016           1.304
+       Category 7     Category 7        0.024        0.038          -1.265
+       Category 7     Category 8        0.024        0.017           0.989
+       Category 7     Category 9        0.024        0.022           0.340
+       Category 7     Category 10       0.000        0.022          -2.766
+       Category 8     Category 1        0.000        0.001          -0.647
+       Category 8     Category 2        0.019        0.003           5.993
+       Category 8     Category 3        0.038        0.002          17.286
+       Category 8     Category 4        0.038        0.007           7.149
+       Category 8     Category 5        0.000        0.008          -1.650
        Category 8     Category 6        0.038        0.003          11.041
-       Category 8     Category 7        0.000        0.009          -1.741
-       Category 8     Category 8        0.000        0.005          -1.263
-       Category 8     Category 9        0.000        0.007          -1.498
-       Category 8     Category 10       0.000        0.008          -1.674
-       Bivariate Pearson Chi-Square                                976.551
-       Bivariate Log-Likelihood Chi-Square                         429.744
+       Category 8     Category 7        0.000        0.009          -1.740
+       Category 8     Category 8        0.000        0.005          -1.261
+       Category 8     Category 9        0.000        0.007          -1.499
+       Category 8     Category 10       0.000        0.008          -1.673
+       Bivariate Pearson Chi-Square                                976.765
+       Bivariate Log-Likelihood Chi-Square                         429.580
      Q103           Q118
        Category 1     Category 1        0.000        0.001          -0.506
        Category 1     Category 2        0.000        0.001          -0.692
@@ -3756,7 +3756,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 8        0.003        0.001           1.210
        Category 10    Category 9        0.000        0.001          -0.540
        Category 10    Category 10       0.003        0.004          -0.302
-       Bivariate Pearson Chi-Square                                700.613
+       Bivariate Pearson Chi-Square                                700.614
        Bivariate Log-Likelihood Chi-Square                         181.612
      Q103           Q284
        Category 1     Category 1        0.000        0.002          -0.908
@@ -3859,7 +3859,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 8        0.000        0.001          -0.625
        Category 10    Category 9        0.000        0.001          -0.639
        Category 10    Category 10       0.003        0.004          -0.277
-       Bivariate Pearson Chi-Square                                702.722
+       Bivariate Pearson Chi-Square                                702.723
        Bivariate Log-Likelihood Chi-Square                         213.881
      Q103           Q587
        Category 1     Category 1        0.000        0.002          -0.718
@@ -3872,98 +3872,98 @@ TECHNICAL 10 OUTPUT
        Category 1     Category 8        0.000        0.000          -0.146
        Category 1     Category 9        0.000        0.000          -0.145
        Category 1     Category 10       0.000        0.000          -0.126
-       Category 2     Category 1        0.000        0.004          -1.143
-       Category 2     Category 2        0.029        0.003           8.044
-       Category 2     Category 3        0.000        0.001          -0.632
+       Category 2     Category 1        0.000        0.004          -1.142
+       Category 2     Category 2        0.029        0.003           8.038
+       Category 2     Category 3        0.000        0.001          -0.633
        Category 2     Category 4        0.000        0.003          -0.965
-       Category 2     Category 5        0.000        0.001          -0.701
-       Category 2     Category 6        0.000        0.000          -0.351
-       Category 2     Category 7        0.000        0.001          -0.461
+       Category 2     Category 5        0.000        0.001          -0.700
+       Category 2     Category 6        0.000        0.000          -0.350
+       Category 2     Category 7        0.000        0.001          -0.460
        Category 2     Category 8        0.000        0.000          -0.265
        Category 2     Category 9        0.000        0.000          -0.263
-       Category 2     Category 10       0.000        0.000          -0.230
-       Category 3     Category 1        0.000        0.007          -1.557
-       Category 3     Category 2        0.000        0.007          -1.595
-       Category 3     Category 3        0.000        0.003          -0.960
-       Category 3     Category 4        0.000        0.007          -1.501
+       Category 2     Category 10       0.000        0.000          -0.229
+       Category 3     Category 1        0.000        0.007          -1.556
+       Category 3     Category 2        0.000        0.007          -1.596
+       Category 3     Category 3        0.000        0.003          -0.961
+       Category 3     Category 4        0.000        0.007          -1.502
        Category 3     Category 5        0.000        0.004          -1.115
        Category 3     Category 6        0.000        0.001          -0.563
-       Category 3     Category 7        0.000        0.002          -0.745
-       Category 3     Category 8        0.000        0.001          -0.431
+       Category 3     Category 7        0.000        0.002          -0.744
+       Category 3     Category 8        0.000        0.001          -0.430
        Category 3     Category 9        0.000        0.001          -0.428
-       Category 3     Category 10       0.000        0.000          -0.375
-       Category 4     Category 1        0.024        0.027          -0.385
-       Category 4     Category 2        0.072        0.036           3.455
-       Category 4     Category 3        0.000        0.015          -2.294
-       Category 4     Category 4        0.024        0.042          -1.682
-       Category 4     Category 5        0.048        0.027           2.375
-       Category 4     Category 6        0.000        0.007          -1.585
-       Category 4     Category 7        0.000        0.013          -2.145
-       Category 4     Category 8        0.000        0.005          -1.260
-       Category 4     Category 9        0.000        0.005          -1.266
-       Category 4     Category 10       0.024        0.004           6.131
-       Category 5     Category 1        0.037        0.019           2.457
-       Category 5     Category 2        0.049        0.031           1.977
-       Category 5     Category 3        0.025        0.015           1.501
-       Category 5     Category 4        0.025        0.047          -1.957
-       Category 5     Category 5        0.000        0.036          -3.537
-       Category 5     Category 6        0.012        0.011           0.282
-       Category 5     Category 7        0.012        0.021          -1.094
-       Category 5     Category 8        0.000        0.008          -1.617
-       Category 5     Category 9        0.012        0.008           0.878
-       Category 5     Category 10       0.000        0.007          -1.490
-       Category 6     Category 1        0.012        0.011           0.252
-       Category 6     Category 2        0.012        0.019          -0.976
-       Category 6     Category 3        0.012        0.010           0.359
-       Category 6     Category 4        0.036        0.036           0.018
-       Category 6     Category 5        0.024        0.032          -0.772
-       Category 6     Category 6        0.000        0.010          -1.879
-       Category 6     Category 7        0.000        0.021          -2.717
-       Category 6     Category 8        0.024        0.008           3.207
+       Category 3     Category 10       0.000        0.000          -0.374
+       Category 4     Category 1        0.024        0.027          -0.380
+       Category 4     Category 2        0.072        0.036           3.450
+       Category 4     Category 3        0.000        0.015          -2.296
+       Category 4     Category 4        0.024        0.042          -1.686
+       Category 4     Category 5        0.048        0.027           2.376
+       Category 4     Category 6        0.000        0.007          -1.583
+       Category 4     Category 7        0.000        0.013          -2.143
+       Category 4     Category 8        0.000        0.005          -1.257
+       Category 4     Category 9        0.000        0.005          -1.265
+       Category 4     Category 10       0.024        0.004           6.143
+       Category 5     Category 1        0.037        0.019           2.465
+       Category 5     Category 2        0.049        0.031           1.975
+       Category 5     Category 3        0.025        0.015           1.494
+       Category 5     Category 4        0.025        0.047          -1.962
+       Category 5     Category 5        0.000        0.036          -3.538
+       Category 5     Category 6        0.012        0.011           0.285
+       Category 5     Category 7        0.012        0.021          -1.090
+       Category 5     Category 8        0.000        0.008          -1.614
+       Category 5     Category 9        0.012        0.008           0.880
+       Category 5     Category 10       0.000        0.006          -1.488
+       Category 6     Category 1        0.012        0.011           0.257
+       Category 6     Category 2        0.012        0.019          -0.977
+       Category 6     Category 3        0.012        0.010           0.355
+       Category 6     Category 4        0.036        0.036           0.011
+       Category 6     Category 5        0.024        0.032          -0.774
+       Category 6     Category 6        0.000        0.010          -1.878
+       Category 6     Category 7        0.000        0.021          -2.715
+       Category 6     Category 8        0.024        0.008           3.219
        Category 6     Category 9        0.000        0.009          -1.767
-       Category 6     Category 10       0.024        0.008           3.469
-       Category 7     Category 1        0.030        0.011           3.435
-       Category 7     Category 2        0.030        0.021           1.130
-       Category 7     Category 3        0.060        0.012           8.185
-       Category 7     Category 4        0.015        0.047          -2.791
-       Category 7     Category 5        0.060        0.048           1.025
-       Category 7     Category 6        0.015        0.018          -0.346
-       Category 7     Category 7        0.015        0.040          -2.327
-       Category 7     Category 8        0.015        0.017          -0.316
+       Category 6     Category 10       0.024        0.008           3.476
+       Category 7     Category 1        0.030        0.011           3.445
+       Category 7     Category 2        0.030        0.021           1.131
+       Category 7     Category 3        0.060        0.012           8.174
+       Category 7     Category 4        0.015        0.047          -2.796
+       Category 7     Category 5        0.060        0.048           1.020
+       Category 7     Category 6        0.015        0.017          -0.344
+       Category 7     Category 7        0.015        0.040          -2.325
+       Category 7     Category 8        0.015        0.017          -0.309
        Category 7     Category 9        0.015        0.020          -0.677
-       Category 7     Category 10       0.000        0.019          -2.542
-       Category 8     Category 1        0.000        0.002          -0.763
+       Category 7     Category 10       0.000        0.019          -2.540
+       Category 8     Category 1        0.000        0.002          -0.762
        Category 8     Category 2        0.000        0.004          -1.102
-       Category 8     Category 3        0.010        0.002           3.048
-       Category 8     Category 4        0.039        0.009           5.757
-       Category 8     Category 5        0.000        0.011          -1.914
+       Category 8     Category 3        0.010        0.002           3.044
+       Category 8     Category 4        0.039        0.009           5.749
+       Category 8     Category 5        0.000        0.011          -1.915
        Category 8     Category 6        0.019        0.004           4.274
        Category 8     Category 7        0.000        0.011          -1.912
-       Category 8     Category 8        0.000        0.005          -1.325
+       Category 8     Category 8        0.000        0.005          -1.323
        Category 8     Category 9        0.010        0.007           0.720
-       Category 8     Category 10       0.000        0.007          -1.518
-       Category 9     Category 1        0.000        0.002          -0.762
-       Category 9     Category 2        0.014        0.004           3.283
-       Category 9     Category 3        0.014        0.002           4.778
-       Category 9     Category 4        0.043        0.010           6.154
-       Category 9     Category 5        0.000        0.013          -2.082
+       Category 8     Category 10       0.000        0.007          -1.517
+       Category 9     Category 1        0.000        0.002          -0.760
+       Category 9     Category 2        0.014        0.004           3.284
+       Category 9     Category 3        0.014        0.002           4.774
+       Category 9     Category 4        0.043        0.010           6.146
+       Category 9     Category 5        0.000        0.013          -2.084
        Category 9     Category 6        0.029        0.005           5.885
-       Category 9     Category 7        0.000        0.014          -2.231
-       Category 9     Category 8        0.000        0.008          -1.617
-       Category 9     Category 9        0.014        0.011           0.677
-       Category 9     Category 10       0.014        0.013           0.290
-       Category 10    Category 1        0.000        0.000          -0.201
+       Category 9     Category 7        0.000        0.014          -2.230
+       Category 9     Category 8        0.000        0.008          -1.615
+       Category 9     Category 9        0.014        0.011           0.675
+       Category 9     Category 10       0.014        0.013           0.292
+       Category 10    Category 1        0.000        0.000          -0.200
        Category 10    Category 2        0.000        0.000          -0.296
        Category 10    Category 3        0.000        0.000          -0.233
-       Category 10    Category 4        0.000        0.001          -0.504
+       Category 10    Category 4        0.000        0.001          -0.505
        Category 10    Category 5        0.000        0.001          -0.589
        Category 10    Category 6        0.000        0.000          -0.396
        Category 10    Category 7        0.000        0.001          -0.677
        Category 10    Category 8        0.000        0.001          -0.518
        Category 10    Category 9        0.000        0.001          -0.647
        Category 10    Category 10       0.000        0.002          -0.795
-       Bivariate Pearson Chi-Square                                519.999
-       Bivariate Log-Likelihood Chi-Square                         431.197
+       Bivariate Pearson Chi-Square                                519.744
+       Bivariate Log-Likelihood Chi-Square                         431.066
      Q118           Q283
        Category 1     Category 1        0.015        0.007           1.740
        Category 1     Category 2        0.000        0.002          -0.797
@@ -4129,90 +4129,90 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 9        0.033        0.020           1.582
        Category 8     Category 10       0.030        0.040          -1.004
        Bivariate Pearson Chi-Square                                194.307
-       Bivariate Log-Likelihood Chi-Square                         136.206
+       Bivariate Log-Likelihood Chi-Square                         136.205
      Q118           Q587
        Category 1     Category 1        0.000        0.004          -1.172
-       Category 1     Category 2        0.000        0.003          -0.984
+       Category 1     Category 2        0.000        0.003          -0.985
        Category 1     Category 3        0.000        0.001          -0.534
        Category 1     Category 4        0.000        0.002          -0.764
        Category 1     Category 5        0.000        0.001          -0.513
-       Category 1     Category 6        0.000        0.000          -0.247
+       Category 1     Category 6        0.000        0.000          -0.246
        Category 1     Category 7        0.000        0.000          -0.315
-       Category 1     Category 8        0.000        0.000          -0.177
+       Category 1     Category 8        0.000        0.000          -0.176
        Category 1     Category 9        0.000        0.000          -0.172
        Category 1     Category 10       0.000        0.000          -0.148
-       Category 2     Category 1        0.035        0.014           3.309
-       Category 2     Category 2        0.035        0.014           3.239
-       Category 2     Category 3        0.000        0.005          -1.293
-       Category 2     Category 4        0.000        0.011          -1.965
+       Category 2     Category 1        0.035        0.014           3.313
+       Category 2     Category 2        0.035        0.014           3.234
+       Category 2     Category 3        0.000        0.005          -1.295
+       Category 2     Category 4        0.000        0.011          -1.966
        Category 2     Category 5        0.000        0.006          -1.392
-       Category 2     Category 6        0.000        0.001          -0.683
-       Category 2     Category 7        0.000        0.002          -0.885
-       Category 2     Category 8        0.000        0.001          -0.501
+       Category 2     Category 6        0.000        0.001          -0.682
+       Category 2     Category 7        0.000        0.002          -0.883
+       Category 2     Category 8        0.000        0.001          -0.500
        Category 2     Category 9        0.000        0.001          -0.491
-       Category 2     Category 10       0.000        0.001          -0.424
-       Category 3     Category 1        0.047        0.014           5.251
-       Category 3     Category 2        0.000        0.018          -2.481
-       Category 3     Category 3        0.000        0.007          -1.562
-       Category 3     Category 4        0.047        0.018           3.908
-       Category 3     Category 5        0.000        0.011          -1.900
-       Category 3     Category 6        0.000        0.003          -0.957
-       Category 3     Category 7        0.000        0.005          -1.260
-       Category 3     Category 8        0.000        0.002          -0.723
-       Category 3     Category 9        0.000        0.002          -0.714
-       Category 3     Category 10       0.000        0.001          -0.621
-       Category 4     Category 1        0.040        0.020           2.563
-       Category 4     Category 2        0.053        0.031           2.291
-       Category 4     Category 3        0.040        0.014           3.948
-       Category 4     Category 4        0.053        0.042           0.988
+       Category 2     Category 10       0.000        0.001          -0.423
+       Category 3     Category 1        0.047        0.014           5.257
+       Category 3     Category 2        0.000        0.018          -2.482
+       Category 3     Category 3        0.000        0.007          -1.564
+       Category 3     Category 4        0.047        0.018           3.902
+       Category 3     Category 5        0.000        0.011          -1.899
+       Category 3     Category 6        0.000        0.003          -0.955
+       Category 3     Category 7        0.000        0.005          -1.258
+       Category 3     Category 8        0.000        0.002          -0.721
+       Category 3     Category 9        0.000        0.001          -0.713
+       Category 3     Category 10       0.000        0.001          -0.620
+       Category 4     Category 1        0.040        0.020           2.571
+       Category 4     Category 2        0.053        0.031           2.287
+       Category 4     Category 3        0.040        0.014           3.938
+       Category 4     Category 4        0.053        0.042           0.981
        Category 4     Category 5        0.013        0.028          -1.669
-       Category 4     Category 6        0.013        0.008           1.134
-       Category 4     Category 7        0.000        0.014          -2.213
-       Category 4     Category 8        0.000        0.005          -1.295
+       Category 4     Category 6        0.013        0.008           1.139
+       Category 4     Category 7        0.000        0.014          -2.211
+       Category 4     Category 8        0.000        0.005          -1.292
        Category 4     Category 9        0.000        0.005          -1.295
-       Category 4     Category 10       0.000        0.004          -1.139
-       Category 5     Category 1        0.000        0.017          -2.407
-       Category 5     Category 2        0.059        0.030           3.042
-       Category 5     Category 3        0.029        0.016           2.028
-       Category 5     Category 4        0.044        0.054          -0.808
-       Category 5     Category 5        0.015        0.044          -2.636
-       Category 5     Category 6        0.000        0.014          -2.165
-       Category 5     Category 7        0.015        0.027          -1.383
-       Category 5     Category 8        0.000        0.010          -1.848
-       Category 5     Category 9        0.015        0.010           0.771
-       Category 5     Category 10       0.015        0.008           1.259
-       Category 6     Category 1        0.000        0.010          -1.854
+       Category 4     Category 10       0.000        0.004          -1.138
+       Category 5     Category 1        0.000        0.017          -2.404
+       Category 5     Category 2        0.059        0.030           3.040
+       Category 5     Category 3        0.029        0.016           2.021
+       Category 5     Category 4        0.044        0.054          -0.816
+       Category 5     Category 5        0.015        0.044          -2.637
+       Category 5     Category 6        0.000        0.014          -2.163
+       Category 5     Category 7        0.015        0.027          -1.379
+       Category 5     Category 8        0.000        0.010          -1.845
+       Category 5     Category 9        0.015        0.010           0.773
+       Category 5     Category 10       0.015        0.008           1.265
+       Category 6     Category 1        0.000        0.010          -1.851
        Category 6     Category 2        0.027        0.020           0.880
-       Category 6     Category 3        0.000        0.011          -1.985
-       Category 6     Category 4        0.027        0.046          -1.649
-       Category 6     Category 5        0.027        0.046          -1.658
-       Category 6     Category 6        0.027        0.016           1.576
-       Category 6     Category 7        0.000        0.035          -3.524
-       Category 6     Category 8        0.013        0.015          -0.180
-       Category 6     Category 9        0.000        0.016          -2.379
-       Category 6     Category 10       0.000        0.014          -2.218
-       Category 7     Category 1        0.012        0.003           3.111
-       Category 7     Category 2        0.012        0.007           1.328
-       Category 7     Category 3        0.012        0.004           2.463
-       Category 7     Category 4        0.025        0.017           1.015
-       Category 7     Category 5        0.025        0.021           0.513
+       Category 6     Category 3        0.000        0.012          -1.987
+       Category 6     Category 4        0.027        0.046          -1.656
+       Category 6     Category 5        0.027        0.046          -1.661
+       Category 6     Category 6        0.027        0.016           1.578
+       Category 6     Category 7        0.000        0.035          -3.522
+       Category 6     Category 8        0.013        0.015          -0.173
+       Category 6     Category 9        0.000        0.016          -2.378
+       Category 6     Category 10       0.000        0.014          -2.216
+       Category 7     Category 1        0.012        0.003           3.120
+       Category 7     Category 2        0.012        0.007           1.329
+       Category 7     Category 3        0.012        0.004           2.459
+       Category 7     Category 4        0.025        0.017           1.010
+       Category 7     Category 5        0.025        0.021           0.509
        Category 7     Category 6        0.025        0.008           3.355
-       Category 7     Category 7        0.012        0.020          -1.016
-       Category 7     Category 8        0.000        0.009          -1.789
+       Category 7     Category 7        0.012        0.020          -1.015
+       Category 7     Category 8        0.000        0.009          -1.787
        Category 7     Category 9        0.012        0.011           0.156
-       Category 7     Category 10       0.037        0.011           4.581
-       Category 8     Category 1        0.000        0.002          -0.776
-       Category 8     Category 2        0.000        0.004          -1.162
-       Category 8     Category 3        0.038        0.002          13.099
-       Category 8     Category 4        0.013        0.012           0.120
-       Category 8     Category 5        0.025        0.016           1.301
+       Category 7     Category 10       0.037        0.011           4.588
+       Category 8     Category 1        0.000        0.002          -0.775
+       Category 8     Category 2        0.000        0.004          -1.161
+       Category 8     Category 3        0.038        0.003          13.090
+       Category 8     Category 4        0.013        0.012           0.117
+       Category 8     Category 5        0.025        0.016           1.296
        Category 8     Category 6        0.013        0.007           1.162
        Category 8     Category 7        0.000        0.020          -2.654
-       Category 8     Category 8        0.025        0.011           2.497
-       Category 8     Category 9        0.025        0.016           1.417
-       Category 8     Category 10       0.000        0.019          -2.575
-       Bivariate Pearson Chi-Square                                462.234
-       Bivariate Log-Likelihood Chi-Square                         388.008
+       Category 8     Category 8        0.025        0.011           2.505
+       Category 8     Category 9        0.025        0.016           1.416
+       Category 8     Category 10       0.000        0.019          -2.574
+       Bivariate Pearson Chi-Square                                461.975
+       Bivariate Log-Likelihood Chi-Square                         387.810
      Q283           Q284
        Category 1     Category 1        0.037        0.035           0.135
        Category 1     Category 2        0.023        0.019           0.405
@@ -4314,230 +4314,230 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 8        0.006        0.016          -1.445
        Category 10    Category 9        0.018        0.016           0.230
        Category 10    Category 10       0.018        0.035          -1.755
-       Bivariate Pearson Chi-Square                                111.393
+       Bivariate Pearson Chi-Square                                111.394
        Bivariate Log-Likelihood Chi-Square                         118.585
      Q283           Q587
-       Category 1     Category 1        0.039        0.022           2.044
-       Category 1     Category 2        0.039        0.022           2.064
-       Category 1     Category 3        0.000        0.008          -1.626
-       Category 1     Category 4        0.000        0.018          -2.477
+       Category 1     Category 1        0.039        0.022           2.048
+       Category 1     Category 2        0.039        0.022           2.059
+       Category 1     Category 3        0.000        0.008          -1.628
+       Category 1     Category 4        0.000        0.018          -2.479
        Category 1     Category 5        0.000        0.009          -1.753
-       Category 1     Category 6        0.000        0.002          -0.859
-       Category 1     Category 7        0.000        0.004          -1.113
-       Category 1     Category 8        0.000        0.001          -0.629
-       Category 1     Category 9        0.000        0.001          -0.617
-       Category 1     Category 10       0.000        0.001          -0.532
-       Category 2     Category 1        0.012        0.015          -0.396
-       Category 2     Category 2        0.025        0.021           0.534
-       Category 2     Category 3        0.012        0.009           0.755
-       Category 2     Category 4        0.037        0.023           1.743
+       Category 1     Category 6        0.000        0.002          -0.858
+       Category 1     Category 7        0.000        0.004          -1.111
+       Category 1     Category 8        0.000        0.001          -0.628
+       Category 1     Category 9        0.000        0.001          -0.616
+       Category 1     Category 10       0.000        0.001          -0.531
+       Category 2     Category 1        0.012        0.015          -0.392
+       Category 2     Category 2        0.025        0.021           0.531
+       Category 2     Category 3        0.012        0.009           0.750
+       Category 2     Category 4        0.037        0.023           1.738
        Category 2     Category 5        0.000        0.014          -2.162
-       Category 2     Category 6        0.000        0.004          -1.096
-       Category 2     Category 7        0.000        0.006          -1.450
-       Category 2     Category 8        0.000        0.002          -0.835
-       Category 2     Category 9        0.000        0.002          -0.826
-       Category 2     Category 10       0.000        0.002          -0.719
-       Category 3     Category 1        0.000        0.012          -2.012
-       Category 3     Category 2        0.069        0.019           6.821
-       Category 3     Category 3        0.046        0.009           7.435
-       Category 3     Category 4        0.023        0.025          -0.294
+       Category 2     Category 6        0.000        0.004          -1.095
+       Category 2     Category 7        0.000        0.006          -1.448
+       Category 2     Category 8        0.000        0.002          -0.833
+       Category 2     Category 9        0.000        0.002          -0.825
+       Category 2     Category 10       0.000        0.002          -0.718
+       Category 3     Category 1        0.000        0.012          -2.010
+       Category 3     Category 2        0.069        0.019           6.816
+       Category 3     Category 3        0.046        0.009           7.423
+       Category 3     Category 4        0.023        0.025          -0.298
        Category 3     Category 5        0.000        0.017          -2.422
-       Category 3     Category 6        0.000        0.005          -1.264
-       Category 3     Category 7        0.000        0.009          -1.706
-       Category 3     Category 8        0.000        0.003          -0.998
-       Category 3     Category 9        0.000        0.003          -0.997
-       Category 3     Category 10       0.000        0.002          -0.876
-       Category 4     Category 1        0.021        0.012           1.610
-       Category 4     Category 2        0.000        0.021          -2.678
-       Category 4     Category 3        0.000        0.010          -1.880
-       Category 4     Category 4        0.043        0.034           0.922
-       Category 4     Category 5        0.043        0.026           2.002
-       Category 4     Category 6        0.000        0.008          -1.609
-       Category 4     Category 7        0.000        0.014          -2.225
-       Category 4     Category 8        0.000        0.005          -1.328
-       Category 4     Category 9        0.000        0.005          -1.344
-       Category 4     Category 10       0.021        0.004           4.903
-       Category 5     Category 1        0.009        0.008           0.041
-       Category 5     Category 2        0.026        0.016           1.477
-       Category 5     Category 3        0.009        0.009           0.028
-       Category 5     Category 4        0.017        0.031          -1.428
-       Category 5     Category 5        0.009        0.027          -2.046
-       Category 5     Category 6        0.009        0.008           0.045
-       Category 5     Category 7        0.009        0.017          -1.183
-       Category 5     Category 8        0.000        0.006          -1.482
-       Category 5     Category 9        0.000        0.007          -1.524
-       Category 5     Category 10       0.009        0.006           0.775
-       Category 6     Category 1        0.000        0.005          -1.352
+       Category 3     Category 6        0.000        0.005          -1.263
+       Category 3     Category 7        0.000        0.008          -1.704
+       Category 3     Category 8        0.000        0.003          -0.996
+       Category 3     Category 9        0.000        0.003          -0.996
+       Category 3     Category 10       0.000        0.002          -0.874
+       Category 4     Category 1        0.021        0.012           1.616
+       Category 4     Category 2        0.000        0.021          -2.679
+       Category 4     Category 3        0.000        0.010          -1.883
+       Category 4     Category 4        0.043        0.034           0.915
+       Category 4     Category 5        0.043        0.026           2.000
+       Category 4     Category 6        0.000        0.008          -1.607
+       Category 4     Category 7        0.000        0.014          -2.223
+       Category 4     Category 8        0.000        0.005          -1.326
+       Category 4     Category 9        0.000        0.005          -1.343
+       Category 4     Category 10       0.021        0.004           4.913
+       Category 5     Category 1        0.009        0.008           0.046
+       Category 5     Category 2        0.026        0.016           1.476
+       Category 5     Category 3        0.009        0.009           0.024
+       Category 5     Category 4        0.017        0.031          -1.433
+       Category 5     Category 5        0.009        0.027          -2.047
+       Category 5     Category 6        0.009        0.008           0.046
+       Category 5     Category 7        0.009        0.017          -1.180
+       Category 5     Category 8        0.000        0.006          -1.480
+       Category 5     Category 9        0.000        0.007          -1.523
+       Category 5     Category 10       0.009        0.006           0.779
+       Category 6     Category 1        0.000        0.005          -1.350
        Category 6     Category 2        0.016        0.011           0.958
-       Category 6     Category 3        0.000        0.006          -1.432
-       Category 6     Category 4        0.048        0.023           3.022
-       Category 6     Category 5        0.016        0.023          -0.802
-       Category 6     Category 6        0.032        0.008           5.135
-       Category 6     Category 7        0.000        0.016          -2.377
-       Category 6     Category 8        0.000        0.007          -1.499
+       Category 6     Category 3        0.000        0.006          -1.433
+       Category 6     Category 4        0.048        0.023           3.013
+       Category 6     Category 5        0.016        0.023          -0.804
+       Category 6     Category 6        0.032        0.008           5.138
+       Category 6     Category 7        0.000        0.016          -2.375
+       Category 6     Category 8        0.000        0.007          -1.496
        Category 6     Category 9        0.016        0.007           1.922
-       Category 6     Category 10       0.000        0.006          -1.445
-       Category 7     Category 1        0.027        0.004           6.674
+       Category 6     Category 10       0.000        0.006          -1.443
+       Category 7     Category 1        0.027        0.004           6.688
        Category 7     Category 2        0.000        0.008          -1.686
-       Category 7     Category 3        0.027        0.005           5.820
-       Category 7     Category 4        0.027        0.020           0.866
-       Category 7     Category 5        0.013        0.022          -1.043
-       Category 7     Category 6        0.013        0.008           1.129
-       Category 7     Category 7        0.000        0.018          -2.496
-       Category 7     Category 8        0.013        0.008           1.200
+       Category 7     Category 3        0.027        0.005           5.813
+       Category 7     Category 4        0.027        0.020           0.860
+       Category 7     Category 5        0.013        0.022          -1.046
+       Category 7     Category 6        0.013        0.008           1.130
+       Category 7     Category 7        0.000        0.018          -2.495
+       Category 7     Category 8        0.013        0.008           1.207
        Category 7     Category 9        0.000        0.009          -1.739
-       Category 7     Category 10       0.013        0.008           1.158
-       Category 8     Category 1        0.000        0.002          -0.885
-       Category 8     Category 2        0.009        0.005           1.123
-       Category 8     Category 3        0.009        0.003           2.101
-       Category 8     Category 4        0.000        0.013          -2.136
-       Category 8     Category 5        0.019        0.016           0.419
-       Category 8     Category 6        0.019        0.006           2.892
-       Category 8     Category 7        0.009        0.015          -0.869
-       Category 8     Category 8        0.000        0.007          -1.535
-       Category 8     Category 9        0.019        0.008           2.055
-       Category 8     Category 10       0.009        0.008           0.273
-       Category 9     Category 1        0.014        0.001           7.654
-       Category 9     Category 2        0.014        0.002           4.680
-       Category 9     Category 3        0.014        0.001           6.364
-       Category 9     Category 4        0.000        0.006          -1.486
-       Category 9     Category 5        0.000        0.008          -1.681
+       Category 7     Category 10       0.013        0.008           1.162
+       Category 8     Category 1        0.000        0.002          -0.884
+       Category 8     Category 2        0.009        0.005           1.124
+       Category 8     Category 3        0.009        0.003           2.097
+       Category 8     Category 4        0.000        0.013          -2.138
+       Category 8     Category 5        0.019        0.016           0.415
+       Category 8     Category 6        0.019        0.006           2.893
+       Category 8     Category 7        0.009        0.015          -0.868
+       Category 8     Category 8        0.000        0.007          -1.533
+       Category 8     Category 9        0.019        0.008           2.054
+       Category 8     Category 10       0.009        0.008           0.276
+       Category 9     Category 1        0.014        0.001           7.670
+       Category 9     Category 2        0.014        0.002           4.682
+       Category 9     Category 3        0.014        0.001           6.358
+       Category 9     Category 4        0.000        0.006          -1.488
+       Category 9     Category 5        0.000        0.008          -1.682
        Category 9     Category 6        0.000        0.003          -1.085
        Category 9     Category 7        0.000        0.009          -1.748
-       Category 9     Category 8        0.014        0.004           2.753
-       Category 9     Category 9        0.014        0.006           2.134
-       Category 9     Category 10       0.000        0.006          -1.400
-       Category 10    Category 1        0.000        0.001          -0.649
+       Category 9     Category 8        0.014        0.004           2.760
+       Category 9     Category 9        0.014        0.006           2.133
+       Category 9     Category 10       0.000        0.006          -1.399
+       Category 10    Category 1        0.000        0.001          -0.648
        Category 10    Category 2        0.000        0.003          -0.976
-       Category 10    Category 3        0.012        0.002           4.430
-       Category 10    Category 4        0.012        0.009           0.641
-       Category 10    Category 5        0.012        0.012          -0.059
-       Category 10    Category 6        0.000        0.006          -1.382
+       Category 10    Category 3        0.012        0.002           4.427
+       Category 10    Category 4        0.012        0.009           0.638
+       Category 10    Category 5        0.012        0.012          -0.062
+       Category 10    Category 6        0.000        0.006          -1.383
        Category 10    Category 7        0.000        0.016          -2.349
-       Category 10    Category 8        0.012        0.009           0.574
+       Category 10    Category 8        0.012        0.009           0.579
        Category 10    Category 9        0.000        0.013          -2.118
-       Category 10    Category 10       0.000        0.016          -2.381
-       Bivariate Pearson Chi-Square                                581.390
-       Bivariate Log-Likelihood Chi-Square                         491.883
+       Category 10    Category 10       0.000        0.016          -2.380
+       Bivariate Pearson Chi-Square                                581.424
+       Bivariate Log-Likelihood Chi-Square                         491.692
      Q284           Q587
-       Category 1     Category 1        0.021        0.021           0.054
-       Category 1     Category 2        0.021        0.020           0.180
-       Category 1     Category 3        0.021        0.007           3.266
-       Category 1     Category 4        0.021        0.015           0.956
-       Category 1     Category 5        0.000        0.007          -1.564
-       Category 1     Category 6        0.000        0.002          -0.758
-       Category 1     Category 7        0.000        0.003          -0.975
-       Category 1     Category 8        0.000        0.001          -0.548
-       Category 1     Category 9        0.000        0.001          -0.535
-       Category 1     Category 10       0.000        0.001          -0.460
-       Category 2     Category 1        0.018        0.014           0.667
-       Category 2     Category 2        0.036        0.018           2.418
-       Category 2     Category 3        0.000        0.007          -1.594
-       Category 2     Category 4        0.018        0.019          -0.160
+       Category 1     Category 1        0.021        0.021           0.057
+       Category 1     Category 2        0.021        0.020           0.177
+       Category 1     Category 3        0.021        0.007           3.259
+       Category 1     Category 4        0.021        0.015           0.954
+       Category 1     Category 5        0.000        0.007          -1.563
+       Category 1     Category 6        0.000        0.002          -0.757
+       Category 1     Category 7        0.000        0.003          -0.973
+       Category 1     Category 8        0.000        0.001          -0.546
+       Category 1     Category 9        0.000        0.001          -0.534
+       Category 1     Category 10       0.000        0.001          -0.459
+       Category 2     Category 1        0.018        0.014           0.671
+       Category 2     Category 2        0.036        0.018           2.414
+       Category 2     Category 3        0.000        0.007          -1.596
+       Category 2     Category 4        0.018        0.019          -0.163
        Category 2     Category 5        0.000        0.011          -1.931
-       Category 2     Category 6        0.000        0.003          -0.968
-       Category 2     Category 7        0.000        0.005          -1.269
-       Category 2     Category 8        0.000        0.002          -0.724
+       Category 2     Category 6        0.000        0.003          -0.966
+       Category 2     Category 7        0.000        0.005          -1.267
+       Category 2     Category 8        0.000        0.002          -0.723
        Category 2     Category 9        0.000        0.001          -0.713
-       Category 2     Category 10       0.000        0.001          -0.618
-       Category 3     Category 1        0.000        0.014          -2.169
-       Category 3     Category 2        0.072        0.021           6.496
-       Category 3     Category 3        0.000        0.010          -1.813
-       Category 3     Category 4        0.036        0.028           0.919
+       Category 2     Category 10       0.000        0.001          -0.617
+       Category 3     Category 1        0.000        0.014          -2.167
+       Category 3     Category 2        0.072        0.021           6.491
+       Category 3     Category 3        0.000        0.010          -1.816
+       Category 3     Category 4        0.036        0.028           0.913
        Category 3     Category 5        0.000        0.018          -2.491
-       Category 3     Category 6        0.000        0.005          -1.286
-       Category 3     Category 7        0.000        0.009          -1.720
-       Category 3     Category 8        0.000        0.003          -0.998
-       Category 3     Category 9        0.000        0.003          -0.992
-       Category 3     Category 10       0.000        0.002          -0.867
-       Category 4     Category 1        0.000        0.012          -2.038
-       Category 4     Category 2        0.033        0.021           1.605
-       Category 4     Category 3        0.017        0.010           1.155
-       Category 4     Category 4        0.050        0.033           1.715
+       Category 3     Category 6        0.000        0.005          -1.284
+       Category 3     Category 7        0.000        0.009          -1.718
+       Category 3     Category 8        0.000        0.003          -0.996
+       Category 3     Category 9        0.000        0.003          -0.991
+       Category 3     Category 10       0.000        0.002          -0.865
+       Category 4     Category 1        0.000        0.012          -2.035
+       Category 4     Category 2        0.033        0.021           1.603
+       Category 4     Category 3        0.017        0.010           1.149
+       Category 4     Category 4        0.050        0.034           1.708
        Category 4     Category 5        0.000        0.025          -2.934
-       Category 4     Category 6        0.000        0.007          -1.568
-       Category 4     Category 7        0.017        0.013           0.518
-       Category 4     Category 8        0.000        0.005          -1.276
-       Category 4     Category 9        0.000        0.005          -1.284
-       Category 4     Category 10       0.000        0.004          -1.135
-       Category 5     Category 1        0.019        0.009           2.064
+       Category 4     Category 6        0.000        0.007          -1.566
+       Category 4     Category 7        0.017        0.013           0.523
+       Category 4     Category 8        0.000        0.005          -1.273
+       Category 4     Category 9        0.000        0.005          -1.283
+       Category 4     Category 10       0.000        0.004          -1.134
+       Category 5     Category 1        0.019        0.009           2.071
        Category 5     Category 2        0.019        0.016           0.389
-       Category 5     Category 3        0.019        0.009           2.048
-       Category 5     Category 4        0.077        0.031           4.782
-       Category 5     Category 5        0.019        0.027          -0.849
-       Category 5     Category 6        0.000        0.008          -1.689
-       Category 5     Category 7        0.000        0.017          -2.385
-       Category 5     Category 8        0.000        0.006          -1.449
+       Category 5     Category 3        0.019        0.009           2.042
+       Category 5     Category 4        0.077        0.031           4.772
+       Category 5     Category 5        0.019        0.027          -0.851
+       Category 5     Category 6        0.000        0.008          -1.688
+       Category 5     Category 7        0.000        0.016          -2.383
+       Category 5     Category 8        0.000        0.006          -1.447
        Category 5     Category 9        0.000        0.006          -1.481
-       Category 5     Category 10       0.000        0.005          -1.330
-       Category 6     Category 1        0.025        0.005           4.778
+       Category 5     Category 10       0.000        0.005          -1.328
+       Category 6     Category 1        0.025        0.005           4.789
        Category 6     Category 2        0.037        0.011           4.604
-       Category 6     Category 3        0.012        0.006           1.456
-       Category 6     Category 4        0.012        0.024          -1.372
-       Category 6     Category 5        0.000        0.022          -2.783
-       Category 6     Category 6        0.025        0.008           3.616
-       Category 6     Category 7        0.000        0.016          -2.333
-       Category 6     Category 8        0.012        0.006           1.409
-       Category 6     Category 9        0.012        0.007           1.239
-       Category 6     Category 10       0.012        0.006           1.626
-       Category 7     Category 1        0.028        0.004           7.378
+       Category 6     Category 3        0.012        0.006           1.452
+       Category 6     Category 4        0.012        0.024          -1.376
+       Category 6     Category 5        0.000        0.022          -2.785
+       Category 6     Category 6        0.025        0.008           3.619
+       Category 6     Category 7        0.000        0.016          -2.331
+       Category 6     Category 8        0.012        0.006           1.416
+       Category 6     Category 9        0.012        0.007           1.240
+       Category 6     Category 10       0.012        0.006           1.631
+       Category 7     Category 1        0.028        0.004           7.392
        Category 7     Category 2        0.000        0.008          -1.609
-       Category 7     Category 3        0.000        0.004          -1.228
-       Category 7     Category 4        0.014        0.018          -0.602
-       Category 7     Category 5        0.028        0.019           1.150
-       Category 7     Category 6        0.014        0.007           1.539
-       Category 7     Category 7        0.014        0.015          -0.230
-       Category 7     Category 8        0.000        0.006          -1.484
-       Category 7     Category 9        0.000        0.007          -1.575
-       Category 7     Category 10       0.014        0.006           1.758
-       Category 8     Category 1        0.000        0.003          -1.041
+       Category 7     Category 3        0.000        0.004          -1.229
+       Category 7     Category 4        0.014        0.018          -0.607
+       Category 7     Category 5        0.028        0.019           1.147
+       Category 7     Category 6        0.014        0.007           1.540
+       Category 7     Category 7        0.014        0.015          -0.228
+       Category 7     Category 8        0.000        0.006          -1.482
+       Category 7     Category 9        0.000        0.007          -1.574
+       Category 7     Category 10       0.014        0.006           1.762
+       Category 8     Category 1        0.000        0.003          -1.039
        Category 8     Category 2        0.007        0.007           0.011
-       Category 8     Category 3        0.021        0.004           4.748
-       Category 8     Category 4        0.007        0.018          -1.570
-       Category 8     Category 5        0.014        0.021          -0.967
+       Category 8     Category 3        0.021        0.004           4.742
+       Category 8     Category 4        0.007        0.018          -1.573
+       Category 8     Category 5        0.014        0.022          -0.970
        Category 8     Category 6        0.014        0.008           1.110
-       Category 8     Category 7        0.000        0.020          -2.626
-       Category 8     Category 8        0.007        0.009          -0.404
+       Category 8     Category 7        0.000        0.020          -2.625
+       Category 8     Category 8        0.007        0.009          -0.399
        Category 8     Category 9        0.007        0.011          -0.674
-       Category 8     Category 10       0.014        0.010           0.730
-       Category 9     Category 1        0.000        0.001          -0.675
+       Category 8     Category 10       0.014        0.010           0.734
+       Category 9     Category 1        0.000        0.001          -0.674
        Category 9     Category 2        0.000        0.003          -1.008
-       Category 9     Category 3        0.012        0.002           4.319
-       Category 9     Category 4        0.012        0.009           0.637
-       Category 9     Category 5        0.024        0.011           2.181
+       Category 9     Category 3        0.012        0.002           4.315
+       Category 9     Category 4        0.012        0.009           0.634
+       Category 9     Category 5        0.024        0.011           2.177
        Category 9     Category 6        0.012        0.005           1.902
-       Category 9     Category 7        0.000        0.013          -2.079
-       Category 9     Category 8        0.000        0.006          -1.461
-       Category 9     Category 9        0.012        0.008           0.827
-       Category 9     Category 10       0.000        0.008          -1.668
-       Category 10    Category 1        0.000        0.001          -0.572
+       Category 9     Category 7        0.000        0.013          -2.078
+       Category 9     Category 8        0.000        0.006          -1.459
+       Category 9     Category 9        0.012        0.008           0.826
+       Category 9     Category 10       0.000        0.008          -1.667
+       Category 10    Category 1        0.000        0.001          -0.571
        Category 10    Category 2        0.000        0.002          -0.866
-       Category 10    Category 3        0.011        0.001           4.804
-       Category 10    Category 4        0.000        0.007          -1.557
-       Category 10    Category 5        0.011        0.010           0.160
-       Category 10    Category 6        0.000        0.005          -1.284
+       Category 10    Category 3        0.011        0.001           4.801
+       Category 10    Category 4        0.000        0.007          -1.559
+       Category 10    Category 5        0.011        0.010           0.157
+       Category 10    Category 6        0.000        0.005          -1.285
        Category 10    Category 7        0.000        0.014          -2.207
-       Category 10    Category 8        0.011        0.008           0.639
-       Category 10    Category 9        0.011        0.012          -0.131
-       Category 10    Category 10       0.000        0.016          -2.312
-       Bivariate Pearson Chi-Square                                431.336
-       Bivariate Log-Likelihood Chi-Square                         429.948
+       Category 10    Category 8        0.011        0.008           0.643
+       Category 10    Category 9        0.011        0.012          -0.133
+       Category 10    Category 10       0.000        0.016          -2.311
+       Bivariate Pearson Chi-Square                                431.217
+       Bivariate Log-Likelihood Chi-Square                         429.671
 
-       Overall Bivariate Pearson Chi-Square                      16704.253
-       Overall Bivariate Log-Likelihood Chi-Square                8435.246
+       Overall Bivariate Pearson Chi-Square                      16702.740
+       Overall Bivariate Log-Likelihood Chi-Square                8433.818
 
 
 TECHNICAL 8 OUTPUT
 
 
    E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
-              1 -0.53701088D+04    0.0000000    0.0000000  EM
-              2 -0.52311256D+04  138.9832457    0.0258809  FS
-              3 -0.51932795D+04   37.8460531    0.0072348  FS
-              4 -0.51865806D+04    6.6989466    0.0012899  FS
-              5 -0.51864896D+04    0.0909828    0.0000175  FS
-              6 -0.51864847D+04    0.0048583    0.0000009  FS
-              7 -0.51864844D+04    0.0003684    0.0000001  FS
+              1 -0.53700909D+04    0.0000000    0.0000000  EM
+              2 -0.52311083D+04  138.9826588    0.0258809  FS
+              3 -0.51932621D+04   37.8461240    0.0072348  FS
+              4 -0.51865628D+04    6.6993333    0.0012900  FS
+              5 -0.51864718D+04    0.0909952    0.0000175  FS
+              6 -0.51864669D+04    0.0048591    0.0000009  FS
+              7 -0.51864666D+04    0.0003685    0.0000001  FS
 
 
 PLOT INFORMATION
@@ -4548,8 +4548,8 @@ The following plots are available:
   Item characteristic curves
   Information curves
 
-     Beginning Time:  14:14:40
-        Ending Time:  14:14:41
+     Beginning Time:  15:27:16
+        Ending Time:  15:27:17
        Elapsed Time:  00:00:01
 
 

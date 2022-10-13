@@ -97,7 +97,7 @@ Q284,Letter Fluency (S),SAGES,GCP-alt-2b,Q884,Letter Fluency (S),SAGESII_Telepho
 Q117,Letter fluency CFL (Controlled Oral Word Association Test (COWAT)),HRS_ADAMS,GCP-alt-2a,Q881,Letter Fluency (FAS) (CFL cutpoints),SAGESII_Telephone_validation,GCP-alt-2a,NA,NA
 Q285,Letter Fluency (FAS) (Sages deciles),SAGES,GCP-alt-2c,Q885,Letter Fluency (FAS) (SAGES deciles),SAGESII_Telephone_validation,GCP-alt-2c,NA,NA
 Q266,Semantic fluency - supermarket (SAGES deciles),SAGES,GCP-alt-3b,Q866,Semantic fluency - supermarket (SAGES deciles),SAGESII_Telephone_validation,GCP-alt-3b,NA,NA
-Q532,Oral Trails A Telephone Time to complete,SAGESII_Telephone,GCP,Q832,Oral Trails A Telephone Time to complete,SAGESII_Telephone_validation,GCP,NA,NA
+Q532,Oral Trails A Telephone Time to complete,SAGESII_Telephone,Not GCP,Q832,Oral Trails A Telephone Time to complete,SAGESII_Telephone_validation,GCP,NA,NA
 Q534,Oral Trails B Telephone Time to complete,SAGESII_Telephone,GCP,Q834,Oral Trails B Telephone Time to complete,SAGESII_Telephone_validation,GCP,NA,NA
 Q587,Category switching (Total number of correct switches),SAGESII_Telephone,GCP,Q887,Category switching (Total number of correct switches),SAGESII_Telephone_validation,GCP,NA,NA
 Q115,"Boston Naming Test, 15 Items",HRS_ADAMS,GCP,Q951,"Boston Naming Test, 15 Items (decile)",SAGESII_Video_validation,GCP,NA,NA
