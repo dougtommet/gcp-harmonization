@@ -60,34 +60,317 @@ The questionable assumptions were deciding whether measures of letter fluency an
 
 With these as the possible choices, we decided to go with the version that fixes the coding mistakes, FAS/FCL summed but not equivalent and animal/supermarket naming not equivalent.
 
-## @fig-timeline: Timeline of SAGES-I and SAGES-II
+# Figure: Timeline of SAGES-II
 
-```{mermaid}
-%%| label: fig-timeline
-%%| fig-cap: Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes
-%%| fig-cap-location: top
+## @fig-timeline: Timeline of SAGES-II participant interviews
 
-sequenceDiagram
-  participant Before times
-  participant After times
-  Before times ->>After times: COVID
-  Note left of Before times: SAGES II starts enrollment
-  Note right of After times: Neuropsych testing procedures updated
+```{r}
+#| label: fig-timeline
+#| fig-cap: Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes
+#| fig-cap-location: top
+
+sagesII_subject_df <- readRDS(file=path(r_objects_folder, "010_sagesII_subject_df.rds"))
+
+covid2020_link <- RCurl::getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2020.csv")
+covid2021_link <- RCurl::getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2021.csv")
+covid2022_link <- RCurl::getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties-2022.csv")
+covid2020 <- read_csv(covid2020_link)
+covid2021 <- read_csv(covid2021_link)
+covid2022 <- read_csv(covid2022_link)
+
+covid <- covid2020 %>%
+  bind_rows(covid2021) %>%
+  bind_rows(covid2022) %>%
+  group_by(state, county) %>%
+  mutate(incident_cases = cases - lag(cases),
+         incident_cases = case_when(incident_cases<0 ~ 0,
+                                    TRUE ~ incident_cases),
+         wk = lubridate::week(date),
+         yr = lubridate::year(date))
+
+covid_suffolk <- covid %>%
+  filter(state=="Massachusetts") %>%
+  filter(county %in% c("Suffolk")) %>%
+  ungroup() %>%
+  group_by(yr, wk) %>%
+  summarize(date = min(date),
+            incident_cases = sum(incident_cases, na.rm = TRUE)) %>%
+  mutate(incident_cases10000 = incident_cases/10000)
+
+foo <- sagesII_subject_df %>%
+  mutate(timefr = factor(timefr)) %>%
+  select(studyid, timefr, starts_with("vin_loc"), starts_with("vin_date"), starts_with("visit_number")) %>%
+  filter(!is.na(timefr))
+
+ggplot(foo, aes(x=vin_date, y = vin_loc, color = timefr)) +
+  geom_vline(xintercept = c(as.Date("2020-03-11"), as.Date("2021-05-24")), 
+             color = "grey60", linetype=2) +
+  geom_point(position = "jitter", alpha = 1, size = .5) +
+  
+  scale_x_date("Date", date_breaks = "6 months") +
+  scale_color_manual("Interview Month", 
+                     values = c("#e0f3db", "#ccebc5", "#a8ddb5", "#7bccc4", 
+                                "#4eb3d3", "#2b8cbe", "#0868ac", "#084081") ) +
+  scale_y_continuous("Interview type", 
+                     breaks = 1:3,
+                     labels = c("In-person", "Telephone", "Video"),
+                     sec.axis = sec_axis( trans=~.*10000, name="Weekly incident COVID cases (Suffolk County)")) +
+  hrbrthemes::theme_ipsum() +
+  theme(axis.text.x=element_text(angle=60, hjust=1)) +
+  geom_bar(data = covid_suffolk, inherit.aes = FALSE, 
+           aes(x = date, y = incident_cases10000), 
+           stat = "identity", fill = "red") +
+  labs(caption = "COVID data source: NY Times COVID 19 data repository")
+
 ```
 
-@fig-timeline is meant to show the development/refinement of the neuropsych testing procedures due to COVID.
+@fig-timeline shows when different interview modes occurred in SAGES II.
 
 ::: callout-note
-This needs to be sketched out by Eva/Tamara/Field staff.
+*   Need the exact dates to use for the two vertical lines. Currently, they are based on the data.
+*   Does the COVID data provide useful data? What is the best way to present it? Currently, it only uses Suffolk County data, but it could be expanded to additional counties in the Boston region.
+*   Is the color scheme good?
 :::
 
-## @tbl-descriptives: Sample characteristics
+## @fig-timeline-alt1: Timeline of SAGES-II participant interviews
+
+```{r}
+#| label: fig-timeline-alt1
+#| fig-cap: Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes
+#| fig-cap-location: top
+foo <- foo %>%
+  mutate(j = runif(n(), -.5, .5),
+         vin_loc_jitter = vin_loc + j) 
+ggplot(foo, aes(x=vin_date, y = vin_loc_jitter, color = timefr)) +
+  geom_vline(xintercept = c(as.Date("2020-03-11"), as.Date("2021-05-24")), 
+             color = "grey60", linetype=2) +
+  geom_point(alpha = 1, size = .5) +
+  # geom_point(data = foo %>% filter(timefr==0), color="red", size = .5) +
+  
+  scale_x_date("Date", date_breaks = "6 months") +
+  scale_color_manual("Interview Month", 
+                     values = c("#084081",
+                                "#0868ac",
+                                "#2b8cbe",
+                                "#4eb3d3",
+                                "#7bccc4",
+                                "#a8ddb5",
+                                "#ccebc5",
+                                "#e0f3db"
+                                ) ) +
+  scale_y_continuous("Interview type", 
+                     breaks = 1:3,
+                     labels = c("In-person", "Telephone", "Video"),
+                     sec.axis = sec_axis( trans=~.*10000, name="Weekly incident COVID cases (Suffolk County)")) +
+  hrbrthemes::theme_ipsum() +
+  theme(axis.text.x=element_text(angle=60, hjust=1)) +
+  geom_bar(data = covid_suffolk, inherit.aes = FALSE, 
+           aes(x = date, y = incident_cases10000), 
+           stat = "identity", fill = "red") +
+  labs(caption = "COVID data source: NY Times COVID 19 data repository")
+
+```
+
+@fig-timeline-alt1 is the same as @fig-timeline but with the color gradient reversed.
+
+## Data quality check
+
+Some of the points in @fig-timeline/@fig-timeline-alt1 appear to have data errors because they are listed as having in-person visits during the shutdown.  The following tables list the studyid and visit date for these participants.  @tbl-data-quality lists the nine records that are listed as being an in-person interview that occurred during the shutdown.  @tbl-data-quality1 - @tbl-data-quality9 lists the all the visit dates for each of the nine participants listed in @tbl-data-quality.
+
+For most of these records it seems like the visit location is incorrect. One of the records seems like the visit date is incorrect.
+
+```{r}
+foo_odd_dates <- foo %>%
+  filter(vin_loc==1) %>%
+  filter(vin_date > "2020-10-01" & vin_date < "2021-4-01") %>%
+  select(studyid, timefr, vin_date, vin_loc) 
+
+foo_odd_dates_ids <- foo_odd_dates %>%
+  pull(studyid)
+```
+
+```{r}
+#| label: tbl-data-quality
+#| tbl-cap: Data quality check
+#| tbl-cap-location: top
+
+foo_odd_dates %>%
+  gt::gt()
+```
+
+```{r}
+#| label: tbl-data-quality1
+#| tbl-cap: Studyid 1
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[1]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 1)
+  )
+```
+
+```{r}
+#| label: tbl-data-quality2
+#| tbl-cap: Studyid 2
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[2]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 3)
+  )
+```
+
+```{r}
+#| label: tbl-data-quality3
+#| tbl-cap: Studyid 3
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[3]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 2)
+  )
+```
+
+```{r}
+#| label: tbl-data-quality4
+#| tbl-cap: Studyid 4
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[4]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 5)
+  )
+```
+
+```{r}
+#| label: tbl-data-quality5
+#| tbl-cap: Studyid 5
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[5]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 1)
+  )
+```
+
+```{r}
+#| label: tbl-data-quality6
+#| tbl-cap: Studyid 6
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[6]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 1)
+  )
+```
+
+```{r}
+#| label: tbl-data-quality7
+#| tbl-cap: Studyid 7
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[7]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 2)
+  )
+```
+
+```{r}
+#| label: tbl-data-quality8
+#| tbl-cap: Studyid 8
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[8]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 4)
+  )
+```
+
+```{r}
+#| label: tbl-data-quality9
+#| tbl-cap: Studyid 9
+#| tbl-cap-location: top
+
+foo %>%
+  filter(studyid %in% foo_odd_dates_ids[9]) %>%
+  select(studyid, timefr, vin_date, vin_loc) %>%
+  gt::gt() %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "yellow")
+    ),
+    locations = gt::cells_body(
+      rows = 1)
+  )
+```
+
+# Sample characteristics
+
+## @tbl-descriptives: Sample characteristics - SAGES II baseline
 
 ```{r}
 #| label: tbl-descriptives
 #| tbl-cap: Sample characteristics
 #| tbl-cap-location: top
 sagesII_subject_df_bl <- readRDS(file=path(r_objects_folder, "010_sagesII_subject_df_bl.rds"))
+sagesII_subject_df <- readRDS(file=path(r_objects_folder, "010_sagesII_subject_df.rds"))
+# sagesII_df <- readRDS(file=path(r_objects_folder, "010_sagesII_df.rds"))
 
 sagesII_subject_df_bl %>%
   select(vdfemale, vdnonwhite, vdeduc_r, vdsurg, vdgds15, vdcci) %>%
@@ -95,6 +378,7 @@ sagesII_subject_df_bl %>%
     statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})",
                      gtsummary::all_categorical() ~ "{n} / {N} ({p}%)")
   ) %>%
+  gtsummary::add_n() %>%
   gtsummary::modify_caption("SAGES II - Baseline interview")
 
 ```
@@ -102,6 +386,62 @@ sagesII_subject_df_bl %>%
 ::: callout-note
 This is the descriptive statistics for SAGES II at the baseline interview. In the harmonization analysis, for the telephone/video samples the interviews came (mostly) from the follow-up interviews.
 :::
+
+## @tbl-descriptives_split: Sample characteristics - SAGES II at first interview mode
+
+```{r}
+#| label: tbl-descriptives_split
+#| tbl-cap: Sample characteristics by interview mode
+#| tbl-cap-location: top
+
+sagesII_subject_df %>%
+  filter(visit_number_loc==1) %>%
+  select(vin_loc2, timefr, visit_number_overall, vdfemale, vdnonwhite, vdeduc_r, vdsurg, vdgds15, vdcci) %>%
+  gtsummary::tbl_summary(by = vin_loc2,
+    statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})",
+                     gtsummary::all_categorical() ~ "{n} / {N} ({p}%)")
+  )  %>%
+  gtsummary::add_n() %>%
+  gtsummary::modify_caption("SAGES II - First interview at different assessment modes")
+
+```
+
+::: callout-note
+This table is somewhat tricky to interpret.  It includes the first time a participant had a particular interview mode. So a participant could have had an in-person interview, a telephone interview and video interview. That participant would be listed in all the columns.
+
+The reason this table might be useful is that it describes the samples used to harmonize the GCP across interview types.
+
+* Of the participants' first in-person interview, 76% had their first in-person interview at baseline.
+
+* Of the participants' first telephone interview, 51% had their first telephone interview at 1-month and 24% had their first telephone interview at 6-month.
+
+* Of the participants' first video interview, 55% had their first video interview at baseline, and 23% had their first video interview at 12-month.
+:::
+
+## @tbl-descriptives: Sample characteristics - SAGES II validation sample
+
+```{r}
+#| label: tbl-descriptives_validation
+#| tbl-cap: Sample characteristics for the validation sample
+#| tbl-cap-location: top
+sagesII_validation_df <- readRDS(file=path(r_objects_folder, "010_sagesII_validation_df.rds"))
+sagesII_validation_df_ids <- sagesII_validation_df %>%
+  pull(studyid)
+
+sagesII_subject_df_bl %>%
+  filter(studyid %in% sagesII_validation_df_ids) %>%
+  select(vdfemale, vdnonwhite, vdeduc_r, vdsurg, vdgds15, vdcci) %>%
+  gtsummary::tbl_summary(
+    statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})",
+                     gtsummary::all_categorical() ~ "{n} / {N} ({p}%)")
+  )  %>%
+  gtsummary::add_n() %>%
+  gtsummary::modify_caption("SAGES II - validation sample")
+```
+
+This table should be merged with whichever of @tbl-descriptives or @tbl-descriptives_split that gets used.
+
+# Cognitive battery
 
 ## @tbl-battery: Cognitive tests by mode and study
 
@@ -167,6 +507,8 @@ gcp_items %>%
 
 @tbl-battery shows the neuropsych tests used in the different studys/modes.
 
+# GCP Information
+
 ## @fig-info: Test Information by mode and study
 
 ```{r}
@@ -205,6 +547,8 @@ ggplot(aes(x = theta, y = i, color = study_name_short)) +
 ::: callout-note
 The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-person, and SAGES II - Video. This means their Information curves would overlap. I shifted the curves by a small amount so they would be distinct.
 :::
+
+# Validation
 
 ## @fig-video-vs-telephone: Agreement by mode
 

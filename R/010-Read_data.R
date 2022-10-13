@@ -210,143 +210,193 @@ if(fs::dir_exists(sagesII_datafolder)) {
   sagesII_subject_df <- sagesII_subject_df %>%
     mutate(vdeduc_r = case_when(vdeduc_r %in% c(100000000) ~ NA_real_,
                                 TRUE ~ vdeduc_r))
-  sagesII_subject_df_bl <- sagesII_subject_df %>%
-    filter(timefr==0)
-  saveRDS(sagesII_subject_df_bl,    file=path(r_objects_folder, "010_sagesII_subject_df_bl.rds"))
-}
-
-
-
-if(fs::dir_exists(sagesII_datafolder_npb)) {
-  # Sages II Data
-  # sagesII_df_old <- read_dta(fs::path(sagesII_datafolder_npb, "sagesii.dta")) 
-  # sagesII_df_old <- sagesII_df_old %>%
-  #   rename(npb_08 = npb08) %>%
-  #   rename(npb_10 = npb10)
-  sagesII_df <- read_dta(fs::path(sagesII_datafolder_npb, "sagesiinpb 2022-03-25.dta")) 
   
   # There was one record that had a very large Trails B time which is probably a data error
-  sagesII_df <- sagesII_df %>%
+  sagesII_subject_df <- sagesII_subject_df %>%
     mutate(npb_61 = case_when(npb_61>800 & npb_61 <900 ~ NA_real_,
                               TRUE ~ npb_61)) 
-    
-  sagesII_df <- sagesII_df %>%
-    mutate(npb_08 = as.numeric(npb_08),
-           npb_10 = as.numeric(npb_10),
-           npb_12 = as.numeric(npb_12),
-           npb_17 = as.numeric(npb_17),
-           npb_54 = as.numeric(npb_54),
-           npb_55 = as.numeric(npb_55),
-           npb_57 = as.numeric(npb_57),
-           npb_25 = as.numeric(npb_25),
-           npb_58 = as.numeric(npb_58)) %>%
-    mutate(npb_01 = case_when(npb_01 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_01),
-           npb_02 = case_when(npb_02 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_02),
-           npb_03 = case_when(npb_03 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_03),
-           npb_04 = case_when(npb_04 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_04),
-           npb_05 = case_when(npb_05 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_05),
-           npb_06 = case_when(npb_06 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_06),
-           npb_08 = case_when(npb_08 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_08),
-           npb_10 = case_when(npb_10 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_10),
-           npb_11 = case_when(npb_11 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_11),
-           npb_12 = case_when(npb_12 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_12),
-           npb_13 = case_when(npb_13 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_13),
-           npb_14 = case_when(npb_14 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_14),
-           npb_15 = case_when(npb_15 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_15),
-           npb_15a = case_when(npb_15a %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_15a),
-           npb_16 = case_when(npb_16 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_16),
-           npb_16a = case_when(npb_16a %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_16a),
-           npb_17 = case_when(npb_17 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_17),
-           npb_18 = case_when(npb_18 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_18),
-           npb_19 = case_when(npb_19 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_19),
-           npb_20 = case_when(npb_20 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_20),
-           npb_21 = case_when(npb_21 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_21),
-           npb_22 = case_when(npb_22 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_22),
-           npb_23 = case_when(npb_23 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_23),
-           npb_28 = case_when(npb_28 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_28),
-           npb_29 = case_when(npb_29 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_29),
-           npb_30 = case_when(npb_30 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_30),
-           npb_37 = case_when(npb_37 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_37),
-           npb_38 = case_when(npb_38 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_38),
-           npb_39 = case_when(npb_39 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_39),
-           npb_50 = case_when(npb_50 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_50),
-           npb_51 = case_when(npb_51 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_51),
-           npb_52 = case_when(npb_52 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_52),
-           npb_53 = case_when(npb_53 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_53),
-           npb_54 = case_when(npb_54 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_54),
-           npb_55 = case_when(npb_55 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_55),
-           npb_56 = case_when(npb_56 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_56),
-           npb_57 = case_when(npb_57 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_57),
-           npb_61 = case_when(npb_61 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_61),
-           npb_62 = case_when(npb_62 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_62),
-           npb_64 = case_when(npb_64 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
-                              TRUE ~ npb_64),
-           ) %>%
-    select(sort(tidyselect::peek_vars())) %>%
-    select(studyid, timefr, vin_loc, everything())
   
-
-  sagesII_df <- sagesII_df %>%
+  sagesII_subject_df <- sagesII_subject_df %>%
     group_by(studyid) %>%
     arrange(studyid, timefr) %>%
-    mutate(visit_number = row_number()) %>%
+    mutate(visit_number_overall = row_number()) %>%
     ungroup() %>%
-    select(studyid, vin_loc, timefr, visit_number, everything()) 
+    select(studyid, vin_loc, vin_date, timefr, visit_number_overall, starts_with("npb"), everything()) 
   
+  sagesII_subject_df <- sagesII_subject_df %>%
+    mutate(vin_date = lubridate::as_date(vin_date),
+           vin_loc = case_when(vin_loc %in% c(1, 4) ~ 1, 
+                                vin_loc %in% c(2) ~ 2,
+                                vin_loc %in% c(3) ~ 3),
+           vin_loc2 = factor(vin_loc, labels = c("In-person", "Telephone", "Video")),
+           vdsurg = factor(vdsurg, levels = 1:8,
+                           labels = c("1: Knee Replacement", 
+                                      "2: Hip Replacement", 
+                                      "3: Cervical laminectomy", 
+                                      "4: Thoracic or lumbar laminectomy",
+                                      "5: Spine Surgery",
+                                      "6: Major General Surgery",
+                                      "7: Major Vascular Surgery",
+                                      "8: Major Urology Surgery"))
+    ) %>%
+    arrange(studyid, timefr) %>%
+    group_by(studyid, vin_loc) %>%
+    mutate(visit_number_loc = row_number()) %>% 
+    ungroup() %>%
+    haven::zap_labels()  %>%
+    select(studyid, vin_loc, vin_loc2, vin_date, timefr, visit_number_overall, visit_number_loc, starts_with("npb"), everything()) 
   
-  sagesII_inperson_df <- sagesII_df %>%
+  sagesII_inperson_df <- sagesII_subject_df %>%
     filter(vin_loc %in% c(1, 4))
   
-  sagesII_telephone_df <- sagesII_df %>%
+  sagesII_telephone_df <- sagesII_subject_df %>%
     filter(vin_loc == 2)
   
-  sagesII_video_df <- sagesII_df %>%
+  sagesII_video_df <- sagesII_subject_df %>%
     filter(vin_loc == 3)
   
-  saveRDS(sagesII_df,              file=path(r_objects_folder, "010_sagesII_df.rds"))
+  sagesII_subject_df_bl <- sagesII_subject_df %>%
+    filter(timefr==0)
+  
   saveRDS(sagesII_inperson_df,     file=path(r_objects_folder, "010_sagesII_inperson_df.rds"))
   saveRDS(sagesII_telephone_df,    file=path(r_objects_folder, "010_sagesII_telephone_df.rds"))
   saveRDS(sagesII_video_df,        file=path(r_objects_folder, "010_sagesII_video_df.rds"))
+  saveRDS(sagesII_subject_df,      file=path(r_objects_folder, "010_sagesII_subject_df.rds"))
+  saveRDS(sagesII_subject_df_bl,   file=path(r_objects_folder, "010_sagesII_subject_df_bl.rds"))
 }
+
+
+
+# if(fs::dir_exists(sagesII_datafolder_npb)) {
+#   # Sages II Data
+#   # sagesII_df_old <- read_dta(fs::path(sagesII_datafolder_npb, "sagesii.dta"))
+#   # sagesII_df_old <- sagesII_df_old %>%
+#   #   rename(npb_08 = npb08) %>%
+#   #   rename(npb_10 = npb10)
+#   sagesII_df <- read_dta(fs::path(sagesII_datafolder_npb, "sagesiinpb 2022-03-25.dta"))
+# 
+#   # There was one record that had a very large Trails B time which is probably a data error
+#   sagesII_df <- sagesII_df %>%
+#     mutate(npb_61 = case_when(npb_61>800 & npb_61 <900 ~ NA_real_,
+#                               TRUE ~ npb_61))
+# 
+#   sagesII_df <- sagesII_df %>%
+#     mutate(npb_08 = as.numeric(npb_08),
+#            npb_10 = as.numeric(npb_10),
+#            npb_12 = as.numeric(npb_12),
+#            npb_17 = as.numeric(npb_17),
+#            npb_54 = as.numeric(npb_54),
+#            npb_55 = as.numeric(npb_55),
+#            npb_57 = as.numeric(npb_57),
+#            npb_25 = as.numeric(npb_25),
+#            npb_58 = as.numeric(npb_58)) %>%
+#     mutate(npb_01 = case_when(npb_01 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_01),
+#            npb_02 = case_when(npb_02 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_02),
+#            npb_03 = case_when(npb_03 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_03),
+#            npb_04 = case_when(npb_04 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_04),
+#            npb_05 = case_when(npb_05 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_05),
+#            npb_06 = case_when(npb_06 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_06),
+#            npb_08 = case_when(npb_08 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_08),
+#            npb_10 = case_when(npb_10 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_10),
+#            npb_11 = case_when(npb_11 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_11),
+#            npb_12 = case_when(npb_12 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_12),
+#            npb_13 = case_when(npb_13 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_13),
+#            npb_14 = case_when(npb_14 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_14),
+#            npb_15 = case_when(npb_15 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_15),
+#            npb_15a = case_when(npb_15a %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_15a),
+#            npb_16 = case_when(npb_16 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_16),
+#            npb_16a = case_when(npb_16a %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_16a),
+#            npb_17 = case_when(npb_17 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_17),
+#            npb_18 = case_when(npb_18 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_18),
+#            npb_19 = case_when(npb_19 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_19),
+#            npb_20 = case_when(npb_20 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_20),
+#            npb_21 = case_when(npb_21 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_21),
+#            npb_22 = case_when(npb_22 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_22),
+#            npb_23 = case_when(npb_23 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_23),
+#            npb_28 = case_when(npb_28 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_28),
+#            npb_29 = case_when(npb_29 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_29),
+#            npb_30 = case_when(npb_30 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_30),
+#            npb_37 = case_when(npb_37 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_37),
+#            npb_38 = case_when(npb_38 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_38),
+#            npb_39 = case_when(npb_39 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_39),
+#            npb_50 = case_when(npb_50 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_50),
+#            npb_51 = case_when(npb_51 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_51),
+#            npb_52 = case_when(npb_52 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_52),
+#            npb_53 = case_when(npb_53 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_53),
+#            npb_54 = case_when(npb_54 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_54),
+#            npb_55 = case_when(npb_55 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_55),
+#            npb_56 = case_when(npb_56 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_56),
+#            npb_57 = case_when(npb_57 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_57),
+#            npb_61 = case_when(npb_61 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_61),
+#            npb_62 = case_when(npb_62 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_62),
+#            npb_64 = case_when(npb_64 %in% c(99999992, 99999993, 99999994, 99999995, 99999997, 100000000) ~ NA_real_,
+#                               TRUE ~ npb_64),
+#            ) %>%
+#     select(sort(tidyselect::peek_vars())) %>%
+#     select(studyid, timefr, vin_loc, everything())
+# 
+# 
+#   sagesII_df <- sagesII_df %>%
+#     group_by(studyid) %>%
+#     arrange(studyid, timefr) %>%
+#     mutate(visit_number = row_number()) %>%
+#     ungroup() %>%
+#     select(studyid, vin_loc, timefr, visit_number, everything())
+# 
+# 
+#   sagesII_inperson_df <- sagesII_df %>%
+#     filter(vin_loc %in% c(1, 4))
+# 
+#   sagesII_telephone_df <- sagesII_df %>%
+#     filter(vin_loc == 2)
+# 
+#   sagesII_video_df <- sagesII_df %>%
+#     filter(vin_loc == 3)
+# 
+#   saveRDS(sagesII_df,              file=path(r_objects_folder, "010_sagesII_df.rds"))
+#   saveRDS(sagesII_inperson_df,     file=path(r_objects_folder, "010_sagesII_inperson_df.rds"))
+#   saveRDS(sagesII_telephone_df,    file=path(r_objects_folder, "010_sagesII_telephone_df.rds"))
+#   saveRDS(sagesII_video_df,        file=path(r_objects_folder, "010_sagesII_video_df.rds"))
+# }
 
 if(fs::dir_exists(sagesII_datafolder_validation)) {
   sagesII_validation_df <- read_dta(fs::path(sagesII_datafolder_validation, "SAGESII_validation_20210618.dta")) 

@@ -1,7 +1,7 @@
 ---
 title: "GCP Harmonization Tables & Figures"
 author: "Doug Tommet"
-date: '2022-08-19'
+date: '2022-10-13'
 format:
   html:
     toc: true
@@ -60,57 +60,59 @@ The questionable assumptions were deciding whether measures of letter fluency an
 
 With these as the possible choices, we decided to go with the version that fixes the coding mistakes, FAS/FCL summed but not equivalent and animal/supermarket naming not equivalent.
 
-## @fig-timeline: Timeline of SAGES-I and SAGES-II
+# Figure: Timeline of SAGES-II
+
+## @fig-timeline: Timeline of SAGES-II participant interviews
 
 
-
-:::{.cell .fig-cap-location-top}
-
-:::{.cell-output-display}
-
-:::{#fig-timeline}
-
-<p >
-
-<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">
-sequenceDiagram
-  participant Before times
-  participant After times
-  Before times ->>After times: COVID
-  Note left of Before times: SAGES II starts enrollment
-  Note right of After times: Neuropsych testing procedures updated
-</pre>
-
-<div id="mermaid-tooltip-1" class="mermaidTooltip"></div>
-</p>
-
-
-Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes
-:::
+::: {.cell .fig-cap-location-top}
+::: {.cell-output-display}
+![Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes](xxx-Tables_and_figures_for_manuscript_files/figure-html/fig-timeline-1.png){#fig-timeline width=672}
 :::
 :::
 
 
-
-@fig-timeline is meant to show the development/refinement of the neuropsych testing procedures due to COVID.
+@fig-timeline shows when different interview modes occurred in SAGES II.
 
 ::: callout-note
-This needs to be sketched out by Eva/Tamara/Field staff.
+*   Need the exact dates to use for the two vertical lines. Currently, they are based on the data.
+*   Does the COVID data provide useful data? What is the best way to present it? Currently, it only uses Suffolk County data, but it could be expanded to additional counties in the Boston region.
+*   Is the color scheme good?
 :::
 
-## @tbl-descriptives: Sample characteristics
+## @fig-timeline-alt1: Timeline of SAGES-II participant interviews
 
 
-::: {#tbl-descriptives .cell .tbl-cap-location-top tbl-cap='Sample characteristics'}
+::: {.cell .fig-cap-location-top}
+::: {.cell-output-display}
+![Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes](xxx-Tables_and_figures_for_manuscript_files/figure-html/fig-timeline-alt1-1.png){#fig-timeline-alt1 width=672}
+:::
+:::
+
+
+@fig-timeline-alt1 is the same as @fig-timeline but with the color gradient reversed.
+
+## Data quality check
+
+Some of the points in @fig-timeline/@fig-timeline-alt1 appear to have data errors because they are listed as having in-person visits during the shutdown.  The following tables list the studyid and visit date for these participants.  @tbl-data-quality lists the nine records that are listed as being an in-person interview that occurred during the shutdown.  @tbl-data-quality1 - @tbl-data-quality9 lists the all the visit dates for each of the nine participants listed in @tbl-data-quality.
+
+For most of these records it seems like the visit location is incorrect. One of the records seems like the visit date is incorrect.
+
+
+::: {.cell}
+
+:::
+
+::: {#tbl-data-quality .cell .tbl-cap-location-top tbl-cap='Data quality check'}
 ::: {.cell-output-display}
 
 ```{=html}
-<div id="qaecgdaxnk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zabegaisqr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#qaecgdaxnk .gt_table {
+#zabegaisqr .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -135,7 +137,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-left-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_heading {
+#zabegaisqr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -147,7 +149,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-right-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_title {
+#zabegaisqr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -159,7 +161,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-bottom-width: 0;
 }
 
-#qaecgdaxnk .gt_subtitle {
+#zabegaisqr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -171,13 +173,13 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-top-width: 0;
 }
 
-#qaecgdaxnk .gt_bottom_border {
+#zabegaisqr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_col_headings {
+#zabegaisqr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -192,7 +194,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-right-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_col_heading {
+#zabegaisqr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -212,7 +214,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   overflow-x: hidden;
 }
 
-#qaecgdaxnk .gt_column_spanner_outer {
+#zabegaisqr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -224,15 +226,15 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   padding-right: 4px;
 }
 
-#qaecgdaxnk .gt_column_spanner_outer:first-child {
+#zabegaisqr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qaecgdaxnk .gt_column_spanner_outer:last-child {
+#zabegaisqr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qaecgdaxnk .gt_column_spanner {
+#zabegaisqr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -244,7 +246,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   width: 100%;
 }
 
-#qaecgdaxnk .gt_group_heading {
+#zabegaisqr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -269,7 +271,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   vertical-align: middle;
 }
 
-#qaecgdaxnk .gt_empty_group_heading {
+#zabegaisqr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -284,15 +286,15 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   vertical-align: middle;
 }
 
-#qaecgdaxnk .gt_from_md > :first-child {
+#zabegaisqr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qaecgdaxnk .gt_from_md > :last-child {
+#zabegaisqr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qaecgdaxnk .gt_row {
+#zabegaisqr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -311,7 +313,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   overflow-x: hidden;
 }
 
-#qaecgdaxnk .gt_stub {
+#zabegaisqr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -324,7 +326,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   padding-right: 5px;
 }
 
-#qaecgdaxnk .gt_stub_row_group {
+#zabegaisqr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -338,11 +340,11 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   vertical-align: top;
 }
 
-#qaecgdaxnk .gt_row_group_first td {
+#zabegaisqr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qaecgdaxnk .gt_summary_row {
+#zabegaisqr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -352,16 +354,16 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   padding-right: 5px;
 }
 
-#qaecgdaxnk .gt_first_summary_row {
+#zabegaisqr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_first_summary_row.thick {
+#zabegaisqr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qaecgdaxnk .gt_last_summary_row {
+#zabegaisqr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -371,7 +373,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-bottom-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_grand_summary_row {
+#zabegaisqr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -381,7 +383,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   padding-right: 5px;
 }
 
-#qaecgdaxnk .gt_first_grand_summary_row {
+#zabegaisqr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -391,11 +393,11 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-top-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_striped {
+#zabegaisqr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qaecgdaxnk .gt_table_body {
+#zabegaisqr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -404,7 +406,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-bottom-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_footnotes {
+#zabegaisqr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -418,7 +420,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-right-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_footnote {
+#zabegaisqr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -427,7 +429,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   padding-right: 5px;
 }
 
-#qaecgdaxnk .gt_sourcenotes {
+#zabegaisqr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -441,7 +443,7 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   border-right-color: #D3D3D3;
 }
 
-#qaecgdaxnk .gt_sourcenote {
+#zabegaisqr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -449,36 +451,36 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   padding-right: 5px;
 }
 
-#qaecgdaxnk .gt_left {
+#zabegaisqr .gt_left {
   text-align: left;
 }
 
-#qaecgdaxnk .gt_center {
+#zabegaisqr .gt_center {
   text-align: center;
 }
 
-#qaecgdaxnk .gt_right {
+#zabegaisqr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qaecgdaxnk .gt_font_normal {
+#zabegaisqr .gt_font_normal {
   font-weight: normal;
 }
 
-#qaecgdaxnk .gt_font_bold {
+#zabegaisqr .gt_font_bold {
   font-weight: bold;
 }
 
-#qaecgdaxnk .gt_font_italic {
+#zabegaisqr .gt_font_italic {
   font-style: italic;
 }
 
-#qaecgdaxnk .gt_super {
+#zabegaisqr .gt_super {
   font-size: 65%;
 }
 
-#qaecgdaxnk .gt_two_val_uncert {
+#zabegaisqr .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -487,31 +489,4631 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   margin-left: 0.1em;
 }
 
-#qaecgdaxnk .gt_footnote_marks {
+#zabegaisqr .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#qaecgdaxnk .gt_asterisk {
+#zabegaisqr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qaecgdaxnk .gt_slash_mark {
+#zabegaisqr .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#qaecgdaxnk .gt_fraction_numerator {
+#zabegaisqr .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#qaecgdaxnk .gt_fraction_denominator {
+#zabegaisqr .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">MF90019</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2020-12-07</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PD10385</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2020-11-04</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PD10413</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2020-11-13</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30152</td>
+<td class="gt_row gt_center">12</td>
+<td class="gt_row gt_left">2020-12-01</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30582</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2020-11-24</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30598</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2020-12-04</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF31135</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2021-02-23</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PW20173</td>
+<td class="gt_row gt_center">6</td>
+<td class="gt_row gt_left">2020-12-07</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PW20565</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2020-11-27</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality1 .cell .tbl-cap-location-top tbl-cap='Studyid 1'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="qcanfzrmza" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#qcanfzrmza .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qcanfzrmza .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qcanfzrmza .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qcanfzrmza .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qcanfzrmza .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qcanfzrmza .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qcanfzrmza .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qcanfzrmza .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qcanfzrmza .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qcanfzrmza .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qcanfzrmza .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qcanfzrmza .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qcanfzrmza .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qcanfzrmza .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qcanfzrmza .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qcanfzrmza .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qcanfzrmza .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qcanfzrmza .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qcanfzrmza .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qcanfzrmza .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qcanfzrmza .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qcanfzrmza .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qcanfzrmza .gt_left {
+  text-align: left;
+}
+
+#qcanfzrmza .gt_center {
+  text-align: center;
+}
+
+#qcanfzrmza .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qcanfzrmza .gt_font_normal {
+  font-weight: normal;
+}
+
+#qcanfzrmza .gt_font_bold {
+  font-weight: bold;
+}
+
+#qcanfzrmza .gt_font_italic {
+  font-style: italic;
+}
+
+#qcanfzrmza .gt_super {
+  font-size: 65%;
+}
+
+#qcanfzrmza .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#qcanfzrmza .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#qcanfzrmza .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qcanfzrmza .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#qcanfzrmza .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#qcanfzrmza .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">MF90019</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">0</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2020-12-07</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">MF90019</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2021-01-15</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left">MF90019</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2021-02-16</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left">MF90019</td>
+<td class="gt_row gt_center">6</td>
+<td class="gt_row gt_left">2021-06-16</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">MF90019</td>
+<td class="gt_row gt_center">12</td>
+<td class="gt_row gt_left">2021-12-08</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">MF90019</td>
+<td class="gt_row gt_center">18</td>
+<td class="gt_row gt_left">2022-06-23</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality2 .cell .tbl-cap-location-top tbl-cap='Studyid 2'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="vssubplhki" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#vssubplhki .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vssubplhki .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vssubplhki .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vssubplhki .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vssubplhki .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vssubplhki .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vssubplhki .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vssubplhki .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vssubplhki .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vssubplhki .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vssubplhki .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vssubplhki .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vssubplhki .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vssubplhki .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vssubplhki .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vssubplhki .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vssubplhki .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vssubplhki .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vssubplhki .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vssubplhki .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vssubplhki .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vssubplhki .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vssubplhki .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vssubplhki .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vssubplhki .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vssubplhki .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vssubplhki .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vssubplhki .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vssubplhki .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vssubplhki .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vssubplhki .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vssubplhki .gt_left {
+  text-align: left;
+}
+
+#vssubplhki .gt_center {
+  text-align: center;
+}
+
+#vssubplhki .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vssubplhki .gt_font_normal {
+  font-weight: normal;
+}
+
+#vssubplhki .gt_font_bold {
+  font-weight: bold;
+}
+
+#vssubplhki .gt_font_italic {
+  font-style: italic;
+}
+
+#vssubplhki .gt_super {
+  font-size: 65%;
+}
+
+#vssubplhki .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#vssubplhki .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#vssubplhki .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vssubplhki .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#vssubplhki .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#vssubplhki .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">PD10385</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2020-08-11</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left">PD10385</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2020-09-30</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">PD10385</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">2</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2020-11-04</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">PD10385</td>
+<td class="gt_row gt_center">6</td>
+<td class="gt_row gt_left">2021-03-09</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left">PD10385</td>
+<td class="gt_row gt_center">12</td>
+<td class="gt_row gt_left">2021-09-16</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PD10385</td>
+<td class="gt_row gt_center">18</td>
+<td class="gt_row gt_left">2022-03-01</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality3 .cell .tbl-cap-location-top tbl-cap='Studyid 3'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="unphorbxbi" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#unphorbxbi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#unphorbxbi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#unphorbxbi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#unphorbxbi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#unphorbxbi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#unphorbxbi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#unphorbxbi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#unphorbxbi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#unphorbxbi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#unphorbxbi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#unphorbxbi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#unphorbxbi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#unphorbxbi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#unphorbxbi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#unphorbxbi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#unphorbxbi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#unphorbxbi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#unphorbxbi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#unphorbxbi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#unphorbxbi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#unphorbxbi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#unphorbxbi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#unphorbxbi .gt_left {
+  text-align: left;
+}
+
+#unphorbxbi .gt_center {
+  text-align: center;
+}
+
+#unphorbxbi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#unphorbxbi .gt_font_normal {
+  font-weight: normal;
+}
+
+#unphorbxbi .gt_font_bold {
+  font-weight: bold;
+}
+
+#unphorbxbi .gt_font_italic {
+  font-style: italic;
+}
+
+#unphorbxbi .gt_super {
+  font-size: 65%;
+}
+
+#unphorbxbi .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#unphorbxbi .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#unphorbxbi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#unphorbxbi .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#unphorbxbi .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#unphorbxbi .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">PD10413</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2020-09-29</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">PD10413</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">1</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2020-11-13</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">PD10413</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2020-12-11</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left">PD10413</td>
+<td class="gt_row gt_center">6</td>
+<td class="gt_row gt_left">2021-04-14</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left">PD10413</td>
+<td class="gt_row gt_center">12</td>
+<td class="gt_row gt_left">2021-10-18</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PD10413</td>
+<td class="gt_row gt_center">18</td>
+<td class="gt_row gt_left">2022-04-12</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality4 .cell .tbl-cap-location-top tbl-cap='Studyid 4'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="ddctnogwiv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#ddctnogwiv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ddctnogwiv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ddctnogwiv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ddctnogwiv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ddctnogwiv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ddctnogwiv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ddctnogwiv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ddctnogwiv .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ddctnogwiv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ddctnogwiv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ddctnogwiv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ddctnogwiv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ddctnogwiv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddctnogwiv .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ddctnogwiv .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ddctnogwiv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddctnogwiv .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ddctnogwiv .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddctnogwiv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ddctnogwiv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddctnogwiv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ddctnogwiv .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddctnogwiv .gt_left {
+  text-align: left;
+}
+
+#ddctnogwiv .gt_center {
+  text-align: center;
+}
+
+#ddctnogwiv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ddctnogwiv .gt_font_normal {
+  font-weight: normal;
+}
+
+#ddctnogwiv .gt_font_bold {
+  font-weight: bold;
+}
+
+#ddctnogwiv .gt_font_italic {
+  font-style: italic;
+}
+
+#ddctnogwiv .gt_super {
+  font-size: 65%;
+}
+
+#ddctnogwiv .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#ddctnogwiv .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#ddctnogwiv .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ddctnogwiv .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#ddctnogwiv .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#ddctnogwiv .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">PF30152</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2019-10-15</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30152</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2019-12-20</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30152</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2020-01-17</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30152</td>
+<td class="gt_row gt_center">6</td>
+<td class="gt_row gt_left">2020-05-04</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">PF30152</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">12</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2020-12-01</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30152</td>
+<td class="gt_row gt_center">18</td>
+<td class="gt_row gt_left">2021-06-03</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left">PF30152</td>
+<td class="gt_row gt_center">24</td>
+<td class="gt_row gt_left">2021-11-29</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality5 .cell .tbl-cap-location-top tbl-cap='Studyid 5'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="btcjtptewg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#btcjtptewg .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#btcjtptewg .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#btcjtptewg .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#btcjtptewg .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#btcjtptewg .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#btcjtptewg .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#btcjtptewg .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#btcjtptewg .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#btcjtptewg .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#btcjtptewg .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#btcjtptewg .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#btcjtptewg .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#btcjtptewg .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#btcjtptewg .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#btcjtptewg .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#btcjtptewg .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#btcjtptewg .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#btcjtptewg .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#btcjtptewg .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#btcjtptewg .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#btcjtptewg .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#btcjtptewg .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#btcjtptewg .gt_left {
+  text-align: left;
+}
+
+#btcjtptewg .gt_center {
+  text-align: center;
+}
+
+#btcjtptewg .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#btcjtptewg .gt_font_normal {
+  font-weight: normal;
+}
+
+#btcjtptewg .gt_font_bold {
+  font-weight: bold;
+}
+
+#btcjtptewg .gt_font_italic {
+  font-style: italic;
+}
+
+#btcjtptewg .gt_super {
+  font-size: 65%;
+}
+
+#btcjtptewg .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#btcjtptewg .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#btcjtptewg .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#btcjtptewg .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#btcjtptewg .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#btcjtptewg .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">PF30582</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">0</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2020-11-24</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30582</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2021-01-06</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left">PF30582</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2021-02-09</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left">PF30582</td>
+<td class="gt_row gt_center">12</td>
+<td class="gt_row gt_left">2021-12-21</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30582</td>
+<td class="gt_row gt_center">18</td>
+<td class="gt_row gt_left">2022-06-13</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality6 .cell .tbl-cap-location-top tbl-cap='Studyid 6'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="ghgmehkhhb" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#ghgmehkhhb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ghgmehkhhb .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ghgmehkhhb .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ghgmehkhhb .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ghgmehkhhb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ghgmehkhhb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ghgmehkhhb .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ghgmehkhhb .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ghgmehkhhb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ghgmehkhhb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ghgmehkhhb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ghgmehkhhb .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ghgmehkhhb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ghgmehkhhb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ghgmehkhhb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ghgmehkhhb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ghgmehkhhb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ghgmehkhhb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ghgmehkhhb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ghgmehkhhb .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ghgmehkhhb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ghgmehkhhb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ghgmehkhhb .gt_left {
+  text-align: left;
+}
+
+#ghgmehkhhb .gt_center {
+  text-align: center;
+}
+
+#ghgmehkhhb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ghgmehkhhb .gt_font_normal {
+  font-weight: normal;
+}
+
+#ghgmehkhhb .gt_font_bold {
+  font-weight: bold;
+}
+
+#ghgmehkhhb .gt_font_italic {
+  font-style: italic;
+}
+
+#ghgmehkhhb .gt_super {
+  font-size: 65%;
+}
+
+#ghgmehkhhb .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#ghgmehkhhb .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#ghgmehkhhb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ghgmehkhhb .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#ghgmehkhhb .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#ghgmehkhhb .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">PF30598</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">0</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2020-12-04</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30598</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2021-01-15</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left">PF30598</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2021-02-18</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left">PF30598</td>
+<td class="gt_row gt_center">6</td>
+<td class="gt_row gt_left">2021-06-15</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30598</td>
+<td class="gt_row gt_center">12</td>
+<td class="gt_row gt_left">2021-12-14</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PF30598</td>
+<td class="gt_row gt_center">18</td>
+<td class="gt_row gt_left">2022-06-06</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality7 .cell .tbl-cap-location-top tbl-cap='Studyid 7'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="pntsamsynt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#pntsamsynt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#pntsamsynt .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#pntsamsynt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#pntsamsynt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#pntsamsynt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#pntsamsynt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#pntsamsynt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#pntsamsynt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pntsamsynt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pntsamsynt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#pntsamsynt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#pntsamsynt .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#pntsamsynt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pntsamsynt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#pntsamsynt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#pntsamsynt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pntsamsynt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#pntsamsynt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pntsamsynt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#pntsamsynt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pntsamsynt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pntsamsynt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pntsamsynt .gt_left {
+  text-align: left;
+}
+
+#pntsamsynt .gt_center {
+  text-align: center;
+}
+
+#pntsamsynt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pntsamsynt .gt_font_normal {
+  font-weight: normal;
+}
+
+#pntsamsynt .gt_font_bold {
+  font-weight: bold;
+}
+
+#pntsamsynt .gt_font_italic {
+  font-style: italic;
+}
+
+#pntsamsynt .gt_super {
+  font-size: 65%;
+}
+
+#pntsamsynt .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#pntsamsynt .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#pntsamsynt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#pntsamsynt .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#pntsamsynt .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#pntsamsynt .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">PF31135</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2022-01-04</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">PF31135</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">1</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2021-02-23</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">PF31135</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2022-03-25</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality8 .cell .tbl-cap-location-top tbl-cap='Studyid 8'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="opnydrbkuw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#opnydrbkuw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#opnydrbkuw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#opnydrbkuw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#opnydrbkuw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#opnydrbkuw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#opnydrbkuw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#opnydrbkuw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#opnydrbkuw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#opnydrbkuw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#opnydrbkuw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#opnydrbkuw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#opnydrbkuw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#opnydrbkuw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opnydrbkuw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#opnydrbkuw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#opnydrbkuw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opnydrbkuw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#opnydrbkuw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opnydrbkuw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#opnydrbkuw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opnydrbkuw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#opnydrbkuw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opnydrbkuw .gt_left {
+  text-align: left;
+}
+
+#opnydrbkuw .gt_center {
+  text-align: center;
+}
+
+#opnydrbkuw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#opnydrbkuw .gt_font_normal {
+  font-weight: normal;
+}
+
+#opnydrbkuw .gt_font_bold {
+  font-weight: bold;
+}
+
+#opnydrbkuw .gt_font_italic {
+  font-style: italic;
+}
+
+#opnydrbkuw .gt_super {
+  font-size: 65%;
+}
+
+#opnydrbkuw .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#opnydrbkuw .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#opnydrbkuw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#opnydrbkuw .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#opnydrbkuw .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#opnydrbkuw .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">PW20173</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_left">2020-02-10</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">PW20173</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2020-07-09</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left">PW20173</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2020-08-07</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">PW20173</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">6</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2020-12-07</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">PW20173</td>
+<td class="gt_row gt_center">12</td>
+<td class="gt_row gt_left">2021-06-09</td>
+<td class="gt_row gt_right">3</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+::: {#tbl-data-quality9 .cell .tbl-cap-location-top tbl-cap='Studyid 9'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="ulvlmbdziy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#ulvlmbdziy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ulvlmbdziy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ulvlmbdziy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ulvlmbdziy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ulvlmbdziy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ulvlmbdziy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ulvlmbdziy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ulvlmbdziy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ulvlmbdziy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ulvlmbdziy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ulvlmbdziy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ulvlmbdziy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ulvlmbdziy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulvlmbdziy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ulvlmbdziy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ulvlmbdziy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulvlmbdziy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ulvlmbdziy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulvlmbdziy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ulvlmbdziy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulvlmbdziy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ulvlmbdziy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ulvlmbdziy .gt_left {
+  text-align: left;
+}
+
+#ulvlmbdziy .gt_center {
+  text-align: center;
+}
+
+#ulvlmbdziy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ulvlmbdziy .gt_font_normal {
+  font-weight: normal;
+}
+
+#ulvlmbdziy .gt_font_bold {
+  font-weight: bold;
+}
+
+#ulvlmbdziy .gt_font_italic {
+  font-style: italic;
+}
+
+#ulvlmbdziy .gt_super {
+  font-size: 65%;
+}
+
+#ulvlmbdziy .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#ulvlmbdziy .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#ulvlmbdziy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ulvlmbdziy .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#ulvlmbdziy .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#ulvlmbdziy .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">studyid</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">timefr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">vin_date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vin_loc</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left" style="background-color: #FFFF00;">PW20565</td>
+<td class="gt_row gt_center" style="background-color: #FFFF00;">0</td>
+<td class="gt_row gt_left" style="background-color: #FFFF00;">2020-11-27</td>
+<td class="gt_row gt_right" style="background-color: #FFFF00;">1</td></tr>
+    <tr><td class="gt_row gt_left">PW20565</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_left">2020-12-29</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left">PW20565</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_left">2021-02-04</td>
+<td class="gt_row gt_right">2</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
+
+:::
+:::
+
+
+# Sample characteristics
+
+## @tbl-descriptives: Sample characteristics - SAGES II baseline
+
+
+::: {#tbl-descriptives .cell .tbl-cap-location-top tbl-cap='Sample characteristics'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="uvuzmccveq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#uvuzmccveq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#uvuzmccveq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#uvuzmccveq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#uvuzmccveq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#uvuzmccveq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#uvuzmccveq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#uvuzmccveq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#uvuzmccveq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#uvuzmccveq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#uvuzmccveq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#uvuzmccveq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#uvuzmccveq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#uvuzmccveq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uvuzmccveq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#uvuzmccveq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#uvuzmccveq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uvuzmccveq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#uvuzmccveq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uvuzmccveq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#uvuzmccveq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uvuzmccveq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#uvuzmccveq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uvuzmccveq .gt_left {
+  text-align: left;
+}
+
+#uvuzmccveq .gt_center {
+  text-align: center;
+}
+
+#uvuzmccveq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#uvuzmccveq .gt_font_normal {
+  font-weight: normal;
+}
+
+#uvuzmccveq .gt_font_bold {
+  font-weight: bold;
+}
+
+#uvuzmccveq .gt_font_italic {
+  font-style: italic;
+}
+
+#uvuzmccveq .gt_super {
+  font-size: 65%;
+}
+
+#uvuzmccveq .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#uvuzmccveq .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#uvuzmccveq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#uvuzmccveq .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#uvuzmccveq .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#uvuzmccveq .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -523,67 +5125,91 @@ This needs to be sketched out by Eva/Tamara/Field staff.
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>N</strong></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>N = 420</strong><sup class="gt_footnote_marks">1</sup></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr><td class="gt_row gt_left">Female Sex</td>
+<td class="gt_row gt_center">420</td>
 <td class="gt_row gt_center">271 / 420 (65%)</td></tr>
     <tr><td class="gt_row gt_left">Non white</td>
-<td class="gt_row gt_center">52 / 418 (12%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">2</td></tr>
+<td class="gt_row gt_center">420</td>
+<td class="gt_row gt_center">55 / 420 (13%)</td></tr>
     <tr><td class="gt_row gt_left">vdeduc_r</td>
+<td class="gt_row gt_center">419</td>
 <td class="gt_row gt_center">16.25 (2.67)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">1</td></tr>
-    <tr><td class="gt_row gt_left">Surgery Type</td>
+    <tr><td class="gt_row gt_left">vdsurg</td>
+<td class="gt_row gt_center">420</td>
 <td class="gt_row gt_center"></td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
-<td class="gt_row gt_center">210 / 419 (50%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
-<td class="gt_row gt_center">160 / 419 (38%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
-<td class="gt_row gt_center">1 / 419 (0.2%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
-<td class="gt_row gt_center">27 / 419 (6.4%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
-<td class="gt_row gt_center">10 / 419 (2.4%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">7</td>
-<td class="gt_row gt_center">3 / 419 (0.7%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8</td>
-<td class="gt_row gt_center">8 / 419 (1.9%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">1</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1: Knee Replacement</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">210 / 420 (50%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2: Hip Replacement</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">160 / 420 (38%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3: Cervical laminectomy</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">1 / 420 (0.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4: Thoracic or lumbar laminectomy</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">0 / 420 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5: Spine Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">27 / 420 (6.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6: Major General Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">10 / 420 (2.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">7: Major Vascular Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">3 / 420 (0.7%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8: Major Urology Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">9 / 420 (2.1%)</td></tr>
     <tr><td class="gt_row gt_left">Geriatric Depression Scale Score [0-15]</td>
-<td class="gt_row gt_center">2.47 (2.31)</td></tr>
+<td class="gt_row gt_center">420</td>
+<td class="gt_row gt_center">2.48 (2.31)</td></tr>
     <tr><td class="gt_row gt_left">Charlson Comorbidity Index</td>
+<td class="gt_row gt_center">284</td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">160 / 284 (56%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">51 / 284 (18%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">38 / 284 (13%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">17 / 284 (6.0%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">6 / 284 (2.1%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">7 / 284 (2.5%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">1 / 284 (0.4%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">2 / 284 (0.7%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">9</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">2 / 284 (0.7%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center"></td>
 <td class="gt_row gt_center">136</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
     <tr>
-      <td class="gt_footnote" colspan="2"><sup class="gt_footnote_marks">1</sup> n / N (%); Mean (SD)</td>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">1</sup> n / N (%); Mean (SD)</td>
     </tr>
   </tfoot>
 </table>
@@ -598,19 +5224,19 @@ This needs to be sketched out by Eva/Tamara/Field staff.
 This is the descriptive statistics for SAGES II at the baseline interview. In the harmonization analysis, for the telephone/video samples the interviews came (mostly) from the follow-up interviews.
 :::
 
-## @tbl-battery: Cognitive tests by mode and study
+## @tbl-descriptives_split: Sample characteristics - SAGES II at first interview mode
 
 
-::: {#tbl-battery .cell .tbl-cap-location-top tbl-cap='Cognitive tests by mode and study'}
+::: {#tbl-descriptives_split .cell .tbl-cap-location-top tbl-cap='Sample characteristics by interview mode'}
 ::: {.cell-output-display}
 
 ```{=html}
-<div id="jdtwubuarh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rhxdqhfveq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#jdtwubuarh .gt_table {
+#rhxdqhfveq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -635,7 +5261,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-left-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_heading {
+#rhxdqhfveq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -647,7 +5273,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-right-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_title {
+#rhxdqhfveq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -659,7 +5285,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-bottom-width: 0;
 }
 
-#jdtwubuarh .gt_subtitle {
+#rhxdqhfveq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -671,13 +5297,13 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-top-width: 0;
 }
 
-#jdtwubuarh .gt_bottom_border {
+#rhxdqhfveq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_col_headings {
+#rhxdqhfveq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -692,7 +5318,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-right-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_col_heading {
+#rhxdqhfveq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -712,7 +5338,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   overflow-x: hidden;
 }
 
-#jdtwubuarh .gt_column_spanner_outer {
+#rhxdqhfveq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -724,15 +5350,15 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   padding-right: 4px;
 }
 
-#jdtwubuarh .gt_column_spanner_outer:first-child {
+#rhxdqhfveq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jdtwubuarh .gt_column_spanner_outer:last-child {
+#rhxdqhfveq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jdtwubuarh .gt_column_spanner {
+#rhxdqhfveq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -744,7 +5370,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   width: 100%;
 }
 
-#jdtwubuarh .gt_group_heading {
+#rhxdqhfveq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -769,7 +5395,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   vertical-align: middle;
 }
 
-#jdtwubuarh .gt_empty_group_heading {
+#rhxdqhfveq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -784,15 +5410,15 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   vertical-align: middle;
 }
 
-#jdtwubuarh .gt_from_md > :first-child {
+#rhxdqhfveq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jdtwubuarh .gt_from_md > :last-child {
+#rhxdqhfveq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jdtwubuarh .gt_row {
+#rhxdqhfveq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -811,7 +5437,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   overflow-x: hidden;
 }
 
-#jdtwubuarh .gt_stub {
+#rhxdqhfveq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -824,7 +5450,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   padding-right: 5px;
 }
 
-#jdtwubuarh .gt_stub_row_group {
+#rhxdqhfveq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -838,11 +5464,11 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   vertical-align: top;
 }
 
-#jdtwubuarh .gt_row_group_first td {
+#rhxdqhfveq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jdtwubuarh .gt_summary_row {
+#rhxdqhfveq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -852,16 +5478,16 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   padding-right: 5px;
 }
 
-#jdtwubuarh .gt_first_summary_row {
+#rhxdqhfveq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_first_summary_row.thick {
+#rhxdqhfveq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jdtwubuarh .gt_last_summary_row {
+#rhxdqhfveq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -871,7 +5497,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-bottom-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_grand_summary_row {
+#rhxdqhfveq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -881,7 +5507,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   padding-right: 5px;
 }
 
-#jdtwubuarh .gt_first_grand_summary_row {
+#rhxdqhfveq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -891,11 +5517,11 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-top-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_striped {
+#rhxdqhfveq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jdtwubuarh .gt_table_body {
+#rhxdqhfveq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -904,7 +5530,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-bottom-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_footnotes {
+#rhxdqhfveq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -918,7 +5544,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-right-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_footnote {
+#rhxdqhfveq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -927,7 +5553,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   padding-right: 5px;
 }
 
-#jdtwubuarh .gt_sourcenotes {
+#rhxdqhfveq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -941,7 +5567,7 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   border-right-color: #D3D3D3;
 }
 
-#jdtwubuarh .gt_sourcenote {
+#rhxdqhfveq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -949,36 +5575,36 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   padding-right: 5px;
 }
 
-#jdtwubuarh .gt_left {
+#rhxdqhfveq .gt_left {
   text-align: left;
 }
 
-#jdtwubuarh .gt_center {
+#rhxdqhfveq .gt_center {
   text-align: center;
 }
 
-#jdtwubuarh .gt_right {
+#rhxdqhfveq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jdtwubuarh .gt_font_normal {
+#rhxdqhfveq .gt_font_normal {
   font-weight: normal;
 }
 
-#jdtwubuarh .gt_font_bold {
+#rhxdqhfveq .gt_font_bold {
   font-weight: bold;
 }
 
-#jdtwubuarh .gt_font_italic {
+#rhxdqhfveq .gt_font_italic {
   font-style: italic;
 }
 
-#jdtwubuarh .gt_super {
+#rhxdqhfveq .gt_super {
   font-size: 65%;
 }
 
-#jdtwubuarh .gt_two_val_uncert {
+#rhxdqhfveq .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -987,31 +5613,1258 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
   margin-left: 0.1em;
 }
 
-#jdtwubuarh .gt_footnote_marks {
+#rhxdqhfveq .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#jdtwubuarh .gt_asterisk {
+#rhxdqhfveq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jdtwubuarh .gt_slash_mark {
+#rhxdqhfveq .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#jdtwubuarh .gt_fraction_numerator {
+#rhxdqhfveq .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#jdtwubuarh .gt_fraction_denominator {
+#rhxdqhfveq .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  <caption>SAGES II - First interview at different assessment modes</caption>
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>N</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>In-person</strong>, N = 391<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Telephone</strong>, N = 239<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Video</strong>, N = 208<sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">timefr</td>
+<td class="gt_row gt_center">838</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">296 / 391 (76%)</td>
+<td class="gt_row gt_center">9 / 239 (3.8%)</td>
+<td class="gt_row gt_center">115 / 208 (55%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">21 / 391 (5.4%)</td>
+<td class="gt_row gt_center">121 / 239 (51%)</td>
+<td class="gt_row gt_center">0 / 208 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">16 / 391 (4.1%)</td>
+<td class="gt_row gt_center">31 / 239 (13%)</td>
+<td class="gt_row gt_center">12 / 208 (5.8%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">29 / 391 (7.4%)</td>
+<td class="gt_row gt_center">58 / 239 (24%)</td>
+<td class="gt_row gt_center">19 / 208 (9.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">12</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">27 / 391 (6.9%)</td>
+<td class="gt_row gt_center">19 / 239 (7.9%)</td>
+<td class="gt_row gt_center">48 / 208 (23%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">18</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">2 / 391 (0.5%)</td>
+<td class="gt_row gt_center">0 / 239 (0%)</td>
+<td class="gt_row gt_center">14 / 208 (6.7%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">24</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">0 / 391 (0%)</td>
+<td class="gt_row gt_center">1 / 239 (0.4%)</td>
+<td class="gt_row gt_center">0 / 208 (0%)</td></tr>
+    <tr><td class="gt_row gt_left">visit_number_overall</td>
+<td class="gt_row gt_center">838</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">296 / 391 (76%)</td>
+<td class="gt_row gt_center">9 / 239 (3.8%)</td>
+<td class="gt_row gt_center">115 / 208 (55%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">24 / 391 (6.1%)</td>
+<td class="gt_row gt_center">123 / 239 (51%)</td>
+<td class="gt_row gt_center">0 / 208 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">14 / 391 (3.6%)</td>
+<td class="gt_row gt_center">31 / 239 (13%)</td>
+<td class="gt_row gt_center">13 / 208 (6.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">29 / 391 (7.4%)</td>
+<td class="gt_row gt_center">59 / 239 (25%)</td>
+<td class="gt_row gt_center">18 / 208 (8.7%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">26 / 391 (6.6%)</td>
+<td class="gt_row gt_center">17 / 239 (7.1%)</td>
+<td class="gt_row gt_center">48 / 208 (23%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">2 / 391 (0.5%)</td>
+<td class="gt_row gt_center">0 / 239 (0%)</td>
+<td class="gt_row gt_center">14 / 208 (6.7%)</td></tr>
+    <tr><td class="gt_row gt_left">Female Sex</td>
+<td class="gt_row gt_center">838</td>
+<td class="gt_row gt_center">250 / 391 (64%)</td>
+<td class="gt_row gt_center">149 / 239 (62%)</td>
+<td class="gt_row gt_center">131 / 208 (63%)</td></tr>
+    <tr><td class="gt_row gt_left">Non white</td>
+<td class="gt_row gt_center">838</td>
+<td class="gt_row gt_center">128 / 391 (33%)</td>
+<td class="gt_row gt_center">234 / 239 (98%)</td>
+<td class="gt_row gt_center">111 / 208 (53%)</td></tr>
+    <tr><td class="gt_row gt_left">vdeduc_r</td>
+<td class="gt_row gt_center">419</td>
+<td class="gt_row gt_center">16.32 (2.70)</td>
+<td class="gt_row gt_center">14.44 (1.88)</td>
+<td class="gt_row gt_center">16.22 (2.63)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">95</td>
+<td class="gt_row gt_center">230</td>
+<td class="gt_row gt_center">94</td></tr>
+    <tr><td class="gt_row gt_left">vdsurg</td>
+<td class="gt_row gt_center">838</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1: Knee Replacement</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">198 / 391 (51%)</td>
+<td class="gt_row gt_center">119 / 239 (50%)</td>
+<td class="gt_row gt_center">96 / 208 (46%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2: Hip Replacement</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">145 / 391 (37%)</td>
+<td class="gt_row gt_center">99 / 239 (41%)</td>
+<td class="gt_row gt_center">90 / 208 (43%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3: Cervical laminectomy</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">1 / 391 (0.3%)</td>
+<td class="gt_row gt_center">0 / 239 (0%)</td>
+<td class="gt_row gt_center">0 / 208 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4: Thoracic or lumbar laminectomy</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">0 / 391 (0%)</td>
+<td class="gt_row gt_center">0 / 239 (0%)</td>
+<td class="gt_row gt_center">0 / 208 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5: Spine Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">26 / 391 (6.6%)</td>
+<td class="gt_row gt_center">14 / 239 (5.9%)</td>
+<td class="gt_row gt_center">12 / 208 (5.8%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6: Major General Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">9 / 391 (2.3%)</td>
+<td class="gt_row gt_center">3 / 239 (1.3%)</td>
+<td class="gt_row gt_center">5 / 208 (2.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">7: Major Vascular Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">3 / 391 (0.8%)</td>
+<td class="gt_row gt_center">1 / 239 (0.4%)</td>
+<td class="gt_row gt_center">1 / 208 (0.5%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8: Major Urology Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">9 / 391 (2.3%)</td>
+<td class="gt_row gt_center">3 / 239 (1.3%)</td>
+<td class="gt_row gt_center">4 / 208 (1.9%)</td></tr>
+    <tr><td class="gt_row gt_left">Geriatric Depression Scale Score [0-15]</td>
+<td class="gt_row gt_center">696</td>
+<td class="gt_row gt_center">2.31 (2.22)</td>
+<td class="gt_row gt_center">2.25 (2.03)</td>
+<td class="gt_row gt_center">2.52 (2.36)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">21</td>
+<td class="gt_row gt_center">121</td>
+<td class="gt_row gt_center">0</td></tr>
+    <tr><td class="gt_row gt_left">Charlson Comorbidity Index</td>
+<td class="gt_row gt_center">694</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">145 / 256 (57%)</td>
+<td class="gt_row gt_center">136 / 235 (58%)</td>
+<td class="gt_row gt_center">109 / 203 (54%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">45 / 256 (18%)</td>
+<td class="gt_row gt_center">39 / 235 (17%)</td>
+<td class="gt_row gt_center">39 / 203 (19%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">35 / 256 (14%)</td>
+<td class="gt_row gt_center">31 / 235 (13%)</td>
+<td class="gt_row gt_center">32 / 203 (16%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">15 / 256 (5.9%)</td>
+<td class="gt_row gt_center">14 / 235 (6.0%)</td>
+<td class="gt_row gt_center">11 / 203 (5.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">5 / 256 (2.0%)</td>
+<td class="gt_row gt_center">5 / 235 (2.1%)</td>
+<td class="gt_row gt_center">5 / 203 (2.5%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">6 / 256 (2.3%)</td>
+<td class="gt_row gt_center">6 / 235 (2.6%)</td>
+<td class="gt_row gt_center">3 / 203 (1.5%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">1 / 256 (0.4%)</td>
+<td class="gt_row gt_center">0 / 235 (0%)</td>
+<td class="gt_row gt_center">0 / 203 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">2 / 256 (0.8%)</td>
+<td class="gt_row gt_center">2 / 235 (0.9%)</td>
+<td class="gt_row gt_center">2 / 203 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">9</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">2 / 256 (0.8%)</td>
+<td class="gt_row gt_center">2 / 235 (0.9%)</td>
+<td class="gt_row gt_center">2 / 203 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">135</td>
+<td class="gt_row gt_center">4</td>
+<td class="gt_row gt_center">5</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="5"><sup class="gt_footnote_marks">1</sup> n / N (%); Mean (SD)</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+```
+
+:::
+:::
+
+
+::: callout-note
+This table is somewhat tricky to interpret.  It includes the first time a participant had a particular interview mode. So a participant could have had an in-person interview, a telephone interview and video interview. That participant would be listed in all the columns.
+
+The reason this table might be useful is that it describes the samples used to harmonize the GCP across interview types.
+
+* Of the participants' first in-person interview, 76% had their first in-person interview at baseline.
+
+* Of the participants' first telephone interview, 51% had their first telephone interview at 1-month and 24% had their first telephone interview at 6-month.
+
+* Of the participants' first video interview, 55% had their first video interview at baseline, and 23% had their first video interview at 12-month.
+:::
+
+## @tbl-descriptives: Sample characteristics - SAGES II validation sample
+
+
+::: {#tbl-descriptives_validation .cell .tbl-cap-location-top tbl-cap='Sample characteristics for the validation sample'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="xfgxhgokaz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#xfgxhgokaz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xfgxhgokaz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xfgxhgokaz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xfgxhgokaz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xfgxhgokaz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xfgxhgokaz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xfgxhgokaz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xfgxhgokaz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xfgxhgokaz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xfgxhgokaz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xfgxhgokaz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xfgxhgokaz .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xfgxhgokaz .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xfgxhgokaz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xfgxhgokaz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xfgxhgokaz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xfgxhgokaz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xfgxhgokaz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xfgxhgokaz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xfgxhgokaz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xfgxhgokaz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xfgxhgokaz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xfgxhgokaz .gt_left {
+  text-align: left;
+}
+
+#xfgxhgokaz .gt_center {
+  text-align: center;
+}
+
+#xfgxhgokaz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xfgxhgokaz .gt_font_normal {
+  font-weight: normal;
+}
+
+#xfgxhgokaz .gt_font_bold {
+  font-weight: bold;
+}
+
+#xfgxhgokaz .gt_font_italic {
+  font-style: italic;
+}
+
+#xfgxhgokaz .gt_super {
+  font-size: 65%;
+}
+
+#xfgxhgokaz .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#xfgxhgokaz .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#xfgxhgokaz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xfgxhgokaz .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#xfgxhgokaz .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#xfgxhgokaz .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  <caption>SAGES II - validation sample</caption>
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>N</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>N = 98</strong><sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Female Sex</td>
+<td class="gt_row gt_center">98</td>
+<td class="gt_row gt_center">61 / 98 (62%)</td></tr>
+    <tr><td class="gt_row gt_left">Non white</td>
+<td class="gt_row gt_center">98</td>
+<td class="gt_row gt_center">8 / 98 (8.2%)</td></tr>
+    <tr><td class="gt_row gt_left">vdeduc_r</td>
+<td class="gt_row gt_center">97</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">12</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">8 / 97 (8.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">13</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">6 / 97 (6.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">14</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">13 / 97 (13%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">15</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">3 / 97 (3.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">16</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">19 / 97 (20%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">18</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">30 / 97 (31%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">20</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">18 / 97 (19%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">1</td></tr>
+    <tr><td class="gt_row gt_left">vdsurg</td>
+<td class="gt_row gt_center">98</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1: Knee Replacement</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">49 / 98 (50%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2: Hip Replacement</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">45 / 98 (46%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3: Cervical laminectomy</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">0 / 98 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4: Thoracic or lumbar laminectomy</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">0 / 98 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5: Spine Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">2 / 98 (2.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6: Major General Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">1 / 98 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">7: Major Vascular Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">0 / 98 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8: Major Urology Surgery</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">1 / 98 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left">Geriatric Depression Scale Score [0-15]</td>
+<td class="gt_row gt_center">98</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">22 / 98 (22%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">19 / 98 (19%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">23 / 98 (23%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">13 / 98 (13%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">7 / 98 (7.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">4 / 98 (4.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">5 / 98 (5.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">7</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">3 / 98 (3.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">2 / 98 (2.0%)</td></tr>
+    <tr><td class="gt_row gt_left">Charlson Comorbidity Index</td>
+<td class="gt_row gt_center">98</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">55 / 98 (56%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">17 / 98 (17%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">12 / 98 (12%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">6 / 98 (6.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">3 / 98 (3.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">3 / 98 (3.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">9</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">2 / 98 (2.0%)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">1</sup> n / N (%)</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+```
+
+:::
+:::
+
+
+This table should be merged with whichever of @tbl-descriptives or @tbl-descriptives_split that gets used.
+
+# Cognitive battery
+
+## @tbl-battery: Cognitive tests by mode and study
+
+
+::: {#tbl-battery .cell .tbl-cap-location-top tbl-cap='Cognitive tests by mode and study'}
+::: {.cell-output-display}
+
+```{=html}
+<div id="osbwjdbtaq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#osbwjdbtaq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#osbwjdbtaq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#osbwjdbtaq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#osbwjdbtaq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#osbwjdbtaq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#osbwjdbtaq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#osbwjdbtaq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#osbwjdbtaq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#osbwjdbtaq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#osbwjdbtaq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#osbwjdbtaq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#osbwjdbtaq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#osbwjdbtaq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osbwjdbtaq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#osbwjdbtaq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#osbwjdbtaq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osbwjdbtaq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#osbwjdbtaq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osbwjdbtaq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#osbwjdbtaq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osbwjdbtaq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#osbwjdbtaq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osbwjdbtaq .gt_left {
+  text-align: left;
+}
+
+#osbwjdbtaq .gt_center {
+  text-align: center;
+}
+
+#osbwjdbtaq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#osbwjdbtaq .gt_font_normal {
+  font-weight: normal;
+}
+
+#osbwjdbtaq .gt_font_bold {
+  font-weight: bold;
+}
+
+#osbwjdbtaq .gt_font_italic {
+  font-style: italic;
+}
+
+#osbwjdbtaq .gt_super {
+  font-size: 65%;
+}
+
+#osbwjdbtaq .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#osbwjdbtaq .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#osbwjdbtaq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#osbwjdbtaq .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#osbwjdbtaq .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#osbwjdbtaq .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1171,6 +7024,8 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
 
 @tbl-battery shows the neuropsych tests used in the different studys/modes.
 
+# GCP Information
+
 ## @fig-info: Test Information by mode and study
 
 
@@ -1187,6 +7042,8 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
 The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-person, and SAGES II - Video. This means their Information curves would overlap. I shifted the curves by a small amount so they would be distinct.
 :::
 
+# Validation
+
 ## @fig-video-vs-telephone: Agreement by mode
 
 
@@ -1202,12 +7059,12 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
 ::: {.cell-output-display}
 
 ```{=html}
-<div id="godptlndak" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="nrvdzlzwef" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#godptlndak .gt_table {
+#nrvdzlzwef .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1232,7 +7089,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-left-color: #D3D3D3;
 }
 
-#godptlndak .gt_heading {
+#nrvdzlzwef .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1244,7 +7101,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-right-color: #D3D3D3;
 }
 
-#godptlndak .gt_title {
+#nrvdzlzwef .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1256,7 +7113,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-bottom-width: 0;
 }
 
-#godptlndak .gt_subtitle {
+#nrvdzlzwef .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1268,13 +7125,13 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-top-width: 0;
 }
 
-#godptlndak .gt_bottom_border {
+#nrvdzlzwef .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#godptlndak .gt_col_headings {
+#nrvdzlzwef .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1289,7 +7146,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-right-color: #D3D3D3;
 }
 
-#godptlndak .gt_col_heading {
+#nrvdzlzwef .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1309,7 +7166,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   overflow-x: hidden;
 }
 
-#godptlndak .gt_column_spanner_outer {
+#nrvdzlzwef .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1321,15 +7178,15 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   padding-right: 4px;
 }
 
-#godptlndak .gt_column_spanner_outer:first-child {
+#nrvdzlzwef .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#godptlndak .gt_column_spanner_outer:last-child {
+#nrvdzlzwef .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#godptlndak .gt_column_spanner {
+#nrvdzlzwef .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1341,7 +7198,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   width: 100%;
 }
 
-#godptlndak .gt_group_heading {
+#nrvdzlzwef .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1366,7 +7223,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   vertical-align: middle;
 }
 
-#godptlndak .gt_empty_group_heading {
+#nrvdzlzwef .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1381,15 +7238,15 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   vertical-align: middle;
 }
 
-#godptlndak .gt_from_md > :first-child {
+#nrvdzlzwef .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#godptlndak .gt_from_md > :last-child {
+#nrvdzlzwef .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#godptlndak .gt_row {
+#nrvdzlzwef .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1408,7 +7265,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   overflow-x: hidden;
 }
 
-#godptlndak .gt_stub {
+#nrvdzlzwef .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1421,7 +7278,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   padding-right: 5px;
 }
 
-#godptlndak .gt_stub_row_group {
+#nrvdzlzwef .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1435,11 +7292,11 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   vertical-align: top;
 }
 
-#godptlndak .gt_row_group_first td {
+#nrvdzlzwef .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#godptlndak .gt_summary_row {
+#nrvdzlzwef .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1449,16 +7306,16 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   padding-right: 5px;
 }
 
-#godptlndak .gt_first_summary_row {
+#nrvdzlzwef .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#godptlndak .gt_first_summary_row.thick {
+#nrvdzlzwef .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#godptlndak .gt_last_summary_row {
+#nrvdzlzwef .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1468,7 +7325,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-bottom-color: #D3D3D3;
 }
 
-#godptlndak .gt_grand_summary_row {
+#nrvdzlzwef .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1478,7 +7335,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   padding-right: 5px;
 }
 
-#godptlndak .gt_first_grand_summary_row {
+#nrvdzlzwef .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1488,11 +7345,11 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-top-color: #D3D3D3;
 }
 
-#godptlndak .gt_striped {
+#nrvdzlzwef .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#godptlndak .gt_table_body {
+#nrvdzlzwef .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1501,7 +7358,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-bottom-color: #D3D3D3;
 }
 
-#godptlndak .gt_footnotes {
+#nrvdzlzwef .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1515,7 +7372,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-right-color: #D3D3D3;
 }
 
-#godptlndak .gt_footnote {
+#nrvdzlzwef .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1524,7 +7381,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   padding-right: 5px;
 }
 
-#godptlndak .gt_sourcenotes {
+#nrvdzlzwef .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1538,7 +7395,7 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   border-right-color: #D3D3D3;
 }
 
-#godptlndak .gt_sourcenote {
+#nrvdzlzwef .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1546,36 +7403,36 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   padding-right: 5px;
 }
 
-#godptlndak .gt_left {
+#nrvdzlzwef .gt_left {
   text-align: left;
 }
 
-#godptlndak .gt_center {
+#nrvdzlzwef .gt_center {
   text-align: center;
 }
 
-#godptlndak .gt_right {
+#nrvdzlzwef .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#godptlndak .gt_font_normal {
+#nrvdzlzwef .gt_font_normal {
   font-weight: normal;
 }
 
-#godptlndak .gt_font_bold {
+#nrvdzlzwef .gt_font_bold {
   font-weight: bold;
 }
 
-#godptlndak .gt_font_italic {
+#nrvdzlzwef .gt_font_italic {
   font-style: italic;
 }
 
-#godptlndak .gt_super {
+#nrvdzlzwef .gt_super {
   font-size: 65%;
 }
 
-#godptlndak .gt_two_val_uncert {
+#nrvdzlzwef .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1584,31 +7441,31 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
   margin-left: 0.1em;
 }
 
-#godptlndak .gt_footnote_marks {
+#nrvdzlzwef .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#godptlndak .gt_asterisk {
+#nrvdzlzwef .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#godptlndak .gt_slash_mark {
+#nrvdzlzwef .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#godptlndak .gt_fraction_numerator {
+#nrvdzlzwef .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#godptlndak .gt_fraction_denominator {
+#nrvdzlzwef .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1624,12 +7481,12 @@ The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-p
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">11.44</td>
-<td class="gt_row gt_right">&minus;0.03</td>
-<td class="gt_row gt_right">21.48</td></tr>
+    <tr><td class="gt_row gt_right">11.53</td>
+<td class="gt_row gt_right">0.72</td>
+<td class="gt_row gt_right">21.58</td></tr>
     <tr><td class="gt_row gt_right">0.83</td>
 <td class="gt_row gt_right">0.67</td>
-<td class="gt_row gt_right">1.00</td></tr>
+<td class="gt_row gt_right">0.99</td></tr>
   </tbody>
   
   
@@ -1700,32 +7557,34 @@ other attached packages:
 [19] tidyverse_1.3.2    
 
 loaded via a namespace (and not attached):
- [1] nlme_3.1-152        lubridate_1.8.0     webshot_0.5.2      
- [4] httr_1.4.2          rprojroot_2.0.2     tools_4.0.3        
- [7] backports_1.2.1     utf8_1.1.4          R6_2.5.1           
-[10] DBI_1.1.1           mgcv_1.8-34         colorspace_2.0-0   
-[13] withr_2.4.1         tidyselect_1.1.2    compiler_4.0.3     
-[16] extrafontdb_1.0     cli_3.3.0           mcr_1.2.2          
-[19] rvest_1.0.2         gt_0.6.0            xml2_1.3.3         
-[22] labeling_0.4.2      sass_0.4.1          scales_1.2.0       
-[25] checkmate_2.0.0     commonmark_1.7      systemfonts_1.0.1  
-[28] digest_0.6.29       rmarkdown_2.14      svglite_2.0.0      
-[31] pkgconfig_2.0.3     htmltools_0.5.3     extrafont_0.17     
-[34] dbplyr_2.2.1        fastmap_1.1.0       htmlwidgets_1.5.3  
-[37] rlang_1.0.4         rstudioapi_0.13     generics_0.1.0     
-[40] farver_2.1.0        jsonlite_1.7.2      magrittr_2.0.3     
-[43] Matrix_1.3-2        Rcpp_1.0.8          munsell_0.5.0      
-[46] fansi_0.4.2         gdtools_0.2.3       lifecycle_1.0.1    
-[49] stringi_1.5.3       yaml_2.2.1          gtsummary_1.6.1    
-[52] QSPworkflow_0.1.0   grid_4.0.3          hrbrthemes_0.8.0   
-[55] crayon_1.5.1        lattice_0.20-41     splines_4.0.3      
-[58] hms_1.1.1           pillar_1.6.5        reprex_2.0.1       
-[61] glue_1.6.1          evaluate_0.14       broom.helpers_1.8.0
-[64] modelr_0.1.8        vctrs_0.4.1         tzdb_0.3.0         
-[67] Rttf2pt1_1.3.8      cellranger_1.1.0    gtable_0.3.0       
-[70] assertthat_0.2.1    xfun_0.31           broom_1.0.0        
-[73] googledrive_2.0.0   viridisLite_0.3.0   gargle_1.2.0       
-[76] ellipsis_0.3.2     
+ [1] nlme_3.1-152        bitops_1.0-7        lubridate_1.8.0    
+ [4] bit64_4.0.5         webshot_0.5.2       httr_1.4.2         
+ [7] rprojroot_2.0.2     tools_4.0.3         backports_1.2.1    
+[10] utf8_1.1.4          R6_2.5.1            mgcv_1.8-34        
+[13] DBI_1.1.1           colorspace_2.0-0    withr_2.4.1        
+[16] tidyselect_1.1.2    bit_4.0.4           compiler_4.0.3     
+[19] extrafontdb_1.0     mcr_1.2.2           cli_3.3.0          
+[22] rvest_1.0.2         gt_0.6.0            xml2_1.3.3         
+[25] labeling_0.4.2      sass_0.4.1          scales_1.2.0       
+[28] checkmate_2.0.0     commonmark_1.7      systemfonts_1.0.1  
+[31] digest_0.6.29       rmarkdown_2.14      svglite_2.0.0      
+[34] pkgconfig_2.0.3     htmltools_0.5.3     extrafont_0.17     
+[37] dbplyr_2.2.1        fastmap_1.1.0       htmlwidgets_1.5.3  
+[40] rlang_1.0.4         rstudioapi_0.13     generics_0.1.0     
+[43] farver_2.1.0        jsonlite_1.7.2      vroom_1.5.7        
+[46] RCurl_1.98-1.3      magrittr_2.0.3      Matrix_1.3-2       
+[49] Rcpp_1.0.8          munsell_0.5.0       fansi_0.4.2        
+[52] gdtools_0.2.3       lifecycle_1.0.1     stringi_1.5.3      
+[55] yaml_2.2.1          gtsummary_1.6.1     QSPworkflow_0.1.0  
+[58] grid_4.0.3          hrbrthemes_0.8.0    parallel_4.0.3     
+[61] crayon_1.5.1        lattice_0.20-41     splines_4.0.3      
+[64] hms_1.1.1           pillar_1.6.5        reprex_2.0.1       
+[67] glue_1.6.1          evaluate_0.14       broom.helpers_1.8.0
+[70] modelr_0.1.8        vctrs_0.4.1         tzdb_0.3.0         
+[73] Rttf2pt1_1.3.8      cellranger_1.1.0    gtable_0.3.0       
+[76] assertthat_0.2.1    xfun_0.31           broom_1.0.0        
+[79] googledrive_2.0.0   viridisLite_0.3.0   gargle_1.2.0       
+[82] ellipsis_0.3.2     
 ```
 :::
 :::

@@ -29,7 +29,8 @@ sagesI_bunkerfolder <- fs::path(sages_datapath, "SOURCE", "SAGES-Telephone(Bunke
 
 sagesII_datafolder_npb <- fs::path(sages_datapath, "SOURCE", "SAGESII-Neuropsych")
 
-sagesII_datafolder <- fs::path(sages_datapath, "SOURCE", "SAGESII-Processing", "Files_2022-08-04")
+# sagesII_datafolder <- fs::path(sages_datapath, "SOURCE", "SAGESII-Processing", "Files_2022-08-04")
+sagesII_datafolder <- fs::path(sages_datapath, "SOURCE", "SAGESII-clean", "frozenfiles", "2022_10_05_freeze")
 
 sagesII_datafolder_validation <- fs::path(sages_datapath, "SOURCE", "SAGESII-validation")
 

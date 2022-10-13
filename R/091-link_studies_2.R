@@ -185,7 +185,15 @@ if (gcp_version == "GCPv1") {
 saveRDS(uni_item_bank_02b,  file=path(r_objects_folder, str_c("091_uni_item_bank_02b_", gcp_version, ".rds")))
 
 # 03 - SAGESII in-person
-uni_item_bank_03b <- my_harmonization_fx(3, uni_item_bank_02b, 3, b.runmplus = TRUE, b.bifactor_model = FALSE)
+if (gcp_version == "GCPv1") {
+  uni_item_bank_03b <- my_harmonization_fx(3, uni_item_bank_02b, 3, b.runmplus = TRUE, b.bifactor_model = FALSE,
+                                           b.extra.model.statement = "[Q104$9 * 7.5];")
+} else if (gcp_version == "GCPv2a") {
+  uni_item_bank_03b <- my_harmonization_fx(3, uni_item_bank_02b, 3, b.runmplus = TRUE, b.bifactor_model = FALSE,
+                                           b.extra.model.statement = "[Q104$9 * 7.5];")
+} else {
+  uni_item_bank_03b <- my_harmonization_fx(3, uni_item_bank_02b, 3, b.runmplus = TRUE, b.bifactor_model = FALSE)
+}
 saveRDS(uni_item_bank_03b,  file=path(r_objects_folder, str_c("091_uni_item_bank_03b_", gcp_version, ".rds")))
 
 # 04 - SAGESII telephone
@@ -193,7 +201,18 @@ uni_item_bank_04b <- my_harmonization_fx(4, uni_item_bank_03b, 4, b.runmplus = T
 saveRDS(uni_item_bank_04b,  file=path(r_objects_folder, str_c("091_uni_item_bank_04b_", gcp_version, ".rds")))
 
 # 05 - SAGESII video
-uni_item_bank_05b <- my_harmonization_fx(5, uni_item_bank_04b, 5, b.runmplus = TRUE, b.bifactor_model = FALSE)
+if (gcp_version == "GCPv2a") {
+  uni_item_bank_05b <- my_harmonization_fx(5, uni_item_bank_04b, 5, b.runmplus = TRUE, b.bifactor_model = FALSE,
+                                           b.extra.model.statement = "[Q225$8 * 9.5]; [Q225$9 * 9.6];")
+} else if (gcp_version == "GCPv2b") {
+  uni_item_bank_05b <- my_harmonization_fx(5, uni_item_bank_04b, 5, b.runmplus = TRUE, b.bifactor_model = FALSE,
+                                           b.extra.model.statement = "[Q225$8 * 8.5]; [Q225$9 * 8.6];")
+} else if (gcp_version == "GCPv2c") {
+  uni_item_bank_05b <- my_harmonization_fx(5, uni_item_bank_04b, 5, b.runmplus = TRUE, b.bifactor_model = FALSE,
+                                           b.extra.model.statement = "[Q225$8 * 9.5]; [Q225$9 * 9.6];")
+} else {
+  uni_item_bank_05b <- my_harmonization_fx(5, uni_item_bank_04b, 5, b.runmplus = TRUE, b.bifactor_model = FALSE)
+}
 saveRDS(uni_item_bank_05b,  file=path(r_objects_folder, str_c("091_uni_item_bank_05b_", gcp_version, ".rds")))
 
 # 06 - SAGESI telephone

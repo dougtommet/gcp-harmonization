@@ -100,14 +100,14 @@ sagesI_df_for_table1 <- sagesI_560_df %>%
   filter(timefr==0)
 saveRDS(sagesI_df_for_table1,               file=path(r_objects_folder, "020_sagesI_df_for_table1.rds"))
 
-sagesI_df_filtered <- sagesI_560_df %>%
+sagesI_df <- sagesI_560_df %>%
   left_join(sagesI_inperson_df, by = "studyid") %>%
   select(studyid, timefr, any_of(sagesI_items))  %>%
   # rename(newid = studyid) %>%
   mutate(newid = str_c(studyid, "_", timefr)) %>%
   mutate(study_wave_number = 2)
 
-sagesI_df_bl_filtered <- sagesI_df_filtered %>%
+sagesI_df_bl_filtered <- sagesI_df %>%
   filter(timefr==0)
 
 # Sages I telephone
@@ -125,11 +125,13 @@ sagesI_telephone_items <- sagesI_telephone_items_df %>%
   distinct(item) %>%
   pull(item)
 
-sagesI_telephone_df_filtered <- sagesI_telephone_df %>%
+sagesI_telephone_df <- sagesI_telephone_df %>%
   select(studyid, any_of(sagesI_telephone_items))  %>%
   rename(newid = studyid) %>%
   # mutate(newid = str_c(studyid, "_", timefr)) %>%
   mutate(study_wave_number = 6)
+
+sagesI_telephone_df_filtered <- sagesI_telephone_df
 
 # Sages II in-person
 sagesII_inperson_items_df <- gcp_items %>%
@@ -146,12 +148,15 @@ sagesII_inperson_items <- sagesII_inperson_items_df %>%
   distinct(item) %>%
   pull(item)
 
-sagesII_inperson_df_filtered <- sagesII_inperson_df %>%
+sagesII_inperson_df <- sagesII_inperson_df %>%
   # rename(newid = studyid) %>%
   mutate(newid = str_c(studyid, "_", timefr)) %>%
   mutate(study_wave_number = 3)
 
-sagesII_inperson_df_bl_filtered <- sagesII_inperson_df_filtered %>%
+sagesII_inperson_df_first_filtered <- sagesII_inperson_df %>%
+  filter(visit_number_loc==1)
+  
+sagesII_inperson_df_bl_filtered <- sagesII_inperson_df %>%
   filter(timefr==0)
 
 # Sages II telephone
@@ -169,16 +174,13 @@ sagesII_telephone_items <- sagesII_telephone_items_df %>%
   distinct(item) %>%
   pull(item)
 
-sagesII_telephone_df_filtered <- sagesII_telephone_df %>%
+sagesII_telephone_df <- sagesII_telephone_df %>%
   # rename(newid = studyid) %>%
   mutate(newid = str_c(studyid, "_", timefr)) %>%
   mutate(study_wave_number = 4)
 
-sagesII_telephone_df_bl_filtered <- sagesII_telephone_df_filtered %>%
-  group_by(newid) %>%
-  arrange(newid, timefr) %>%
-  slice(1) %>%
-  ungroup()
+sagesII_telephone_df_first_filtered <- sagesII_telephone_df %>%
+  filter(visit_number_loc==1)
 
 # Sages II video
 sagesII_video_items_df <- gcp_items %>%
@@ -195,16 +197,13 @@ sagesII_video_items <- sagesII_video_items_df %>%
   distinct(item) %>%
   pull(item)
 
-sagesII_video_df_filtered <- sagesII_video_df %>%
+sagesII_video_df <- sagesII_video_df %>%
   # rename(newid = studyid) %>%
   mutate(newid = str_c(studyid, "_", timefr)) %>%
   mutate(study_wave_number = 5)
 
-sagesII_video_df_bl_filtered <- sagesII_video_df_filtered %>%
-  group_by(newid) %>%
-  arrange(newid, timefr) %>%
-  slice(1) %>%
-  ungroup()
+sagesII_video_df_first_filtered <- sagesII_video_df %>%
+  filter(visit_number_loc==1)
 
 # SAGES II - telephone validation
 sagesII_telephone_validation_items_df <- gcp_items %>%
@@ -221,9 +220,11 @@ sagesII_telephone_validation_items <- sagesII_telephone_validation_items_df %>%
   distinct(item) %>%
   pull(item)
 
-sagesII_telephone_validation_df_filtered <- sagesII_telephone_validation_df %>%
+sagesII_telephone_validation_df <- sagesII_telephone_validation_df %>%
   mutate(newid = str_c(studyid)) %>%
   mutate(study_wave_number = 8)
+
+sagesII_telephone_validation_df_filtered <- sagesII_telephone_validation_df
 
 # SAGES II - video validation
 sagesII_video_validation_items_df <- gcp_items %>%
@@ -240,9 +241,11 @@ sagesII_video_validation_items <- sagesII_video_validation_items_df %>%
   distinct(item) %>%
   pull(item)
 
-sagesII_video_validation_df_filtered <- sagesII_video_validation_df %>%
+sagesII_video_validation_df <- sagesII_video_validation_df %>%
   mutate(newid = str_c(studyid)) %>%
   mutate(study_wave_number = 9)
+
+sagesII_video_validation_df_filtered <- sagesII_video_validation_df
 
 # Duke data
 intuit_items_df <- gcp_items %>%
@@ -259,31 +262,31 @@ intuit_items <- intuit_items_df %>%
   distinct(item) %>%
   pull(item)
 
-intuit_df_filtered <- intuit_df %>%
+intuit_df <- intuit_df %>%
   mutate(newid = str_c(studyno, "_", visit)) %>%
   mutate(study_wave_number = 7)
+
+intuit_df_filtered <- intuit_df
 
 intuit_df_bl_filtered <- intuit_df_filtered %>%
   filter(visit==0)
 
 ### Save the R objects
-saveRDS(adams_items_df,                   file=path(r_objects_folder, "020_adams_items_df.rds"))
-saveRDS(adams_df_filtered,                file=path(r_objects_folder, "020_adams_df_filtered.rds"))
-saveRDS(sagesI_items_df,                  file=path(r_objects_folder, "020_sagesI_items_df.rds"))
-saveRDS(sagesI_df_filtered,               file=path(r_objects_folder, "020_sagesI_df_filtered.rds"))
-saveRDS(sagesI_df_bl_filtered,            file=path(r_objects_folder, "020_sagesI_df_bl_filtered.rds"))
-saveRDS(sagesII_inperson_items_df,        file=path(r_objects_folder, "020_sagesII_inperson_items_df.rds"))
-saveRDS(sagesII_inperson_df_filtered,     file=path(r_objects_folder, "020_sagesII_inperson_df_filtered.rds"))
-saveRDS(sagesII_inperson_df_bl_filtered,  file=path(r_objects_folder, "020_sagesII_inperson_df_bl_filtered.rds"))
-saveRDS(sagesII_telephone_items_df,       file=path(r_objects_folder, "020_sagesII_telephone_items_df.rds"))
-saveRDS(sagesII_telephone_df_filtered,    file=path(r_objects_folder, "020_sagesII_telephone_df_filtered.rds"))
-saveRDS(sagesII_telephone_df_bl_filtered, file=path(r_objects_folder, "020_sagesII_telephone_df_bl_filtered.rds"))
-saveRDS(sagesII_video_items_df,           file=path(r_objects_folder, "020_sagesII_video_items_df.rds"))
-saveRDS(sagesII_video_df_filtered,        file=path(r_objects_folder, "020_sagesII_video_df_filtered.rds"))
-saveRDS(sagesII_video_df_bl_filtered,     file=path(r_objects_folder, "020_sagesII_video_df_bl_filtered.rds"))
-saveRDS(intuit_items_df,                  file=path(r_objects_folder, "020_intuit_items_df.rds"))
-saveRDS(intuit_df_filtered,               file=path(r_objects_folder, "020_intuit_df_filtered.rds"))
-saveRDS(intuit_df_bl_filtered,            file=path(r_objects_folder, "020_intuit_df_bl_filtered.rds"))
+saveRDS(adams_items_df,                      file=path(r_objects_folder, "020_adams_items_df.rds"))
+saveRDS(adams_df_filtered,                   file=path(r_objects_folder, "020_adams_df_filtered.rds"))
+saveRDS(sagesI_items_df,                     file=path(r_objects_folder, "020_sagesI_items_df.rds"))
+saveRDS(sagesI_df_bl_filtered,               file=path(r_objects_folder, "020_sagesI_df_bl_filtered.rds"))
+saveRDS(sagesII_inperson_items_df,           file=path(r_objects_folder, "020_sagesII_inperson_items_df.rds"))
+saveRDS(sagesII_inperson_df,                 file=path(r_objects_folder, "020_sagesII_inperson_df_filtered.rds"))
+saveRDS(sagesII_inperson_df_first_filtered,  file=path(r_objects_folder, "020_sagesII_inperson_df_bl_filtered.rds"))
+saveRDS(sagesII_inperson_df_bl_filtered,     file=path(r_objects_folder, "020_sagesII_inperson_df_bl_filtered.rds"))
+saveRDS(sagesII_telephone_items_df,          file=path(r_objects_folder, "020_sagesII_telephone_items_df.rds"))
+saveRDS(sagesII_telephone_df_first_filtered, file=path(r_objects_folder, "020_sagesII_telephone_df_bl_filtered.rds"))
+saveRDS(sagesII_video_items_df,              file=path(r_objects_folder, "020_sagesII_video_items_df.rds"))
+saveRDS(sagesII_video_df_first_filtered,     file=path(r_objects_folder, "020_sagesII_video_df_bl_filtered.rds"))
+saveRDS(intuit_items_df,                     file=path(r_objects_folder, "020_intuit_items_df.rds"))
+saveRDS(intuit_df_filtered,                  file=path(r_objects_folder, "020_intuit_df_filtered.rds"))
+saveRDS(intuit_df_bl_filtered,               file=path(r_objects_folder, "020_intuit_df_bl_filtered.rds"))
 saveRDS(sagesII_telephone_validation_df_filtered,    file=path(r_objects_folder, "020_sagesII_telephone_validation_df_filtered.rds"))
 saveRDS(sagesII_video_validation_df_filtered,        file=path(r_objects_folder, "020_sagesII_video_validation_df_filtered.rds"))
 
@@ -317,22 +320,22 @@ saveRDS(aux_variables_df,                 file=path(r_objects_folder, "020_aux_v
 
 gcp_df <- tibble(response_data = list(adams_df_filtered, 
                                       sagesI_df_bl_filtered,
-                                      sagesII_inperson_df_bl_filtered, 
-                                      sagesII_telephone_df_bl_filtered, 
-                                      sagesII_video_df_bl_filtered,
+                                      sagesII_inperson_df_first_filtered, 
+                                      sagesII_telephone_df_first_filtered, 
+                                      sagesII_video_df_first_filtered,
                                       sagesI_telephone_df_filtered,
                                       intuit_df_filtered,
                                       sagesII_telephone_validation_df_filtered,
                                       sagesII_video_validation_df_filtered),
                  response_data_all = list(adams_df_filtered, 
-                                      sagesI_df_filtered,
-                                      sagesII_inperson_df_filtered, 
-                                      sagesII_telephone_df_filtered, 
-                                      sagesII_video_df_filtered,
-                                      sagesI_telephone_df_filtered,
-                                      intuit_df_filtered,
-                                      sagesII_telephone_validation_df_filtered,
-                                      sagesII_video_validation_df_filtered),
+                                      sagesI_df,
+                                      sagesII_inperson_df, 
+                                      sagesII_telephone_df, 
+                                      sagesII_video_df,
+                                      sagesI_telephone_df,
+                                      intuit_df,
+                                      sagesII_telephone_validation_df,
+                                      sagesII_video_validation_df),
                  item_data = list(adams_items_df, 
                                   sagesI_items_df, 
                                   sagesII_inperson_items_df, 

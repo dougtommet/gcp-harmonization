@@ -173,8 +173,15 @@ if (gcp_version == "GCPv1") {
 saveRDS(uni_item_bank_02,  file=path(r_objects_folder, str_c("090_uni_item_bank_02_", gcp_version, ".rds")))
 
 # 03 - SAGESII in-person
-if (gcp_version == "GCPv1") {
-  uni_item_bank_03 <- my_harmonization_fx(3, uni_item_bank_02, 3, b.runmplus = TRUE, b.bifactor_model = FALSE)
+if (gcp_version == "GCPv2a") {
+  uni_item_bank_03 <- my_harmonization_fx(3, uni_item_bank_02, 3, b.runmplus = TRUE, b.bifactor_model = FALSE,
+                                          b.extra.model.statement = "[Q226$8 * 7.2]; ")
+} else if (gcp_version == "GCPv2b") {
+  uni_item_bank_03 <- my_harmonization_fx(3, uni_item_bank_02, 3, b.runmplus = TRUE, b.bifactor_model = FALSE,
+                                          b.extra.model.statement = "[Q226$8 * 7.2]; [Q103$9 * 5.5]; ")
+} else if (gcp_version == "GCPv2c") {
+  uni_item_bank_03 <- my_harmonization_fx(3, uni_item_bank_02, 3, b.runmplus = TRUE, b.bifactor_model = FALSE,
+                                          b.extra.model.statement = "[Q226$8 * 7.2]; ")
 } else {
   uni_item_bank_03 <- my_harmonization_fx(3, uni_item_bank_02, 3, b.runmplus = TRUE, b.bifactor_model = FALSE)
 }
@@ -198,22 +205,8 @@ if (gcp_version == "GCPv2a") {
 saveRDS(uni_item_bank_04,  file=path(r_objects_folder, str_c("090_uni_item_bank_04_", gcp_version, ".rds")))
 
 # 05 - SAGESII video
-if (gcp_version == "GCPv1") {
-  uni_item_bank_05 <- my_harmonization_fx(5, uni_item_bank_04, 5, b.runmplus = TRUE, b.bifactor_model = FALSE,
-                                          b.extra.model.statement = "[Q104$8 * 7.5];")
-} else if (gcp_version == "GCPv2a") {
-  uni_item_bank_05 <- my_harmonization_fx(5, uni_item_bank_04, 5, b.runmplus = TRUE, b.bifactor_model = FALSE,
-                                          b.extra.model.statement = "[Q104$8 * 7.5]; [Q225$8 * 9.5]; [Q225$9 * 10];")
-} else if (gcp_version == "GCPv2b") {
-  uni_item_bank_05 <- my_harmonization_fx(5, uni_item_bank_04, 5, b.runmplus = TRUE, b.bifactor_model = FALSE,
-                                          b.extra.model.statement = "[Q225$8 * 9.5]; [Q225$9 * 10];")
-} else if (gcp_version == "GCPv2c") {
-  uni_item_bank_05 <- my_harmonization_fx(5, uni_item_bank_04, 5, b.runmplus = TRUE, b.bifactor_model = FALSE,
-                                          b.extra.model.statement = "[Q225$8 * 9.5]; [Q225$9 * 10];")
-} else {
-  uni_item_bank_05 <- my_harmonization_fx(5, uni_item_bank_04, 5, b.runmplus = TRUE, b.bifactor_model = FALSE,
-                                          b.extra.model.statement = "[Q266$8 * 5.8];")
-}
+uni_item_bank_05 <- my_harmonization_fx(5, uni_item_bank_04, 5, b.runmplus = TRUE, b.bifactor_model = FALSE)
+
 
 saveRDS(uni_item_bank_05,  file=path(r_objects_folder, str_c("090_uni_item_bank_05_", gcp_version, ".rds")))
 
