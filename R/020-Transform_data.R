@@ -266,7 +266,8 @@ intuit_df <- intuit_df %>%
   mutate(newid = str_c(studyno, "_", visit)) %>%
   mutate(study_wave_number = 7)
 
-intuit_df_filtered <- intuit_df
+intuit_df_filtered <- intuit_df %>%
+  filter(visit==0)
 
 intuit_df_bl_filtered <- intuit_df_filtered %>%
   filter(visit==0)

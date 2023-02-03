@@ -225,10 +225,10 @@ if(fs::dir_exists(sagesII_datafolder)) {
   
   sagesII_subject_df <- sagesII_subject_df %>%
     mutate(vin_date = lubridate::as_date(vin_date),
-           vin_loc = case_when(vin_loc %in% c(1, 4) ~ 1, 
+           vin_loc2 = case_when(vin_loc %in% c(1, 4) ~ 1, 
                                 vin_loc %in% c(2) ~ 2,
                                 vin_loc %in% c(3) ~ 3),
-           vin_loc2 = factor(vin_loc, labels = c("In-person", "Telephone", "Video")),
+           vin_loc3 = factor(vin_loc2, labels = c("In-person", "Telephone", "Video")),
            vdsurg = factor(vdsurg, levels = 1:8,
                            labels = c("1: Knee Replacement", 
                                       "2: Hip Replacement", 
@@ -240,11 +240,11 @@ if(fs::dir_exists(sagesII_datafolder)) {
                                       "8: Major Urology Surgery"))
     ) %>%
     arrange(studyid, timefr) %>%
-    group_by(studyid, vin_loc) %>%
+    group_by(studyid, vin_loc2) %>%
     mutate(visit_number_loc = row_number()) %>% 
     ungroup() %>%
     haven::zap_labels()  %>%
-    select(studyid, vin_loc, vin_loc2, vin_date, timefr, visit_number_overall, visit_number_loc, starts_with("npb"), everything()) 
+    select(studyid, vin_loc, vin_loc2, vin_loc3, vin_date, timefr, visit_number_overall, visit_number_loc, starts_with("npb"), everything()) 
   
   sagesII_inperson_df <- sagesII_subject_df %>%
     filter(vin_loc %in% c(1, 4))
@@ -399,7 +399,8 @@ if(fs::dir_exists(sagesII_datafolder)) {
 # }
 
 if(fs::dir_exists(sagesII_datafolder_validation)) {
-  sagesII_validation_df <- read_dta(fs::path(sagesII_datafolder_validation, "SAGESII_validation_20210618.dta")) 
+  # sagesII_validation_df <- read_dta(fs::path(sagesII_datafolder_validation, "SAGESII_validation_20210618.dta")) 
+  sagesII_validation_df <- read_dta(fs::path(sagesII_datafolder_validation, "SAGESII_validation_20230110.dta")) 
   
   sagesII_validation_df <- sagesII_validation_df %>%
     mutate(
@@ -447,10 +448,11 @@ saveRDS(intuit_df,        file=path(r_objects_folder, "010_intuit_df.rds"))
 
 
 # Googlesheet Meta Data
-params <- list(pull_from_googlesheets = TRUE)
+# params <- list(pull_from_googlesheets = TRUE)
 
 if (params$pull_from_googlesheets) {
-  # googlesheets4::gs4_auth()
+  # googledrive::drive_auth()
+  # googlesheets4::gs4_auth(token = googledrive::drive_token())
   sheet_path <- googledrive::drive_get("SAGES GCP Harmonization Codebook")
   gcp_lookup_studies <- googlesheets4::read_sheet(sheet_path, sheet = "Studies")
   Sys.sleep(2)

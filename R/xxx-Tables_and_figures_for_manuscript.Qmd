@@ -66,7 +66,7 @@ With these as the possible choices, we decided to go with the version that fixes
 
 ```{r}
 #| label: fig-timeline
-#| fig-cap: Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes
+#| fig-cap: Timeline of SAGES-II and the development/roll-out of novel assessment modes
 #| fig-cap-location: top
 
 sagesII_subject_df <- readRDS(file=path(r_objects_folder, "010_sagesII_subject_df.rds"))
@@ -102,7 +102,7 @@ foo <- sagesII_subject_df %>%
   select(studyid, timefr, starts_with("vin_loc"), starts_with("vin_date"), starts_with("visit_number")) %>%
   filter(!is.na(timefr))
 
-ggplot(foo, aes(x=vin_date, y = vin_loc, color = timefr)) +
+ggplot(foo, aes(x=vin_date, y = vin_loc2, color = timefr)) +
   geom_vline(xintercept = c(as.Date("2020-03-11"), as.Date("2021-05-24")), 
              color = "grey60", linetype=2) +
   geom_point(position = "jitter", alpha = 1, size = .5) +
@@ -136,11 +136,11 @@ ggplot(foo, aes(x=vin_date, y = vin_loc, color = timefr)) +
 
 ```{r}
 #| label: fig-timeline-alt1
-#| fig-cap: Timeline of SAGES-I and SAGES-II and the development/roll-out of novel assessment modes
+#| fig-cap: Timeline of SAGES-II and the development/roll-out of novel assessment modes
 #| fig-cap-location: top
 foo <- foo %>%
   mutate(j = runif(n(), -.5, .5),
-         vin_loc_jitter = vin_loc + j) 
+         vin_loc_jitter = vin_loc2 + j) 
 ggplot(foo, aes(x=vin_date, y = vin_loc_jitter, color = timefr)) +
   geom_vline(xintercept = c(as.Date("2020-03-11"), as.Date("2021-05-24")), 
              color = "grey60", linetype=2) +
@@ -179,9 +179,14 @@ Some of the points in @fig-timeline/@fig-timeline-alt1 appear to have data error
 
 For most of these records it seems like the visit location is incorrect. One of the records seems like the visit date is incorrect.
 
+Update: For the 8 records that are listed as having an in-person visit during the shutdown period, those were the partial in-person visits, so they are correct.
+
+::: {.callout-note collapse=true icon=false}
+## Tables of records to check 
+
 ```{r}
 foo_odd_dates <- foo %>%
-  filter(vin_loc==1) %>%
+  filter(vin_loc2==1) %>%
   filter(vin_date > "2020-10-01" & vin_date < "2021-4-01") %>%
   select(studyid, timefr, vin_date, vin_loc) 
 
@@ -359,6 +364,26 @@ foo %>%
       rows = 1)
   )
 ```
+:::
+
+## Patterns of interview type
+
+These are the frequencies of the different pattern of interview type for the first four visits.
+
+```{r}
+#| label: tbl-interview-pattern
+#| tbl-cap: Pattern of interview type for the first four visits
+#| tbl-cap-location: top
+sagesII_subject_df %>%
+  select(studyid, timefr, vin_loc3) %>%
+  pivot_wider(id_cols = studyid, names_from = timefr, names_prefix = "M", values_from = vin_loc3) %>%
+  group_by(M0, M1, M2, M6) %>%
+  count() %>%
+  # arrange(desc(n)) %>%
+  ungroup() %>%
+  gt::gt()
+
+```
 
 # Sample characteristics
 
@@ -396,8 +421,8 @@ This is the descriptive statistics for SAGES II at the baseline interview. In th
 
 sagesII_subject_df %>%
   filter(visit_number_loc==1) %>%
-  select(vin_loc2, timefr, visit_number_overall, vdfemale, vdnonwhite, vdeduc_r, vdsurg, vdgds15, vdcci) %>%
-  gtsummary::tbl_summary(by = vin_loc2,
+  select(vin_loc3, timefr, visit_number_overall, vdfemale, vdnonwhite, vdeduc_r, vdsurg, vdgds15, vdcci) %>%
+  gtsummary::tbl_summary(by = vin_loc3,
     statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})",
                      gtsummary::all_categorical() ~ "{n} / {N} ({p}%)")
   )  %>%
@@ -418,7 +443,7 @@ The reason this table might be useful is that it describes the samples used to h
 * Of the participants' first video interview, 55% had their first video interview at baseline, and 23% had their first video interview at 12-month.
 :::
 
-## @tbl-descriptives: Sample characteristics - SAGES II validation sample
+## @tbl-descriptives_validation: Sample characteristics - SAGES II validation sample
 
 ```{r}
 #| label: tbl-descriptives_validation
@@ -444,6 +469,8 @@ This table should be merged with whichever of @tbl-descriptives or @tbl-descript
 # Cognitive battery
 
 ## @tbl-battery: Cognitive tests by mode and study
+
+As a result of a DIF analysis, we found that the digit span tests and hvlt were different between in-person and telephone interviews, and that digit span backwards was different between in-person and video interviews. So in the table below those tests will be listed twice indicating they are not linked in the harmonization process.
 
 ```{r}
 #| label: tbl-battery
@@ -505,7 +532,7 @@ gcp_items %>%
 
 ```
 
-@tbl-battery shows the neuropsych tests used in the different studys/modes.
+@tbl-battery shows the neuropsych tests used in the different studies/modes.
 
 # GCP Information
 

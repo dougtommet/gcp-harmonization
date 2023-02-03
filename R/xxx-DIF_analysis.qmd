@@ -1,0 +1,462 @@
+---
+title: "DIF analysis in SAGES II"
+author: "Doug Tommet"
+date: '`r Sys.Date()`'
+format: 
+  html:
+    code-fold: true
+execute: 
+  echo: false
+  warning: false
+  messages: false
+---
+
+This analysis does a DIF analysis in the SAGES-II cohort to look for differences by interview mode.  This analysis will use the entire SAGES-II cohort across all interview months.  We assumed that the tests FAS and Supermarket item fluency are invariant across interview mode.  We made this assumption because we felt these tests were the most difficult to cheat across the different interview modes.  The analysis will use a multiple group model that will allow the factor loadings and thresholds to differ by interview mode.  The group means are being constrained to be 0 because the interview mode was essentially randomly assigned we hypothesize that there should not be a difference in the mean GCP between interview modes.  Instead of looking for differences in individual thresholds for each test we will look to see if there is a proportional shift in the thresholds for a particular test by interview mode.
+
+```{r}
+source(here::here("R", "001-Libraries_and_functions.R"))
+source(here("R", "005-folder_paths_and_options.R"))
+
+gcp_version <- readRDS(file=path(r_objects_folder, "000_gcp_version.rds"))
+gcp_study_nested <- readRDS(file=path(r_objects_folder, str_c("070_gcp_study_nested_", gcp_version, ".rds")))
+
+```
+
+```{r}
+foo <- gcp_study_nested %>%
+  filter(Study_number %in% c(3, 4, 5)) %>%
+  select(response_data_all_long)
+
+goo <- foo %>%
+  unnest(cols = c(response_data_all_long)) %>% 
+  pivot_wider(names_from = item, values_from = response) %>%
+  mutate(tele = case_when(study_wave_number==4 ~ 1,
+                          TRUE ~ 0),
+         video = case_when(study_wave_number==5 ~ 1,
+                          TRUE ~ 0))
+
+goo <- goo %>%
+  mutate(timefr1 = case_when(timefr==1 ~ 1,
+                             TRUE ~ 0),
+         timefr2 = case_when(timefr==2 ~ 1,
+                             TRUE ~ 0),
+         timefr6 = case_when(timefr==6 ~ 1,
+                             TRUE ~ 0),
+         timefr12 = case_when(timefr==12 ~ 1,
+                             TRUE ~ 0),
+         timefr18 = case_when(timefr %in% c(18, 24, 30) ~ 1,
+                             TRUE ~ 0)
+         )
+```
+
+
+```{r}
+#| tbl-cap: Tests used in SAGES-II
+tests_df <- tribble(~item, ~name,
+                    "Q285", "FAS",
+                    "Q266", "Supermarket",
+                    "Q115", "BNT",
+                    "Q102", "DSF",
+                    "Q103", "DSB",
+                    "Q226", "HVLT",
+                    "Q228", "HVLT-Delayed",
+                    "Q101", "Trails A",
+                    "Q100", "Trails B",
+                    "Q225", "VSAT",
+                    "Q242", "DSST",
+                    "Q534", "Oral Trails B",
+                    "Q587", "Category Switching"
+                    )
+
+tests_df %>%
+  gt::gt() %>%
+  gt::cols_label(item = "Item", name = "Test name")
+```
+
+
+```{r}
+#| tbl-cap: Test response frequency by interview mode
+goo %>%
+  select(-newid, -study_wave_number, -timefr1, -timefr2, -timefr6, -timefr12, 
+         -timefr18, -tele, -video) %>%
+  gtsummary::tbl_summary(by = study_name_short,
+                         type = c(Q115, Q103, Q102, Q226, 
+                                  Q228, Q101, Q100, Q225, 
+                                  Q242, Q285, Q266, Q534, 
+                                  Q587) ~ "categorical")
+```
+
+
+```{r}
+#| echo: true
+mod4 <- MplusAutomation::mplusObject(
+  VARIABLE = "categorical = Q100 Q101 Q102 Q103 Q115 Q225 Q226 Q228 Q242 Q266 Q285 Q534 Q587;
+               classes = cg (3);
+               knownclass = cg (study_wave_number = 3 
+  study_wave_number = 4 
+  study_wave_number = 5);",
+  ANALYSIS = "estimator = mlr;
+  algorithm = integration;
+              type = mixture;",
+  MODEL = "%Overall%
+  
+           Q100star by Q100 @1;
+           Q100star @0;
+           [Q100star @0];
+           Q101star by Q101 @1;
+           Q101star @0;
+           [Q101star @0];
+           Q102star by Q102 @1;
+           Q102star @0;
+           [Q102star @0];
+           Q103star by Q103 @1;
+           Q103star @0;
+           [Q103star @0];
+           Q115star by Q115 @1;
+           Q115star @0;
+           [Q115star @0];
+           Q225star by Q225 @1;
+           Q225star @0;
+           [Q225star @0];
+           Q226star by Q226 @1;
+           Q226star @0;
+           [Q226star @0];
+           Q228star by Q228 @1;
+           Q228star @0;
+           [Q228star @0];
+           Q242star by Q242 @1;
+           Q242star @0;
+           [Q242star @0];
+           Q266star by Q266 @1;
+           Q266star @0;
+           [Q266star @0];
+           Q285star by Q285 @1;
+           Q285star @0;
+           [Q285star @0];
+           Q534star by Q534 @1;
+           Q534star @0;
+           [Q534star @0];
+           Q587star by Q587 @1;
+           Q587star @0;
+           [Q587star @0];
+           
+           
+           f by Q285star* Q266star;
+           f @ 1;
+           f on timefr1 timefr2 timefr6 timefr12 timefr18;
+           
+           [Q100$1 Q100$2 Q100$3 Q100$4 Q100$5 Q100$6] (t100_1 - t100_6);
+           [Q100$7 Q100$8 Q100$9] (t100_7 - t100_9);
+           [Q101$1 Q101$2 Q101$3 Q101$4 Q101$5 Q101$6] (t101_1 - t101_6);
+           [Q101$7 Q101$8] (t101_7 - t101_8);
+           [Q102$1 Q102$2 Q102$3 Q102$4 Q102$5 Q102$6] (t102_1 - t102_6);
+           [Q103$1 Q103$2 Q103$3 Q103$4 Q103$5 Q103$6] (t103_1 - t103_6);
+           [Q103$7 Q103$8 Q103$9] (t103_7 - t103_9);
+           [Q115$1 Q115$2 Q115$3 Q115$4 Q115$5] (t115_1 - t115_5);
+           [Q225$1 Q225$2 Q225$3 Q225$4 Q225$5 Q225$6] (t225_1 - t225_6);
+           [Q225$7] (t225_7);
+           [Q226$1 Q226$2 Q226$3 Q226$4 Q226$5 Q226$6] (t226_1 - t226_6);
+           [Q226$7 Q226$8] (t226_7 - t226_8);
+           [Q228$1 Q228$2 Q228$3 Q228$4 Q228$5 Q228$6] (t228_1 - t228_6);
+           [Q228$7] (t228_7);
+           [Q242$1 Q242$2 Q242$3 Q242$4 Q242$5 Q242$6] (t242_1 - t242_6);
+           [Q242$7] (t242_7);
+           [Q534$1 Q534$2 Q534$3 Q534$4 Q534$5 Q534$6] (t534_1 - t534_6);
+           [Q534$7 Q534$8 Q534$9] (t534_7 - t534_9);
+           [Q587$1 Q587$2 Q587$3 Q587$4 Q587$5 Q587$6] (t587_1 - t587_6);
+           [Q587$7 Q587$8 Q587$9] (t587_7 - t587_9);
+           
+           %cg#1%
+           f by Q100star* (f100_1) 
+                Q101star  (f101_1) 
+                Q102star  (f102_1) 
+                Q103star  (f103_1)
+                Q115star  (f115_1)
+                Q225star  (f225_1)
+                Q226star  (f226_1)
+                Q228star  (f228_1)
+                Q242star  (f242_1);
+           [f@0];
+           [Q100star @ 0] (m100_1);
+           [Q101star @ 0] (m101_1);
+           [Q102star @ 0] (m102_1);
+           [Q103star @ 0] (m103_1);
+           [Q115star @ 0] (m115_1);
+           [Q225star @ 0] (m225_1);
+           [Q226star @ 0] (m226_1);
+           [Q228star @ 0] (m228_1);
+           [Q242star @ 0] (m242_1);
+           
+           [Q100$1 Q100$2 Q100$3 Q100$4 Q100$5 Q100$6] (t100_1 - t100_6);
+           [Q100$7 Q100$8 Q100$9] (t100_7 - t100_9);
+           [Q101$1 Q101$2 Q101$3 Q101$4 Q101$5 Q101$6] (t101_1 - t101_6);
+           [Q101$7 Q101$8] (t101_7 - t101_8);
+           [Q102$1 Q102$2 Q102$3 Q102$4 Q102$5 Q102$6] (t102_1 - t102_6);
+           [Q103$1 Q103$2 Q103$3 Q103$4 Q103$5 Q103$6] (t103_1 - t103_6);
+           [Q103$7 Q103$8 Q103$9] (t103_7 - t103_9);
+           [Q115$1 Q115$2 Q115$3 Q115$4 Q115$5] (t115_1 - t115_5);
+           [Q225$1 Q225$2 Q225$3 Q225$4 Q225$5 Q225$6] (t225_1 - t225_6);
+           [Q225$7] (t225_7);
+           [Q226$1 Q226$2 Q226$3 Q226$4 Q226$5 Q226$6] (t226_1 - t226_6);
+           [Q226$7 Q226$8] (t226_7 - t226_8);
+           [Q228$1 Q228$2 Q228$3 Q228$4 Q228$5 Q228$6] (t228_1 - t228_6);
+           [Q228$7] (t228_7);
+           [Q242$1 Q242$2 Q242$3 Q242$4 Q242$5 Q242$6] (t242_1 - t242_6);
+           [Q242$7] (t242_7);
+           [Q534$1 Q534$2 Q534$3 Q534$4 Q534$5 Q534$6] (t534_1 - t534_6);
+           [Q534$7 Q534$8 Q534$9] (t534_7 - t534_9);
+           [Q587$1 Q587$2 Q587$3 Q587$4 Q587$5 Q587$6] (t587_1 - t587_6);
+           [Q587$7 Q587$8 Q587$9] (t587_7 - t587_9);
+           
+           %cg#2%
+           f by Q102star* (f102_2)
+                Q103star  (f103_2)
+                Q226star  (f226_2)
+                Q228star  (f228_2) 
+                Q534star  (f534_2)
+                Q587star  (f587_2);
+           [f@0];
+           [Q102star] (m102_2);
+           [Q103star] (m103_2);
+           [Q226star] (m226_2);
+           [Q228star] (m228_2);
+           [Q534star] (m534_2);
+           [Q587star] (m587_2);
+           
+           [Q100$1 Q100$2 Q100$3 Q100$4 Q100$5 Q100$6] (t100_1 - t100_6);
+           [Q100$7 Q100$8 Q100$9] (t100_7 - t100_9);
+           [Q101$1 Q101$2 Q101$3 Q101$4 Q101$5 Q101$6] (t101_1 - t101_6);
+           [Q101$7 Q101$8] (t101_7 - t101_8);
+           [Q102$1 Q102$2 Q102$3 Q102$4 Q102$5 Q102$6] (t102_1 - t102_6);
+           [Q103$1 Q103$2 Q103$3 Q103$4 Q103$5 Q103$6] (t103_1 - t103_6);
+           [Q103$7 Q103$8 Q103$9] (t103_7 - t103_9);
+           [Q115$1 Q115$2 Q115$3 Q115$4 Q115$5] (t115_1 - t115_5);
+           [Q225$1 Q225$2 Q225$3 Q225$4 Q225$5 Q225$6] (t225_1 - t225_6);
+           [Q225$7] (t225_7);
+           [Q226$1 Q226$2 Q226$3 Q226$4 Q226$5 Q226$6] (t226_1 - t226_6);
+           [Q226$7 Q226$8] (t226_7 - t226_8);
+           [Q228$1 Q228$2 Q228$3 Q228$4 Q228$5 Q228$6] (t228_1 - t228_6);
+           [Q228$7] (t228_7);
+           [Q242$1 Q242$2 Q242$3 Q242$4 Q242$5 Q242$6] (t242_1 - t242_6);
+           [Q242$7] (t242_7);
+           [Q534$1 Q534$2 Q534$3 Q534$4 Q534$5 Q534$6] (t534_1 - t534_6);
+           [Q534$7 Q534$8 Q534$9] (t534_7 - t534_9);
+           [Q587$1 Q587$2 Q587$3 Q587$4 Q587$5 Q587$6] (t587_1 - t587_6);
+           [Q587$7 Q587$8 Q587$9] (t587_7 - t587_9);
+           
+           %cg#3%
+           f by Q100star* (f100_3)
+                Q101star  (f101_3) 
+                Q102star  (f102_3)
+                Q103star  (f103_3)
+                Q115star  (f115_3)
+                Q225star  (f225_3)
+                Q226star  (f226_3)
+                Q228star  (f228_3)
+                Q242star  (f242_3);
+           [f@0];
+           [Q100star] (m100_3);
+           [Q101star] (m101_3);
+           [Q102star] (m102_3);
+           [Q103star] (m103_3);
+           [Q115star] (m115_3);
+           [Q225star] (m225_3);
+           [Q226star] (m226_3);
+           [Q228star] (m228_3);
+           [Q242star] (m242_3);
+           
+           [Q100$1 Q100$2 Q100$3 Q100$4 Q100$5 Q100$6] (t100_1 - t100_6);
+           [Q100$7 Q100$8 Q100$9] (t100_7 - t100_9);
+           [Q101$1 Q101$2 Q101$3 Q101$4 Q101$5 Q101$6] (t101_1 - t101_6);
+           [Q101$7 Q101$8] (t101_7 - t101_8);
+           [Q102$1 Q102$2 Q102$3 Q102$4 Q102$5 Q102$6] (t102_1 - t102_6);
+           [Q103$1 Q103$2 Q103$3 Q103$4 Q103$5 Q103$6] (t103_1 - t103_6);
+           [Q103$7 Q103$8 Q103$9] (t103_7 - t103_9);
+           [Q115$1 Q115$2 Q115$3 Q115$4 Q115$5] (t115_1 - t115_5);
+           [Q225$1 Q225$2 Q225$3 Q225$4 Q225$5 Q225$6] (t225_1 - t225_6);
+           [Q225$7] (t225_7);
+           [Q226$1 Q226$2 Q226$3 Q226$4 Q226$5 Q226$6] (t226_1 - t226_6);
+           [Q226$7 Q226$8] (t226_7 - t226_8);
+           [Q228$1 Q228$2 Q228$3 Q228$4 Q228$5 Q228$6] (t228_1 - t228_6);
+           [Q228$7] (t228_7);
+           [Q242$1 Q242$2 Q242$3 Q242$4 Q242$5 Q242$6] (t242_1 - t242_6);
+           [Q242$7] (t242_7);
+           [Q534$1 Q534$2 Q534$3 Q534$4 Q534$5 Q534$6] (t534_1 - t534_6);
+           [Q534$7 Q534$8 Q534$9] (t534_7 - t534_9);
+           [Q587$1 Q587$2 Q587$3 Q587$4 Q587$5 Q587$6] (t587_1 - t587_6);
+           [Q587$7 Q587$8 Q587$9] (t587_7 - t587_9);
+           ",
+  MODELCONSTRAINT = "new(f100_d13 f101_d13 f102_d12 f102_d13 f103_d12
+  f103_d13 f115_d13 f225_d13 f226_d12 f226_d13 f228_d12 f228_d13 
+  f242_d13 m100_d13 m101_d13 m102_d12 m102_d13 m103_d12 m103_d13 
+  m115_d13 m225_d13 m226_d12 m226_d13 m228_d12 m228_d13 m242_d13
+  m534_d12 m587_d12);
+       f100_d13 = f100_1-f100_3;
+       f101_d13 = f101_1-f101_3;
+       f102_d12 = f102_1-f102_2;
+       f102_d13 = f102_1-f102_3;
+       f103_d12 = f103_1-f102_2;
+       f103_d13 = f103_1-f103_3;
+       f115_d13 = f115_1-f115_3;
+       f225_d13 = f225_1-f225_3;
+       f226_d12 = f226_1-f226_2;
+       f226_d13 = f226_1-f226_3;
+       f228_d12 = f228_1-f228_2;
+       f228_d13 = f228_1-f228_3;
+       f242_d13 = f242_1-f242_3;
+       m100_d13 = 0-m100_3;
+       m101_d13 = 0-m101_3;
+       m102_d12 = 0-m102_2;
+       m102_d13 = 0-m102_3;
+       m103_d12 = 0-m103_2;
+       m103_d13 = 0-m103_3;
+       m115_d13 = 0-m115_3;
+       m225_d13 = 0-m225_3;
+       m226_d12 = 0-m226_2;
+       m226_d13 = 0-m226_3;
+       m228_d12 = 0-m228_2;
+       m228_d13 = 0-m228_3;
+       m242_d13 = 0-m242_3;
+       m534_d12 = 0-m534_2;
+       m587_d12 = 0-m587_2;",
+  OUTPUT = "standardized;",
+  PLOT = "Type = Plot2;",
+  SAVEDATA = "SAVE = FSCORES; File = 'fscores_DIF.dat';",
+  usevariables = c("study_wave_number", "Q100", "Q101", "Q102", "Q103",
+                   "Q115", "Q225", "Q226", "Q228", "Q242", "Q266", 
+                   "Q285", "Q534", "Q587", "timefr1", "timefr2", 
+                   "timefr6", "timefr12", "timefr18"),
+  rdata = goo
+)
+# fs::dir_create(here::here("mplus_ignore", "DIFanalysis4"))
+setwd(here::here("mplus_ignore", "DIFanalysis4"))
+MplusAutomation::mplusModeler(mod4, modelout = "DIFmodel4.inp", run = 1)
+```
+
+```{r}
+mod4_output <- MplusAutomation::readModels(here::here("mplus_ignore", "DIFanalysis4", "DIFmodel4.out"))
+
+```
+
+::: {.callout-note collapse=true icon=false}
+## Mplus Multiple group model output 
+```{r}
+cat(readLines(here::here("mplus_ignore", "DIFanalysis4", "DIFmodel4.out")), sep = '\n')
+```
+:::
+
+```{r}
+#| tbl-cap: "Factor loadings from multiple group model with DIF and means constrained to be 0"
+
+
+fl_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
+  filter(paramHeader == "F.BY") %>%
+  select(LatentClass, param, est) %>%
+  pivot_wider(id_cols = param, values_from = est, names_from = LatentClass, names_prefix = "Class_") %>%
+  rename(Class_1_unstd = Class_1) %>%
+  rename(Class_2_unstd = Class_2) %>%
+  rename(Class_3_unstd = Class_3) %>%
+  mutate(param = str_sub(param, 1, 4))
+
+fl_dif <- mod4_output[["parameters"]][["unstandardized"]] %>%
+  filter(str_detect(paramHeader, "New")) %>%
+  filter(str_detect(param, "F")) %>%
+  select(param, est, pval) %>%
+  separate(param, into = c("item", "comparison"), sep = "_") %>%
+  pivot_wider(id = item, names_from = comparison, values_from = c(est, pval)) %>%
+  mutate(item = str_replace(item, "F", "Q")) %>%
+  select(item, est_D12, pval_D12, est_D13, pval_D13)
+
+fl_parameters.std <- mod4_output[["parameters"]][["stdyx.standardized"]] %>%
+  filter(paramHeader == "F.BY") %>%
+  select(LatentClass, param, est) %>%
+  pivot_wider(id_cols = param, values_from = est, 
+              names_from = LatentClass, names_prefix = "Class_") %>%
+  mutate(param = str_sub(param, 1, 4))
+
+tests_df %>%
+  left_join(fl_parameters.unstd, by = c("item" = "param")) %>%
+  left_join(fl_dif, by = c("item" = "item")) %>%
+  gt::gt() %>%
+    gt::sub_missing(missing_text = "") %>%
+    gt::tab_spanner("UnStd Factor Loadings", 
+                    columns = c(Class_1_unstd, Class_2_unstd, Class_3_unstd)) %>%
+    gt::tab_spanner("Inperson/Telephone", columns = c(est_D12, pval_D12)) %>%
+    gt::tab_spanner("Inperson/Video", columns = c(est_D13, pval_D13)) %>%
+    gt::cols_label(item = "Item", 
+                   name = "Test name",
+                   Class_1_unstd = "Inperson", 
+                   Class_2_unstd = "Telephone",
+                   Class_3_unstd = "Video",
+                   est_D12 = "Difference", pval_D12 = "p-value", 
+                   est_D13 = "Difference", pval_D13 = "p-value")
+```
+
+```{r}
+#| tbl-cap: "Means of latent indicator of items from multiple group model with DIF and means constrained to be 0"
+mean_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
+  filter(paramHeader == "Intercepts") %>%
+  filter(pval!=999 | LatentClass==1) %>%
+  filter(str_detect(param, "STAR")) %>%
+  select(LatentClass, param, est) %>%
+  pivot_wider(id_cols = param, values_from = est, 
+              names_from = LatentClass, names_prefix = "Class_") %>%
+  mutate(item = str_sub(param, 1, 4)) %>%
+  filter(!item %in% c("Q266", "Q285")) %>%
+  select(item, Class_1, Class_2, Class_3) %>%
+  rename(Class_1_unstd = Class_1) %>%
+  rename(Class_2_unstd = Class_2) %>%
+  rename(Class_3_unstd = Class_3)
+
+
+m_dif <- mod4_output[["parameters"]][["unstandardized"]] %>%
+  filter(str_detect(paramHeader, "New")) %>%
+  filter(str_detect(param, "M")) %>%
+  select(param, est, pval) %>%
+  separate(param, into = c("item", "comparison"), sep = "_") %>%
+  pivot_wider(id = item, names_from = comparison, values_from = c(est, pval)) %>%
+  mutate(item = str_replace(item, "M", "Q")) %>%
+  select(item, est_D12, pval_D12, est_D13, pval_D13)
+
+tests_df %>%
+  filter(!item %in% c("Q266", "Q285")) %>%
+  left_join(mean_parameters.unstd, by = c("item"="item")) %>%
+  left_join(m_dif, by = c("item"="item")) %>%
+  gt::gt() %>%
+    gt::sub_missing(missing_text = "") %>%
+    gt::tab_spanner("Means", 
+                    columns = c(Class_1_unstd, Class_2_unstd, Class_3_unstd)) %>%
+    gt::tab_spanner("Inperson/Telephone", columns = c(est_D12, pval_D12)) %>%
+    gt::tab_spanner("Inperson/Video", columns = c(est_D13, pval_D13)) %>%
+    gt::cols_label(item = "Item", 
+                   name = "Test name",
+                   Class_1_unstd = "Inperson", 
+                   Class_2_unstd = "Telephone",
+                   Class_3_unstd = "Video",
+                   est_D12 = "Difference", pval_D12 = "p-value", 
+                   est_D13 = "Difference", pval_D13 = "p-value")
+```
+
+```{r}
+#| tbl-cap: "Thresholds from multiple group model with DIF and means constrained to be 0"
+thres_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
+  filter(paramHeader == "Thresholds") %>%
+  select(LatentClass, param, est) %>%
+  pivot_wider(id_cols = param, values_from = est, 
+              names_from = LatentClass, names_prefix = "Class_") %>%
+  separate(param, into = c("item", "threshold"), sep = "\\$") %>%
+  rename(Class_1_unstd = Class_1) %>%
+  rename(Class_2_unstd = Class_2) %>%
+  rename(Class_3_unstd = Class_3)
+
+
+thres_parameters.unstd %>%
+  group_by(item) %>%
+  gt::gt() %>%
+    gt::sub_missing(missing_text = "") %>%
+    gt::cols_label(item = "Item", 
+                   Class_1_unstd = "Inperson", 
+                   Class_2_unstd = "Telephone",
+                   Class_3_unstd = "Video")
+
+```

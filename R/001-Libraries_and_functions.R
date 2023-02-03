@@ -10,8 +10,9 @@ library(here)
 library(googlesheets4)
 library(ggrepel)
 library(ggsci)
+library(car)
 # library(QSPthemes) # work in progress
 
 # install.packages("devtools")
-devtools::install_github("dougtommet/QSPworkflow")
+# devtools::install_github("dougtommet/QSPworkflow")
 

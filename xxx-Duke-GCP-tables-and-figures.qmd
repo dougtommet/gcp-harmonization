@@ -1,0 +1,218 @@
+---
+title: "SAGES, MADCO-PC, & INTUIT GCP Harmonization"
+author: "Doug Tommet"
+date: '`r Sys.Date()`'
+format:
+  html:
+    toc: true
+    self-contained: true
+    theme: journal
+figures:
+  fig-cap-location: top 
+execute:
+  echo: false
+  warning: false
+  message: false
+keep-md: true
+---
+
+
+```{r}
+rm(list = setdiff(ls(), lsf.str())[!(setdiff(ls(), lsf.str()) %in% "params")])
+source(here::here("R", "001-Libraries_and_functions.R"))
+source(here::here("R", "005-folder_paths_and_options.R"))
+```
+
+
+```{r}
+sagesI_inperson_df <-   readRDS(file=path(r_objects_folder, "010_sagesI_inperson_df.rds"))
+sagesI_560_df <-        readRDS(file=path(r_objects_folder, "010_sagesI_560_df.rds"))
+intuit_df <-            readRDS(file=path(r_objects_folder, "010_intuit_df.rds"))
+
+gcp_study_nested <- readRDS(file=path(r_objects_folder, str_c("070_gcp_study_nested_GCPv2b.rds")))
+foo <- gcp_study_nested %>%
+  filter(study_name_short %in% c("SAGES", "INTUIT_ACTIVE")) %>%
+  pull(response_data)
+
+```
+
+# Cognitive battery
+
+## @tbl-battery: Cognitive tests by mode and study
+
+These are the items used to harmonize INTUIT/MADCO to SAGES.  The Duke studies are listed in one column because since they used the same cognitive battery, the two studies were harmonized at the same time.  
+
+```{r}
+#| label: tbl-battery
+#| tbl-cap: "Cognitive tests by mode and study"
+#| tbl-cap-location: top
+ 
+gcp_items <- readRDS(file=path(r_objects_folder, "010_gcp_items.rds"))
+gcp_linking_items <- readRDS(file=path(r_objects_folder, "010_gcp_linking_items.rds")) %>%
+  select(item_a, item_b)
+
+gcp_items <- gcp_items %>%
+  filter(str_detect(item, "Q")) %>%
+  filter(!str_detect(Set, "Not")) %>%
+  filter(!str_detect(Set, "DNI")) %>%
+  # filter(!str_detect(item, "Q7")) %>%
+  left_join(gcp_linking_items, by = c("item" = "item_b")) %>%
+  select(item, item_a, item_label, study, domain, Set)
+
+gcp_items_wide <- gcp_items %>%
+  mutate(item_new = case_when(!is.na(item_a) ~ item_a,
+                              TRUE ~ item),
+         x = "X") %>%
+  select(item_new, study, x) %>%
+  pivot_wider(names_from = study, values_from = x)
+
+gcp_items <- gcp_items_wide %>%
+  left_join(gcp_items, by = c("item_new" = "item")) %>%
+  select(item_new, item_label, Set, domain, everything()) %>%
+  select(-item_a, -study) %>%
+  arrange(domain, item_new)
+
+gcp_version <- "GCPv2c"
+if (gcp_version == "GCPv1"){
+  gcp_alt <- c("GCP-alt-1a", "GCP-alt-2a", "GCP-alt-3a")
+}
+if (gcp_version == "GCPv2a"){
+  gcp_alt <- c("GCP-alt-1b", "GCP-alt-2a", "GCP-alt-3a")
+}
+if (gcp_version == "GCPv2b"){
+  gcp_alt <- c("GCP-alt-1b", "GCP-alt-2b", "GCP-alt-3b")
+}
+if (gcp_version == "GCPv2c"){
+  gcp_alt <- c("GCP-alt-1b", "GCP-alt-2c", "GCP-alt-3b")
+}
+
+gcp_items <- gcp_items %>%
+  filter(Set %in% c("GCP", gcp_alt)) %>%
+  filter(!is.na(SAGES) | !is.na(INTUIT_ACTIVE))
+
+gcp_items %>%
+  gt::gt() %>%
+  gt::cols_hide(columns = c(item_new, domain, Set, HRS_ADAMS, SAGES_Telephone, SAGESII_Inperson, SAGESII_Telephone, SAGESII_Video, SAGESII_Telephone_validation, SAGESII_Video_validation)) %>%
+  gt::cols_align(align = "center") %>%
+  gt::tab_row_group(label = "Memory", rows = domain %in% c("mem")) %>%
+  gt::tab_row_group(label = "Language", rows = domain %in% c("lan")) %>%
+  gt::tab_row_group(label = "Attention/Executive Function", rows = domain %in% c("att", "ef")) %>%
+  gt::sub_missing(columns = 3:11, rows = everything(), missing_text = "") %>%
+  gt::tab_spanner("Study/Mode", 5:11) %>%
+  gt::cols_label(INTUIT_ACTIVE = "INTUIT/MADCO")
+  
+
+```
+
+# Descriptive statistics of cognitive assessment
+
+::: callout-note
+@tbl-battery-desc is more inclusive of the cognitive tests used in the assessment than @tbl-battery.  Not all the items in this table were used in the GCP, only those in @tbl-battery were used in the GCP.
+:::
+
+```{r}
+#| label: tbl-battery-desc
+#| tbl-cap: "Descriptive statistics of cognitive battery"
+#| tbl-cap-location: top
+foo_sages <- foo[[1]] 
+foo_duke <- foo[[2]]
+
+foo_duke <- foo_duke %>%
+  rename(i208 = i708) %>%
+  rename(i210 = i710) %>%
+  rename(npb14 = digtsym) %>%
+  rename(npb10 = trailsa) %>%
+  rename(npb12 = trailsb) %>%
+  rename(npb15 = repfor) %>%
+  rename(npb16 = repback)
+
+goo <- foo_sages %>%
+  bind_rows(foo_duke) %>%
+  mutate(study = case_when(study_wave_number==2 ~ "SAGES",
+                           TRUE ~ study),
+         study = factor(study, levels = c("SAGES", "A", "I"), labels = c("SAGES", "MADCO-PC", "INTUIT"))) %>%
+  sjlabelled::var_labels(
+    randtig = "Immediate RANDT Gist",
+    randtiv = "Immediate RANDT Verbatim",
+    randtdg = "Delay RANDT Gist",
+    randtdv = "Delay RANDT Verbatim",
+    i208    = "Hopkins Verbal Learning Initial (3 Trial Sum)",	
+    i210    = "Hopkins Delayed recall",
+    hvltdelayrecognition = "Hopkins Delayed recognition",
+    i713    = "Wechsler Reproduction Immediate (3 trial sum)",		
+    i717    = "Wechsler Reproduction Delay (3 trial sum)",
+    i201    = "Visual Search and Attention",
+    npb14   = "Digit Symbol",              	
+    npb10   = "Trails Making Test Part A", 	
+    npb12   = "Trails Making Test Part B",	
+    npb15   = "Digit Span Repeat Forwards",
+    npb16   = "Digit Span Repeat Backwards",
+    i241    = "Boston Naming Test",
+    i265    = "Semantic fluency – supermarket",
+    i281    = "Letter fluency - FAS",
+    )
+
+
+
+goo %>%
+  filter(study_wave_number==2 | (study_wave_number==7 & visit==0))  %>%
+  select(study, randtig, randtiv, randtdg, randtdv, i208, i210, hvltdelayrecognition, 
+         i713, i717, i201, 
+         npb14, npb10, npb12, 
+         npb15, npb16, 
+         i241, i265, i281) %>%
+  gtsummary::tbl_summary(by = study,
+                         type = c(randtig, randtiv, randtdg, randtdv) ~ "continuous",
+                         statistic = gtsummary::all_continuous() ~ "{mean} ({sd})",
+                         digits = gtsummary::everything() ~ 1,
+                         missing = "no"
+                         ) %>%
+  gtsummary::modify_table_body(
+    mutate,
+    groupname_col = case_when(variable %in% c("randtig", "randtiv", "randtdg", "randtdv", "i208", "i210", "hvltdelayrecognition") ~ "Verbal Memory",
+                              variable %in% c("i713", "i717", "i201") ~ "Visual Memory",
+                              variable %in% c("npb14", "npb10", "npb12") ~ "Executive Function",
+                              variable %in% c("npb15", "npb16") ~ "Attention/Concentration",
+                              variable %in% c("i241", "i265", "i281") ~ "Language",
+                              TRUE ~ "unlabeled")
+  ) %>%
+  gtsummary::as_gt() %>%
+  gt::sub_values(
+    values = "NA (NA)",
+    replacement = ""
+  )
+
+
+
+
+```
+
+# GCP Information
+
+## @fig-info: Test Information by mode and study
+
+```{r}
+#| label: fig-info
+#| fig-cap: "Test Information by mode and study"
+#| fig-cap-location: top
+gcp_study_nested_v2c <- readRDS(file=path(r_objects_folder, "250_gcp_study_nested_GCPv2c.rds"))
+
+foo <- gcp_study_nested_v2c[["h_obj"]]
+
+foo <- gcp_study_nested_v2c %>%
+  mutate(boo = map(h_obj, pluck, "test_info"))
+
+goo <- foo %>%
+  select(study_name_short, boo) %>%
+  unnest(cols = c(boo))
+
+goo %>%
+  filter(study_name_short %in% c("SAGES", "INTUIT_ACTIVE")) %>%
+  ggplot(aes(x = theta, y = i, color = study_name_short)) +
+    geom_line() +
+    scale_y_continuous("Information") +
+    scale_x_continuous("GCP") +
+    scale_color_discrete("Study") +
+    hrbrthemes::theme_ipsum()
+
+```

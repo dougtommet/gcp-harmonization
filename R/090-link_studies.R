@@ -190,14 +190,11 @@ saveRDS(uni_item_bank_03,  file=path(r_objects_folder, str_c("090_uni_item_bank_
 
 # 04 - SAGESII telephone
 if (gcp_version == "GCPv2a") {
-  uni_item_bank_04 <- my_harmonization_fx(4, uni_item_bank_03, 4, b.runmplus = TRUE, b.bifactor_model = FALSE,
-                                          b.extra.model.statement = "[Q226$8 * 7.5];")
+  uni_item_bank_04 <- my_harmonization_fx(4, uni_item_bank_03, 4, b.runmplus = TRUE, b.bifactor_model = FALSE)
 } else if (gcp_version == "GCPv2b") {
-  uni_item_bank_04 <- my_harmonization_fx(4, uni_item_bank_03, 4, b.runmplus = TRUE, b.bifactor_model = FALSE,
-                                          b.extra.model.statement = "[Q226$8 * 7];")
+  uni_item_bank_04 <- my_harmonization_fx(4, uni_item_bank_03, 4, b.runmplus = TRUE, b.bifactor_model = FALSE)
 } else if (gcp_version == "GCPv2c") {
-  uni_item_bank_04 <- my_harmonization_fx(4, uni_item_bank_03, 4, b.runmplus = TRUE, b.bifactor_model = FALSE,
-                                          b.extra.model.statement = "[Q226$8 * 7.5];")
+  uni_item_bank_04 <- my_harmonization_fx(4, uni_item_bank_03, 4, b.runmplus = TRUE, b.bifactor_model = FALSE)
 } else {
   uni_item_bank_04 <- my_harmonization_fx(4, uni_item_bank_03, 4, b.runmplus = TRUE, b.bifactor_model = FALSE,)
 }
