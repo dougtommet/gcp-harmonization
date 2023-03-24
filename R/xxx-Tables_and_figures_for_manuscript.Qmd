@@ -88,6 +88,12 @@ covid <- covid2020 %>%
          wk = lubridate::week(date),
          yr = lubridate::year(date))
 
+latest_sages_interview <- sagesII_subject_df %>%
+  summarize(max(vin_date))
+
+covid <- covid %>% 
+  filter(date <= latest_sages_interview)
+
 covid_suffolk <- covid %>%
   filter(state=="Massachusetts") %>%
   filter(county %in% c("Suffolk")) %>%
@@ -121,7 +127,7 @@ ggplot(foo, aes(x=vin_date, y = vin_loc2, color = timefr)) +
            aes(x = date, y = incident_cases10000), 
            stat = "identity", fill = "red") +
   labs(caption = "COVID data source: NY Times COVID 19 data repository")
-
+ggsave(here::here("Figures", "Figure 1.pdf"), device = cairo_pdf)
 ```
 
 @fig-timeline shows when different interview modes occurred in SAGES II.
@@ -168,7 +174,7 @@ ggplot(foo, aes(x=vin_date, y = vin_loc_jitter, color = timefr)) +
            aes(x = date, y = incident_cases10000), 
            stat = "identity", fill = "red") +
   labs(caption = "COVID data source: NY Times COVID 19 data repository")
-
+ggsave(here::here("Figures", "Figure 1-alt.pdf"), device = cairo_pdf)
 ```
 
 @fig-timeline-alt1 is the same as @fig-timeline but with the color gradient reversed.
@@ -534,6 +540,128 @@ gcp_items %>%
 
 @tbl-battery shows the neuropsych tests used in the different studies/modes.
 
+
+```{r}
+gcp_study_nested_v2c <- readRDS(file=path(r_objects_folder, "250_gcp_study_nested_GCPv2c.rds"))
+foo <- gcp_study_nested_v2c %>%
+  mutate(boo = map(h_obj, pluck, "response_df_filtered"))  %>%
+  select(study_name_short, boo)  %>%
+  unnest(cols = c(boo)) %>%
+  select(-study_wave_number, -timefr) %>%
+  filter(!(item %in% c("Q532")))
+
+response_df_validation <- foo %>%
+  filter(study_name_short %in% c("SAGESII_Telephone_validation", "SAGESII_Video_validation")) %>%
+  select(study_name_short, newid, item, response)
+response_df_validation_wide <- response_df_validation %>%
+  pivot_wider(id_cols = c(newid, study_name_short), names_from = item, values_from = response) 
+
+
+response_df_sages <- foo %>%
+  filter(study_name_short %in% c("SAGESII_Inperson", "SAGESII_Telephone", "SAGESII_Video")) %>%
+  select(study_name_short, newid, item, response)
+response_df_sages_wide <- response_df_sages %>%
+  pivot_wider(id_cols = c(newid, study_name_short), names_from = item, values_from = response) 
+
+validation_df_differences <- response_df_validation_wide %>%
+  mutate(id = str_sub(newid, 3, -1),
+         x = str_sub(study_name_short, 9, 9)) %>%
+  arrange(id) %>%
+  ungroup() %>%
+  select(-study_name_short) %>%
+  group_by(id) %>%
+  summarize(across(c(Q103, Q102, Q226, Q228, Q285, Q266), diff, .names = '{col}')) %>%
+  mutate(study_name_short = "Difference")
+  
+goo <- response_df_validation_wide %>%
+  bind_rows(validation_df_differences) %>%
+  mutate(study_name_short = factor(study_name_short, levels = c("SAGESII_Telephone_validation", "SAGESII_Video_validation", "Difference")))
+
+goo <- goo %>%
+  labelled::set_variable_labels(Q103 = str_c("Q103: ", gcp_items %>% filter(item_new=="Q103") %>% pull(item_label)), 
+                                Q102 = str_c("Q102: ", gcp_items %>% filter(item_new=="Q102") %>% pull(item_label)),
+                                Q226 = str_c("Q226: ", gcp_items %>% filter(item_new=="Q226") %>% pull(item_label)), 
+                                Q228 = str_c("Q228: ", gcp_items %>% filter(item_new=="Q228") %>% pull(item_label)), 
+                                Q285 = str_c("Q285: ", gcp_items %>% filter(item_new=="Q285") %>% pull(item_label)), 
+                                Q266 = str_c("Q266: ", gcp_items %>% filter(item_new=="Q266") %>% pull(item_label)), 
+                                Q534 = str_c("Q534: ", gcp_items %>% filter(item_new=="Q534") %>% pull(item_label)), 
+                                Q587 = str_c("Q587: ", gcp_items %>% filter(item_new=="Q587") %>% pull(item_label)), 
+                                Q115 = str_c("Q115: ", gcp_items %>% filter(item_new=="Q115") %>% pull(item_label)), 
+                                Q101 = str_c("Q101: ", gcp_items %>% filter(item_new=="Q101") %>% pull(item_label)), 
+                                Q100 = str_c("Q100: ", gcp_items %>% filter(item_new=="Q100") %>% pull(item_label)), 
+                                Q225 = str_c("Q225: ", gcp_items %>% filter(item_new=="Q225") %>% pull(item_label)), 
+                                Q242 = str_c("Q242: ", gcp_items %>% filter(item_new=="Q242") %>% pull(item_label)), 
+  )
+
+response_df_sages_wide <- response_df_sages_wide %>%
+  labelled::set_variable_labels(Q103 = str_c("Q103: ", gcp_items %>% filter(item_new=="Q103") %>% pull(item_label)), 
+                                Q102 = str_c("Q102: ", gcp_items %>% filter(item_new=="Q102") %>% pull(item_label)),
+                                Q226 = str_c("Q226: ", gcp_items %>% filter(item_new=="Q226") %>% pull(item_label)), 
+                                Q228 = str_c("Q228: ", gcp_items %>% filter(item_new=="Q228") %>% pull(item_label)), 
+                                Q285 = str_c("Q285: ", gcp_items %>% filter(item_new=="Q285") %>% pull(item_label)), 
+                                Q266 = str_c("Q266: ", gcp_items %>% filter(item_new=="Q266") %>% pull(item_label)), 
+                                Q534 = str_c("Q534: ", gcp_items %>% filter(item_new=="Q534") %>% pull(item_label)), 
+                                Q587 = str_c("Q587: ", gcp_items %>% filter(item_new=="Q587") %>% pull(item_label)), 
+                                Q115 = str_c("Q115: ", gcp_items %>% filter(item_new=="Q115") %>% pull(item_label)), 
+                                Q101 = str_c("Q101: ", gcp_items %>% filter(item_new=="Q101") %>% pull(item_label)), 
+                                Q100 = str_c("Q100: ", gcp_items %>% filter(item_new=="Q100") %>% pull(item_label)), 
+                                Q225 = str_c("Q225: ", gcp_items %>% filter(item_new=="Q225") %>% pull(item_label)), 
+                                Q242 = str_c("Q242: ", gcp_items %>% filter(item_new=="Q242") %>% pull(item_label)), 
+                                Q526 = str_c("Q526: ", gcp_items %>% filter(item_new=="Q526") %>% pull(item_label)), 
+                                Q571 = str_c("Q571: ", gcp_items %>% filter(item_new=="Q571") %>% pull(item_label)), 
+                                Q572 = str_c("Q572: ", gcp_items %>% filter(item_new=="Q572") %>% pull(item_label)), 
+                                Q672 = str_c("Q672: ", gcp_items %>% filter(item_new=="Q672") %>% pull(item_label)), 
+  )
+```
+
+```{r}
+#| label: tbl-cog-desc
+#| tbl-cap: "Descriptive statistics of cognitive battery"
+#| tbl-cap-location: top
+response_df_sages_wide %>%
+  select(-newid) %>%
+  gtsummary::tbl_summary(by = study_name_short,
+                         statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})",
+                                          gtsummary::all_categorical() ~ "{n} / {N} ({p}%)"
+                                          ),
+                         type = c(Q103, Q102, Q226, Q228, Q285, 
+                                  Q266, Q534, Q587, Q115, 
+                                  Q101, Q100, Q225, Q242,
+                                  Q526, Q571, Q572, Q672
+                                  ) ~ "continuous"
+    ) %>%
+  gtsummary::as_gt() %>%
+  gt::tab_row_group(label = "Memory", rows = variable %in% c("Q226", "Q228")) %>%
+  gt::tab_row_group(label = "Language", rows = variable %in% c("Q115", "Q266", "Q285", "Q587", "Q526")) %>%
+  gt::tab_row_group(label = "Attention/Executive Function", rows = variable %in% c("Q101", "Q100", "Q102", "Q103", "Q225", "Q242", "Q534", "Q571", "Q572", "Q672")) 
+```
+
+@tbl-cog-desc shows descriptive statistics of the cognitive battery by the different modes.
+
+```{r}
+#| label: tbl-cog-desc-validation
+#| tbl-cap: "Descriptive statistics of cognitive battery in validation sample"
+#| tbl-cap-location: top
+
+goo %>%
+  select(-newid, -id) %>%
+  gtsummary::tbl_summary(by = study_name_short,
+                         statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})",
+                                          gtsummary::all_categorical() ~ "{n} / {N} ({p}%)"
+                                          ),
+                         type = c(Q103, Q102, Q226, Q228, Q285, 
+                                  Q266, Q534, Q587, Q115, 
+                                  Q101, Q100, Q225, Q242) ~ "continuous"
+    ) %>%
+  gtsummary::as_gt() %>%
+  gt::tab_row_group(label = "Memory", rows = variable %in% c("Q226", "Q228")) %>%
+  gt::tab_row_group(label = "Language", rows = variable %in% c("Q115", "Q266", "Q285", "Q587")) %>%
+  gt::tab_row_group(label = "Attention/Executive Function", rows = variable %in% c("Q101", "Q100", "Q102", "Q103", "Q225", "Q242", "Q534")) 
+
+```
+
+@tbl-cog-desc-validation shows descriptive statistics of the cognitive battery in the validation sample.
+
 # GCP Information
 
 ## @fig-info: Test Information by mode and study
@@ -551,31 +679,59 @@ foo <- gcp_study_nested_v2c %>%
 
 goo <- foo %>%
   select(study_name_short, boo) %>%
-  unnest(cols = c(boo))
+  unnest(cols = c(boo)) %>%
+  mutate(t = (theta*10)+50)
 
-goo %>%
+hoo <- goo %>%
   filter(study_name_short %in% c("HRS_ADAMS", "SAGES", 
                                  "SAGESII_Inperson", "SAGESII_Telephone", 
                                  "SAGESII_Video")) %>%
   mutate(i = case_when(study_name_short=="SAGES" ~ i + .1,
                        study_name_short=="SAGESII_Video" ~ i - .1,
-                       TRUE ~ i)) %>%
-ggplot(aes(x = theta, y = i, color = study_name_short)) +
+                       TRUE ~ i)) 
+
+hoo %>%
+ggplot(aes(x = t, y = i, color = study_name_short)) +
   geom_line() +
   scale_y_continuous("Information") +
-  scale_x_continuous("GCP") +
-  scale_color_discrete("Study") +
+  scale_x_continuous("GCP", breaks = seq(10, 90, 10)) +
+  scale_color_discrete("Study", labels = c("HRS ADAMS", "SAGES", 
+                                 "SAGES II Inperson", "SAGES II Telephone", 
+                                 "SAGES II Video")) +
   hrbrthemes::theme_ipsum()
 
+ggsave(here::here("Figures", "Figure 2.pdf"), device = cairo_pdf)
 ```
 
-@fig-info shows the information plot.
+```{r}
+#| label: fig-info-rug
+#| fig-cap: "Test Information by mode and study"
+#| fig-cap-location: top
+gcp_g_v2c <- readRDS(file=path(r_objects_folder, "400_gcp_g_v2c.rds"))
+sages_gcp <- gcp_g_v2c %>%
+  filter(study_name_short %in% c("SAGESII_Inperson", "SAGESII_Telephone", "SAGESII_Video"))
+
+hoo %>%
+ggplot(aes(x = t, y = i, color = study_name_short)) +
+  geom_line() +
+  scale_y_continuous("Information") +
+  scale_x_continuous("GCP", breaks = seq(10, 90, 10)) +
+  scale_color_discrete("Study", labels = c("HRS ADAMS", "SAGES", 
+                                 "SAGES II Inperson", "SAGES II Telephone", 
+                                 "SAGES II Video")) +
+  hrbrthemes::theme_ipsum() +
+  geom_rug(data = sages_gcp, inherit.aes = FALSE, mapping = aes(x = gcp), alpha = .4)
+ggsave(here::here("Figures", "Figure 2 w rug.pdf"), device = cairo_pdf)
+```
+
+@fig-info and @fig-info-rug shows the information plot.
 
 ::: callout-note
 The cognitive test battery was the same for SAGES I - In-person, SAGES II - In-person, and SAGES II - Video. This means their Information curves would overlap. I shifted the curves by a small amount so they would be distinct.
 :::
 
 # Validation
+
 
 ## @fig-video-vs-telephone: Agreement by mode
 
@@ -612,12 +768,13 @@ ggplot(validation_df, aes(x=Telephone, y=Video)) +
   geom_point() +
   scale_x_continuous("Telephone GCP", limits = c(40, 90)) +
   scale_y_continuous("Video GCP", limits = c(40, 90)) +
-  geom_smooth(se=FALSE, aes(color = "Loess")) +
+  # geom_smooth(se=FALSE, aes(color = "Loess")) +
   geom_abline(slope = 1) +
-  geom_abline(aes(slope = deming_reg@para[2], intercept = deming_reg@para[1], 
-              color = "Deming")) +
-  scale_color_manual("Model", values = c("blue", "red"), breaks = c("Loess", "Deming")) +
+  # geom_abline(aes(slope = deming_reg@para[2], intercept = deming_reg@para[1], 
+              # color = "Deming")) +
+  # scale_color_manual("Model", values = c("blue", "red"), breaks = c("Loess", "Deming")) +
   hrbrthemes::theme_ipsum()
+ggsave(here::here("Figures", "Figure 3.pdf"), device = cairo_pdf)
 ```
 
 The correlation of GCP between telephone and video interviews is: `r cor(validation_df$Telephone, validation_df$Video) %>% round(2)`.
@@ -634,9 +791,10 @@ ggplot(aes(x=avg, y=diff)) +
   geom_point() +
   scale_x_continuous("Average between telephone and video") +
   scale_y_continuous("Difference between telephone and video", limits = c(-15, 15)) +
-  geom_smooth(se=FALSE) +
+  # geom_smooth(se=FALSE) +
   geom_hline(yintercept = 0) +
   hrbrthemes::theme_ipsum()
+ggsave(here::here("Figures", "Figure 4.pdf"), device = cairo_pdf)
 ```
 
 ## (Table 3): Validation study results
