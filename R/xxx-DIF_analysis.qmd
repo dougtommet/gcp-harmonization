@@ -5,6 +5,9 @@ date: '`r Sys.Date()`'
 format: 
   html:
     code-fold: true
+    toc: true
+    self-contained: true
+    theme: journal
 execute: 
   echo: false
   warning: false
@@ -49,6 +52,7 @@ goo <- goo %>%
          )
 ```
 
+# Cognitive Tests in SAGES-II
 
 ```{r}
 #| tbl-cap: Tests used in SAGES-II
@@ -73,6 +77,7 @@ tests_df %>%
   gt::cols_label(item = "Item", name = "Test name")
 ```
 
+# Descriptive statistics of cognitive tests
 
 ```{r}
 #| tbl-cap: Test response frequency by interview mode
@@ -86,6 +91,7 @@ goo %>%
                                   Q587) ~ "categorical")
 ```
 
+# Mplus code for DIF model
 
 ```{r}
 #| echo: true
@@ -289,8 +295,7 @@ mod4 <- MplusAutomation::mplusObject(
   MODELCONSTRAINT = "new(f100_d13 f101_d13 f102_d12 f102_d13 f103_d12
   f103_d13 f115_d13 f225_d13 f226_d12 f226_d13 f228_d12 f228_d13 
   f242_d13 m100_d13 m101_d13 m102_d12 m102_d13 m103_d12 m103_d13 
-  m115_d13 m225_d13 m226_d12 m226_d13 m228_d12 m228_d13 m242_d13
-  m534_d12 m587_d12);
+  m115_d13 m225_d13 m226_d12 m226_d13 m228_d12 m228_d13 m242_d13);
        f100_d13 = f100_1-f100_3;
        f101_d13 = f101_1-f101_3;
        f102_d12 = f102_1-f102_2;
@@ -317,8 +322,7 @@ mod4 <- MplusAutomation::mplusObject(
        m228_d12 = 0-m228_2;
        m228_d13 = 0-m228_3;
        m242_d13 = 0-m242_3;
-       m534_d12 = 0-m534_2;
-       m587_d12 = 0-m587_2;",
+       ",
   OUTPUT = "standardized;",
   PLOT = "Type = Plot2;",
   SAVEDATA = "SAVE = FSCORES; File = 'fscores_DIF.dat';",
@@ -345,6 +349,10 @@ cat(readLines(here::here("mplus_ignore", "DIFanalysis4", "DIFmodel4.out")), sep 
 ```
 :::
 
+# DIF summary tables
+
+## Factor loadings
+
 ```{r}
 #| tbl-cap: "Factor loadings from multiple group model with DIF and means constrained to be 0"
 
@@ -363,7 +371,7 @@ fl_dif <- mod4_output[["parameters"]][["unstandardized"]] %>%
   filter(str_detect(param, "F")) %>%
   select(param, est, pval) %>%
   separate(param, into = c("item", "comparison"), sep = "_") %>%
-  pivot_wider(id = item, names_from = comparison, values_from = c(est, pval)) %>%
+  pivot_wider(id_cols = item, names_from = comparison, values_from = c(est, pval)) %>%
   mutate(item = str_replace(item, "F", "Q")) %>%
   select(item, est_D12, pval_D12, est_D13, pval_D13)
 
@@ -392,8 +400,10 @@ tests_df %>%
                    est_D13 = "Difference", pval_D13 = "p-value")
 ```
 
+## Means
+
 ```{r}
-#| tbl-cap: "Means of latent indicator of items from multiple group model with DIF and means constrained to be 0"
+#| tbl-cap: "Means of latent indicator of items from multiple group model with DIF; means constrained to be 0"
 mean_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
   filter(paramHeader == "Intercepts") %>%
   filter(pval!=999 | LatentClass==1) %>%
@@ -414,7 +424,7 @@ m_dif <- mod4_output[["parameters"]][["unstandardized"]] %>%
   filter(str_detect(param, "M")) %>%
   select(param, est, pval) %>%
   separate(param, into = c("item", "comparison"), sep = "_") %>%
-  pivot_wider(id = item, names_from = comparison, values_from = c(est, pval)) %>%
+  pivot_wider(id_cols = item, names_from = comparison, values_from = c(est, pval)) %>%
   mutate(item = str_replace(item, "M", "Q")) %>%
   select(item, est_D12, pval_D12, est_D13, pval_D13)
 
@@ -437,8 +447,10 @@ tests_df %>%
                    est_D13 = "Difference", pval_D13 = "p-value")
 ```
 
+## Thresholds
+
 ```{r}
-#| tbl-cap: "Thresholds from multiple group model with DIF and means constrained to be 0"
+#| tbl-cap: "Thresholds from multiple group model with DIF; means constrained to be 0"
 thres_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
   filter(paramHeader == "Thresholds") %>%
   select(LatentClass, param, est) %>%
