@@ -99,7 +99,7 @@ gcp_items %>%
   gt::tab_row_group(label = "Attention/Executive Function", rows = domain %in% c("att", "ef")) %>%
   gt::sub_missing(columns = 3:11, rows = everything(), missing_text = "") %>%
   gt::tab_spanner("Study/Mode", 5:11) %>%
-  gt::cols_label(INTUIT_ACTIVE = "INTUIT/MADCO")
+  gt::cols_label(INTUIT_ACTIVE = "Duke studies")
   
 
 ```
@@ -189,11 +189,13 @@ goo %>%
 
 # GCP Information
 
+
+
 ## @fig-info: Test Information by mode and study
 
 ```{r}
 #| label: fig-info
-#| fig-cap: "Test Information by mode and study"
+#| fig-cap: "Test Information by study"
 #| fig-cap-location: top
 gcp_study_nested_v2c <- readRDS(file=path(r_objects_folder, "250_gcp_study_nested_GCPv2c.rds"))
 
@@ -212,7 +214,74 @@ goo %>%
     geom_line() +
     scale_y_continuous("Information") +
     scale_x_continuous("GCP") +
-    scale_color_discrete("Study") +
+    # scale_color_discrete("Study", labels = c(SAGES = "SAGES", INTUIT_ACTIVE = "Duke studies"),
+    #                      colors = c("#d95f02", "#7570b3")) +
+    scale_color_manual("Study", labels = c(SAGES = "SAGES", INTUIT_ACTIVE = "Duke studies"),
+                         values = c(SAGES = "#d95f02", INTUIT_ACTIVE = "#7570b3")) +
     hrbrthemes::theme_ipsum()
+ggsave(here::here("Figures", "Duke_harmonization_Item_Information.pdf"), device = cairo_pdf)
 
 ```
+
+
+```{r}
+#| label: fig-sem-plot
+#| fig-cap: "Standard error measurement by study"
+#| fig-cap-location: top
+
+foo <- read_csv(path(derivedfolder, "gcp_factor_score_v2c.csv"))
+
+foo %>%
+  filter(study_name_short %in% c("INTUIT_ACTIVE", "SAGES")) %>%
+  group_by(study_name_short) %>%
+  ggplot(aes(x = gcp, y=g_se, color = study_name_short)) +
+    geom_hline(yintercept = .316) +
+    geom_smooth(se=FALSE) +
+    geom_rug(sides="b") +
+    hrbrthemes::theme_ipsum() +
+    scale_x_continuous("GCP") +
+    scale_y_continuous("SEM", lim = c(0, 1)) +
+    scale_color_manual("Study", values = c(SAGES = "#d95f02", INTUIT_ACTIVE = "#7570b3")) +
+    theme(legend.position="none") +
+    annotate("text", 75, .2, label = "SAGES", color = "#d95f02") +
+    annotate("text", 75, .4, label = "Duke studies", color = "#7570b3")
+ggsave(here::here("Figures", "Duke_harmonization_SEM.pdf"), device = cairo_pdf)
+
+
+foo %>%
+  filter(study_name_short %in% c("INTUIT_ACTIVE", "SAGES")) %>%
+  mutate(gcp_se = g_se*10) %>%
+  group_by(study_name_short) %>%
+  ggplot(aes(x = gcp, y=gcp_se, color = study_name_short)) +
+    geom_hline(yintercept = 3.16) +
+    geom_point(alpha = .25, size = .5) +
+    geom_smooth(se=FALSE) +
+    scale_x_continuous("GCP") +
+    scale_y_continuous("GCP Standard Error", lim = c(0, 8)) +
+    scale_color_manual("Study", values = c(SAGES = "#d95f02", INTUIT_ACTIVE = "#7570b3"),
+                       labels = c(SAGES = "SAGES", INTUIT_ACTIVE = "Duke studies")) +
+    hrbrthemes::theme_ipsum()
+ggsave(here::here("Figures", "Duke_harmonization_SEM2.pdf"), device = cairo_pdf)
+
+```
+
+## GCP vs CCI in Duke studies
+
+```{r}
+
+intuit_cci_df <- read_xlsx(fs::path(sages_datapath, "SOURCE", "INTUIT", "MADCOPC_INTUIT_DukeCCI.xlsx"))
+intuit_gcp <- read_csv(path(derivedfolder, "intuit_gcp.csv"))
+sagesI_gcp <- read_csv(path(derivedfolder, "sagesI_gcp.csv"))
+
+foo <- intuit_cci_df %>%
+  left_join(intuit_gcp, by = c("studyno" = "newid", "visit" = "timefr"))
+
+foo %>%
+  ggplot(aes(x = gcp, y = Duke_CCI)) +
+    geom_point() +
+    geom_smooth(se = FALSE) +
+    hrbrthemes::theme_ipsum()
+
+ggsave(here::here("Figures", "Duke_harmonization_GCP_CCI.pdf"), device = cairo_pdf)
+```
+

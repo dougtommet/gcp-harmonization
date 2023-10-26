@@ -1,6 +1,6 @@
-Mplus VERSION 8.5 (Mac)
+Mplus VERSION 8.9 (Mac)
 MUTHEN & MUTHEN
-01/27/2023  11:06 AM
+10/24/2023   2:37 PM
 
 INPUT INSTRUCTIONS
 
@@ -408,6 +408,12 @@ MODEL RESULTS
     G                  1.355      0.117     11.547      0.000
 
 
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.141E-01
+       (ratio of smallest to largest eigenvalue)
+
+
 RESULTS IN PROBABILITY SCALE
 
                     Estimate
@@ -778,12 +784,6 @@ R-SQUARE
     Q572               0.155      0.011     13.670      0.000
     Q117               0.602      0.021     29.012      0.000
     Q587               0.426      0.021     20.115      0.000
-
-
-QUALITY OF NUMERICAL RESULTS
-
-     Condition Number for the Information Matrix              0.141E-01
-       (ratio of smallest to largest eigenvalue)
 
 
 MODEL COMMAND WITH FINAL ESTIMATES USED AS STARTING VALUES
@@ -1420,6 +1420,34 @@ TECHNICAL 10 OUTPUT
        426         1.00       0.00      10.00
 
 
+     MOST FREQUENT RESPONSE PATTERNS
+
+    Response          Frequency     Standardized
+     Pattern    Observed  Estimated   Residual
+                                     (z-score)
+         1         1.00       0.00      10.00
+         2         1.00       0.00      10.00
+         3         1.00       0.00      10.00
+         4         1.00       0.00      10.00
+         5         1.00       0.00      10.00
+         6         1.00       0.00      10.00
+         7         1.00       0.00      10.00
+         8         1.00       0.00      10.00
+         9         1.00       0.00      10.00
+        10         1.00       0.00      10.00
+        11         1.00       0.00      10.00
+        12         1.00       0.00      10.00
+        13         1.00       0.00      10.00
+        14         1.00       0.00      10.00
+        15         1.00       0.00      10.00
+        16         1.00       0.00      10.00
+        17         1.00       0.00      10.00
+        18         1.00       0.00      10.00
+        19         1.00       0.00      10.00
+        20         1.00       0.00      10.00
+     Number of Significant Standardized Residuals     20
+
+
      UNIVARIATE MODEL FIT INFORMATION
 
                                Estimated Probabilities
@@ -1438,6 +1466,7 @@ TECHNICAL 10 OUTPUT
        Category 9        0.021        0.015           0.994
        Univariate Pearson Chi-Square                  2.104
        Univariate Log-Likelihood Chi-Square           2.036
+       Number of Significant Standardized Residuals   0
      Q228
        Category 1        0.012        0.034          -2.507
        Category 2        0.038        0.038          -0.045
@@ -1449,6 +1478,7 @@ TECHNICAL 10 OUTPUT
        Category 8        0.005        0.015          -1.719
        Univariate Pearson Chi-Square                 37.303
        Univariate Log-Likelihood Chi-Square          44.165
+       Number of Significant Standardized Residuals   3
      Q534
        Category 1        0.109        0.119          -0.673
        Category 2        0.094        0.122          -1.758
@@ -1462,6 +1492,7 @@ TECHNICAL 10 OUTPUT
        Category 10       0.101        0.105          -0.226
        Univariate Pearson Chi-Square                 13.891
        Univariate Log-Likelihood Chi-Square          13.725
+       Number of Significant Standardized Residuals   1
      Q104
        Category 1        0.014        0.029          -1.806
        Category 2        0.047        0.053          -0.557
@@ -1473,6 +1504,7 @@ TECHNICAL 10 OUTPUT
        Category 8        0.087        0.046           4.091
        Univariate Pearson Chi-Square                 93.569
        Univariate Log-Likelihood Chi-Square          82.408
+       Number of Significant Standardized Residuals   4
      Q571
        Category 1        0.002        0.004          -0.548
        Category 2        0.002        0.003          -0.071
@@ -1484,6 +1516,7 @@ TECHNICAL 10 OUTPUT
        Category 8        0.195        0.163           1.782
        Univariate Pearson Chi-Square                  4.532
        Univariate Log-Likelihood Chi-Square           4.486
+       Number of Significant Standardized Residuals   0
      Q572
        Category 1        0.002        0.004          -0.595
        Category 2        0.009        0.009           0.203
@@ -1497,6 +1530,7 @@ TECHNICAL 10 OUTPUT
        Category 10       0.040        0.026           1.878
        Univariate Pearson Chi-Square                 14.022
        Univariate Log-Likelihood Chi-Square          13.057
+       Number of Significant Standardized Residuals   1
      Q117
        Category 1        0.005        0.001           2.697
        Category 2        0.031        0.007           6.117
@@ -1510,6 +1544,7 @@ TECHNICAL 10 OUTPUT
        Category 10       0.064        0.112          -3.135
        Univariate Pearson Chi-Square                 72.724
        Univariate Log-Likelihood Chi-Square          50.097
+       Number of Significant Standardized Residuals   5
      Q587
        Category 1        0.087        0.066           1.710
        Category 2        0.129        0.109           1.328
@@ -1523,9 +1558,11 @@ TECHNICAL 10 OUTPUT
        Category 10       0.082        0.079           0.230
        Univariate Pearson Chi-Square                  8.209
        Univariate Log-Likelihood Chi-Square           7.997
+       Number of Significant Standardized Residuals   0
 
        Overall Univariate Pearson Chi-Square                       246.354
        Overall Univariate Log-Likelihood Chi-Square                217.970
+       Overall Number of Significant Standardized Residuals          14
 
 
      BIVARIATE MODEL FIT INFORMATION
@@ -1609,6 +1646,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 8        0.000        0.001          -0.602
        Bivariate Pearson Chi-Square                                165.099
        Bivariate Log-Likelihood Chi-Square                         188.814
+       Number of Significant Standardized Residuals                  11
      Q526           Q534
        Category 1     Category 1        0.017        0.019          -0.343
        Category 1     Category 2        0.009        0.011          -0.427
@@ -1702,6 +1740,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 10       0.002        0.006          -0.975
        Bivariate Pearson Chi-Square                                137.819
        Bivariate Log-Likelihood Chi-Square                         116.901
+       Number of Significant Standardized Residuals                  9
      Q526           Q104
        Category 1     Category 1        0.002        0.008          -1.217
        Category 1     Category 2        0.015        0.009           1.263
@@ -1777,6 +1816,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 8        0.007        0.004           1.000
        Bivariate Pearson Chi-Square                                147.939
        Bivariate Log-Likelihood Chi-Square                         136.321
+       Number of Significant Standardized Residuals                  8
      Q526           Q571
        Category 1     Category 1        0.000        0.001          -0.533
        Category 1     Category 2        0.000        0.000          -0.417
@@ -1852,6 +1892,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 8        0.007        0.006           0.217
        Bivariate Pearson Chi-Square                                 54.280
        Bivariate Log-Likelihood Chi-Square                          58.783
+       Number of Significant Standardized Residuals                  3
      Q526           Q572
        Category 1     Category 1        0.002        0.001           1.582
        Category 1     Category 2        0.002        0.001           0.794
@@ -1945,6 +1986,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 10       0.007        0.001           3.716
        Bivariate Pearson Chi-Square                                111.910
        Bivariate Log-Likelihood Chi-Square                          97.693
+       Number of Significant Standardized Residuals                  6
      Q526           Q117
        Category 1     Category 1        0.000        0.000          -0.398
        Category 1     Category 2        0.013        0.002           4.548
@@ -2038,6 +2080,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 10       0.002        0.007          -1.203
        Bivariate Pearson Chi-Square                                238.193
        Bivariate Log-Likelihood Chi-Square                         156.906
+       Number of Significant Standardized Residuals                  17
      Q526           Q587
        Category 1     Category 1        0.022        0.013           1.797
        Category 1     Category 2        0.012        0.012           0.030
@@ -2131,6 +2174,7 @@ TECHNICAL 10 OUTPUT
        Category 9     Category 10       0.007        0.005           0.608
        Bivariate Pearson Chi-Square                                 73.425
        Bivariate Log-Likelihood Chi-Square                          78.776
+       Number of Significant Standardized Residuals                  1
      Q228           Q534
        Category 1     Category 1        0.012        0.010           0.426
        Category 1     Category 2        0.000        0.006          -1.641
@@ -2214,6 +2258,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.000        0.004          -1.309
        Bivariate Pearson Chi-Square                                150.068
        Bivariate Log-Likelihood Chi-Square                         170.500
+       Number of Significant Standardized Residuals                  12
      Q228           Q104
        Category 1     Category 1        0.005        0.004           0.415
        Category 1     Category 2        0.002        0.004          -0.659
@@ -2281,6 +2326,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 8        0.000        0.002          -1.006
        Bivariate Pearson Chi-Square                                263.314
        Bivariate Log-Likelihood Chi-Square                         237.873
+       Number of Significant Standardized Residuals                  11
      Q228           Q571
        Category 1     Category 1        0.000        0.000          -0.377
        Category 1     Category 2        0.000        0.000          -0.295
@@ -2348,6 +2394,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 8        0.000        0.005          -1.404
        Bivariate Pearson Chi-Square                                102.218
        Bivariate Log-Likelihood Chi-Square                         105.430
+       Number of Significant Standardized Residuals                  6
      Q228           Q572
        Category 1     Category 1        0.000        0.000          -0.350
        Category 1     Category 2        0.000        0.001          -0.492
@@ -2431,6 +2478,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.000        0.001          -0.572
        Bivariate Pearson Chi-Square                                141.510
        Bivariate Log-Likelihood Chi-Square                         140.507
+       Number of Significant Standardized Residuals                  8
      Q228           Q117
        Category 1     Category 1        0.002        0.000           3.413
        Category 1     Category 2        0.005        0.001           2.302
@@ -2514,6 +2562,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.000        0.005          -1.432
        Bivariate Pearson Chi-Square                                350.775
        Bivariate Log-Likelihood Chi-Square                         183.538
+       Number of Significant Standardized Residuals                  14
      Q228           Q587
        Category 1     Category 1        0.009        0.006           0.869
        Category 1     Category 2        0.002        0.007          -1.101
@@ -2597,6 +2646,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.000        0.003          -1.174
        Bivariate Pearson Chi-Square                                103.544
        Bivariate Log-Likelihood Chi-Square                         127.011
+       Number of Significant Standardized Residuals                  5
      Q534           Q104
        Category 1     Category 1        0.009        0.013          -0.641
        Category 1     Category 2        0.025        0.018           1.165
@@ -2680,6 +2730,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 8        0.019        0.018           0.191
        Bivariate Pearson Chi-Square                                216.900
        Bivariate Log-Likelihood Chi-Square                         191.594
+       Number of Significant Standardized Residuals                  17
      Q534           Q571
        Category 1     Category 1        0.000        0.001          -0.724
        Category 1     Category 2        0.000        0.001          -0.568
@@ -2763,6 +2814,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 8        0.033        0.035          -0.256
        Bivariate Pearson Chi-Square                                 76.002
        Bivariate Log-Likelihood Chi-Square                          72.809
+       Number of Significant Standardized Residuals                  4
      Q534           Q572
        Category 1     Category 1        0.000        0.001          -0.675
        Category 1     Category 2        0.003        0.002           0.453
@@ -2866,6 +2918,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 10       0.003        0.006          -0.753
        Bivariate Pearson Chi-Square                                119.565
        Bivariate Log-Likelihood Chi-Square                         108.645
+       Number of Significant Standardized Residuals                  6
      Q534           Q117
        Category 1     Category 1        0.005        0.001           3.755
        Category 1     Category 2        0.020        0.004           5.755
@@ -2969,6 +3022,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 10       0.014        0.037          -2.511
        Bivariate Pearson Chi-Square                                279.352
        Bivariate Log-Likelihood Chi-Square                         177.346
+       Number of Significant Standardized Residuals                  16
      Q534           Q587
        Category 1     Category 1        0.035        0.023           1.605
        Category 1     Category 2        0.038        0.026           1.464
@@ -3072,6 +3126,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 10       0.021        0.024          -0.440
        Bivariate Pearson Chi-Square                                158.144
        Bivariate Log-Likelihood Chi-Square                         141.798
+       Number of Significant Standardized Residuals                  9
      Q104           Q571
        Category 1     Category 1        0.000        0.000          -0.447
        Category 1     Category 2        0.000        0.000          -0.348
@@ -3139,6 +3194,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 8        0.038        0.018           2.933
        Bivariate Pearson Chi-Square                                164.860
        Bivariate Log-Likelihood Chi-Square                         143.135
+       Number of Significant Standardized Residuals                  12
      Q104           Q572
        Category 1     Category 1        0.000        0.000          -0.396
        Category 1     Category 2        0.000        0.001          -0.554
@@ -3222,6 +3278,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.007        0.003           1.441
        Bivariate Pearson Chi-Square                                227.778
        Bivariate Log-Likelihood Chi-Square                         182.034
+       Number of Significant Standardized Residuals                  14
      Q104           Q117
        Category 1     Category 1        0.002        0.000           2.365
        Category 1     Category 2        0.000        0.002          -0.899
@@ -3305,6 +3362,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.019        0.022          -0.414
        Bivariate Pearson Chi-Square                                498.992
        Bivariate Log-Likelihood Chi-Square                         295.634
+       Number of Significant Standardized Residuals                  32
      Q104           Q587
        Category 1     Category 1        0.005        0.009          -0.867
        Category 1     Category 2        0.005        0.007          -0.621
@@ -3388,6 +3446,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.028        0.014           2.382
        Bivariate Pearson Chi-Square                                185.041
        Bivariate Log-Likelihood Chi-Square                         167.496
+       Number of Significant Standardized Residuals                  14
      Q571           Q572
        Category 1     Category 1        0.000        0.000          -0.125
        Category 1     Category 2        0.000        0.000          -0.175
@@ -3471,6 +3530,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.031        0.007           5.854
        Bivariate Pearson Chi-Square                                162.654
        Bivariate Log-Likelihood Chi-Square                         157.603
+       Number of Significant Standardized Residuals                  11
      Q571           Q117
        Category 1     Category 1        0.000        0.000          -0.106
        Category 1     Category 2        0.000        0.000          -0.252
@@ -3554,6 +3614,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.024        0.041          -1.792
        Bivariate Pearson Chi-Square                                481.102
        Bivariate Log-Likelihood Chi-Square                         156.478
+       Number of Significant Standardized Residuals                  12
      Q571           Q587
        Category 1     Category 1        0.000        0.001          -0.579
        Category 1     Category 2        0.000        0.001          -0.589
@@ -3637,6 +3698,7 @@ TECHNICAL 10 OUTPUT
        Category 8     Category 10       0.038        0.027           1.298
        Bivariate Pearson Chi-Square                                124.275
        Bivariate Log-Likelihood Chi-Square                          90.524
+       Number of Significant Standardized Residuals                  4
      Q572           Q117
        Category 1     Category 1        0.000        0.000          -0.088
        Category 1     Category 2        0.002        0.000           4.417
@@ -3740,6 +3802,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 10       0.007        0.007           0.090
        Bivariate Pearson Chi-Square                                458.508
        Bivariate Log-Likelihood Chi-Square                         176.041
+       Number of Significant Standardized Residuals                  14
      Q572           Q587
        Category 1     Category 1        0.000        0.001          -0.531
        Category 1     Category 2        0.000        0.001          -0.573
@@ -3843,6 +3906,7 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 10       0.007        0.004           0.784
        Bivariate Pearson Chi-Square                                155.840
        Bivariate Log-Likelihood Chi-Square                         131.842
+       Number of Significant Standardized Residuals                  12
      Q117           Q587
        Category 1     Category 1        0.005        0.000           4.670
        Category 1     Category 2        0.000        0.000          -0.296
@@ -3946,9 +4010,11 @@ TECHNICAL 10 OUTPUT
        Category 10    Category 10       0.012        0.030          -2.190
        Bivariate Pearson Chi-Square                                244.334
        Bivariate Log-Likelihood Chi-Square                         153.485
+       Number of Significant Standardized Residuals                  16
 
        Overall Bivariate Pearson Chi-Square                       5593.441
        Overall Bivariate Log-Likelihood Chi-Square                4145.518
+       Overall Number of Significant Standardized Residuals          304
 
 
 TECHNICAL 8 OUTPUT
@@ -3974,8 +4040,8 @@ The following plots are available:
   Item characteristic curves
   Information curves
 
-     Beginning Time:  11:06:29
-        Ending Time:  11:06:29
+     Beginning Time:  14:37:55
+        Ending Time:  14:37:55
        Elapsed Time:  00:00:00
 
 
@@ -3989,4 +4055,4 @@ Fax: (310) 391-8971
 Web: www.StatModel.com
 Support: Support@StatModel.com
 
-Copyright (c) 1998-2020 Muthen & Muthen
+Copyright (c) 1998-2023 Muthen & Muthen

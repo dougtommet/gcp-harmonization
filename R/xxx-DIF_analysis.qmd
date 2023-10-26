@@ -39,6 +39,17 @@ goo <- foo %>%
                           TRUE ~ 0))
 
 goo <- goo %>%
+  mutate(Q103 = case_when(study_name_short=="SAGESII_Inperson" ~ Q103,
+                          study_name_short=="SAGESII_Telephone" ~ Q572,
+                          study_name_short=="SAGESII_Video" ~ Q672),
+         Q102 = case_when(study_name_short=="SAGESII_Inperson" ~ Q102,
+                          study_name_short=="SAGESII_Telephone" ~ Q571,
+                          study_name_short=="SAGESII_Video" ~ Q102),
+         Q226 = case_when(study_name_short=="SAGESII_Inperson" ~ Q226,
+                          study_name_short=="SAGESII_Telephone" ~ Q526,
+                          study_name_short=="SAGESII_Video" ~ Q226))
+
+goo <- goo %>%
   mutate(timefr1 = case_when(timefr==1 ~ 1,
                              TRUE ~ 0),
          timefr2 = case_when(timefr==2 ~ 1,
@@ -82,8 +93,12 @@ tests_df %>%
 ```{r}
 #| tbl-cap: Test response frequency by interview mode
 goo %>%
-  select(-newid, -study_wave_number, -timefr1, -timefr2, -timefr6, -timefr12, 
-         -timefr18, -tele, -video) %>%
+  select(study_name_short, Q115, Q103, Q102, Q226, 
+                                  Q228, Q101, Q100, Q225, 
+                                  Q242, Q285, Q266, Q534, 
+                                  Q587) %>%
+  # select(-newid, -study_wave_number, -timefr1, -timefr2, -timefr6, -timefr12, 
+  #        -timefr18, -tele, -video) %>%
   gtsummary::tbl_summary(by = study_name_short,
                          type = c(Q115, Q103, Q102, Q226, 
                                   Q228, Q101, Q100, Q225, 
@@ -342,20 +357,7 @@ mod4_output <- MplusAutomation::readModels(here::here("mplus_ignore", "DIFanalys
 
 ```
 
-::: {.callout-note collapse=true icon=false}
-## Mplus Multiple group model output 
 ```{r}
-cat(readLines(here::here("mplus_ignore", "DIFanalysis4", "DIFmodel4.out")), sep = '\n')
-```
-:::
-
-# DIF summary tables
-
-## Factor loadings
-
-```{r}
-#| tbl-cap: "Factor loadings from multiple group model with DIF and means constrained to be 0"
-
 
 fl_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
   filter(paramHeader == "F.BY") %>%
@@ -375,35 +377,28 @@ fl_dif <- mod4_output[["parameters"]][["unstandardized"]] %>%
   mutate(item = str_replace(item, "F", "Q")) %>%
   select(item, est_D12, pval_D12, est_D13, pval_D13)
 
-fl_parameters.std <- mod4_output[["parameters"]][["stdyx.standardized"]] %>%
-  filter(paramHeader == "F.BY") %>%
-  select(LatentClass, param, est) %>%
-  pivot_wider(id_cols = param, values_from = est, 
-              names_from = LatentClass, names_prefix = "Class_") %>%
-  mutate(param = str_sub(param, 1, 4))
+# fl_parameters.std <- mod4_output[["parameters"]][["stdyx.standardized"]] %>%
+#   filter(paramHeader == "F.BY") %>%
+#   select(LatentClass, param, est) %>%
+#   pivot_wider(id_cols = param, values_from = est, 
+#               names_from = LatentClass, names_prefix = "Class_") %>%
+#   mutate(param = str_sub(param, 1, 4))
 
-tests_df %>%
-  left_join(fl_parameters.unstd, by = c("item" = "param")) %>%
-  left_join(fl_dif, by = c("item" = "item")) %>%
-  gt::gt() %>%
-    gt::sub_missing(missing_text = "") %>%
-    gt::tab_spanner("UnStd Factor Loadings", 
-                    columns = c(Class_1_unstd, Class_2_unstd, Class_3_unstd)) %>%
-    gt::tab_spanner("Inperson/Telephone", columns = c(est_D12, pval_D12)) %>%
-    gt::tab_spanner("Inperson/Video", columns = c(est_D13, pval_D13)) %>%
-    gt::cols_label(item = "Item", 
-                   name = "Test name",
-                   Class_1_unstd = "Inperson", 
-                   Class_2_unstd = "Telephone",
-                   Class_3_unstd = "Video",
-                   est_D12 = "Difference", pval_D12 = "p-value", 
-                   est_D13 = "Difference", pval_D13 = "p-value")
-```
+# Using the r2 values to calculate the std loadings because the F by QSTAR loading is always 1
+r2 <- mod4_output[["parameters"]][["r2"]] %>%
+  tibble() %>%
+  filter(!str_detect(param, "STAR")) %>%
+  filter(!str_detect(param, "F")) %>%
+  filter(pval!=999)
 
-## Means
+fl_parameters.std <- r2 %>%
+  mutate(fl = sqrt(est))  %>%
+  select(LatentClass, param, fl) %>%
+  pivot_wider(id_cols = param, values_from = fl, names_from = LatentClass, names_prefix = "Class_") %>%
+  rename(Class_1_std = Class_1) %>%
+  rename(Class_2_std = Class_2) %>%
+  rename(Class_3_std = Class_3)
 
-```{r}
-#| tbl-cap: "Means of latent indicator of items from multiple group model with DIF; means constrained to be 0"
 mean_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
   filter(paramHeader == "Intercepts") %>%
   filter(pval!=999 | LatentClass==1) %>%
@@ -418,7 +413,6 @@ mean_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
   rename(Class_2_unstd = Class_2) %>%
   rename(Class_3_unstd = Class_3)
 
-
 m_dif <- mod4_output[["parameters"]][["unstandardized"]] %>%
   filter(str_detect(paramHeader, "New")) %>%
   filter(str_detect(param, "M")) %>%
@@ -427,6 +421,91 @@ m_dif <- mod4_output[["parameters"]][["unstandardized"]] %>%
   pivot_wider(id_cols = item, names_from = comparison, values_from = c(est, pval)) %>%
   mutate(item = str_replace(item, "M", "Q")) %>%
   select(item, est_D12, pval_D12, est_D13, pval_D13)
+
+thres_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
+  filter(paramHeader == "Thresholds") %>%
+  select(LatentClass, param, est) %>%
+  pivot_wider(id_cols = param, values_from = est, 
+              names_from = LatentClass, names_prefix = "Class_") %>%
+  separate(param, into = c("item", "threshold"), sep = "\\$") %>%
+  rename(Class_1_unstd = Class_1) %>%
+  rename(Class_2_unstd = Class_2) %>%
+  rename(Class_3_unstd = Class_3)
+
+
+  
+  
+```
+
+::: {.callout-note collapse=true icon=false}
+## Mplus Multiple group model output 
+```{r}
+cat(readLines(here::here("mplus_ignore", "DIFanalysis4", "DIFmodel4.out")), sep = '\n')
+```
+:::
+
+# DIF summary tables
+
+## Factor loadings
+
+```{r}
+#| tbl-cap: "Factor loadings from multiple group model with DIF and means constrained to be 0"
+
+tests_df %>%
+  left_join(fl_parameters.unstd, by = c("item" = "param")) %>%
+  left_join(fl_parameters.std, by = c("item" = "param")) %>%
+  left_join(fl_dif, by = c("item" = "item")) %>%
+  gt::gt() %>%
+    gt::sub_missing(missing_text = "") %>%
+    gt::tab_spanner("UnStd Factor Loadings", 
+                    columns = c(Class_1_unstd, Class_2_unstd, Class_3_unstd)) %>%
+    gt::tab_spanner("Std Factor Loadings", 
+                    columns = c(Class_1_std, Class_2_std, Class_3_std)) %>%
+    gt::tab_spanner("Inperson/Telephone", columns = c(est_D12, pval_D12)) %>%
+    gt::tab_spanner("Inperson/Video", columns = c(est_D13, pval_D13)) %>%
+    gt::cols_label(item = "Item", 
+                   name = "Test name",
+                   Class_1_unstd = "Inperson", 
+                   Class_2_unstd = "Telephone",
+                   Class_3_unstd = "Video",
+                   Class_1_std = "Inperson", 
+                   Class_2_std = "Telephone",
+                   Class_3_std = "Video",
+                   est_D12 = "Difference", pval_D12 = "p-value", 
+                   est_D13 = "Difference", pval_D13 = "p-value") %>%
+  gt::fmt_number(columns = c(Class_1_unstd, Class_2_unstd, Class_3_unstd, 
+                             Class_1_std, Class_2_std, Class_3_std), decimals = 2) %>%
+  gt::fmt_number(columns = c(est_D12, pval_D12, est_D13, pval_D13), n_sigfig = 2)
+```
+
+
+```{r}
+#| tbl-cap: "Omega statistics - Internal consistency reliability"
+
+fl_parameters.std %>%
+  mutate(denom1 = 1-Class_1_std^2,
+         denom2 = 1-Class_2_std^2,
+         denom3 = 1-Class_3_std^2) %>%
+  summarize_at(vars(Class_1_std, Class_2_std, Class_3_std, denom1, denom2, denom3), sum, na.rm=TRUE) %>%
+  mutate(omega1 = Class_1_std^2/(Class_1_std^2 + denom1),
+         omega2 = Class_2_std^2/(Class_2_std^2 + denom2),
+         omega3 = Class_3_std^2/(Class_3_std^2 + denom3)) %>%
+  select(omega1, omega2, omega3) %>%
+  gt::gt() %>%
+    gt::tab_spanner("Omega", 
+                    columns = c(omega1, omega2, omega3)) %>%
+    gt::cols_label(omega1 = "Inperson", 
+                   omega2 = "Telephone",
+                   omega3 = "Video") %>%
+    gt::fmt_number(columns = c(omega1, omega2, omega3), decimals = 2)
+
+
+```
+
+## Means
+
+```{r}
+#| tbl-cap: "Means of latent indicator of items from multiple group model with DIF; means constrained to be 0"
 
 tests_df %>%
   filter(!item %in% c("Q266", "Q285")) %>%
@@ -451,16 +530,6 @@ tests_df %>%
 
 ```{r}
 #| tbl-cap: "Thresholds from multiple group model with DIF; means constrained to be 0"
-thres_parameters.unstd <- mod4_output[["parameters"]][["unstandardized"]] %>%
-  filter(paramHeader == "Thresholds") %>%
-  select(LatentClass, param, est) %>%
-  pivot_wider(id_cols = param, values_from = est, 
-              names_from = LatentClass, names_prefix = "Class_") %>%
-  separate(param, into = c("item", "threshold"), sep = "\\$") %>%
-  rename(Class_1_unstd = Class_1) %>%
-  rename(Class_2_unstd = Class_2) %>%
-  rename(Class_3_unstd = Class_3)
-
 
 thres_parameters.unstd %>%
   group_by(item) %>%

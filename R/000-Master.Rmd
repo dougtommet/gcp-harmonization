@@ -22,7 +22,7 @@ source(here::here("R", "005-Folder_paths_and_options.R"))
 ```
 
 
-```{r, eval = FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, eval = TRUE, echo=FALSE, message=FALSE, warning=FALSE}
 
 source(here::here("R", "010-Read_data.R"))
 

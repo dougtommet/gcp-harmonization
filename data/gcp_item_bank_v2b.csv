@@ -153,7 +153,6 @@ Q266,266,threshold,thres4,T4,2,1.801,0.796,4,4,no
 Q266,266,threshold,thres5,T5,2,2.905,1.284,5,5,no
 Q266,266,threshold,thres6,T6,2,4.203,1.857,6,6,no
 Q266,266,threshold,thres7,T7,2,5.721,2.528,7,7,no
-Q266,266,threshold,thres8,T8,3,10.715,4.466,8,8,no
 Q283,283,factor_loading,g,g,2,2.656,0.736,NA,NA,no
 Q283,283,threshold,thres1,T1,2,-1.305,-0.487,1,1,no
 Q283,283,threshold,thres2,T2,2,0.122,0.045,2,2,no
