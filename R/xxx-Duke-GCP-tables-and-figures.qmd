@@ -223,28 +223,39 @@ ggsave(here::here("Figures", "Duke_harmonization_Item_Information.pdf"), device 
 
 ```
 
+```{r}
+#| results: hide
+foo <- read_csv(path(derivedfolder, "gcp_factor_score_v2c.csv"))
+
+foo %>%
+  filter(study_name_short %in% c("INTUIT_ACTIVE", "SAGES")) %>%
+  group_by(study_name_short) %>%
+  summarize(n())
+
+```
 
 ```{r}
 #| label: fig-sem-plot
-#| fig-cap: "Standard error measurement by study"
+#| fig-cap: "Standard error measurement of general cognitive performance in SAGES (n = 5949) and MADCO-PC (n = 250), INTUIT (n = 369) "
 #| fig-cap-location: top
 
 foo <- read_csv(path(derivedfolder, "gcp_factor_score_v2c.csv"))
 
 foo %>%
   filter(study_name_short %in% c("INTUIT_ACTIVE", "SAGES")) %>%
+  mutate(gcp_se = g_se*10) %>%
   group_by(study_name_short) %>%
-  ggplot(aes(x = gcp, y=g_se, color = study_name_short)) +
-    geom_hline(yintercept = .316) +
+  ggplot(aes(x = gcp, y=gcp_se, color = study_name_short)) +
+    geom_hline(yintercept = 3.16) +
     geom_smooth(se=FALSE) +
-    geom_rug(sides="b") +
+    geom_rug(sides="b", alpha=.2) +
     hrbrthemes::theme_ipsum() +
     scale_x_continuous("GCP") +
-    scale_y_continuous("SEM", lim = c(0, 1)) +
+    scale_y_continuous("GCP Standard Error", lim = c(0, 8)) +
     scale_color_manual("Study", values = c(SAGES = "#d95f02", INTUIT_ACTIVE = "#7570b3")) +
     theme(legend.position="none") +
-    annotate("text", 75, .2, label = "SAGES", color = "#d95f02") +
-    annotate("text", 75, .4, label = "Duke studies", color = "#7570b3")
+    annotate("text", 75, 2, label = "SAGES", color = "#d95f02") +
+    annotate("text", 75, 4, label = "MADCO-PC & INTUIT", color = "#7570b3")
 ggsave(here::here("Figures", "Duke_harmonization_SEM.pdf"), device = cairo_pdf)
 
 
@@ -254,12 +265,12 @@ foo %>%
   group_by(study_name_short) %>%
   ggplot(aes(x = gcp, y=gcp_se, color = study_name_short)) +
     geom_hline(yintercept = 3.16) +
-    geom_point(alpha = .25, size = .5) +
+    geom_point(alpha = .10, size = .5) +
     geom_smooth(se=FALSE) +
     scale_x_continuous("GCP") +
     scale_y_continuous("GCP Standard Error", lim = c(0, 8)) +
     scale_color_manual("Study", values = c(SAGES = "#d95f02", INTUIT_ACTIVE = "#7570b3"),
-                       labels = c(SAGES = "SAGES", INTUIT_ACTIVE = "Duke studies")) +
+                       labels = c(SAGES = "SAGES", INTUIT_ACTIVE = "MADCO-PC & INTUIT")) +
     hrbrthemes::theme_ipsum()
 ggsave(here::here("Figures", "Duke_harmonization_SEM2.pdf"), device = cairo_pdf)
 
