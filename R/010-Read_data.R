@@ -444,6 +444,11 @@ if(fs::dir_exists(sagesII_datafolder_validation)) {
 
 
 intuit_df <- read_xlsx(fs::path(sages_datapath, "SOURCE", "INTUIT", "ACTIVATE_INTUIT_forNIDUS_04142022.xlsx"), sheet = "CognitiveData")
+# From Mary Cooter's email 2023-05-25
+intuit_df <- intuit_df %>%
+  mutate(trailsa = case_when(studyno=="ACT084" & visit=="0" ~ 300,
+                             TRUE ~ trailsa))
+
 saveRDS(intuit_df,        file=path(r_objects_folder, "010_intuit_df.rds"))
 
 

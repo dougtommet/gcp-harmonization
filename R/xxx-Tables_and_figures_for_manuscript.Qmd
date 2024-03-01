@@ -198,6 +198,54 @@ ggsave(here::here("Figures", "Figure 1-alt.pdf"), device = cairo_pdf)
 
 @fig-timeline-alt1 is the same as @fig-timeline but with the color gradient reversed.
 
+```{r}
+#| label: fig-timeline-alt2
+#| fig-cap: Timeline of SAGES-II and the development/roll-out of novel assessment modes
+#| fig-cap-location: top
+foo <- foo %>%
+  filter(timefr %in% c("0", "1", "2", "6", "12", "18")) 
+
+new_lab <- foo %>%
+  group_by(timefr) %>%
+  count() %>%
+  mutate(new_lab = str_c(str_pad(timefr, 2, "left", " "), ": n = ", n)) %>%
+  pull(new_lab)
+
+foo <- foo %>%
+  mutate(timefr2 = factor(timefr, labels = new_lab))
+
+ggplot(foo, aes(x=vin_date, y = vin_loc_jitter, color = timefr2)) +
+  geom_vline(xintercept = c(as.Date("2020-03-11"), as.Date("2021-05-24")), 
+             color = "grey60", linetype=2) +
+  geom_point(alpha = 1, size = .5) +
+  # geom_point(data = foo %>% filter(timefr==0), color="red", size = .5) +
+  
+  scale_x_date("Date", date_breaks = "6 months") +
+  scale_color_manual("Interview Month", 
+                     values = c("#084081",
+                                "#0868ac",
+                                "#2b8cbe",
+                                "#4eb3d3",
+                                "#7bccc4",
+                                "#a8ddb5",
+                                "#ccebc5",
+                                "#e0f3db"
+                                ) ) +
+  scale_y_continuous("Interview type", 
+                     breaks = 1:3,
+                     labels = c("In-person \n (n = 1220)", "Telephone \n (n = 426)", "Video \n (n = 362)"),
+                     sec.axis = sec_axis( trans=~.*10000, name="Weekly incident COVID cases (Suffolk County)")) +
+  hrbrthemes::theme_ipsum() +
+  theme(axis.text.x=element_text(angle=60, hjust=1)) +
+  geom_bar(data = covid_suffolk, inherit.aes = FALSE, 
+           aes(x = date, y = incident_cases10000), 
+           stat = "identity", fill = "red") +
+  labs(caption = "COVID data source: NY Times COVID 19 data repository")
+ggsave(here::here("Figures", "Figure 1-alt2.pdf"), device = cairo_pdf)
+```
+
+@fig-timeline-alt2 is the same as @fig-timeline-alt1 but restricted to interviews up to 18 months and with the sample size in the legend.
+
 ## Data quality check
 
 Some of the points in @fig-timeline/@fig-timeline-alt1 appear to have data errors because they are listed as having in-person visits during the shutdown.  The following tables list the studyid and visit date for these participants.  @tbl-data-quality lists the nine records that are listed as being an in-person interview that occurred during the shutdown.  @tbl-data-quality1 - @tbl-data-quality9 lists the all the visit dates for each of the nine participants listed in @tbl-data-quality.
@@ -810,18 +858,14 @@ validation_wide <- validation_df %>%
 validation_differences_mean <- mean(validation_wide$d)
 validation_loa <- mean(validation_wide$d) + qt(c(.025, .975), df=(nrow(validation_wide)-1))*sqrt(sum(validation_wide$dev2)/(nrow(validation_wide)-1))
 
+validation_cor <- cor(validation_df$Telephone, validation_df$Video)
+validation_cor_ci <- cor.test(validation_df$Telephone, validation_df$Video, method = "pearson", conf.level = 0.9)["conf.int"][[1]]
 
-```
+validation_lm <- estimatr::lm_robust(d~avg, data = validation_wide, se_type = "HC1") %>%
+  broom::tidy() %>%
+  filter(term=="avg") 
 
-```{r}
-# library(MethComp)
-
-
-
-
-
-
-
+validation_lm_text <- glue::glue("b = {round(validation_lm$estimate, 2)}, standard error (se) = {round(validation_lm$std.error, 2)}, P = {round(validation_lm$p.value, 2)}")
 ```
 
 
@@ -866,6 +910,9 @@ ggsave(here::here("Figures", "Figure 4.pdf"), device = cairo_pdf)
 
 
 The limits of agreement of the difference between mode of assessment is `r round(validation_loa, 2)`.
+
+
+The scatterplot and Bland-Altman limits of agreement between the telephone and video GCP scores are shown in Figure 3. The limits of agreement tell us the range where 95% of the differences between the two scores would lie for a set of new observations, and our results suggest this range would be `r round(validation_loa, 1)`, about two standard deviations in width. The correlation between the two measures is `r round(validation_cor, 2)`, and the 90% confidence interval is `r round(validation_cor_ci, 2)`. An important result of the Bland-Altman plots is that there does not appear to be a systematic differential over- or under-estimation of the GCP score by telephone versus videoconference administration. In fact, the slope of the difference on average scores is not significant (`r validation_lm_text`) but the sign of the parameter suggests that at higher ability, persons assessed by telephone may be at an advantage, and at lower ability persons assessed by videoconference may be at an advantage. At mean ability levels, the scores from telephone and videoconference do not differ significantly, where the mean difference is **-0.47 (se = 0.46, P = .31)** indicating a slight and non-significant advantage for those assessed by videoconference. However, it is notable that all observations falling outside of the 95% limits of agreement are persons for whom the GCP score estimated from telephone administration far exceeded the estimate obtained from videoconference administration of the battery. In summary, there seems to be good evidence for agreement in the large between telephone and videoconference, with a suggestion that high ability people may benefit from telephone administration, and a few people seem to benefit greatly by telephone administration but these individuals do not have a large impact on the overall sample mean.
 
 ## (Table 3): Validation study results
 

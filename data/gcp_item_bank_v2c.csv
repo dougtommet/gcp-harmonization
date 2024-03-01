@@ -19,7 +19,6 @@ Q101,101,threshold,thres6,T6,1,-1.391,-0.547,6,6,no
 Q101,101,threshold,thres7,T7,1,-0.115,-0.045,7,7,no
 Q101,101,threshold,thres8,T8,1,2.211,0.87,8,8,no
 Q101,101,threshold,thres9,T9,1,4.419,1.738,9,9,no
-Q101,101,threshold,thres9,T10,7,5.884,2.515,9,10,yes
 Q102,102,factor_loading,g,g,1,1.325,0.59,NA,NA,no
 Q102,102,threshold,thres1,T1,1,-7.946,-3.537,1,1,no
 Q102,102,threshold,thres2,T2,1,-5.708,-2.541,2,2,no
