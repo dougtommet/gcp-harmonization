@@ -62,23 +62,15 @@ The steps of this process are:
 
 These are the studies that were used in this analysis and the order in which they were harmonized.
 
-+----------------------+-----------------------------------------------------------------------------------------------------------+
 | Study                | Description                                                                                               |
-+======================+===========================================================================================================+
+|----------------|--------------------------------------------------------|
 | ADAMS                | A sub-study of HRS. Nationally representative of older adults.                                            |
-+----------------------+-----------------------------------------------------------------------------------------------------------+
 | SAGES-I              | A study of post-op delirium of adults undergoing elective surgery                                         |
-+----------------------+-----------------------------------------------------------------------------------------------------------+
 | SAGES-II (In-person) | A study of post-op delirium of adults undergoing elective surgery. Participants had in-person interviews. |
-+----------------------+-----------------------------------------------------------------------------------------------------------+
 | SAGES-II (Telephone) | A study of post-op delirium of adults undergoing elective surgery. Participants had telephone interviews. |
-+----------------------+-----------------------------------------------------------------------------------------------------------+
 | SAGES-II (IVideo)    | A study of post-op delirium of adults undergoing elective surgery. Participants had video interviews.     |
-+----------------------+-----------------------------------------------------------------------------------------------------------+
 | MADCO-PC             | A study of post-op delirium of adults undergoing elective surgery.                                        |
-+----------------------+-----------------------------------------------------------------------------------------------------------+
 | Intuit               | A study of post-op delirium of adults undergoing elective surgery.                                        |
-+----------------------+-----------------------------------------------------------------------------------------------------------+
 
 ## The tests
 
@@ -109,6 +101,5 @@ These are the tests that were administered across the studies. Tests that have a
 | HVLT delayed recall percent             |       | x       | x                    |                      | x                | x               |
 | HVLT (telephone)                        |       |         |                      | x                    |                  |                 |
 | HVLT delayed recall percent (telephone) |       |         |                      | x                    |                  |                 |
-
 
 \~end
