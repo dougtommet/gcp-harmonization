@@ -14,11 +14,12 @@ The GCP is the latent trait from a single factor confirmatory factor analysis mo
 
 *References*
 
--   Jones, Rudolph, et al Development of a unidimensional composite measure of neuropsychological functioning in older cardiac surgery patients with good measurement precision. J Clin Exp Neuropsych May 2010: 1-9.
+-   Jones, R. N., Rudolph, J. L., Inouye, S. K., Yang, F. M., Fong, T. G., Milberg, W. P., Tommet, D., Metzger, E. D., Cupples, L. A., & Marcantonio, E. R. (2010). Development of a unidimensional composite measure of neuropsychological functioning in older cardiac surgery patients with good measurement precision. Journal of Clinical and Experimental Neuropsychology, 32(10), 1041-1049. https://doi.org/10.1080/13803391003662728 
 
--   Gross, Jones, et al Calibration and Validation of an Innovative Approach for Estimating General Cognitive Performance. Neuroepidemiology 2014: 144-153
+-   Gross, A. L., Jones, R. N., Fong, T. G., Tommet, D., & Inouye, S. K. (2014). Calibration and validation of an innovative approach for estimating general cognitive performance. Neuroepidemiology, 42(3), 144-153. https://doi.org/10.1159/000357647 
 
--   Validation paper (submitted)
+-   Joffe, Y., Liu, J., Arias, F., Tommet, D., Fong, T. G., Schmitt, E. M., Travison, T., Kunicki, Z. J., Inouye, S. K., & Jones, R. N. (2024). Adaptation, Calibration, and Validation of a Cognitive Assessment Battery for Telephone and Video Administration. Journal of the American Geriatrics Society, in press. https://doi.org/DOI:10.1111/jgs.19275 
+
 
 -   Duke harmonization paper (submitted)
 
